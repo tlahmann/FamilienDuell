@@ -1,0 +1,304 @@
+Nennen Sie ein Tier, dass mit dem Buchstaben 'A' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'B' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'C' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'D' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'E' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'F' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'G' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'H' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'I' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'J' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'K' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'L' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'M' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'N' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'O' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'P' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'Q' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'R' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'S' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'T' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'U' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'V' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'W' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'X' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'Y' beginnt.
+Nennen Sie ein Tier, dass mit dem Buchstaben 'Z' beginnt.
+Nennen Sie ein Jungenname mit A
+Nennen Sie ein Mädchenname mit A
+Nennen Sie ein Jungenname mit B
+Nennen Sie ein Mädchenname mit B
+Nennen Sie ein Jungenname mit C
+Nennen Sie ein Mädchenname mit C
+Nennen Sie ein Jungenname mit D
+Nennen Sie ein Mädchenname mit D
+Nennen Sie ein Jungenname mit E
+Nennen Sie ein Mädchenname mit E
+Nennen Sie ein Jungenname mit F
+Nennen Sie ein Mädchenname mit F
+Nennen Sie ein Jungenname mit G
+Nennen Sie ein Mädchenname mit G
+Nennen Sie ein Jungenname mit H
+Nennen Sie ein Mädchenname mit H
+Nennen Sie ein Jungenname mit I
+Nennen Sie ein Mädchenname mit I
+Nennen Sie ein Jungenname mit J
+Nennen Sie ein Mädchenname mit J
+Nennen Sie ein Jungenname mit K
+Nennen Sie ein Mädchenname mit K
+Nennen Sie ein Jungenname mit L
+Nennen Sie ein Mädchenname mit L
+Nennen Sie ein Jungenname mit M
+Nennen Sie ein Mädchenname mit M
+Nennen Sie ein Jungenname mit N
+Nennen Sie ein Mädchenname mit N
+Nennen Sie ein Jungenname mit O
+Nennen Sie ein Mädchenname mit O
+Nennen Sie ein Jungenname mit P
+Nennen Sie ein Mädchenname mit P
+Nennen Sie ein Jungenname mit Q
+Nennen Sie ein Mädchenname mit Q
+Nennen Sie ein Jungenname mit R
+Nennen Sie ein Mädchenname mit R
+Nennen Sie ein Jungenname mit S
+Nennen Sie ein Mädchenname mit S
+Nennen Sie ein Jungenname mit T
+Nennen Sie ein Mädchenname mit T
+Nennen Sie ein Jungenname mit U
+Nennen Sie ein Mädchenname mit U
+Nennen Sie ein Jungenname mit V
+Nennen Sie ein Mädchenname mit V
+Nennen Sie ein Jungenname mit W
+Nennen Sie ein Mädchenname mit W
+Nennen Sie ein Jungenname mit X
+Nennen Sie ein Mädchenname mit X
+Nennen Sie ein Jungenname mit Y
+Nennen Sie ein Mädchenname mit Y
+Nennen Sie ein Jungenname mit Z
+Nennen Sie ein Mädchenname mit Z
+Nennen Sie eine Deutsche Biermarke
+Nennen Sie etwas, das Sie mit dem Winter verbinden
+Nennen Sie etwas, das Sie mit dem Frühling verbinden
+Nennen Sie etwas, das Sie mit dem Sommer verbinden
+Nennen Sie etwas, das Sie mit dem Herbst verbinden
+Nennen Sie etwas, das man mit Fasching verbindet
+Nennen Sie etwas, das man mit Ostern verbinden
+Nennen Sie etwas, das man mit Weihnachten verbinden
+Nennen Sie etwas, das man mit [...] verbinden
+Nennen Sie etwas, wovon man einen Roten Kopf bekommt
+Nennen SIe eine Personengruppe, die einem peinlich sein kann.
+Nennen Sie ein Gemüse aus dem Garten
+Nennen Sie eine beliebte Eissorte
+Nennen Sie einen Disney Film
+Nennen Sie eine Tätigkeit im Internet
+Nennen Sie ein Kleidungsstück für den Winter
+Nennen Sie ein Kleidungsstück für den Sommer
+Nennen Sie etwas, das man zum Frühstück isst
+Nennen Sie etwas, das in jedem Büro vorhanden ist
+Nennen Sie etwas, dass man jeden Tag macht
+Nennen Sie eine bliebte Zeichentrickserie
+Nennen Sie ein Kartenspiel
+Was findet man in der Handtasche einer Frau
+Nennen Sie ein beliebtes Ziel für die Flitterwochen
+Nennen Sie etwas, das man jemanden sagt, bevor man schlafen geht
+Nennen Sie einen alkoholischen Cocktail
+Nennen Sie eine Sportart mit Ball
+Nennen Sie eine Teamsportart
+Nennen Sie eine Pizzasorte
+Nennen Sie ein Kleidungsstück.
+Nennen Sie eine beliebte Eissorte.
+Nennen Sie einen perfekten Ort für ein romantisches Essen.
+Nennen Sie ein Lieblingsschulfach.
+Nennen Sie ein gefährliches Tier.
+Nennen Sie eine Haarfarbe.
+Nennen Sie eine Augenfarbe.
+Nennen Sie eine Freizeitaktivität.
+Nennen Sie eine Sportart.
+Nennen Sie einen Disneyfilm.
+Wo geht man am häufigsten einkaufen.
+Nennen Sie eine beliebte Schokoladensorte.
+Nennen Sie etwas, das man schlägt.
+Nennen Sie ein anderes Wort für Streit.
+Nennen Sie ein Tier mit gepunktetem Fell.
+Nennen Sie eine Tätigkeit, bei der Sie Radio hören.
+Nennen Sie ein anderes Wort für gut.
+Nennen Sie eine Nussart.
+Nennen Sie etwas, das sich auf Tücke reimt.
+Nennen Sie eine Tätigkeit im Internet.
+Nennen Sie ein Nachtisch.
+Nennen Sie eine Sitzmöglichkeit.
+Nennen Sie etwas aus der Besteckschublade.
+Nennen Sie etwas, das man an den PC anschließt.
+Nennen Sie ein Kleidungsstück für den Winter.
+Nennen Sie etwas aus dem Schulranzen.
+Nennen Sie ein Nachbarland Deutschlands.
+Nennen Sie ein Bundesland.
+Nennen Sie etwas, womit man Musik hören kann.
+Nennen Sie ein typisches Zootier.
+Nennen Sie ein Fernsehprogramm.
+Nennen Sie eine Süßigkeit.
+Nennen Sie ein Organ des Körpers.
+Nennen Sie ein Insekt.
+Nennen Sie eine Religion, außer Christentum.
+Nennen Sie eine Hauptstadt Europas, außer Berlin.
+Nennen Sie ein Fortbewegungsmittel.
+Nennen Sie etwas, das fliegt.
+Nennen Sie ein Wochentag.
+Nennen Sie ein Monat.
+Nennen Sie ein Tier, das man isst.
+Nennen Sie einen Pizzabelag.
+Nennen Sie etwas, das man mit Wasser macht.
+Nennen Sie ein Satzzeichen.
+Nennen Sie ein Tier auf dem Bauernhof.
+Nennen Sie etwas zur Wohnungsverschönerung.
+Nennen Sie etwas, das man zum Frühstück isst.
+Nennen Sie einen Verwandten.
+Nennen Sie eine Soße.
+Nennen Sie eine Figur aus Star Wars.
+Nennen Sie ein Gemüse aus dem Garten.
+Nennen Sie ein Feiertag.
+Nennen Sie eine Fruchtsaftsorte
+Nennen Sie ein heißer Ort
+Nennen Sie ein Gefühl
+Nennen Sie eine Schmuckart
+Nennen Sie eine Beerenart
+Nennen Sie etwas, das man jeden Tag macht.
+Nennen Sie etwas, das Babies machen
+Nennen Sie ein Wort, dass mit „Wind“ beginnt
+Nennen Sie eine olympische Disziplin
+Nennen Sie ein Urlaubsort der Deutschen
+Nennen Sie ein Fortbewegungsmittel ohne Räder
+Nennen Sie ein Tier, dass stacheln hat
+Nennen Sie ein Bundesland
+Nennen Sie ein anderes Wort für „Streit“
+Nennen Sie eine Sportart, in der man etwas fängt
+Nennen Sie ein Lieblingsschulfach
+Nennen Sie ein Disneyfilm
+Nennen Sie ein Song von Michael Jackson
+Nennen Sie eine Schokoladensorte
+Nennen Sie etwas aus der Besteckschublade
+Nennen Sie eine Hauptstadt Europas, ausser Berlin.
+Nennen Sie einen Wochentag
+Nennen Sie einen Pizzabeleg
+Nennen Sie etwas , dass man mit Wasser macht
+Nennen Sie ein Gefühl
+Nennen Sie ein Nachbarland von Deutschland
+Nennen Sie etwas, was man in der Stadt macht
+Nennen Sie ein Organ des Menschen
+Nennen Sie etwas, was zur Wohnungsverschönerung dient
+Nennen Sie ein Fernsehprogramm
+Nennen Sie ein anderes Wort für „schlecht“
+Nennen Sie etwas, dass man am Wochenende macht
+Nennen Sie ein Kleidungsstück
+Nennen Sie eine Lebensmittelindustrie
+Nennen Sie eine Stadt in Hessen
+Nennen Sie etwas aus dem Etui(Mäppchen)
+Nennen Sie einen Monat, der auf 'R' endet
+Nennen Sie einen Monat, der auf 'I' endet
+Nennen Sie eine Biersorte
+Nennen Sie eine Fischart
+Nennen Sie eine Primzahl
+Nennen Sie etwas, dass man zur Begrüßung sagt
+Nennen Sie eine Comedyserie 
+Nennen Sie etwas, dass man aus Kartoffeln macht
+Nennen Sie etwas, dass man sehen kann
+Nennen Sie etwas, dass man riechen kann
+Nennen Sie etwas, dass man fühlen kann
+Nennen Sie etwas, dass man schmecken kann
+Nennen Sie etwas, dass man hören kann
+Nennen Sie etwas, was Tasten hat
+Nennen Sie ein soziales Netzwerk, ausser Facebook
+Nennen Sie etwas, was man neben dem Radio hören, macht
+Nennen Sie etwas, was man zum Frühstück isst
+Nennen Sie ein Land, dass die Farbe „Weiß“ in der Flagge hat
+Nennen Sie ein Land, dass die Farbe „Rot“ in der Flagge hat
+Nennen Sie ein Land, dass die Farbe „Gelb“ in der Flagge hat
+Nennen Sie ein Land, dass die Farbe „Blau“ in der Flagge hat
+Nennen Sie ein Land, dass die Farbe „Grün“ in der Flagge hat
+Nennen Sie ein Land, dass die Farbe „Schwarz“ in der Flagge hat
+Nennen Sie eine Partei
+Nennen Sie Ihre Lieblingsfarbe
+Nennen Sie ein Brettspiel
+Nennen Sie eine Sportart, die man im Winter macht
+Nennen Sie eine Religion, ausser das Christentum
+Nennen Sie etwas, was man bei McDonalds essen kann
+Nennen Sie ein Land, wo spanisch gesprochen wird (ausser Spanien selbst)
+Nennen Sie eine Fast- Food - Kette
+Nennen Sie ein Getränk(ohne Alkohol
+Nennen Sie ein Film aus der Harry-Potter-Filmreihe
+Nennen Sie eine Stadt in Südamerika
+Nennen Sie eine Automarke
+Nennen Sie ein Hollywood-Schauspieler(männlich)
+Nennen Sie ein anderes Wort für „Laufen“
+Nennen Sie etwas was in den Salat kommt(ausser der Salat selber)
+Nennen Sie ein Wahrzeichen von den Städten Deutschlands
+Nennen Sie ein Gesellschaftsspiel
+Nennen Sie ein Land in Afrika
+Nennen Sie ein Tier mit Geweih.
+Was reimt sich auf tief?
+Nennen Sie ein gelb-schwarzes Insekt.
+Nennen Sie etwas, dass einen Schnabel hat.
+Nennen Sie ein Tier, dass Stacheln hat.
+Nennen Sie eine Cremesuppe.
+Nennen Sie einen Käfigvogel.
+Nennen Sie etwas, dass man an seinem letzten Arbeitstag macht.
+Nennen Sie ein besonders gesundes Getränk.
+Nennen Sie einen Ort mit wenig Beinfreiheit.
+Nennen Sie eine Information, die auf ihrem Kontoauszug steht
+Nennen Sie etwas, mit dem sie die Haare stylen
+Nennen Sie eine Tätigkeit, bei der sie Radio hören
+Nennen Sie einen Käfigvogel
+Nennen Sie eine Cremesuppe
+Nennen Sie einen Bodenschatz, der in Deutschland abgebaut wird
+Nennen Sie eine Sportart mit Schiedsrichter
+Nennen Sie eine Maschine, bei deren Bedienung man sich einen Ohrenschutz wünscht.
+Nennen Sie eine Sportart, bei der man etwas schlagen muss
+Nennen Sie etwas, in das man einen Knoten macht.
+Nennen Sie einen Teil des Körpers, an dem man oft trockene Haut hat.
+Nennen Sie ein besonders farbenprächtiges Tier.
+Nennen Sie ein Land, in dem Olivenbäume wachsen.
+Nennen Sie etwas, mit dessen Hilfe Sie schwimmen können.
+Nennen Sie etwas, dass man einmal in der Woche wäscht.
+Nennen Sie ein Sicherheitsmerkmal von Banknoten.
+Nennen Sie ein Insekt.
+Nennen Sie ein Instrument in einer Jazzband.
+Nennen Sie etwas, das man schlägt.
+Nennen Sie einen berühmten Seefahrer.
+Nennen Sie etwas, das man immer bei sich trägt.
+Nennen Sie eine Berufsgruppe, die in Krimis häufig der Täter ist.
+Nennen Sie einen deutschen klassischen Komponisten.
+Nennen Sie etwas, das Sie mit Norwegen verbinden.
+Nennen Sie etwas, das Sie mit den drei Heiligen Königen verbinden.
+Nennen Sie eine spezielle Nuss.
+Nennen Sie ein Spiel im Kasino.
+Nennen Sie etwas, das sich auf „sauer“ reimt.
+Nennen Sie einen spanischen Männervornamen.
+Nennen Sie einen Ort mit wenig Beinfreiheit.
+Nennen Sie einen typischen Babynamen.
+Nennen Sie etwas, was man aus Steinen macht.
+Nennen Sie eine Berufsbezeichnung, die auf „-mann“ endet, außer Steuermann.
+Nennen Sie etwas, das Sie für den Notfall immer im Auto haben.
+Nennen Sie etwas, das sich auf „Tasse“ reimt.
+Nennen Sie ein Tier, das 6 Beine hat.
+Nennen Sie eine beliebte Farbe für Bodenfliesen.
+Nennen Sie etwas, das sich auf „tief“ reimt.
+Nennen Sie ein Tier, das einem Auto seinen Namen gibt.
+Nennen Sie etwas, das man an seinem letzten Arbeitstag macht.
+Nennen Sie Sie sitzen zu Hause und der Fernseher ist kaputt. Womit vertreiben Sie sich Ihre Zeit?
+Nennen Sie ein Tier mit 3 Buchstaben.
+Nennen Sie Sie einen Traumberuf vieler Kinder.
+Nennen Sie einen Beruf, in dem man einen Kittel braucht.
+Nennen Sie ein Land, in dem viel Schnee liegt.
+Nennen Sie Was macht eine Braut, kurz bevor sie vor den Altar tritt?
+Nennen Sie etwas, das Blätter zusammenhält.
+Nennen Sie etwas, das am Strand verboten ist.
+Nennen Sie eine Frucht, bei der man die Schale mitisst.
+Nennen Sie ein Körperteil, das man doppelt hat.
+Nennen Sie etwas, das Sie beim Friseur machen.
+Nennen Sie etwas, dass ein Einbrecher hinterlassen könnte, dass zu seiner Festnahme führt.
+Nennen Sie ein Buch, das Sie auf eine einsame Insel mitnehmen würden.
+Nennen Sie eine wichtige Erfindung.
+Nennen Sie einen Preis, der jedes Jahr vergeben wird.
+Nennen Sie das meist getragene Kleidungsstück.
+Nennen Sie eine beliebte Eissorte.
+Nennen Sie einen perfekten Ort für ein romantisch
