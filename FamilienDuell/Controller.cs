@@ -35,6 +35,8 @@ namespace FamilienDuell
             return text;
         } 
         int CurrentGameStatus = 0;
+        int currentSetupStatus = 0;
+        Boolean maximus;
         // initialize monitor
         GameMonitor Monitor = new GameMonitor();
         // get clientid for server
@@ -44,23 +46,85 @@ namespace FamilienDuell
         public Main()
         {
             InitializeComponent();
-            
+
+            txtGameTitle.TextChanged += new EventHandler(this.textGameTitleChanged);
+            txtTeam1.TextChanged += new EventHandler(this.textTeamsChanged);
+            txtTeam2.TextChanged += new EventHandler(this.textTeamsChanged);
+            radioButton1.CheckedChanged += new EventHandler(this.stateOptionsChanged);
+            radioButton2.CheckedChanged += new EventHandler(this.stateOptionsChanged);
+            numericUpDown1.ValueChanged += new EventHandler(this.stateOptionsChanged);
+            cbSounds.CheckedChanged += new EventHandler(this.stateOptionsChanged);
+            this.dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewRowPostPaint);
+            //tabMainControl.TabIndexChanged += new EventHandler(this.tabStateChanged);
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            Monitor.Show();
+
+            //tabMainControl.Enabled = false;
+        }
+
+        // determine if GameTitle has been entered
+        public void textGameTitleChanged(object sender, EventArgs e)
+        {
+            if (txtGameTitle.Text != "")
+            {
+                txtTeam1.Enabled = true;
+                txtTeam2.Enabled = true;
+                tableLayoutPanel3.BackColor = SystemColors.ActiveCaption;
+            }
+            else
+            {
+                txtTeam1.Enabled = false;
+                txtTeam2.Enabled = false;
+                tableLayoutPanel3.BackColor = SystemColors.InactiveCaption;
+            }
+        }
+
+        // determine if Teamnames has been entered
+        public void textTeamsChanged(object sender, EventArgs e)
+        {
+            if (txtTeam1.Text != "" && txtTeam2.Text != "")
+            {
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                numericUpDown1.Enabled = true;
+                cbSounds.Enabled = true;
+                tableLayoutPanel4.BackColor = SystemColors.ActiveCaption;
+            }
+            else
+            {
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                numericUpDown1.Enabled = false;
+                cbSounds.Enabled = false;
+                tableLayoutPanel4.BackColor = SystemColors.InactiveCaption;
+            }
+        }
+
+        public void stateOptionsChanged(object sender, EventArgs e)
+        {
+            if((radioButton1.Checked == true || radioButton2.Checked == true))
+            {
+                btnNext.Enabled = true;
+            }
         }
 
         // start functions
-        public bool nextStep()
+        public bool playGame()
         {
             if (CurrentGameStatus == 0)
             {
                 lblClientId.Text = txtGameTitle.Text;
-                Monitor.Show();
+                
                 btnNext.Text = "Monitor fixieren (Vollbild)";
                 CurrentGameStatus = 1;
             }
             else if (CurrentGameStatus == 1)
             {
                 Monitor.SetHeadline("Davids Familien Duell v0.1 Alpha-RC");
-                Monitor.maximize();
+                
                 Monitor.ToggleWaiting();
                 tabMainControl.Enabled = true;
                 btnNext.Enabled = false;
@@ -251,7 +315,101 @@ namespace FamilienDuell
         // nextbutton
         public void btnNext_Click(object sender, EventArgs e)
         {
-            nextStep();
+            if (tabMainControl.SelectedIndex == 0)
+            {
+                try
+                {
+                    int nOP = Convert.ToInt32(numericUpDown1.Value);
+                    if(dataGridView.RowCount != nOP)
+                    {
+                        int add = nOP - dataGridView.RowCount;
+                        for (int i = 0; i < add; i++)
+                        {
+                            dataGridView.Rows.Add("");
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Fehler!");
+                }
+                
+                tabMainControl.SelectedIndex = 1;
+                currentSetupStatus++;
+            }
+            else if (tabMainControl.SelectedIndex == 1)
+            {
+                if (gridCheck())
+                {
+                    tabMainControl.SelectedIndex = 2;
+                    currentSetupStatus++;
+                }
+            }
+            else if (tabMainControl.SelectedIndex == 2)
+            {
+                tabMainControl.SelectedIndex = 3;
+                currentSetupStatus++;
+                readyToPlay();
+                playGame();
+            }
+        }
+
+        // displays row numbers for dgv
+        private void dataGridViewRowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(dataGridView.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 17, e.RowBounds.Location.Y + 4);
+            }
+        }
+
+        private bool gridCheck()
+        {
+            Boolean valid = true;
+
+            for (int j = 0; j < dataGridView.Rows.Count; j++)
+            {
+                for (int i = 0; i < dataGridView.Columns.Count; i++)
+                {
+                    if (dataGridView.Rows[j].Cells[i].Value == null)
+                    {
+                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
+
+                        valid = false;
+                    }
+                    else if (dataGridView.Rows[j].Cells[i].Value == "")
+                    {
+                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
+
+                        valid = false;
+                    }
+                    else
+                    {
+                            dataGridView.Rows[j].Cells[i].Style.BackColor = Color.White;
+                    }
+                }
+            }
+            return valid;
+        }
+
+        private void readyToPlay()
+        {
+            if(currentSetupStatus == 3)
+            {
+                btnAnswer1.Enabled = true;
+                btnAnswer2.Enabled = true;
+                btnAnswer3.Enabled = true;
+                btnAnswer4.Enabled = true;
+                btnAnswer5.Enabled = true;
+                btnAnswer6.Enabled = true;
+                btnGetQuestion.Enabled = true;
+                btnShowQuestion.Enabled = true;
+                btnTeam1.Enabled = true;
+                btnTeam2.Enabled = true;
+                btnRemi.Enabled = true;
+                btnWrong.Enabled = true;
+                cbTeamRound.Enabled = true;
+            }
         }
 
         // overtake
@@ -295,12 +453,12 @@ namespace FamilienDuell
             }
             if (team1 == team2)
             {
-                btnOvertake.Enabled = false;
+                //btnOvertake.Enabled = false;
                 lblTeamAlert.Text = "Zwei gleiche Teamnamen sind nicht gestattet.";
             }
             else
             {
-                btnOvertake.Enabled = true;
+                //btnOvertake.Enabled = true;
             }
         }
 
@@ -404,62 +562,62 @@ namespace FamilienDuell
 
         private void btnAddPoints_Click(object sender, EventArgs e)
         {
-            if (drpTeam.SelectedIndex > -1 & drpTeam.SelectedIndex < 4)
-            {
-                if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Team 1")
-                {
-                    Monitor.newPoints(2, int.Parse(tbPointsProceed.Text));
-                    lblPointsWarning.Text = "";
-                }
-                else if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Team 2")
-                {
-                    Monitor.newPoints(3, int.Parse(tbPointsProceed.Text));
-                    lblPointsWarning.Text = "";
-                }
-                else if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Rundenpunkte")
-                {
-                    lblPointsWarning.Text = "";
-                    Monitor.newPoints(1, int.Parse(tbPointsProceed.Text));
-                }
-                else
-                {
-                    lblPointsWarning.Text = "Bitte existierendes Team auswählen.";
-                }
-            }
-            else
-            {
-                lblPointsWarning.Text = "Bitte existierendes Team auswählen.";
-            }
+            //if (drpTeam.SelectedIndex > -1 & drpTeam.SelectedIndex < 4)
+            //{
+            //    if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Team 1")
+            //    {
+            //        Monitor.newPoints(2, int.Parse(tbPointsProceed.Text));
+            //        lblPointsWarning.Text = "";
+            //    }
+            //    else if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Team 2")
+            //    {
+            //        Monitor.newPoints(3, int.Parse(tbPointsProceed.Text));
+            //        lblPointsWarning.Text = "";
+            //    }
+            //    else if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Rundenpunkte")
+            //    {
+            //        lblPointsWarning.Text = "";
+            //        Monitor.newPoints(1, int.Parse(tbPointsProceed.Text));
+            //    }
+            //    else
+            //    {
+            //        lblPointsWarning.Text = "Bitte existierendes Team auswählen.";
+            //    }
+            //}
+            //else
+            //{
+            //    lblPointsWarning.Text = "Bitte existierendes Team auswählen.";
+            //}
         }
 
         private void btnDelPoints_Click(object sender, EventArgs e)
         {
-            if (drpTeam.SelectedIndex > -1 & drpTeam.SelectedIndex < 4)
-            {
-                if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Team 1")
-                {
-                    Monitor.remPoints(2, int.Parse(tbPointsProceed.Text));
-                    lblPointsWarning.Text = "";
-                }
-                else if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Team 2")
-                {
-                    Monitor.remPoints(3, int.Parse(tbPointsProceed.Text));
-                    lblPointsWarning.Text = "";
-                }
-                else if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Rundenpunkte")
-                {
-                    lblPointsWarning.Text = "";
-                    Monitor.remPoints(1, int.Parse(tbPointsProceed.Text));
-                }
-                else
-                {
-                    lblPointsWarning.Text = "Bitte existierendes Team auswählen.";
-                }
-            }
-            else
-            {
-                lblPointsWarning.Text = "Bitte existierendes Team auswählen.";
-            }
+            //if (drpTeam.SelectedIndex > -1 & drpTeam.SelectedIndex < 4)
+            //{
+            //    if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Team 1")
+            //    {
+            //        Monitor.remPoints(2, int.Parse(tbPointsProceed.Text));
+            //        lblPointsWarning.Text = "";
+            //    }
+            //    else if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Team 2")
+            //    {
+            //        Monitor.remPoints(3, int.Parse(tbPointsProceed.Text));
+            //        lblPointsWarning.Text = "";
+            //    }
+            //    else if (drpTeam.Items[drpTeam.SelectedIndex].ToString() == "Rundenpunkte")
+            //    {
+            //        lblPointsWarning.Text = "";
+            //        Monitor.remPoints(1, int.Parse(tbPointsProceed.Text));
+            //    }
+            //    else
+            //    {
+            //        lblPointsWarning.Text = "Bitte existierendes Team auswählen.";
+            //    }
+            //}
+            //else
+            //{
+            //    lblPointsWarning.Text = "Bitte existierendes Team auswählen.";
+            //}
         }
 
         private void btnTeam1_Click(object sender, EventArgs e)
@@ -483,6 +641,22 @@ namespace FamilienDuell
         {
             btnNext.Enabled = true;
             Monitor.setPoints(1, 0);
+        }
+
+        private void btnMaximizeClick(object sender, EventArgs e)
+        {
+            if(!maximus)
+            {
+                Monitor.maximize();
+                maximus = true;
+                btnMaximize.Text = "Minimieren";
+            }
+            else
+            {
+                Monitor.minimize();
+                maximus = false;
+                btnMaximize.Text = "Maximieren";
+            }   
         }
     }
 }

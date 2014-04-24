@@ -31,12 +31,16 @@ namespace FamilienDuell
             return true;
         }
 
-        public bool maximize()
+        public void maximize()
         {
             WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
-            //TopMost = true;
-            return true;
+        }
+
+        public void minimize()
+        {
+            WindowState = FormWindowState.Normal;
+            FormBorderStyle = FormBorderStyle.Sizable;
         }
 
         public bool ToggleWaiting()
