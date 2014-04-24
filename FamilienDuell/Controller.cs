@@ -307,14 +307,7 @@ namespace FamilienDuell
         private void btnWrong_Click(object sender, EventArgs e)
         {
             playSound(3);
-            if (cbTeamRound.Checked == true)
-            {
-                Monitor.MakeWrong(1);
-            }
-            else
-            {
-                Monitor.MakeWrong(0);
-            }
+            cbTeamRound.Checked = Monitor.MakeWrong(cbTeamRound.Checked);
         }
 
         private void btnGetQuestion_Click(object sender, EventArgs e)
@@ -396,10 +389,6 @@ namespace FamilienDuell
 
         private void cbTeamRound_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbTeamRound.Checked != true)
-            {
-                Monitor.clearWrong();
-            }
         }
 
         private void btnAddPoints_Click(object sender, EventArgs e)

@@ -135,19 +135,35 @@ namespace FamilienDuell
             return true;
         }
 
-        public bool MakeWrong(int firstword)
+        public bool MakeWrong(bool isInTeamRound)
         {
             lblWrong.Visible = true;
-            if (firstword == 0)
+            if (isInTeamRound)
             {
-                lblWrong.Text = "X";
-                timerWrong.Enabled = true;
+                if (lblWrong.Text.Length < 3)
+                {
+                    lblWrong.Text += "X";
+                    if (lblWrong.Text.Length >= 3)
+                    {
+                        timerWrong.Enabled = true;
+                        return false;
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
             else
             {
-                lblWrong.Text += "X";
+                lblWrong.Text = "X";
+                timerWrong.Enabled = true;
+                return false;
             }
-            return true;
+
         }
 
         public bool clearWrong() {
