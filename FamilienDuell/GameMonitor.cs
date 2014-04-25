@@ -192,7 +192,7 @@ namespace FamilienDuell
             if (team == 1)
             {
                 targetVal = Convert.ToInt32(lblRoundPoints.Text) + points;
-                MessageBox.Show("New targetVal: " + Convert.ToString( targetVal ) );
+                MessageBox.Show("New targetVal: " + Convert.ToString(targetVal));
             }
             else if (team == 2)
             {

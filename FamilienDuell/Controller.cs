@@ -1,12 +1,19 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Media;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
+using System.Threading;
 using System.Xml;
 
 namespace FamilienDuell
@@ -61,6 +68,8 @@ namespace FamilienDuell
         private void Main_Load(object sender, EventArgs e)
         {
             Monitor.Show();
+
+            //playSound(1);
 
             //tabMainControl.Enabled = false;
         }
@@ -195,20 +204,25 @@ namespace FamilienDuell
             {
                 try
                 {
-                    string locationOffset = "D:\\Dropbox\\Misc\\FamilienDuell\\FamilienDuell\\obj\\Debug\\";
+                    string locationOffset = Directory.GetCurrentDirectory();
+                    //System.Diagnostics.Process.Start(path + @"\sound\Bonefit_Hilfe.pdf");
+
+                    //string locationOffset = "D:\\Dropbox\\Misc\\FamilienDuell\\FamilienDuell\\obj\\Debug\\";
                     if (Action == 1)
                     {
-                        SoundPlayer simpleSound = new SoundPlayer(@"" + locationOffset + "sounds\\intro.wav");
+                        SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff94_open_vamps.wav");
                         simpleSound.Play();
                     }
                     else if (Action == 2)
                     {
-                        SoundPlayer simpleSound = new SoundPlayer(@"" + locationOffset + "sounds\\right.wav");
+                        // correct answer sound
+                        SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff-clang.wav");
                         simpleSound.Play();
                     }
                     else if (Action == 3)
                     {
-                        SoundPlayer simpleSound = new SoundPlayer(@"" + locationOffset + "sounds\\wrong.wav");
+                        // wrong answer sound
+                        SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff-strike3.wav");
                         simpleSound.Play();
                     }
                 }
@@ -325,7 +339,8 @@ namespace FamilienDuell
                         int add = nOP - dataGridView.RowCount;
                         for (int i = 0; i < add; i++)
                         {
-                            dataGridView.Rows.Add("");
+                            // TODO DefaultNamen raus!
+                            dataGridView.Rows.Add("Player Red " + (i + 1), "Player Blue " + (i + 1));
                         }
                     }
                 }
@@ -492,7 +507,7 @@ namespace FamilienDuell
         // answers
         private void btnAnswer1_Click(object sender, EventArgs e)
         {
-            playSound(2);
+            //playSound(2);
             btnAnswer1.Enabled = false;
             btnGetQuestion.Enabled = false;
             cbTeamRound.Checked = true;
@@ -502,7 +517,7 @@ namespace FamilienDuell
 
         private void btnAnswer2_Click(object sender, EventArgs e)
         {
-            playSound(2);
+            //playSound(2);
             btnAnswer2.Enabled = false;
             btnGetQuestion.Enabled = false;
             togglePointButtons();
@@ -511,7 +526,7 @@ namespace FamilienDuell
 
         private void btnAnswer3_Click(object sender, EventArgs e)
         {
-            playSound(2);
+            //playSound(2);
             btnGetQuestion.Enabled = false;
             btnAnswer3.Enabled = false;
             togglePointButtons();
@@ -520,7 +535,7 @@ namespace FamilienDuell
 
         private void btnAnswer4_Click(object sender, EventArgs e)
         {
-            playSound(2);
+            //playSound(2);
             btnAnswer4.Enabled = false;
             togglePointButtons();
             btnGetQuestion.Enabled = false;
@@ -529,7 +544,7 @@ namespace FamilienDuell
 
         private void btnAnswer5_Click(object sender, EventArgs e)
         {
-            playSound(2);
+            //playSound(2);
             btnAnswer5.Enabled = false;
             togglePointButtons();
             Monitor.ShowResult(5, btnAnswer5.Text, lblQuantity5.Text);
@@ -538,7 +553,7 @@ namespace FamilienDuell
 
         private void btnAnswer6_Click(object sender, EventArgs e)
         {
-            playSound(2);
+            //playSound(2);
             btnAnswer6.Enabled = false;
             togglePointButtons();
             btnGetQuestion.Enabled = false;
