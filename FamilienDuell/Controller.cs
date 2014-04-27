@@ -142,7 +142,7 @@ namespace FamilienDuell
         }
         #endregion
 
-        #region gameplay
+        #region Gameplay
 
         private void btnWrongClick(object sender, EventArgs e)
         {
@@ -244,6 +244,71 @@ namespace FamilienDuell
             btnNext.Enabled = true;
             Monitor.setPoints(1, 0);
         }
+        #endregion
+
+        #region Validating
+
+        private bool gridCheck()
+        {
+            Boolean valid = true;
+
+            for (int j = 0; j < dataGridView.Rows.Count; j++)
+            {
+                for (int i = 0; i < dataGridView.Columns.Count; i++)
+                {
+                    if (dataGridView.Rows[j].Cells[i].Value == null)
+                    {
+                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
+
+                        valid = false;
+                    }
+                    else if (dataGridView.Rows[j].Cells[i].Value == "")
+                    {
+                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
+
+                        valid = false;
+                    }
+                    else
+                    {
+                        dataGridView.Rows[j].Cells[i].Style.BackColor = Color.White;
+                    }
+                }
+            }
+            return valid;
+        }
+
+        private void readyToPlay()
+        {
+            if (currentSetupStatus == 3)
+            {
+                btnAnswer1.Enabled = true;
+                btnAnswer2.Enabled = true;
+                btnAnswer3.Enabled = true;
+                btnAnswer4.Enabled = true;
+                btnAnswer5.Enabled = true;
+                btnAnswer6.Enabled = true;
+                btnGetQuestion.Enabled = true;
+                btnShowQuestion.Enabled = true;
+                btnTeam1.Enabled = true;
+                btnTeam2.Enabled = true;
+                btnRemi.Enabled = true;
+                btnWrong.Enabled = true;
+                cbTeamRound.Enabled = true;
+            }
+        }
+        #endregion
+
+        #region Design
+
+        // displays row numbers for dgv
+        private void dataGridViewRowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(dataGridView.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 17, e.RowBounds.Location.Y + 4);
+            }
+        }
+
         #endregion
 
         public void showMonitor()
@@ -478,9 +543,17 @@ namespace FamilienDuell
                 {
                     MessageBox.Show(ex.Message, "Fehler!");
                 }
+                if (cbPlayernames.Checked == true)
+                {
+                    tabMainControl.SelectedIndex = 1;
+                    currentSetupStatus++;
+                }
+                else
+                {
+                    tabMainControl.SelectedIndex = 2;
+                    currentSetupStatus += 2;
+                }   
                 
-                tabMainControl.SelectedIndex = 1;
-                currentSetupStatus++;
             }
             else if (tabMainControl.SelectedIndex == 1)
             {
@@ -500,64 +573,6 @@ namespace FamilienDuell
             else if (tabMainControl.SelectedIndex == 3)
             {
                 playGame();
-            }
-        }
-
-        // displays row numbers for dgv
-        private void dataGridViewRowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            using (SolidBrush b = new SolidBrush(dataGridView.RowHeadersDefaultCellStyle.ForeColor))
-            {
-                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 17, e.RowBounds.Location.Y + 4);
-            }
-        }
-
-        private bool gridCheck()
-        {
-            Boolean valid = true;
-
-            for (int j = 0; j < dataGridView.Rows.Count; j++)
-            {
-                for (int i = 0; i < dataGridView.Columns.Count; i++)
-                {
-                    if (dataGridView.Rows[j].Cells[i].Value == null)
-                    {
-                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
-
-                        valid = false;
-                    }
-                    else if (dataGridView.Rows[j].Cells[i].Value == "")
-                    {
-                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
-
-                        valid = false;
-                    }
-                    else
-                    {
-                            dataGridView.Rows[j].Cells[i].Style.BackColor = Color.White;
-                    }
-                }
-            }
-            return valid;
-        }
-
-        private void readyToPlay()
-        {
-            if(currentSetupStatus == 3)
-            {
-                btnAnswer1.Enabled = true;
-                btnAnswer2.Enabled = true;
-                btnAnswer3.Enabled = true;
-                btnAnswer4.Enabled = true;
-                btnAnswer5.Enabled = true;
-                btnAnswer6.Enabled = true;
-                btnGetQuestion.Enabled = true;
-                btnShowQuestion.Enabled = true;
-                btnTeam1.Enabled = true;
-                btnTeam2.Enabled = true;
-                btnRemi.Enabled = true;
-                btnWrong.Enabled = true;
-                cbTeamRound.Enabled = true;
             }
         }
 
