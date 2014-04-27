@@ -11,10 +11,11 @@ namespace FamilienDuell
 {
     public partial class GameMonitor : Form
     {
-        int Waiting = 0;
+        int waiting = 0;
+        int wrongs;
 
-        int AnswerTo;
-        string Quantity;
+        int answerTo;
+        string quantity;
 
         int targetVal;
         int targetTeam;
@@ -24,11 +25,20 @@ namespace FamilienDuell
         public GameMonitor()
         {
             InitializeComponent();
+
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.monitorClosing);
+            imgWaiting.Visible = true;
         }
 
-        public bool SetHeadline(string text) {
+        private void monitorClosing(object sender, CancelEventArgs e)
+        {
+            MessageBox.Show("Dieses Fenster kann nicht geschlossen werden", "Nicht möglich", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            e.Cancel = true;
+        }
+
+        public void setHeadline(string text)
+        {
             lblHeadline.Text = text;
-            return true;
         }
 
         public void maximize()
@@ -43,38 +53,37 @@ namespace FamilienDuell
             FormBorderStyle = FormBorderStyle.Sizable;
         }
 
-        public bool ToggleWaiting()
+        public void toggleWaiting()
         {
-            if (Waiting == 0)
+            if (waiting == 0)
             {
                 imgWaiting.Visible = true;
-                Waiting = 1;
+                waiting = 1;
             }
             else
             {
                 imgWaiting.Visible = false;
-                Waiting = 0;
+                waiting = 0;
             }
-            return true;
         }
 
-        public bool SetTeams(string Team1, string Team2)
+        public void setTeams(string Team1, string Team2)
         {
             lblTeam1.Text = Team1;
             lblTeam2.Text = Team2;
-            return true;
         }
 
         public void setQuestion(string msg)
         {
-            lblQuestion.Text += ": " + msg;
+            question.Visible = true;
+            question.Text = msg;
         }
 
-        public bool GameStart()
+        public void gameStart()
         {
-            lblWrong.Visible = false;
-            lblTeam1.Visible = true;
-            lblTeam2.Visible = true;
+            lblWrong2.Visible = false;
+            //lblTeam1.Visible = true;
+            //lblTeam2.Visible = true;
             lblPointsTeam1.Visible = true;
             lblPointsTeam2.Visible = true;
             lblRoundPoints.Visible = true;
@@ -84,105 +93,121 @@ namespace FamilienDuell
             lblAnswer4.Visible = true;
             lblAnswer5.Visible = true;
             lblAnswer6.Visible = true;
-            lblAnswers1.Visible = true;
-            lblAnswers2.Visible = true;
-            lblAnswers3.Visible = true;
-            lblAnswers4.Visible = true;
-            lblAnswers5.Visible = true;
-            lblAnswers6.Visible = true;
+            lblAnswerPts1.Visible = true;
+            lblAnswerPts2.Visible = true;
+            lblAnswerPts3.Visible = true;
+            lblAnswerPts4.Visible = true;
+            lblAnswerPts5.Visible = true;
+            lblAnswerPts6.Visible = true;
             lblAnswer1.Text = "................................................";
             lblAnswer2.Text = "................................................";
             lblAnswer3.Text = "................................................";
             lblAnswer4.Text = "................................................";
             lblAnswer5.Text = "................................................";
             lblAnswer6.Text = "................................................";
-            lblAnswers1.Text = "..";
-            lblAnswers2.Text = "..";
-            lblAnswers3.Text = "..";
-            lblAnswers4.Text = "..";
-            lblAnswers5.Text = "..";
-            lblAnswers6.Text = "..";
-            lblWrong.Text = "";
-            lblQuestion.Text = "Runde #1";
-            return true;
+            lblAnswerPts1.Text = "..";
+            lblAnswerPts2.Text = "..";
+            lblAnswerPts3.Text = "..";
+            lblAnswerPts4.Text = "..";
+            lblAnswerPts5.Text = "..";
+            lblAnswerPts6.Text = "..";
+            lblWrong2.Text = "";
+            question.Text = "Runde #1";
         }
 
-        public bool nextRound(int roundNumber) {
-            lblWrong.Visible = false;
+        public void nextRound(int roundNumber) {
+            lblWrong2.Visible = false;
             if (roundNumber > 1)
             {
                 lblAnswer6.Visible = false;
-                lblAnswers6.Visible = false;
+                lblAnswerPts6.Visible = false;
             }
             if (roundNumber > 2)
             {
                 lblAnswer5.Visible = false;
-                lblAnswers5.Visible = false;
+                lblAnswerPts5.Visible = false;
             }
             if (roundNumber > 3)
             {
                 lblAnswer4.Visible = false;
-                lblAnswers4.Visible = false;
+                lblAnswerPts4.Visible = false;
             }
-            lblQuestion.Text = "Runde #" + Convert.ToString(roundNumber);
+            question.Text = "Runde #" + Convert.ToString(roundNumber);
             lblAnswer1.Text = "................................................";
             lblAnswer2.Text = "................................................";
             lblAnswer3.Text = "................................................";
             lblAnswer4.Text = "................................................";
             lblAnswer5.Text = "................................................";
-            lblAnswers1.Text = "..";
-            lblAnswers2.Text = "..";
-            lblAnswers3.Text = "..";
-            lblAnswers4.Text = "..";
-            lblAnswers5.Text = "..";
-            lblWrong.Text = "";
-            return true;
+            lblAnswerPts1.Text = "..";
+            lblAnswerPts2.Text = "..";
+            lblAnswerPts3.Text = "..";
+            lblAnswerPts4.Text = "..";
+            lblAnswerPts5.Text = "..";
+            lblWrong2.Text = "";
         }
 
-        public bool MakeWrong(bool isInTeamRound)
+        public void makeWrong(bool isInTeamRound)
         {
-            lblWrong.Visible = true;
             if (isInTeamRound)
             {
-                if (lblWrong.Text.Length < 3)
+                if(wrongs == 0)
                 {
-                    lblWrong.Text += "X";
-                    if (lblWrong.Text.Length >= 3)
-                    {
-                        timerWrong.Enabled = true;
-                        return false;
-                    }
-
-                    return true;
+                    lblWrong1.Visible = true;
+                    wrongs++;
                 }
-                else
+                else if (wrongs == 1)
                 {
-                    return false;
+                    lblWrong2.Visible = true;
+                    wrongs++;
                 }
+                else if (wrongs == 2)
+                {
+                    lblWrong3.Visible = true;
+                    wrongs++;
+                }
+            }
+            
+            //if (isInTeamRound)
+            //{
+            //    if (lblWrong2.Text.Length < 3)
+            //    {
+            //        lblWrong2.Text += "X";
+            //        if (lblWrong2.Text.Length >= 3)
+            //        {
+            //            timerWrong.Enabled = true;
+            //            return false;
+            //        }
 
-            }
-            else
-            {
-                lblWrong.Text = "X";
-                timerWrong.Enabled = true;
-                return false;
-            }
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+
+            //}
+            //else
+            //{
+            //    lblWrong2.Text = "X";
+            //    timerWrong.Enabled = true;
+            //    return false;
+            //}
 
         }
 
         public bool clearWrong() {
-            lblWrong.Text = "";
-            lblWrong.Visible = false;
+            lblWrong2.Text = "";
+            lblWrong2.Visible = false;
             return true;
         }
 
         private void toggleWrong(object sender, EventArgs e)
         {
-            if (lblWrong.Visible == true)
+            if (lblWrong2.Visible == true)
             {
-                lblWrong.Visible = false;
+                lblWrong2.Visible = false;
                 timerWrong.Enabled = false;
-                lblWrong.Text = "";
+                lblWrong2.Text = "";
             }
         }
 
@@ -192,7 +217,7 @@ namespace FamilienDuell
             if (team == 1)
             {
                 targetVal = Convert.ToInt32(lblRoundPoints.Text) + points;
-                MessageBox.Show("New targetVal: " + Convert.ToString(targetVal));
+                //MessageBox.Show("New targetVal: " + Convert.ToString(targetVal));
             }
             else if (team == 2)
             {
@@ -263,67 +288,79 @@ namespace FamilienDuell
                 
         }
 
-        public bool ShowResult(int Answer, string Text, string People)
+        public void showResult(int answer, string text, string people)
         {
-            if (Text.Length > 45)
+            if (text.Length > 45)
             {
-                Text = Text.Substring(0, 45) + "...";
+                text = text.Substring(0, 45) + "...";
             }
-            if (Answer == 1)
+            if (answer == 1)
             {
-                lblAnswer1.Text = Text;
+                lblAnswer1.Text = text;
+                lblAnswerPts1.Visible = true;
+                lblAnswerPts1.Text = people;
+                //lblAnswerPts1.TextAlign = StringAlignment.Center;
             }
-            else if (Answer == 2)
+            else if (answer == 2)
             {
-                lblAnswer2.Text = Text;
+                lblAnswer2.Text = text;
+                lblAnswerPts2.Visible = true;
+                lblAnswerPts2.Text = people;
             }
-            else if (Answer == 3)
+            else if (answer == 3)
             {
-                lblAnswer3.Text = Text;
+                lblAnswer3.Text = text;
+                lblAnswerPts3.Visible = true;
+                lblAnswerPts3.Text = people;
             }
-            else if (Answer == 4)
+            else if (answer == 4)
             {
-                lblAnswer4.Text = Text;
+                lblAnswer4.Text = text;
+                lblAnswerPts4.Visible = true;
+                lblAnswerPts4.Text = people;
             }
-            else if (Answer == 5)
+            else if (answer == 5)
             {
-                lblAnswer5.Text = Text;
+                lblAnswer5.Text = text;
+                lblAnswerPts5.Visible = true;
+                lblAnswerPts5.Text = people;
             }
-            else if (Answer == 6)
+            else if (answer == 6)
             {
-                lblAnswer6.Text = Text;
+                lblAnswer6.Text = text;
+                lblAnswerPts6.Visible = true;
+                lblAnswerPts6.Text = people;
             }
-            if (Answer > 0 & Answer < 7)
+            if (answer > 0 & answer < 7)
             {
-                AnswerTo = Answer;
-                Quantity = People;
+                answerTo = answer;
+                quantity = people;
                 timerRight.Enabled = true;
             }
-            return true;
         }
 
         private void showQuantity(object sender, EventArgs e)
         {
-            if (AnswerTo == 1) {
-            lblAnswers1.Text = Quantity;
+            if (answerTo == 1) {
+            lblAnswerPts1.Text = quantity;
             }
-            if (AnswerTo == 2) {
-            lblAnswers2.Text = Quantity;
+            if (answerTo == 2) {
+            lblAnswerPts2.Text = quantity;
             }
-            if (AnswerTo == 3) {
-            lblAnswers3.Text = Quantity;
+            if (answerTo == 3) {
+            lblAnswerPts3.Text = quantity;
             }
-            if (AnswerTo == 4) {
-            lblAnswers4.Text = Quantity;
+            if (answerTo == 4) {
+            lblAnswerPts4.Text = quantity;
             }
-            if (AnswerTo == 5) {
-            lblAnswers5.Text = Quantity;
+            if (answerTo == 5) {
+            lblAnswerPts5.Text = quantity;
             }
-            if (AnswerTo == 6) {
-            lblAnswers6.Text = Quantity;
+            if (answerTo == 6) {
+            lblAnswerPts6.Text = quantity;
             }
             timerRight.Enabled = false;
-            newPoints(1, int.Parse(Quantity));
+            newPoints(1, int.Parse(quantity));
         }
 
         private void addPoints(object sender, EventArgs e)

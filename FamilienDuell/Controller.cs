@@ -67,18 +67,23 @@ namespace FamilienDuell
 
         private void Main_Load(object sender, EventArgs e)
         {
-            Monitor.Show();
+            showMonitor();
+
+            textGameTitleChanged(null, null);
 
             //playSound(1);
 
             //tabMainControl.Enabled = false;
         }
-
+        
+        #region Setup
         // determine if GameTitle has been entered
         public void textGameTitleChanged(object sender, EventArgs e)
         {
             if (txtGameTitle.Text != "")
             {
+                Monitor.lblHeadline.Text = txtGameTitle.Text.ToString();
+                textTeamsChanged(null, null);
                 txtTeam1.Enabled = true;
                 txtTeam2.Enabled = true;
                 tableLayoutPanel3.BackColor = SystemColors.ActiveCaption;
@@ -88,12 +93,27 @@ namespace FamilienDuell
                 txtTeam1.Enabled = false;
                 txtTeam2.Enabled = false;
                 tableLayoutPanel3.BackColor = SystemColors.InactiveCaption;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                numericUpDown1.Enabled = false;
+                cbSounds.Enabled = false;
+                tableLayoutPanel4.BackColor = SystemColors.InactiveCaption;
             }
         }
 
-        // determine if Teamnames has been entered
+        // determine if Teamnames have been entered
         public void textTeamsChanged(object sender, EventArgs e)
         {
+            if (txtTeam1.Text != "")
+            {
+                Monitor.lblTeam1.Text = txtTeam1.Text.ToString();
+            }
+
+            if (txtTeam1.Text != "")
+            {
+                Monitor.lblTeam2.Text = txtTeam2.Text.ToString();
+            }
+
             if (txtTeam1.Text != "" && txtTeam2.Text != "")
             {
                 radioButton1.Enabled = true;
@@ -104,6 +124,7 @@ namespace FamilienDuell
             }
             else
             {
+                Monitor.lblTeam2.Text = txtTeam2.Text.ToString();
                 radioButton1.Enabled = false;
                 radioButton2.Enabled = false;
                 numericUpDown1.Enabled = false;
@@ -119,6 +140,118 @@ namespace FamilienDuell
                 btnNext.Enabled = true;
             }
         }
+        #endregion
+
+        #region gameplay
+
+        private void btnWrongClick(object sender, EventArgs e)
+        {
+            if (cbTeamRound.Checked)
+                playSound(3);
+            //cbTeamRound.Checked = Monitor.makeWrong(cbTeamRound.Checked);
+            Monitor.makeWrong(cbTeamRound.Checked);
+        }
+
+        private void btnGetQuestion_Click(object sender, EventArgs e)
+        {
+            getQuestion();
+            btnAnswer1.Enabled = true;
+            btnAnswer2.Enabled = true;
+            btnAnswer3.Enabled = true;
+            if (CurrentGameStatus < 6)
+            {
+                btnAnswer4.Enabled = true;
+            }
+            if (CurrentGameStatus < 5)
+            {
+                btnAnswer5.Enabled = true;
+            }
+            if (CurrentGameStatus == 3)
+            {
+                btnAnswer6.Enabled = true;
+            }
+            btnShowQuestion.Enabled = true;
+        }
+
+        // answers
+        private void btnAnswer1Click(object sender, EventArgs e)
+        {
+            playSound(2);
+            btnAnswer1.Enabled = false;
+            btnGetQuestion.Enabled = false;
+            cbTeamRound.Checked = true;
+            togglePointButtons();
+            Monitor.showResult(1, btnAnswer1.Text, lblQuantity1.Text);
+        }
+
+        private void btnAnswer2Click(object sender, EventArgs e)
+        {
+            playSound(2);
+            btnAnswer2.Enabled = false;
+            btnGetQuestion.Enabled = false;
+            togglePointButtons();
+            Monitor.showResult(2, btnAnswer2.Text, lblQuantity2.Text);
+        }
+
+        private void btnAnswer3Click(object sender, EventArgs e)
+        {
+            playSound(2);
+            btnGetQuestion.Enabled = false;
+            btnAnswer3.Enabled = false;
+            togglePointButtons();
+            Monitor.showResult(3, btnAnswer3.Text, lblQuantity3.Text);
+        }
+
+        private void btnAnswer4Click(object sender, EventArgs e)
+        {
+            playSound(2);
+            btnAnswer4.Enabled = false;
+            togglePointButtons();
+            btnGetQuestion.Enabled = false;
+            Monitor.showResult(4, btnAnswer4.Text, lblQuantity4.Text);
+        }
+
+        private void btnAnswer5Click(object sender, EventArgs e)
+        {
+            playSound(2);
+            btnAnswer5.Enabled = false;
+            togglePointButtons();
+            Monitor.showResult(5, btnAnswer5.Text, lblQuantity5.Text);
+            btnGetQuestion.Enabled = false;
+        }
+
+        private void btnAnswer6Click(object sender, EventArgs e)
+        {
+            playSound(2);
+            btnAnswer6.Enabled = false;
+            togglePointButtons();
+            btnGetQuestion.Enabled = false;
+            Monitor.showResult(6, btnAnswer6.Text, lblQuantity6.Text);
+        }
+
+        private void btnTeam1Click(object sender, EventArgs e)
+        {
+            Monitor.winnerPoints(2);
+            btnNext.Enabled = true;
+        }
+
+        private void btnTeam2Click(object sender, EventArgs e)
+        {
+            Monitor.winnerPoints(3);
+            btnNext.Enabled = true;
+        }
+
+        private void btnRemiClick(object sender, EventArgs e)
+        {
+            btnNext.Enabled = true;
+            Monitor.setPoints(1, 0);
+        }
+        #endregion
+
+        public void showMonitor()
+        {
+            Monitor.Show();
+        }
 
         // start functions
         public bool playGame()
@@ -126,18 +259,18 @@ namespace FamilienDuell
             if (CurrentGameStatus == 0)
             {
                 lblClientId.Text = txtGameTitle.Text;
-                
-                btnNext.Text = "Monitor fixieren (Vollbild)";
+
+                btnNext.Text = "Start";
                 CurrentGameStatus = 1;
             }
             else if (CurrentGameStatus == 1)
             {
-                Monitor.SetHeadline("Davids Familien Duell v0.1 Alpha-RC");
+                Monitor.setHeadline("Davids Familien Duell v0.1 Alpha-RC");
                 
-                Monitor.ToggleWaiting();
+                //Monitor.toggleWaiting();
                 tabMainControl.Enabled = true;
                 btnNext.Enabled = false;
-                btnNext.Text = "Runde starten!";
+                //btnNext.Text = "Runde starten!";
                 CurrentGameStatus = 2;
             }
             else if (CurrentGameStatus == 2)
@@ -145,11 +278,11 @@ namespace FamilienDuell
                 if (txtTeam1.Text != "" & txtTeam2.Text != "")
                 {
                     lblTeamAlert.Text = "";
-                    Monitor.ToggleWaiting();
+                    Monitor.toggleWaiting();
                     btnNext.Text = "Nächste Runde";
                     btnNext.Enabled = false;
                     lblStatus.Text = "Aktives Spiel (Runde 1)";
-                    Monitor.GameStart();
+                    Monitor.gameStart();
                     playSound(1);
                     CurrentGameStatus = 3;
                 }
@@ -210,7 +343,8 @@ namespace FamilienDuell
                     //string locationOffset = "D:\\Dropbox\\Misc\\FamilienDuell\\FamilienDuell\\obj\\Debug\\";
                     if (Action == 1)
                     {
-                        SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff94_open_vamps.wav");
+                        // main theme
+                        SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff94_main_theme.wav");
                         simpleSound.Play();
                     }
                     else if (Action == 2)
@@ -324,10 +458,8 @@ namespace FamilienDuell
             return true;
         }
 
-        // start events of buttons
-
         // nextbutton
-        public void btnNext_Click(object sender, EventArgs e)
+        public void btnNextClick(object sender, EventArgs e)
         {
             if (tabMainControl.SelectedIndex == 0)
             {
@@ -365,6 +497,10 @@ namespace FamilienDuell
                 tabMainControl.SelectedIndex = 3;
                 currentSetupStatus++;
                 readyToPlay();
+                playGame();
+            }
+            else if (tabMainControl.SelectedIndex == 3)
+            {
                 playGame();
             }
         }
@@ -427,29 +563,29 @@ namespace FamilienDuell
             }
         }
 
-        // overtake
-        private void btnOvertake_Click(object sender, EventArgs e)
-        {
-            if (txtGameTitle.Text != "")
-            {
-                Monitor.SetHeadline(txtGameTitle.Text);
-            }
-            if (txtTeam1.Text != "" & txtTeam2.Text != "")
-            {
-                Monitor.SetTeams(txtTeam1.Text, txtTeam2.Text);
-            }
-            if (CurrentGameStatus == 2)
-            {
-                if (txtTeam1.Text != "" & txtTeam2.Text != "")
-                {
-                    btnNext.Enabled = true;
-                }
-                else
-                {
-                    lblTeamAlert.Text = "Es sind keine Teams angegeben!";
-                }
-            }
-        }
+        //// overtake
+        //private void btnOvertakeClick(object sender, EventArgs e)
+        //{
+        //    if (txtGameTitle.Text != "")
+        //    {
+        //        Monitor.setHeadline(txtGameTitle.Text);
+        //    }
+        //    if (txtTeam1.Text != "" & txtTeam2.Text != "")
+        //    {
+        //        //Monitor.SetTeams(txtTeam1.Text, txtTeam2.Text);
+        //    }
+        //    if (CurrentGameStatus == 2)
+        //    {
+        //        if (txtTeam1.Text != "" & txtTeam2.Text != "")
+        //        {
+        //            btnNext.Enabled = true;
+        //        }
+        //        else
+        //        {
+        //            lblTeamAlert.Text = "Es sind keine Teams angegeben!";
+        //        }
+        //    }
+        //}
 
         private void checkTeamNames(object sender, EventArgs e)
         {
@@ -477,94 +613,7 @@ namespace FamilienDuell
             }
         }
 
-        private void btnWrong_Click(object sender, EventArgs e)
-        {
-            playSound(3);
-            cbTeamRound.Checked = Monitor.MakeWrong(cbTeamRound.Checked);
-        }
-
-        private void btnGetQuestion_Click(object sender, EventArgs e)
-        {
-            getQuestion();
-            btnAnswer1.Enabled = true;
-            btnAnswer2.Enabled = true;
-            btnAnswer3.Enabled = true;
-            if (CurrentGameStatus < 6)
-            {
-                btnAnswer4.Enabled = true;
-            }
-            if (CurrentGameStatus < 5)
-            {
-                btnAnswer5.Enabled = true;
-            }
-            if (CurrentGameStatus == 3)
-            {
-                btnAnswer6.Enabled = true;
-            }
-            btnShowQuestion.Enabled = true;
-        }
-
-        // answers
-        private void btnAnswer1_Click(object sender, EventArgs e)
-        {
-            //playSound(2);
-            btnAnswer1.Enabled = false;
-            btnGetQuestion.Enabled = false;
-            cbTeamRound.Checked = true;
-            togglePointButtons();
-            Monitor.ShowResult(1, btnAnswer1.Text, lblQuantity1.Text);
-        }
-
-        private void btnAnswer2_Click(object sender, EventArgs e)
-        {
-            //playSound(2);
-            btnAnswer2.Enabled = false;
-            btnGetQuestion.Enabled = false;
-            togglePointButtons();
-            Monitor.ShowResult(2, btnAnswer2.Text, lblQuantity2.Text);
-        }
-
-        private void btnAnswer3_Click(object sender, EventArgs e)
-        {
-            //playSound(2);
-            btnGetQuestion.Enabled = false;
-            btnAnswer3.Enabled = false;
-            togglePointButtons();
-            Monitor.ShowResult(3, btnAnswer3.Text, lblQuantity3.Text);
-        }
-
-        private void btnAnswer4_Click(object sender, EventArgs e)
-        {
-            //playSound(2);
-            btnAnswer4.Enabled = false;
-            togglePointButtons();
-            btnGetQuestion.Enabled = false;
-            Monitor.ShowResult(4, btnAnswer4.Text, lblQuantity4.Text);
-        }
-
-        private void btnAnswer5_Click(object sender, EventArgs e)
-        {
-            //playSound(2);
-            btnAnswer5.Enabled = false;
-            togglePointButtons();
-            Monitor.ShowResult(5, btnAnswer5.Text, lblQuantity5.Text);
-            btnGetQuestion.Enabled = false;
-        }
-
-        private void btnAnswer6_Click(object sender, EventArgs e)
-        {
-            //playSound(2);
-            btnAnswer6.Enabled = false;
-            togglePointButtons();
-            btnGetQuestion.Enabled = false;
-            Monitor.ShowResult(6, btnAnswer6.Text, lblQuantity6.Text);
-        }
-
-        private void cbTeamRound_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void btnAddPoints_Click(object sender, EventArgs e)
+        private void btnAddPointsClick(object sender, EventArgs e)
         {
             //if (drpTeam.SelectedIndex > -1 & drpTeam.SelectedIndex < 4)
             //{
@@ -594,7 +643,7 @@ namespace FamilienDuell
             //}
         }
 
-        private void btnDelPoints_Click(object sender, EventArgs e)
+        private void btnDelPointsClick(object sender, EventArgs e)
         {
             //if (drpTeam.SelectedIndex > -1 & drpTeam.SelectedIndex < 4)
             //{
@@ -624,27 +673,9 @@ namespace FamilienDuell
             //}
         }
 
-        private void btnTeam1_Click(object sender, EventArgs e)
+        private void btnShowQuestionClick(object sender, EventArgs e)
         {
-            Monitor.winnerPoints(2);
-            btnNext.Enabled = true;
-        }
-
-        private void btnTeam2_Click(object sender, EventArgs e)
-        {
-            Monitor.winnerPoints(3);
-            btnNext.Enabled = true;
-        }
-
-        private void btnShowQuestion_Click(object sender, EventArgs e)
-        {
-            Monitor.setQuestion(lblQuestion.Text);
-        }
-
-        private void btnRemi_Click(object sender, EventArgs e)
-        {
-            btnNext.Enabled = true;
-            Monitor.setPoints(1, 0);
+            Monitor.setQuestion(lblQuestion.Text.ToString());
         }
 
         private void btnMaximizeClick(object sender, EventArgs e)
