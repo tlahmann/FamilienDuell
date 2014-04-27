@@ -12,7 +12,7 @@ namespace FamilienDuell
     public partial class GameMonitor : Form
     {
         int waiting = 0;
-        int wrongs;
+        int wrongs = 0;
 
         int answerTo;
         string quantity;
@@ -146,7 +146,7 @@ namespace FamilienDuell
             lblWrong2.Text = "";
         }
 
-        public void makeWrong(bool isInTeamRound)
+        public bool makeWrong(bool isInTeamRound)
         {
             if (isInTeamRound)
             {
@@ -163,52 +163,28 @@ namespace FamilienDuell
                 else if (wrongs == 2)
                 {
                     lblWrong3.Visible = true;
-                    wrongs++;
+                    timerWrong.Enabled = true;
+                    return false;
                 }
+  
+            } else {
+                lblWrong2.Visible = true;
+                timerWrong.Enabled = true;
+                return false;
             }
-            
-            //if (isInTeamRound)
-            //{
-            //    if (lblWrong2.Text.Length < 3)
-            //    {
-            //        lblWrong2.Text += "X";
-            //        if (lblWrong2.Text.Length >= 3)
-            //        {
-            //            timerWrong.Enabled = true;
-            //            return false;
-            //        }
 
-            //        return true;
-            //    }
-            //    else
-            //    {
-            //        return false;
-            //    }
-
-            //}
-            //else
-            //{
-            //    lblWrong2.Text = "X";
-            //    timerWrong.Enabled = true;
-            //    return false;
-            //}
-
-        }
-
-        public bool clearWrong() {
-            lblWrong2.Text = "";
-            lblWrong2.Visible = false;
             return true;
+
         }
+
 
         private void toggleWrong(object sender, EventArgs e)
         {
-            if (lblWrong2.Visible == true)
-            {
-                lblWrong2.Visible = false;
-                timerWrong.Enabled = false;
-                lblWrong2.Text = "";
-            }
+            timerWrong.Enabled = false;
+            lblWrong1.Visible = false;
+            lblWrong2.Visible = false;
+            lblWrong3.Visible = false;
+            wrongs = 0;
         }
 
         // point management

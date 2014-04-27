@@ -146,10 +146,8 @@ namespace FamilienDuell
 
         private void btnWrongClick(object sender, EventArgs e)
         {
-            if (cbTeamRound.Checked)
-                playSound(3);
-            //cbTeamRound.Checked = Monitor.makeWrong(cbTeamRound.Checked);
-            Monitor.makeWrong(cbTeamRound.Checked);
+            playSound(3);
+            cbTeamRound.Checked = Monitor.makeWrong(cbTeamRound.Checked);
         }
 
         private void btnGetQuestion_Click(object sender, EventArgs e)
