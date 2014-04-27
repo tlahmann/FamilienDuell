@@ -360,7 +360,7 @@ namespace FamilienDuell
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Could not play sound file: " + e.Message);
+                    Debug.WriteLine("Could not play sound file: " + e.Message);
                 }
                 return true;
             }
