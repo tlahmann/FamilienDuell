@@ -27,7 +27,168 @@ namespace FamilienDuell
             InitializeComponent();
 
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.monitorClosing);
+            this.ResizeEnd += new EventHandler(this.formResize);
             imgWaiting.Visible = true;
+        }
+
+        public void formResize(object sender, EventArgs e)
+        {
+            newSize();
+        }
+
+        public void newSize()
+        {
+            int hoehe = Form.ActiveForm.Bounds.Height;
+            int breite = Form.ActiveForm.Bounds.Width;
+
+            lblPlayerBlue.Visible = true;
+            lblPlayerRed.Visible = true;
+            lblPlayerBlue.Text = hoehe.ToString();
+            lblPlayerRed.Text = breite.ToString();
+
+            Font f0 = new Font("ISOCPEUR", 10);
+            Font f1 = new Font("ISOCPEUR", 10);
+            Font f2 = new Font("ISOCPEUR", 20);
+            Font f3 = new Font("ISOCPEUR", 30);
+            Font f4 = new Font("ISOCPEUR", 40);
+            Font f5 = new Font("ISOCPEUR", 50);
+
+            if (hoehe <= 300)
+            {
+                lblHeadline.Font = f1;
+            }
+            else if (hoehe <= 500)
+            {
+                lblHeadline.Font = f2;
+
+                question.Font = f2;
+                lblWrong1.Font = f2;
+                lblWrong2.Font = f2;
+                lblWrong3.Font = f2;
+                lblTeam1.Font = f2;
+                lblPointsTeam1.Font = f2;
+                lblRoundPoints.Font = f2;
+                lblTeam2.Font = f2;
+                lblPointsTeam2.Font = f2;
+
+                lblAnswerNo1.Font = f1;
+                lblAnswer1.Font = f1;
+                lblAnswerPts1.Font = f1;
+                lblAnswerNo2.Font = f1;
+                lblAnswer2.Font = f1;
+                lblAnswerPts2.Font = f1;
+                lblAnswerNo3.Font = f1;
+                lblAnswer3.Font = f1;
+                lblAnswerPts3.Font = f1;
+                lblAnswerNo4.Font = f1;
+                lblAnswer4.Font = f1;
+                lblAnswerPts4.Font = f1;
+                lblAnswerNo5.Font = f1;
+                lblAnswer5.Font = f1;
+                lblAnswerPts5.Font = f1;
+                lblAnswerNo6.Font = f1;
+                lblAnswer6.Font = f1;
+                lblAnswerPts6.Font = f1;
+            }
+            else if (hoehe <= 700)
+            {
+                lblHeadline.Font = f3;
+
+                question.Font = f3;
+                lblWrong1.Font = f3;
+                lblWrong2.Font = f3;
+                lblWrong3.Font = f3;
+                lblTeam1.Font = f3;
+                lblPointsTeam1.Font = f3;
+                lblRoundPoints.Font = f3;
+                lblTeam2.Font = f3;
+                lblPointsTeam2.Font = f3;
+
+                lblAnswerNo1.Font = f2;
+                lblAnswer1.Font = f2;
+                lblAnswerPts1.Font = f2;
+                lblAnswerNo2.Font = f2;
+                lblAnswer2.Font = f2;
+                lblAnswerPts2.Font = f2;
+                lblAnswerNo3.Font = f2;
+                lblAnswer3.Font = f2;
+                lblAnswerPts3.Font = f2;
+                lblAnswerNo4.Font = f2;
+                lblAnswer4.Font = f2;
+                lblAnswerPts4.Font = f2;
+                lblAnswerNo5.Font = f2;
+                lblAnswer5.Font = f2;
+                lblAnswerPts5.Font = f2;
+                lblAnswerNo6.Font = f2;
+                lblAnswer6.Font = f2;
+                lblAnswerPts6.Font = f2;
+            }
+            else if (hoehe <= 1000)
+            {
+                lblHeadline.Font = f4;
+
+                question.Font = f4;
+                lblWrong1.Font = f4;
+                lblWrong2.Font = f4;
+                lblWrong3.Font = f4;
+                lblTeam1.Font = f4;
+                lblPointsTeam1.Font = f4;
+                lblRoundPoints.Font = f4;
+                lblTeam2.Font = f4;
+                lblPointsTeam2.Font = f4;
+
+                lblAnswerNo1.Font = f3;
+                lblAnswer1.Font = f3;
+                lblAnswerPts1.Font = f3;
+                lblAnswerNo2.Font = f3;
+                lblAnswer2.Font = f3;
+                lblAnswerPts2.Font = f3;
+                lblAnswerNo3.Font = f3;
+                lblAnswer3.Font = f3;
+                lblAnswerPts3.Font = f3;
+                lblAnswerNo4.Font = f3;
+                lblAnswer4.Font = f3;
+                lblAnswerPts4.Font = f3;
+                lblAnswerNo5.Font = f3;
+                lblAnswer5.Font = f3;
+                lblAnswerPts5.Font = f3;
+                lblAnswerNo6.Font = f3;
+                lblAnswer6.Font = f3;
+                lblAnswerPts6.Font = f3;
+            }
+            else if (hoehe <= 1500)
+            {
+                lblHeadline.Font = f5;
+
+                question.Font = f5;
+                lblWrong1.Font = f5;
+                lblWrong2.Font = f5;
+                lblWrong3.Font = f5;
+                lblTeam1.Font = f5;
+                lblPointsTeam1.Font = f5;
+                lblRoundPoints.Font = f5;
+                lblTeam2.Font = f5;
+                lblPointsTeam2.Font = f5;
+
+                lblAnswerNo1.Font = f4;
+                lblAnswer1.Font = f4;
+                lblAnswerPts1.Font = f4;
+                lblAnswerNo2.Font = f4;
+                lblAnswer2.Font = f4;
+                lblAnswerPts2.Font = f4;
+                lblAnswerNo3.Font = f4;
+                lblAnswer3.Font = f4;
+                lblAnswerPts3.Font = f4;
+                lblAnswerNo4.Font = f4;
+                lblAnswer4.Font = f4;
+                lblAnswerPts4.Font = f4;
+                lblAnswerNo5.Font = f4;
+                lblAnswer5.Font = f4;
+                lblAnswerPts5.Font = f4;
+                lblAnswerNo6.Font = f4;
+                lblAnswer6.Font = f4;
+                lblAnswerPts6.Font = f4;
+            }
         }
 
         private void monitorClosing(object sender, CancelEventArgs e)
@@ -176,7 +337,6 @@ namespace FamilienDuell
             return true;
 
         }
-
 
         private void toggleWrong(object sender, EventArgs e)
         {

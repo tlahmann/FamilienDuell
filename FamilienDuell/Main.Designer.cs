@@ -93,8 +93,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtTeam2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.cbSounds = new System.Windows.Forms.CheckBox();
+            this.cbPlayernames = new System.Windows.Forms.CheckBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -102,8 +104,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.lblTeamAlert = new System.Windows.Forms.Label();
             this.tabMainControl = new System.Windows.Forms.TabControl();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbPlayernames = new System.Windows.Forms.CheckBox();
             this.tabPlay.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -123,10 +123,10 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabMainControl.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -980,7 +980,7 @@
             this.label2.Location = new System.Drawing.Point(281, 60);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.Size = new System.Drawing.Size(24, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "vs.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1020,16 +1020,22 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(586, 116);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // radioButton2
+            // tableLayoutPanel8
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Enabled = false;
-            this.radioButton2.Location = new System.Drawing.Point(3, 83);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(97, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.Text = "Schnelles Spiel";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.cbSounds, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.cbPlayernames, 0, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(296, 83);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(287, 30);
+            this.tableLayoutPanel8.TabIndex = 13;
             // 
             // cbSounds
             // 
@@ -1045,6 +1051,29 @@
             this.cbSounds.TabIndex = 5;
             this.cbSounds.Text = "Sounds abspielen";
             this.cbSounds.UseVisualStyleBackColor = true;
+            // 
+            // cbPlayernames
+            // 
+            this.cbPlayernames.AutoSize = true;
+            this.cbPlayernames.Checked = true;
+            this.cbPlayernames.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbPlayernames.Location = new System.Drawing.Point(3, 3);
+            this.cbPlayernames.Name = "cbPlayernames";
+            this.cbPlayernames.Size = new System.Drawing.Size(90, 17);
+            this.cbPlayernames.TabIndex = 6;
+            this.cbPlayernames.Text = "Spielernamen";
+            this.cbPlayernames.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Enabled = false;
+            this.radioButton2.Location = new System.Drawing.Point(3, 83);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(97, 17);
+            this.radioButton2.TabIndex = 11;
+            this.radioButton2.Text = "Schnelles Spiel";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -1146,35 +1175,6 @@
             this.tabMainControl.Size = new System.Drawing.Size(612, 400);
             this.tabMainControl.TabIndex = 2;
             // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.cbSounds, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.cbPlayernames, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(296, 83);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(287, 30);
-            this.tableLayoutPanel8.TabIndex = 13;
-            // 
-            // cbPlayernames
-            // 
-            this.cbPlayernames.AutoSize = true;
-            this.cbPlayernames.Checked = true;
-            this.cbPlayernames.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbPlayernames.Location = new System.Drawing.Point(3, 3);
-            this.cbPlayernames.Name = "cbPlayernames";
-            this.cbPlayernames.Size = new System.Drawing.Size(90, 17);
-            this.cbPlayernames.TabIndex = 6;
-            this.cbPlayernames.Text = "Spielernamen";
-            this.cbPlayernames.UseVisualStyleBackColor = true;
-            // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1220,12 +1220,12 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabMainControl.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

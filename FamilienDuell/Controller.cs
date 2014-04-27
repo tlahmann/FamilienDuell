@@ -696,12 +696,14 @@ namespace FamilienDuell
             if(!maximus)
             {
                 Monitor.maximize();
+                Monitor.newSize();
                 maximus = true;
                 btnMaximize.Text = "Minimieren";
             }
             else
             {
                 Monitor.minimize();
+                Monitor.newSize();
                 maximus = false;
                 btnMaximize.Text = "Maximieren";
             }   
