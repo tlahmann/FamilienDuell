@@ -46,149 +46,69 @@ namespace FamilienDuell
             lblPlayerBlue.Text = hoehe.ToString();
             lblPlayerRed.Text = breite.ToString();
 
-            Font f0 = new Font("ISOCPEUR", 10);
-            Font f1 = new Font("ISOCPEUR", 10);
-            Font f2 = new Font("ISOCPEUR", 20);
-            Font f3 = new Font("ISOCPEUR", 30);
-            Font f4 = new Font("ISOCPEUR", 40);
-            Font f5 = new Font("ISOCPEUR", 50);
+            String famName = "Press Start 2P";
+
+            Font f10 = new Font(famName, 10);
+            Font f15 = new Font(famName, 15);
+            Font f18 = new Font(famName, 18);
+            Font f22 = new Font(famName, 22);
+            Font f30 = new Font(famName, 30);
+            Font f40 = new Font(famName, 40);
 
             if (hoehe <= 300)
             {
-                lblHeadline.Font = f1;
+                lblHeadline.Font = f15;
             }
             else if (hoehe <= 500)
             {
-                lblHeadline.Font = f2;
-
-                question.Font = f2;
-                lblWrong1.Font = f2;
-                lblWrong2.Font = f2;
-                lblWrong3.Font = f2;
-                lblTeam1.Font = f2;
-                lblPointsTeam1.Font = f2;
-                lblRoundPoints.Font = f2;
-                lblTeam2.Font = f2;
-                lblPointsTeam2.Font = f2;
-
-                lblAnswerNo1.Font = f1;
-                lblAnswer1.Font = f1;
-                lblAnswerPts1.Font = f1;
-                lblAnswerNo2.Font = f1;
-                lblAnswer2.Font = f1;
-                lblAnswerPts2.Font = f1;
-                lblAnswerNo3.Font = f1;
-                lblAnswer3.Font = f1;
-                lblAnswerPts3.Font = f1;
-                lblAnswerNo4.Font = f1;
-                lblAnswer4.Font = f1;
-                lblAnswerPts4.Font = f1;
-                lblAnswerNo5.Font = f1;
-                lblAnswer5.Font = f1;
-                lblAnswerPts5.Font = f1;
-                lblAnswerNo6.Font = f1;
-                lblAnswer6.Font = f1;
-                lblAnswerPts6.Font = f1;
+                setSize(f15, f18);
             }
             else if (hoehe <= 700)
             {
-                lblHeadline.Font = f3;
-
-                question.Font = f3;
-                lblWrong1.Font = f3;
-                lblWrong2.Font = f3;
-                lblWrong3.Font = f3;
-                lblTeam1.Font = f3;
-                lblPointsTeam1.Font = f3;
-                lblRoundPoints.Font = f3;
-                lblTeam2.Font = f3;
-                lblPointsTeam2.Font = f3;
-
-                lblAnswerNo1.Font = f2;
-                lblAnswer1.Font = f2;
-                lblAnswerPts1.Font = f2;
-                lblAnswerNo2.Font = f2;
-                lblAnswer2.Font = f2;
-                lblAnswerPts2.Font = f2;
-                lblAnswerNo3.Font = f2;
-                lblAnswer3.Font = f2;
-                lblAnswerPts3.Font = f2;
-                lblAnswerNo4.Font = f2;
-                lblAnswer4.Font = f2;
-                lblAnswerPts4.Font = f2;
-                lblAnswerNo5.Font = f2;
-                lblAnswer5.Font = f2;
-                lblAnswerPts5.Font = f2;
-                lblAnswerNo6.Font = f2;
-                lblAnswer6.Font = f2;
-                lblAnswerPts6.Font = f2;
+                setSize(f18, f22);
             }
             else if (hoehe <= 1000)
             {
-                lblHeadline.Font = f4;
-
-                question.Font = f4;
-                lblWrong1.Font = f4;
-                lblWrong2.Font = f4;
-                lblWrong3.Font = f4;
-                lblTeam1.Font = f4;
-                lblPointsTeam1.Font = f4;
-                lblRoundPoints.Font = f4;
-                lblTeam2.Font = f4;
-                lblPointsTeam2.Font = f4;
-
-                lblAnswerNo1.Font = f3;
-                lblAnswer1.Font = f3;
-                lblAnswerPts1.Font = f3;
-                lblAnswerNo2.Font = f3;
-                lblAnswer2.Font = f3;
-                lblAnswerPts2.Font = f3;
-                lblAnswerNo3.Font = f3;
-                lblAnswer3.Font = f3;
-                lblAnswerPts3.Font = f3;
-                lblAnswerNo4.Font = f3;
-                lblAnswer4.Font = f3;
-                lblAnswerPts4.Font = f3;
-                lblAnswerNo5.Font = f3;
-                lblAnswer5.Font = f3;
-                lblAnswerPts5.Font = f3;
-                lblAnswerNo6.Font = f3;
-                lblAnswer6.Font = f3;
-                lblAnswerPts6.Font = f3;
+                setSize(f22, f30);
             }
             else if (hoehe <= 1500)
             {
-                lblHeadline.Font = f5;
-
-                question.Font = f5;
-                lblWrong1.Font = f5;
-                lblWrong2.Font = f5;
-                lblWrong3.Font = f5;
-                lblTeam1.Font = f5;
-                lblPointsTeam1.Font = f5;
-                lblRoundPoints.Font = f5;
-                lblTeam2.Font = f5;
-                lblPointsTeam2.Font = f5;
-
-                lblAnswerNo1.Font = f4;
-                lblAnswer1.Font = f4;
-                lblAnswerPts1.Font = f4;
-                lblAnswerNo2.Font = f4;
-                lblAnswer2.Font = f4;
-                lblAnswerPts2.Font = f4;
-                lblAnswerNo3.Font = f4;
-                lblAnswer3.Font = f4;
-                lblAnswerPts3.Font = f4;
-                lblAnswerNo4.Font = f4;
-                lblAnswer4.Font = f4;
-                lblAnswerPts4.Font = f4;
-                lblAnswerNo5.Font = f4;
-                lblAnswer5.Font = f4;
-                lblAnswerPts5.Font = f4;
-                lblAnswerNo6.Font = f4;
-                lblAnswer6.Font = f4;
-                lblAnswerPts6.Font = f4;
+                setSize(f30, f40);
             }
+        }
+
+        public void setSize(Font smallF, Font bigF)
+        {
+            lblHeadline.Font = bigF;
+
+            question.Font = bigF;
+            lblWrong1.Font = bigF;
+            lblWrong2.Font = bigF;
+            lblWrong3.Font = bigF;
+            lblTeam1.Font = bigF;
+            lblPointsTeam1.Font = bigF;
+            lblRoundPoints.Font = bigF;
+            lblTeam2.Font = bigF;
+            lblPointsTeam2.Font = bigF;
+
+            lblAnswerNo1.Font = smallF;
+            lblAnswer1.Font = smallF;
+            lblAnswerPts1.Font = smallF;
+            lblAnswerNo2.Font = smallF;
+            lblAnswer2.Font = smallF;
+            lblAnswerPts2.Font = smallF;
+            lblAnswerNo3.Font = smallF;
+            lblAnswer3.Font = smallF;
+            lblAnswerPts3.Font = smallF;
+            lblAnswerNo4.Font = smallF;
+            lblAnswer4.Font = smallF;
+            lblAnswerPts4.Font = smallF;
+            lblAnswerNo5.Font = smallF;
+            lblAnswer5.Font = smallF;
+            lblAnswerPts5.Font = smallF;
+            lblAnswerNo6.Font = smallF;
+            lblAnswer6.Font = smallF;
+            lblAnswerPts6.Font = smallF;
         }
 
         private void monitorClosing(object sender, CancelEventArgs e)
