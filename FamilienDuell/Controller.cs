@@ -21,6 +21,25 @@ namespace FamilienDuell
 
     public partial class Main : Form
     {
+
+        int CurrentGameStatus = 0;
+        int currentSetupStatus = 0;
+
+        // the current question object
+        Question CurrentQuestion;
+
+        // what the heck is this for?
+        Boolean maximus;
+
+        // initialize monitor
+        GameMonitor Monitor = new GameMonitor();
+
+        // clientid for server
+        string clientId = "asd";
+
+
+
+
         static string randString(Int32 len)
         {
             string text = "";
@@ -41,13 +60,6 @@ namespace FamilienDuell
             }
             return text;
         } 
-        int CurrentGameStatus = 0;
-        int currentSetupStatus = 0;
-        Boolean maximus;
-        // initialize monitor
-        GameMonitor Monitor = new GameMonitor();
-        // get clientid for server
-        string clientId = "asd";
         
 
         public Main()
@@ -438,86 +450,41 @@ namespace FamilienDuell
         private bool getQuestion()
         {
             lblQuestion.Text = "Wartend..";
-            int getQuestion = 0;
-            int currAnswer = 0;
-            XmlTextReader reader = new XmlTextReader("http://www.dbeuchert.com/Duell/" + clientId + ".xml");
-            while (reader.Read())
+            Question question = new Question();
+
+            try
             {
-                if (reader.LocalName == "question")
+                XmlTextReader reader = new XmlTextReader("http://www.dbeuchert.com/Duell/" + clientId + ".xml");
+                question.injectReaderObject(reader);
+
+                if (!question.readQuestion())
                 {
-                    if (getQuestion != 2) {
-                        getQuestion = 1;
-                    }
-                }
-                if (getQuestion == 1 & lblQuestion.Text == "Wartend..")
-                {
-                    if (reader.Value != "" && reader.Name == "")
-                    {
-                        string Question = reader.Value;
-                        lblQuestion.Text = Question;
-                        getQuestion = 2;
-                    }
-                }
-                if (getQuestion == 2)
-                {
-                    string name = reader.Name;
-                    string value = reader.Value;
-                    name.Trim();
-                    value.Trim();
-                    if (value != "" && name == "")
-                    {
-                        currAnswer++;
-                        if (currAnswer == 4)
-                        {
-                            btnAnswer1.Text = reader.Value;
-                        }
-                        else if (currAnswer == 6)
-                        {
-                            lblQuantity1.Text = reader.Value;
-                        }
-                        else if (currAnswer == 10)
-                        {
-                            btnAnswer2.Text = reader.Value;
-                        }
-                        else if (currAnswer == 12)
-                        {
-                            lblQuantity2.Text = reader.Value;
-                        }
-                        else if (currAnswer == 16)
-                        {
-                            btnAnswer3.Text = reader.Value;
-                        }
-                        else if (currAnswer == 18)
-                        {
-                            lblQuantity3.Text = reader.Value;
-                        }
-                        else if (currAnswer == 22)
-                        {
-                            btnAnswer4.Text = reader.Value;
-                        }
-                        else if (currAnswer == 24)
-                        {
-                            lblQuantity4.Text = reader.Value;
-                        }
-                        else if (currAnswer == 28)
-                        {
-                            btnAnswer5.Text = reader.Value;
-                        }
-                        else if (currAnswer == 30)
-                        {
-                            lblQuantity5.Text = reader.Value;
-                        }
-                        else if (currAnswer == 34)
-                        {
-                            btnAnswer6.Text = reader.Value;
-                        }
-                        else if (currAnswer == 36)
-                        {
-                            lblQuantity6.Text = reader.Value;
-                        }
-                    }
+                    MessageBox.Show("Unknown read error while reading question.");
                 }
             }
+            catch (Exception Exception) {
+                MessageBox.Show("Error: " + Exception.Message + "\n" + Exception.StackTrace);
+            }
+
+            lblQuestion.Text = question.getQuestion();
+
+            int iteration = 0;
+            foreach (Answer answer in question.getAnswers())
+            {
+                iteration++;
+                ControlCollection controls = this.Controls as ControlCollection;
+                Control button = this.Controls.Find("btnAnswer" + iteration.ToString(), true).Single();
+                Control quantity = this.Controls.Find("lblQuantity" + iteration.ToString(), true).Single();
+
+                if (button is Button) {
+                    button.Text = answer.title;
+                }
+
+                if (quantity is Label) {
+                    quantity.Text = answer.quantity.ToString();
+                }
+            }
+
             return true;
         }
 
@@ -709,4 +676,5 @@ namespace FamilienDuell
             }   
         }
     }
+
 }
