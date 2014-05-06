@@ -1041,8 +1041,6 @@
             // 
             this.cbSounds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSounds.AutoSize = true;
-            this.cbSounds.Checked = true;
-            this.cbSounds.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbSounds.Enabled = false;
             this.cbSounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSounds.Location = new System.Drawing.Point(174, 3);
@@ -1055,8 +1053,6 @@
             // cbPlayernames
             // 
             this.cbPlayernames.AutoSize = true;
-            this.cbPlayernames.Checked = true;
-            this.cbPlayernames.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbPlayernames.Location = new System.Drawing.Point(3, 3);
             this.cbPlayernames.Name = "cbPlayernames";
             this.cbPlayernames.Size = new System.Drawing.Size(90, 17);
