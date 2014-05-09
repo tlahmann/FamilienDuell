@@ -28,7 +28,7 @@ namespace FamilienDuell
 
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.monitorClosing);
             this.ResizeEnd += new EventHandler(this.formResize);
-            imgWaiting.Visible = true;
+            //imgWaiting.Visible = true;
         }
 
         public void formResize(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace FamilienDuell
 
             if (hoehe <= 300)
             {
-                lblHeadline.Font = f15;
+                lblQuestion.Font = f15;
             }
             else if (hoehe <= 500)
             {
@@ -79,18 +79,17 @@ namespace FamilienDuell
 
         public void setSize(Font smallF, Font bigF)
         {
-            lblHeadline.Font = bigF;
+            lblQuestion.Font = bigF;
 
-            question.Font = bigF;
             lblWrong1.Font = bigF;
             lblWrong2.Font = bigF;
             lblWrong3.Font = bigF;
-            lblTeam1.Font = bigF;
-            lblPointsTeam1.Font = bigF;
-            lblRoundPoints.Font = bigF;
-            lblTeam2.Font = bigF;
-            lblPointsTeam2.Font = bigF;
 
+            lblTeam1.Font = smallF;
+            lblPointsTeam1.Font = smallF;
+            lblRoundPoints.Font = smallF;
+            lblTeam2.Font = smallF;
+            lblPointsTeam2.Font = smallF;
             lblAnswerNo1.Font = smallF;
             lblAnswer1.Font = smallF;
             lblAnswerPts1.Font = smallF;
@@ -119,18 +118,20 @@ namespace FamilienDuell
 
         public void setHeadline(string text)
         {
-            lblHeadline.Text = text;
+            lblQuestion.Text = text;
         }
 
         public void maximize()
         {
             WindowState = FormWindowState.Maximized;
+            newSize();
             FormBorderStyle = FormBorderStyle.None;
         }
 
         public void minimize()
         {
             WindowState = FormWindowState.Normal;
+            newSize();
             FormBorderStyle = FormBorderStyle.Sizable;
         }
 
@@ -138,12 +139,12 @@ namespace FamilienDuell
         {
             if (waiting == 0)
             {
-                imgWaiting.Visible = true;
+                //imgWaiting.Visible = true;
                 waiting = 1;
             }
             else
             {
-                imgWaiting.Visible = false;
+                //imgWaiting.Visible = false;
                 waiting = 0;
             }
         }
@@ -156,8 +157,8 @@ namespace FamilienDuell
 
         public void setQuestion(string msg)
         {
-            question.Visible = true;
-            question.Text = msg;
+            lblQuestion.Visible = true;
+            lblQuestion.Text = msg;
         }
 
         public void gameStart()
@@ -193,7 +194,7 @@ namespace FamilienDuell
             lblAnswerPts5.Text = "..";
             lblAnswerPts6.Text = "..";
             lblWrong2.Text = "";
-            question.Text = "Runde #1";
+            lblQuestion.Text = "Runde #1";
         }
 
         public void nextRound(int roundNumber) {
@@ -213,7 +214,7 @@ namespace FamilienDuell
                 lblAnswer4.Visible = false;
                 lblAnswerPts4.Visible = false;
             }
-            question.Text = "Runde #" + Convert.ToString(roundNumber);
+            lblQuestion.Text = "Runde #" + Convert.ToString(roundNumber);
             lblAnswer1.Text = "................................................";
             lblAnswer2.Text = "................................................";
             lblAnswer3.Text = "................................................";
@@ -268,7 +269,7 @@ namespace FamilienDuell
         }
 
         // point management
-        public bool newPoints(int team,int points)
+        public bool newPoints(int team, int points)
         {
             if (team == 1)
             {

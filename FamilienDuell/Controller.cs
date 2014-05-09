@@ -69,8 +69,6 @@ namespace FamilienDuell
             txtGameTitle.TextChanged += new EventHandler(this.textGameTitleChanged);
             txtTeam1.TextChanged += new EventHandler(this.textTeamsChanged);
             txtTeam2.TextChanged += new EventHandler(this.textTeamsChanged);
-            radioButton1.CheckedChanged += new EventHandler(this.stateOptionsChanged);
-            radioButton2.CheckedChanged += new EventHandler(this.stateOptionsChanged);
             numericUpDown1.ValueChanged += new EventHandler(this.stateOptionsChanged);
             cbSounds.CheckedChanged += new EventHandler(this.stateOptionsChanged);
             this.dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewRowPostPaint);
@@ -94,7 +92,7 @@ namespace FamilienDuell
         {
             if (txtGameTitle.Text != "")
             {
-                Monitor.lblHeadline.Text = txtGameTitle.Text.ToString();
+                Monitor.lblQuestion.Text = txtGameTitle.Text.ToString();
                 textTeamsChanged(null, null);
                 txtTeam1.Enabled = true;
                 txtTeam2.Enabled = true;
@@ -105,8 +103,6 @@ namespace FamilienDuell
                 txtTeam1.Enabled = false;
                 txtTeam2.Enabled = false;
                 tableLayoutPanel3.BackColor = SystemColors.InactiveCaption;
-                radioButton1.Enabled = false;
-                radioButton2.Enabled = false;
                 numericUpDown1.Enabled = false;
                 cbSounds.Enabled = false;
                 tableLayoutPanel4.BackColor = SystemColors.InactiveCaption;
@@ -128,8 +124,6 @@ namespace FamilienDuell
 
             if (txtTeam1.Text != "" && txtTeam2.Text != "")
             {
-                radioButton1.Enabled = true;
-                radioButton2.Enabled = true;
                 numericUpDown1.Enabled = true;
                 cbSounds.Enabled = true;
                 tableLayoutPanel4.BackColor = SystemColors.ActiveCaption;
@@ -137,8 +131,6 @@ namespace FamilienDuell
             else
             {
                 Monitor.lblTeam2.Text = txtTeam2.Text.ToString();
-                radioButton1.Enabled = false;
-                radioButton2.Enabled = false;
                 numericUpDown1.Enabled = false;
                 cbSounds.Enabled = false;
                 tableLayoutPanel4.BackColor = SystemColors.InactiveCaption;
@@ -147,10 +139,10 @@ namespace FamilienDuell
 
         public void stateOptionsChanged(object sender, EventArgs e)
         {
-            if((radioButton1.Checked == true || radioButton2.Checked == true))
-            {
-                btnNext.Enabled = true;
-            }
+            //if((radioButton1.Checked == true || radioButton2.Checked == true))
+            //{
+            //    btnNext.Enabled = true;
+            //}
         }
         #endregion
 
@@ -274,7 +266,7 @@ namespace FamilienDuell
 
                         valid = false;
                     }
-                    else if (dataGridView.Rows[j].Cells[i].Value == "")
+                    else if (dataGridView.Rows[j].Cells[i].Value.ToString() == "")
                     {
                         dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
 
@@ -353,7 +345,7 @@ namespace FamilienDuell
                 if (txtTeam1.Text != "" & txtTeam2.Text != "")
                 {
                     lblTeamAlert.Text = "";
-                    Monitor.toggleWaiting();
+                    //Monitor.toggleWaiting();
                     btnNext.Text = "Nächste Runde";
                     btnNext.Enabled = false;
                     lblStatus.Text = "Aktives Spiel (Runde 1)";
@@ -653,6 +645,11 @@ namespace FamilienDuell
             //}
         }
 
+        private void pointChanger(int team, int pts)
+        {
+            MessageBox.Show("Team: " + team.ToString() + "\nPoints: " + pts.ToString());
+        }
+
         private void btnShowQuestionClick(object sender, EventArgs e)
         {
             Monitor.setQuestion(lblQuestion.Text.ToString());
@@ -674,6 +671,23 @@ namespace FamilienDuell
                 maximus = false;
                 btnMaximize.Text = "Maximieren";
             }   
+        }
+
+        private void changePoints_Click(object sender, EventArgs e)
+        {
+
+            using (ChangePoints ptChange = new ChangePoints())
+            {
+                ptChange.StartPosition = FormStartPosition.CenterParent;
+                ptChange.ShowDialog(this);
+
+                int points = ptChange.getPoints();
+                int team = ptChange.getTeam();
+
+                pointChanger(team, points);
+            }
+
+            
         }
     }
 

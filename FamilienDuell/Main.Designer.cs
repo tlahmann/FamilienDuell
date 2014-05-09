@@ -38,7 +38,6 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.tabPlay = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnWrong = new System.Windows.Forms.Button();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGetQuestion = new System.Windows.Forms.Button();
@@ -75,6 +74,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btnTeam2 = new System.Windows.Forms.Button();
             this.btnTeam1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnWrong = new System.Windows.Forms.Button();
+            this.changePoints = new System.Windows.Forms.Button();
             this.tabQuests = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabPlayers = new System.Windows.Forms.TabPage();
@@ -96,8 +98,6 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.cbSounds = new System.Windows.Forms.CheckBox();
             this.cbPlayernames = new System.Windows.Forms.CheckBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -114,6 +114,7 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
             this.tabQuests.SuspendLayout();
             this.tabPlayers.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -220,7 +221,7 @@
             this.tabPlay.Controls.Add(this.tableLayoutPanel6);
             this.tabPlay.Location = new System.Drawing.Point(4, 22);
             this.tabPlay.Name = "tabPlay";
-            this.tabPlay.Size = new System.Drawing.Size(604, 374);
+            this.tabPlay.Size = new System.Drawing.Size(602, 374);
             this.tabPlay.TabIndex = 2;
             this.tabPlay.Text = "Spielen";
             this.tabPlay.UseVisualStyleBackColor = true;
@@ -229,9 +230,9 @@
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.btnWrong, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel12, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel16, 0, 2);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -239,22 +240,8 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(604, 374);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(602, 374);
             this.tableLayoutPanel6.TabIndex = 0;
-            // 
-            // btnWrong
-            // 
-            this.btnWrong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWrong.Enabled = false;
-            this.btnWrong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWrong.ForeColor = System.Drawing.Color.Maroon;
-            this.btnWrong.Location = new System.Drawing.Point(507, 331);
-            this.btnWrong.Name = "btnWrong";
-            this.btnWrong.Size = new System.Drawing.Size(94, 40);
-            this.btnWrong.TabIndex = 3;
-            this.btnWrong.Text = "FALSCH!";
-            this.btnWrong.UseVisualStyleBackColor = true;
-            this.btnWrong.Click += new System.EventHandler(this.btnWrongClick);
             // 
             // tableLayoutPanel9
             // 
@@ -273,7 +260,7 @@
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(592, 61);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(590, 61);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // tableLayoutPanel10
@@ -290,7 +277,7 @@
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(586, 24);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(584, 24);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
             // btnGetQuestion
@@ -308,7 +295,7 @@
             // btnShowQuestion
             // 
             this.btnShowQuestion.Enabled = false;
-            this.btnShowQuestion.Location = new System.Drawing.Point(296, 0);
+            this.btnShowQuestion.Location = new System.Drawing.Point(295, 0);
             this.btnShowQuestion.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.btnShowQuestion.Name = "btnShowQuestion";
             this.btnShowQuestion.Size = new System.Drawing.Size(120, 23);
@@ -331,7 +318,7 @@
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(586, 25);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(584, 25);
             this.tableLayoutPanel11.TabIndex = 1;
             // 
             // label5
@@ -370,7 +357,7 @@
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(598, 248);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(596, 248);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
             // tableLayoutPanel13
@@ -388,7 +375,7 @@
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(472, 242);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(470, 242);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
             // tableLayoutPanel7
@@ -427,7 +414,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(466, 206);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(464, 206);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // label7
@@ -511,7 +498,7 @@
             this.btnAnswer2.Enabled = false;
             this.btnAnswer2.Location = new System.Drawing.Point(27, 37);
             this.btnAnswer2.Name = "btnAnswer2";
-            this.btnAnswer2.Size = new System.Drawing.Size(386, 28);
+            this.btnAnswer2.Size = new System.Drawing.Size(384, 28);
             this.btnAnswer2.TabIndex = 22;
             this.btnAnswer2.UseVisualStyleBackColor = true;
             this.btnAnswer2.Click += new System.EventHandler(this.btnAnswer2Click);
@@ -525,7 +512,7 @@
             this.btnAnswer1.Enabled = false;
             this.btnAnswer1.Location = new System.Drawing.Point(27, 3);
             this.btnAnswer1.Name = "btnAnswer1";
-            this.btnAnswer1.Size = new System.Drawing.Size(386, 28);
+            this.btnAnswer1.Size = new System.Drawing.Size(384, 28);
             this.btnAnswer1.TabIndex = 16;
             this.btnAnswer1.UseVisualStyleBackColor = true;
             this.btnAnswer1.Click += new System.EventHandler(this.btnAnswer1Click);
@@ -535,7 +522,7 @@
             this.lblQuantity6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuantity6.Location = new System.Drawing.Point(419, 173);
+            this.lblQuantity6.Location = new System.Drawing.Point(417, 173);
             this.lblQuantity6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblQuantity6.Name = "lblQuantity6";
             this.lblQuantity6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -552,7 +539,7 @@
             this.btnAnswer3.Enabled = false;
             this.btnAnswer3.Location = new System.Drawing.Point(27, 71);
             this.btnAnswer3.Name = "btnAnswer3";
-            this.btnAnswer3.Size = new System.Drawing.Size(386, 28);
+            this.btnAnswer3.Size = new System.Drawing.Size(384, 28);
             this.btnAnswer3.TabIndex = 21;
             this.btnAnswer3.UseVisualStyleBackColor = true;
             this.btnAnswer3.Click += new System.EventHandler(this.btnAnswer3Click);
@@ -566,7 +553,7 @@
             this.btnAnswer4.Enabled = false;
             this.btnAnswer4.Location = new System.Drawing.Point(27, 105);
             this.btnAnswer4.Name = "btnAnswer4";
-            this.btnAnswer4.Size = new System.Drawing.Size(386, 28);
+            this.btnAnswer4.Size = new System.Drawing.Size(384, 28);
             this.btnAnswer4.TabIndex = 20;
             this.btnAnswer4.UseVisualStyleBackColor = true;
             this.btnAnswer4.Click += new System.EventHandler(this.btnAnswer4Click);
@@ -576,7 +563,7 @@
             this.lblQuantity5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuantity5.Location = new System.Drawing.Point(419, 139);
+            this.lblQuantity5.Location = new System.Drawing.Point(417, 139);
             this.lblQuantity5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblQuantity5.Name = "lblQuantity5";
             this.lblQuantity5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -593,7 +580,7 @@
             this.btnAnswer6.Enabled = false;
             this.btnAnswer6.Location = new System.Drawing.Point(27, 173);
             this.btnAnswer6.Name = "btnAnswer6";
-            this.btnAnswer6.Size = new System.Drawing.Size(386, 30);
+            this.btnAnswer6.Size = new System.Drawing.Size(384, 30);
             this.btnAnswer6.TabIndex = 18;
             this.btnAnswer6.UseVisualStyleBackColor = true;
             this.btnAnswer6.Click += new System.EventHandler(this.btnAnswer6Click);
@@ -603,7 +590,7 @@
             this.lblQuantity4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuantity4.Location = new System.Drawing.Point(419, 105);
+            this.lblQuantity4.Location = new System.Drawing.Point(417, 105);
             this.lblQuantity4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblQuantity4.Name = "lblQuantity4";
             this.lblQuantity4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -620,7 +607,7 @@
             this.btnAnswer5.Enabled = false;
             this.btnAnswer5.Location = new System.Drawing.Point(27, 139);
             this.btnAnswer5.Name = "btnAnswer5";
-            this.btnAnswer5.Size = new System.Drawing.Size(386, 28);
+            this.btnAnswer5.Size = new System.Drawing.Size(384, 28);
             this.btnAnswer5.TabIndex = 19;
             this.btnAnswer5.UseVisualStyleBackColor = true;
             this.btnAnswer5.Click += new System.EventHandler(this.btnAnswer5Click);
@@ -630,7 +617,7 @@
             this.lblQuantity3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuantity3.Location = new System.Drawing.Point(419, 71);
+            this.lblQuantity3.Location = new System.Drawing.Point(417, 71);
             this.lblQuantity3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblQuantity3.Name = "lblQuantity3";
             this.lblQuantity3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -643,7 +630,7 @@
             this.lblQuantity1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuantity1.Location = new System.Drawing.Point(419, 3);
+            this.lblQuantity1.Location = new System.Drawing.Point(417, 3);
             this.lblQuantity1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblQuantity1.Name = "lblQuantity1";
             this.lblQuantity1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -656,7 +643,7 @@
             this.lblQuantity2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuantity2.Location = new System.Drawing.Point(419, 37);
+            this.lblQuantity2.Location = new System.Drawing.Point(417, 37);
             this.lblQuantity2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblQuantity2.Name = "lblQuantity2";
             this.lblQuantity2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -678,7 +665,7 @@
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(466, 24);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(464, 24);
             this.tableLayoutPanel15.TabIndex = 3;
             // 
             // label6
@@ -696,7 +683,7 @@
             // 
             this.cbTeamRound.AutoSize = true;
             this.cbTeamRound.Enabled = false;
-            this.cbTeamRound.Location = new System.Drawing.Point(369, 3);
+            this.cbTeamRound.Location = new System.Drawing.Point(367, 3);
             this.cbTeamRound.Name = "cbTeamRound";
             this.cbTeamRound.Size = new System.Drawing.Size(88, 17);
             this.cbTeamRound.TabIndex = 24;
@@ -715,7 +702,7 @@
             this.tableLayoutPanel14.Controls.Add(this.label15, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.btnTeam2, 0, 2);
             this.tableLayoutPanel14.Controls.Add(this.btnTeam1, 0, 1);
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(481, 3);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(479, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 4;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -779,13 +766,54 @@
             this.btnTeam1.UseVisualStyleBackColor = true;
             this.btnTeam1.Click += new System.EventHandler(this.btnTeam1Click);
             // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel16.ColumnCount = 2;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Controls.Add(this.btnWrong, 1, 0);
+            this.tableLayoutPanel16.Controls.Add(this.changePoints, 0, 0);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 327);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 1;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(596, 44);
+            this.tableLayoutPanel16.TabIndex = 2;
+            // 
+            // btnWrong
+            // 
+            this.btnWrong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWrong.Enabled = false;
+            this.btnWrong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWrong.ForeColor = System.Drawing.Color.Maroon;
+            this.btnWrong.Location = new System.Drawing.Point(499, 3);
+            this.btnWrong.Name = "btnWrong";
+            this.btnWrong.Size = new System.Drawing.Size(94, 38);
+            this.btnWrong.TabIndex = 3;
+            this.btnWrong.Text = "FALSCH!";
+            this.btnWrong.UseVisualStyleBackColor = true;
+            this.btnWrong.Click += new System.EventHandler(this.btnWrongClick);
+            // 
+            // changePoints
+            // 
+            this.changePoints.Location = new System.Drawing.Point(3, 3);
+            this.changePoints.Name = "changePoints";
+            this.changePoints.Size = new System.Drawing.Size(126, 23);
+            this.changePoints.TabIndex = 4;
+            this.changePoints.Text = "Punkte korrigieren";
+            this.changePoints.UseVisualStyleBackColor = true;
+            this.changePoints.Click += new System.EventHandler(this.changePoints_Click);
+            // 
             // tabQuests
             // 
             this.tabQuests.Controls.Add(this.checkBox1);
             this.tabQuests.Location = new System.Drawing.Point(4, 22);
             this.tabQuests.Name = "tabQuests";
             this.tabQuests.Padding = new System.Windows.Forms.Padding(3);
-            this.tabQuests.Size = new System.Drawing.Size(604, 374);
+            this.tabQuests.Size = new System.Drawing.Size(602, 374);
             this.tabQuests.TabIndex = 1;
             this.tabQuests.Text = "Fragen";
             this.tabQuests.UseVisualStyleBackColor = true;
@@ -808,7 +836,7 @@
             this.tabPlayers.Controls.Add(this.panel1);
             this.tabPlayers.Location = new System.Drawing.Point(4, 22);
             this.tabPlayers.Name = "tabPlayers";
-            this.tabPlayers.Size = new System.Drawing.Size(604, 374);
+            this.tabPlayers.Size = new System.Drawing.Size(602, 374);
             this.tabPlayers.TabIndex = 4;
             this.tabPlayers.Text = "Spielernamen";
             this.tabPlayers.UseVisualStyleBackColor = true;
@@ -821,7 +849,7 @@
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(598, 368);
+            this.panel1.Size = new System.Drawing.Size(596, 368);
             this.panel1.TabIndex = 1;
             // 
             // dataGridView
@@ -839,7 +867,7 @@
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(598, 368);
+            this.dataGridView.Size = new System.Drawing.Size(596, 368);
             this.dataGridView.TabIndex = 0;
             // 
             // Team1
@@ -861,7 +889,7 @@
             this.tabMainSettings.Location = new System.Drawing.Point(4, 22);
             this.tabMainSettings.Name = "tabMainSettings";
             this.tabMainSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMainSettings.Size = new System.Drawing.Size(604, 374);
+            this.tabMainSettings.Size = new System.Drawing.Size(602, 374);
             this.tabMainSettings.TabIndex = 0;
             this.tabMainSettings.Text = "Spieleinstellungen";
             this.tabMainSettings.UseVisualStyleBackColor = true;
@@ -882,7 +910,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(592, 362);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(590, 362);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // tableLayoutPanel2
@@ -900,7 +928,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(586, 114);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(584, 114);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label3
@@ -947,7 +975,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(586, 114);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(584, 114);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // label1
@@ -968,7 +996,7 @@
             this.txtTeam1.Enabled = false;
             this.txtTeam1.Location = new System.Drawing.Point(3, 60);
             this.txtTeam1.Name = "txtTeam1";
-            this.txtTeam1.Size = new System.Drawing.Size(272, 20);
+            this.txtTeam1.Size = new System.Drawing.Size(271, 20);
             this.txtTeam1.TabIndex = 2;
             this.txtTeam1.Text = "Team Blau";
             this.txtTeam1.Leave += new System.EventHandler(this.checkTeamNames);
@@ -977,7 +1005,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(281, 60);
+            this.label2.Location = new System.Drawing.Point(280, 60);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 20);
@@ -990,9 +1018,9 @@
             this.txtTeam2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTeam2.Enabled = false;
-            this.txtTeam2.Location = new System.Drawing.Point(311, 60);
+            this.txtTeam2.Location = new System.Drawing.Point(310, 60);
             this.txtTeam2.Name = "txtTeam2";
-            this.txtTeam2.Size = new System.Drawing.Size(272, 20);
+            this.txtTeam2.Size = new System.Drawing.Size(271, 20);
             this.txtTeam2.TabIndex = 3;
             this.txtTeam2.Text = "Team Rot";
             this.txtTeam2.Leave += new System.EventHandler(this.checkTeamNames);
@@ -1006,18 +1034,16 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel8, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.radioButton2, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.radioButton1, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel8, 0, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 243);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(586, 116);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(584, 116);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // tableLayoutPanel8
@@ -1030,11 +1056,11 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.cbSounds, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.cbPlayernames, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(296, 83);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 37);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(287, 30);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(286, 40);
             this.tableLayoutPanel8.TabIndex = 13;
             // 
             // cbSounds
@@ -1043,7 +1069,7 @@
             this.cbSounds.AutoSize = true;
             this.cbSounds.Enabled = false;
             this.cbSounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSounds.Location = new System.Drawing.Point(174, 3);
+            this.cbSounds.Location = new System.Drawing.Point(173, 3);
             this.cbSounds.Name = "cbSounds";
             this.cbSounds.Size = new System.Drawing.Size(110, 17);
             this.cbSounds.TabIndex = 5;
@@ -1059,30 +1085,6 @@
             this.cbPlayernames.TabIndex = 6;
             this.cbPlayernames.Text = "Spielernamen";
             this.cbPlayernames.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Enabled = false;
-            this.radioButton2.Location = new System.Drawing.Point(3, 83);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(97, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.Text = "Schnelles Spiel";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Enabled = false;
-            this.radioButton1.Location = new System.Drawing.Point(3, 37);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(95, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Normales Spiel";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -1105,19 +1107,19 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.numericUpDown1, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(293, 34);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(292, 34);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(293, 46);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(292, 46);
             this.tableLayoutPanel5.TabIndex = 12;
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown1.Enabled = false;
-            this.numericUpDown1.Location = new System.Drawing.Point(196, 3);
+            this.numericUpDown1.Location = new System.Drawing.Point(195, 3);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1168,7 +1170,7 @@
             this.tabMainControl.Location = new System.Drawing.Point(12, 42);
             this.tabMainControl.Name = "tabMainControl";
             this.tabMainControl.SelectedIndex = 0;
-            this.tabMainControl.Size = new System.Drawing.Size(612, 400);
+            this.tabMainControl.Size = new System.Drawing.Size(610, 400);
             this.tabMainControl.TabIndex = 2;
             // 
             // Main
@@ -1202,6 +1204,7 @@
             this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel14.PerformLayout();
+            this.tableLayoutPanel16.ResumeLayout(false);
             this.tabQuests.ResumeLayout(false);
             this.tabQuests.PerformLayout();
             this.tabPlayers.ResumeLayout(false);
@@ -1281,9 +1284,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTeam2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.CheckBox cbSounds;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -1305,6 +1306,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.CheckBox cbPlayernames;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.Button changePoints;
     }
 }
 
