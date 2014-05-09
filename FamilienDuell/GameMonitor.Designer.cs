@@ -53,13 +53,6 @@
             this.timerAddPoints = new System.Windows.Forms.Timer(this.components);
             this.timerDelPoints = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblWrong3 = new System.Windows.Forms.Label();
-            this.lblWrong1 = new System.Windows.Forms.Label();
-            this.lblPlayerBlue = new System.Windows.Forms.Label();
-            this.lblPlayerRed = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.lblAnswerNo6 = new System.Windows.Forms.Label();
@@ -68,12 +61,21 @@
             this.lblAnswerNo3 = new System.Windows.Forms.Label();
             this.lblAnswerNo2 = new System.Windows.Forms.Label();
             this.lblAnswerNo1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblWrong3 = new System.Windows.Forms.Label();
+            this.lblWrong1 = new System.Windows.Forms.Label();
+            this.lblPlayerBlue = new System.Windows.Forms.Label();
+            this.lblPlayerRed = new System.Windows.Forms.Label();
+            this.resultWriter = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblQuestion
@@ -192,7 +194,7 @@
             this.lblAnswer1.BackColor = System.Drawing.Color.Transparent;
             this.lblAnswer1.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer1.ForeColor = System.Drawing.Color.Lime;
-            this.lblAnswer1.Location = new System.Drawing.Point(203, 0);
+            this.lblAnswer1.Location = new System.Drawing.Point(706, 171);
             this.lblAnswer1.Name = "lblAnswer1";
             this.lblAnswer1.Size = new System.Drawing.Size(372, 62);
             this.lblAnswer1.TabIndex = 9;
@@ -380,7 +382,6 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -389,6 +390,168 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 572);
             this.tableLayoutPanel1.TabIndex = 23;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 5;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.lblTeam1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblPointsTeam1, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblPointsTeam2, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblRoundPoints, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblTeam2, 4, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 528);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(778, 41);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo6, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo5, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo4, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo3, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts1, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswer6, 1, 5);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswer5, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts6, 2, 5);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts5, 2, 4);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswer4, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts4, 2, 3);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswer3, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts2, 2, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswer2, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts3, 2, 2);
+            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 151);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 6;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.89189F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.89189F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.56757F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.86486F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.89189F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.89189F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(778, 371);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // lblAnswerNo6
+            // 
+            this.lblAnswerNo6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnswerNo6.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnswerNo6.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo6.ForeColor = System.Drawing.Color.Lime;
+            this.lblAnswerNo6.Location = new System.Drawing.Point(3, 306);
+            this.lblAnswerNo6.Name = "lblAnswerNo6";
+            this.lblAnswerNo6.Size = new System.Drawing.Size(194, 65);
+            this.lblAnswerNo6.TabIndex = 28;
+            this.lblAnswerNo6.Text = "06.";
+            this.lblAnswerNo6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblAnswerNo5
+            // 
+            this.lblAnswerNo5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnswerNo5.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnswerNo5.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo5.ForeColor = System.Drawing.Color.Lime;
+            this.lblAnswerNo5.Location = new System.Drawing.Point(3, 244);
+            this.lblAnswerNo5.Name = "lblAnswerNo5";
+            this.lblAnswerNo5.Size = new System.Drawing.Size(194, 62);
+            this.lblAnswerNo5.TabIndex = 27;
+            this.lblAnswerNo5.Text = "05.";
+            this.lblAnswerNo5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblAnswerNo4
+            // 
+            this.lblAnswerNo4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnswerNo4.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnswerNo4.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo4.ForeColor = System.Drawing.Color.Lime;
+            this.lblAnswerNo4.Location = new System.Drawing.Point(3, 189);
+            this.lblAnswerNo4.Name = "lblAnswerNo4";
+            this.lblAnswerNo4.Size = new System.Drawing.Size(194, 55);
+            this.lblAnswerNo4.TabIndex = 26;
+            this.lblAnswerNo4.Text = "04.";
+            this.lblAnswerNo4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblAnswerNo3
+            // 
+            this.lblAnswerNo3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnswerNo3.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnswerNo3.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo3.ForeColor = System.Drawing.Color.Lime;
+            this.lblAnswerNo3.Location = new System.Drawing.Point(3, 124);
+            this.lblAnswerNo3.Name = "lblAnswerNo3";
+            this.lblAnswerNo3.Size = new System.Drawing.Size(194, 65);
+            this.lblAnswerNo3.TabIndex = 25;
+            this.lblAnswerNo3.Text = "03.";
+            this.lblAnswerNo3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblAnswerNo2
+            // 
+            this.lblAnswerNo2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnswerNo2.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnswerNo2.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo2.ForeColor = System.Drawing.Color.Lime;
+            this.lblAnswerNo2.Location = new System.Drawing.Point(3, 62);
+            this.lblAnswerNo2.Name = "lblAnswerNo2";
+            this.lblAnswerNo2.Size = new System.Drawing.Size(194, 62);
+            this.lblAnswerNo2.TabIndex = 24;
+            this.lblAnswerNo2.Text = "02.";
+            this.lblAnswerNo2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblAnswerNo1
+            // 
+            this.lblAnswerNo1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnswerNo1.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnswerNo1.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo1.ForeColor = System.Drawing.Color.Lime;
+            this.lblAnswerNo1.Location = new System.Drawing.Point(3, 0);
+            this.lblAnswerNo1.Name = "lblAnswerNo1";
+            this.lblAnswerNo1.Size = new System.Drawing.Size(194, 62);
+            this.lblAnswerNo1.TabIndex = 23;
+            this.lblAnswerNo1.Text = "01.";
+            this.lblAnswerNo1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Black;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Info;
+            this.textBox1.Location = new System.Drawing.Point(203, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(372, 28);
+            this.textBox1.TabIndex = 29;
             // 
             // tableLayoutPanel2
             // 
@@ -500,157 +663,9 @@
             this.lblPlayerRed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblPlayerRed.Visible = false;
             // 
-            // tableLayoutPanel3
+            // resultWriter
             // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.lblTeam1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblPointsTeam1, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblPointsTeam2, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblRoundPoints, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblTeam2, 4, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 528);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(778, 41);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo6, 0, 5);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo5, 0, 4);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo4, 0, 3);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo3, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo2, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts1, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswer6, 1, 5);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswer5, 1, 4);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts6, 2, 5);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts5, 2, 4);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswer4, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts4, 2, 3);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswer3, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts2, 2, 1);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswer2, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts3, 2, 2);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswer1, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 151);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 6;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.89189F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.89189F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.56757F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.86486F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.89189F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.89189F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(778, 371);
-            this.tableLayoutPanel5.TabIndex = 2;
-            // 
-            // lblAnswerNo6
-            // 
-            this.lblAnswerNo6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAnswerNo6.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo6.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnswerNo6.ForeColor = System.Drawing.Color.Lime;
-            this.lblAnswerNo6.Location = new System.Drawing.Point(3, 306);
-            this.lblAnswerNo6.Name = "lblAnswerNo6";
-            this.lblAnswerNo6.Size = new System.Drawing.Size(194, 65);
-            this.lblAnswerNo6.TabIndex = 28;
-            this.lblAnswerNo6.Text = "06.";
-            this.lblAnswerNo6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblAnswerNo5
-            // 
-            this.lblAnswerNo5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAnswerNo5.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo5.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnswerNo5.ForeColor = System.Drawing.Color.Lime;
-            this.lblAnswerNo5.Location = new System.Drawing.Point(3, 244);
-            this.lblAnswerNo5.Name = "lblAnswerNo5";
-            this.lblAnswerNo5.Size = new System.Drawing.Size(194, 62);
-            this.lblAnswerNo5.TabIndex = 27;
-            this.lblAnswerNo5.Text = "05.";
-            this.lblAnswerNo5.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblAnswerNo4
-            // 
-            this.lblAnswerNo4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAnswerNo4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo4.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnswerNo4.ForeColor = System.Drawing.Color.Lime;
-            this.lblAnswerNo4.Location = new System.Drawing.Point(3, 189);
-            this.lblAnswerNo4.Name = "lblAnswerNo4";
-            this.lblAnswerNo4.Size = new System.Drawing.Size(194, 55);
-            this.lblAnswerNo4.TabIndex = 26;
-            this.lblAnswerNo4.Text = "04.";
-            this.lblAnswerNo4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblAnswerNo3
-            // 
-            this.lblAnswerNo3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAnswerNo3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo3.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnswerNo3.ForeColor = System.Drawing.Color.Lime;
-            this.lblAnswerNo3.Location = new System.Drawing.Point(3, 124);
-            this.lblAnswerNo3.Name = "lblAnswerNo3";
-            this.lblAnswerNo3.Size = new System.Drawing.Size(194, 65);
-            this.lblAnswerNo3.TabIndex = 25;
-            this.lblAnswerNo3.Text = "03.";
-            this.lblAnswerNo3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblAnswerNo2
-            // 
-            this.lblAnswerNo2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAnswerNo2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo2.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnswerNo2.ForeColor = System.Drawing.Color.Lime;
-            this.lblAnswerNo2.Location = new System.Drawing.Point(3, 62);
-            this.lblAnswerNo2.Name = "lblAnswerNo2";
-            this.lblAnswerNo2.Size = new System.Drawing.Size(194, 62);
-            this.lblAnswerNo2.TabIndex = 24;
-            this.lblAnswerNo2.Text = "02.";
-            this.lblAnswerNo2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblAnswerNo1
-            // 
-            this.lblAnswerNo1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAnswerNo1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo1.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnswerNo1.ForeColor = System.Drawing.Color.Lime;
-            this.lblAnswerNo1.Location = new System.Drawing.Point(3, 0);
-            this.lblAnswerNo1.Name = "lblAnswerNo1";
-            this.lblAnswerNo1.Size = new System.Drawing.Size(194, 62);
-            this.lblAnswerNo1.TabIndex = 23;
-            this.lblAnswerNo1.Text = "01.";
-            this.lblAnswerNo1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.resultWriter.Tick += new System.EventHandler(this.resultWriter_Tick);
             // 
             // GameMonitor
             // 
@@ -658,8 +673,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 572);
+            this.ClientSize = new System.Drawing.Size(1090, 594);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.lblAnswer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -669,12 +685,13 @@
             this.Name = "GameMonitor";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -720,5 +737,7 @@
         private System.Windows.Forms.Label lblWrong1;
         private System.Windows.Forms.Label lblPlayerBlue;
         private System.Windows.Forms.Label lblPlayerRed;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Timer resultWriter;
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace FamilienDuell
 {
@@ -21,6 +22,7 @@ namespace FamilienDuell
         int targetTeam;
         int targetTeamDel;
         int targetValDel;
+        String[] targetText;
 
         public GameMonitor()
         {
@@ -28,7 +30,6 @@ namespace FamilienDuell
 
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.monitorClosing);
             this.ResizeEnd += new EventHandler(this.formResize);
-            //imgWaiting.Visible = true;
         }
 
         public void formResize(object sender, EventArgs e)
@@ -274,7 +275,6 @@ namespace FamilienDuell
             if (team == 1)
             {
                 targetVal = Convert.ToInt32(lblRoundPoints.Text) + points;
-                //MessageBox.Show("New targetVal: " + Convert.ToString(targetVal));
             }
             else if (team == 2)
             {
@@ -353,7 +353,8 @@ namespace FamilienDuell
             }
             if (answer == 1)
             {
-                lblAnswer1.Text = text;
+                targetText = text.Select(c => c.ToString()).ToArray();
+                resultWriter.Enabled = true;
                 lblAnswerPts1.Visible = true;
                 lblAnswerPts1.Text = people;
                 //lblAnswerPts1.TextAlign = StringAlignment.Center;
@@ -493,6 +494,19 @@ namespace FamilienDuell
                     timerDelPoints.Enabled = false;
                 }
             }
+        }
+
+        public void writeResult(String[] text) {
+            Debug.WriteLine(text.Length);
+            for (int i = 0; i < text.Length; i++) {
+                Debug.WriteLine("Wurst!");
+                lblAnswer1.Text += text[i];
+                System.Threading.Thread.Sleep(200);
+            }
+        }
+
+        private void resultWriter_Tick(object sender, EventArgs e) {
+            //writeResult();
         }
     }
 }

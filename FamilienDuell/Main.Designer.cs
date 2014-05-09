@@ -95,13 +95,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtTeam2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbSounds = new System.Windows.Forms.CheckBox();
-            this.cbPlayernames = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbSounds = new System.Windows.Forms.CheckBox();
+            this.cbPlayernames = new System.Windows.Forms.CheckBox();
             this.lblTeamAlert = new System.Windows.Forms.Label();
             this.tabMainControl = new System.Windows.Forms.TabControl();
             this.tabPlay.SuspendLayout();
@@ -124,9 +124,9 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
             this.tabMainControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1046,46 +1046,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(584, 116);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.cbSounds, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.cbPlayernames, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 37);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(286, 40);
-            this.tableLayoutPanel8.TabIndex = 13;
-            // 
-            // cbSounds
-            // 
-            this.cbSounds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSounds.AutoSize = true;
-            this.cbSounds.Enabled = false;
-            this.cbSounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSounds.Location = new System.Drawing.Point(173, 3);
-            this.cbSounds.Name = "cbSounds";
-            this.cbSounds.Size = new System.Drawing.Size(110, 17);
-            this.cbSounds.TabIndex = 5;
-            this.cbSounds.Text = "Sounds abspielen";
-            this.cbSounds.UseVisualStyleBackColor = true;
-            // 
-            // cbPlayernames
-            // 
-            this.cbPlayernames.AutoSize = true;
-            this.cbPlayernames.Location = new System.Drawing.Point(3, 3);
-            this.cbPlayernames.Name = "cbPlayernames";
-            this.cbPlayernames.Size = new System.Drawing.Size(90, 17);
-            this.cbPlayernames.TabIndex = 6;
-            this.cbPlayernames.Text = "Spielernamen";
-            this.cbPlayernames.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1148,6 +1108,46 @@
             this.label18.Size = new System.Drawing.Size(128, 13);
             this.label18.TabIndex = 13;
             this.label18.Text = "Anzahl Spieler (pro Team)";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.cbSounds, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.cbPlayernames, 0, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 37);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(286, 40);
+            this.tableLayoutPanel8.TabIndex = 13;
+            // 
+            // cbSounds
+            // 
+            this.cbSounds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSounds.AutoSize = true;
+            this.cbSounds.Enabled = false;
+            this.cbSounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSounds.Location = new System.Drawing.Point(173, 3);
+            this.cbSounds.Name = "cbSounds";
+            this.cbSounds.Size = new System.Drawing.Size(110, 17);
+            this.cbSounds.TabIndex = 5;
+            this.cbSounds.Text = "Sounds abspielen";
+            this.cbSounds.UseVisualStyleBackColor = true;
+            // 
+            // cbPlayernames
+            // 
+            this.cbPlayernames.AutoSize = true;
+            this.cbPlayernames.Location = new System.Drawing.Point(3, 3);
+            this.cbPlayernames.Name = "cbPlayernames";
+            this.cbPlayernames.Size = new System.Drawing.Size(90, 17);
+            this.cbPlayernames.TabIndex = 6;
+            this.cbPlayernames.Text = "Spielernamen";
+            this.cbPlayernames.UseVisualStyleBackColor = true;
             // 
             // lblTeamAlert
             // 
@@ -1219,11 +1219,11 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.tabMainControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1291,7 +1291,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label lblTeamAlert;
         private System.Windows.Forms.TabControl tabMainControl;
-        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Team1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Team2;
@@ -1308,6 +1307,7 @@
         private System.Windows.Forms.CheckBox cbPlayernames;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.Button changePoints;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
 

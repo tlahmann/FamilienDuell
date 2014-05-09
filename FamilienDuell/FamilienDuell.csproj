@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerResolver.cs" />
     <Compile Include="ChangePoints.cs">
       <SubType>Form</SubType>
     </Compile>

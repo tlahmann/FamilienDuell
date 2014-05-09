@@ -11,8 +11,6 @@ namespace FamilienDuell
 {
     public partial class ChangePoints : Form
     {
-        int punkte, team;
-
         protected GameMonitor GameMonitor;
 
         public ChangePoints()
@@ -25,14 +23,20 @@ namespace FamilienDuell
             this.GameMonitor = GameMonitor;
         }
 
-        private void btnTm1_Click(object sender, EventArgs e)
-        {
+        private void btnRound_Click(object sender, EventArgs e) {
+            btnRound.Enabled = false;
+            btnTm1.Enabled = true;
+            btnTm2.Enabled = true;
+        }
+
+        private void btnTm1_Click(object sender, EventArgs e) {
+            btnRound.Enabled = true;
             btnTm1.Enabled = false;
             btnTm2.Enabled = true;
         }
 
-        private void btnTm2_Click(object sender, EventArgs e)
-        {
+        private void btnTm2_Click(object sender, EventArgs e) {
+            btnRound.Enabled = true;
             btnTm1.Enabled = true;
             btnTm2.Enabled = false;
         }
@@ -81,28 +85,25 @@ namespace FamilienDuell
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            //Monitor.newPoints(2, int.Parse(tbPointsProceed.Text));
-            punkte = Convert.ToInt16(tbPoints.Text.ToString());
-            if (!btnTm1.Enabled)
-            {
-                team = 1;
-                this.Close();
-            }
-            else if (!btnTm2.Enabled)
-            {
+            int punkte = Convert.ToInt16(tbPoints.Text);
+            int team = 0;
+
+            if (!btnTm1.Enabled) {
                 team = 2;
+            } else if (!btnTm2.Enabled) {
+                team = 3;
+            } else if (!btnRound.Enabled){
+                team = 1;
+            }
+
+            if (team != 0) {
+                if (punkte >= 0)
+                    GameMonitor.newPoints(team, punkte);
+                else {
+                    GameMonitor.remPoints(team, Math.Abs(punkte));
+                }
                 this.Close();
             }
-        }
-
-        internal int getPoints()
-        {
-            return punkte;
-        }
-
-        internal int getTeam()
-        {
-            return team;
         }
     }
 }

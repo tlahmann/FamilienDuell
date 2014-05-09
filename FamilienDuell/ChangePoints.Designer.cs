@@ -38,22 +38,23 @@
             this.btnPlus3 = new System.Windows.Forms.Button();
             this.btnMinus3 = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
+            this.btnRound = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbPoints
             // 
             this.tbPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPoints.Location = new System.Drawing.Point(12, 41);
+            this.tbPoints.Location = new System.Drawing.Point(12, 70);
             this.tbPoints.Name = "tbPoints";
             this.tbPoints.ReadOnly = true;
-            this.tbPoints.Size = new System.Drawing.Size(156, 20);
+            this.tbPoints.Size = new System.Drawing.Size(155, 20);
             this.tbPoints.TabIndex = 0;
             this.tbPoints.Text = "0";
             this.tbPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnTm1
             // 
-            this.btnTm1.Location = new System.Drawing.Point(12, 12);
+            this.btnTm1.Location = new System.Drawing.Point(12, 41);
             this.btnTm1.Name = "btnTm1";
             this.btnTm1.Size = new System.Drawing.Size(75, 23);
             this.btnTm1.TabIndex = 1;
@@ -63,7 +64,7 @@
             // 
             // btnTm2
             // 
-            this.btnTm2.Location = new System.Drawing.Point(93, 12);
+            this.btnTm2.Location = new System.Drawing.Point(92, 41);
             this.btnTm2.Name = "btnTm2";
             this.btnTm2.Size = new System.Drawing.Size(75, 23);
             this.btnTm2.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             // btnPlus1
             // 
-            this.btnPlus1.Location = new System.Drawing.Point(12, 68);
+            this.btnPlus1.Location = new System.Drawing.Point(12, 96);
             this.btnPlus1.Name = "btnPlus1";
             this.btnPlus1.Size = new System.Drawing.Size(75, 23);
             this.btnPlus1.TabIndex = 3;
@@ -83,7 +84,7 @@
             // 
             // btnPlus2
             // 
-            this.btnPlus2.Location = new System.Drawing.Point(12, 98);
+            this.btnPlus2.Location = new System.Drawing.Point(12, 125);
             this.btnPlus2.Name = "btnPlus2";
             this.btnPlus2.Size = new System.Drawing.Size(75, 23);
             this.btnPlus2.TabIndex = 4;
@@ -93,7 +94,7 @@
             // 
             // btnMinus1
             // 
-            this.btnMinus1.Location = new System.Drawing.Point(93, 68);
+            this.btnMinus1.Location = new System.Drawing.Point(92, 96);
             this.btnMinus1.Name = "btnMinus1";
             this.btnMinus1.Size = new System.Drawing.Size(75, 23);
             this.btnMinus1.TabIndex = 5;
@@ -103,7 +104,7 @@
             // 
             // btnMinus2
             // 
-            this.btnMinus2.Location = new System.Drawing.Point(93, 98);
+            this.btnMinus2.Location = new System.Drawing.Point(92, 125);
             this.btnMinus2.Name = "btnMinus2";
             this.btnMinus2.Size = new System.Drawing.Size(75, 23);
             this.btnMinus2.TabIndex = 6;
@@ -113,7 +114,7 @@
             // 
             // btnPlus3
             // 
-            this.btnPlus3.Location = new System.Drawing.Point(12, 128);
+            this.btnPlus3.Location = new System.Drawing.Point(12, 154);
             this.btnPlus3.Name = "btnPlus3";
             this.btnPlus3.Size = new System.Drawing.Size(75, 23);
             this.btnPlus3.TabIndex = 7;
@@ -123,7 +124,7 @@
             // 
             // btnMinus3
             // 
-            this.btnMinus3.Location = new System.Drawing.Point(93, 128);
+            this.btnMinus3.Location = new System.Drawing.Point(92, 154);
             this.btnMinus3.Name = "btnMinus3";
             this.btnMinus3.Size = new System.Drawing.Size(75, 23);
             this.btnMinus3.TabIndex = 8;
@@ -133,19 +134,30 @@
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(12, 157);
+            this.btnApply.Location = new System.Drawing.Point(12, 183);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(156, 23);
+            this.btnApply.Size = new System.Drawing.Size(155, 23);
             this.btnApply.TabIndex = 9;
             this.btnApply.Text = "Anwenden";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
+            // btnRound
+            // 
+            this.btnRound.Location = new System.Drawing.Point(12, 12);
+            this.btnRound.Name = "btnRound";
+            this.btnRound.Size = new System.Drawing.Size(155, 23);
+            this.btnRound.TabIndex = 10;
+            this.btnRound.Text = "Rundenpunkte";
+            this.btnRound.UseVisualStyleBackColor = true;
+            this.btnRound.Click += new System.EventHandler(this.btnRound_Click);
+            // 
             // ChangePoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(184, 190);
+            this.ClientSize = new System.Drawing.Size(181, 218);
+            this.Controls.Add(this.btnRound);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.btnMinus3);
             this.Controls.Add(this.btnPlus3);
@@ -157,9 +169,9 @@
             this.Controls.Add(this.btnTm1);
             this.Controls.Add(this.tbPoints);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(200, 228);
+            this.MaximumSize = new System.Drawing.Size(197, 256);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(200, 228);
+            this.MinimumSize = new System.Drawing.Size(197, 256);
             this.Name = "ChangePoints";
             this.Text = "ChangePoints";
             this.ResumeLayout(false);
@@ -179,5 +191,6 @@
         private System.Windows.Forms.Button btnPlus3;
         private System.Windows.Forms.Button btnMinus3;
         private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Button btnRound;
     }
 }
