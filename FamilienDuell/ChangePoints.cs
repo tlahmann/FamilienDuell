@@ -13,9 +13,16 @@ namespace FamilienDuell
     {
         int punkte, team;
 
+        protected GameMonitor GameMonitor;
+
         public ChangePoints()
         {
             InitializeComponent();
+        }
+
+        public void injectGameMonitor(GameMonitor GameMonitor)
+        {
+            this.GameMonitor = GameMonitor;
         }
 
         private void btnTm1_Click(object sender, EventArgs e)

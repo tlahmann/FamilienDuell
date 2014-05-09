@@ -678,6 +678,7 @@ namespace FamilienDuell
 
             using (ChangePoints ptChange = new ChangePoints())
             {
+                ptChange.injectGameMonitor(Monitor);
                 ptChange.StartPosition = FormStartPosition.CenterParent;
                 ptChange.ShowDialog(this);
 
