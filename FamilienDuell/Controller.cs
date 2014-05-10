@@ -20,33 +20,33 @@ namespace FamilienDuell {
 
     public partial class Main : Form {
 
-        int CurrentGameStatus = 0;
+        int currentGameStatus = 0;
         int currentSetupStatus = 0;
 
-        // what the heck is this for?
+        // determines if the monitor form is maximized
         Boolean maximus;
 
         // initialize monitor
         GameMonitor Monitor = new GameMonitor();
 
         // clientid for server
-        string clientId = "asd";
+        string clientId = "asd"; // what do we need this for?
 
-        static string randString(Int32 len) {
-            string text = "";
-            System.Random random = new System.Random();
-            for (Int32 i = 0; i < len; i++) {
-                Int32 Number = Convert.ToInt32(Math.Floor(58 * random.NextDouble() + 65));
-                char x = Convert.ToChar(Number);
-                if (x > 90 && x < 97) {
-                    i--;
-                    continue;
-                } else {
-                    text += x;
-                }
-            }
-            return text;
-        }
+        //static string randString(Int32 len) {
+        //    string text = "";
+        //    System.Random random = new System.Random();
+        //    for (Int32 i = 0; i < len; i++) {
+        //        Int32 Number = Convert.ToInt32(Math.Floor(58 * random.NextDouble() + 65));
+        //        char x = Convert.ToChar(Number);
+        //        if (x > 90 && x < 97) {
+        //            i--;
+        //            continue;
+        //        } else {
+        //            text += x;
+        //        }
+        //    }
+        //    return text;
+        //}
 
         public Main() {
             InitializeComponent();
@@ -54,14 +54,13 @@ namespace FamilienDuell {
             txtGameTitle.TextChanged += new EventHandler(this.textGameTitleChanged);
             txtTeam1.TextChanged += new EventHandler(this.textTeamsChanged);
             txtTeam2.TextChanged += new EventHandler(this.textTeamsChanged);
-            numericUpDown1.ValueChanged += new EventHandler(this.stateOptionsChanged);
-            cbSounds.CheckedChanged += new EventHandler(this.stateOptionsChanged);
             this.dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewRowPostPaint);
+            this.tabMainControl.SelectedIndexChanged += new EventHandler(this.checkTab);
             //tabMainControl.TabIndexChanged += new EventHandler(this.tabStateChanged);
         }
 
         private void Main_Load(object sender, EventArgs e) {
-            showMonitor();
+            Monitor.Show();
 
             textGameTitleChanged(null, null);
 
@@ -100,6 +99,7 @@ namespace FamilienDuell {
             }
 
             if (txtTeam1.Text != "" && txtTeam2.Text != "") {
+                checkTeamNames(txtTeam1.Text, txtTeam2.Text);
                 numericUpDown1.Enabled = true;
                 cbSounds.Enabled = true;
                 tableLayoutPanel4.BackColor = SystemColors.ActiveCaption;
@@ -111,36 +111,172 @@ namespace FamilienDuell {
             }
         }
 
-        public void stateOptionsChanged(object sender, EventArgs e) {
-            //if((radioButton1.Checked == true || radioButton2.Checked == true))
-            //{
-            //    btnNext.Enabled = true;
-            //}
+        // check if Teamnames are to long
+        private void checkTeamNames(string team1, string team2) {
+            if (team1.Length > 16) {
+                lblTeamCheck.Text = "Name für Team 1 möglicherweise zu lang!";
+            } else if (team2.Length > 16) {
+                lblTeamCheck.Text = "Name für Team 2 möglicherweise zu lang!";
+            } else {
+                lblTeamCheck.Text = "";
+            }
+            if (team1 == team2) {
+                lblTeamCheck.Text = "Zwei gleiche Teamnamen sind nicht gestattet.";
+            }
+        }
+
+        // check if Playernames are entered
+        private bool gridCheck() {
+            Boolean valid = true;
+
+            for (int j = 0; j < dataGridView.Rows.Count; j++) {
+                for (int i = 0; i < dataGridView.Columns.Count; i++) {
+                    if (dataGridView.Rows[j].Cells[i].Value == null) {
+                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
+
+                        valid = false;
+                    } else if (dataGridView.Rows[j].Cells[i].Value.ToString() == "") {
+                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
+
+                        valid = false;
+                    } else {
+                        dataGridView.Rows[j].Cells[i].Style.BackColor = Color.White;
+                    }
+                }
+            }
+            return valid;
+        }
+
+        // nextbutton
+        public void btnNextClick(object sender, EventArgs e) {
+            if (tabMainControl.SelectedIndex == 0) {
+                if (cbPlayernames.Checked == true) {
+                    try {
+                        int nOP = Convert.ToInt32(numericUpDown1.Value);
+                        if (dataGridView.RowCount != nOP) {
+                            int add = nOP - dataGridView.RowCount;
+                            for (int i = 0; i < add; i++) {
+                                // TODO DefaultNamen raus! (?)
+                                dataGridView.Rows.Add("Player Red " + (i + 1), "Player Blue " + (i + 1));
+                            }
+                        }
+                    } catch (Exception ex) {
+                        MessageBox.Show(ex.Message, "Fehler!");
+                    }
+                    tabMainControl.SelectedIndex = 1;
+                    currentSetupStatus = 1;
+                } else {
+                    dataGridView.Enabled = false;
+                    tabMainControl.SelectedIndex = 2;
+                    currentSetupStatus = 2;
+                }
+
+            } else if (tabMainControl.SelectedIndex == 1) {
+                if (gridCheck()) {
+                    tabMainControl.SelectedIndex = 2;
+                    currentSetupStatus = 2;
+                }
+            } else if (tabMainControl.SelectedIndex == 2) {
+                currentSetupStatus = 3;
+                tabMainControl.SelectedIndex = 3;
+            } else if (tabMainControl.SelectedIndex == 3) {
+                playGame();
+            }
+        }
+
+        // check which tab is selected to change the text on the next-button
+        public void checkTab(object sender, EventArgs e) {
+            if (currentGameStatus == 0) {
+                if (tabMainControl.SelectedIndex == 3 && currentSetupStatus == 3) {
+                    btnNext.Text = "Start";
+                } else {
+                    btnNext.Text = "Weiter";
+                }
+            }
         }
         #endregion
 
         #region Gameplay
+        // start functions
+        public void playGame() {
+            if (currentGameStatus == 0) {
+                btnGetQuestion.Enabled = true;
+                changePoints.Enabled = true;
+                btnNext.Text = "Runde läuft...";
+                btnNext.Enabled = false;
+            }
+            //if (currentGameStatus == 0) {
+            //    lblClientId.Text = txtGameTitle.Text;
+            //    btnNext.Text = "Start";
+            //    currentGameStatus = 1;
+            //} else if (currentGameStatus == 1) {
+            //    Monitor.setHeadline("Davids Familien Duell v0.1 Alpha-RC");
 
+            //    //Monitor.toggleWaiting();
+            //    tabMainControl.Enabled = true;
+            //    btnNext.Enabled = false;
+            //    //btnNext.Text = "Runde starten!";
+            //    currentGameStatus = 2;
+            //} else if (currentGameStatus == 2) {
+            //    if (txtTeam1.Text != "" & txtTeam2.Text != "") {
+            //        lblTeamAlert.Text = "";
+            //        //Monitor.toggleWaiting();
+            //        btnNext.Text = "Nächste Runde";
+            //        btnNext.Enabled = false;
+            //        lblStatus.Text = "Aktives Spiel (Runde 1)";
+            //        Monitor.gameStart();
+            //        playSound(1);
+            //        currentGameStatus = 3;
+            //    } else {
+            //        lblTeamAlert.Text = "Es sind keine Teams angegeben!";
+            //    }
+            //} else if (currentGameStatus == 3) {
+            //    if (txtTeam1.Text != "" & txtTeam2.Text != "") {
+            //        togglePointButtons();
+            //        lblTeamAlert.Text = "";
+            //        btnNext.Enabled = false;
+            //        btnGetQuestion.Enabled = true;
+            //        lblStatus.Text = "Aktives Spiel (Runde 2)";
+            //        Monitor.nextRound(2);
+            //        currentGameStatus = 4;
+            //    } else {
+            //        lblTeamAlert.Text = "Es sind keine Teams angegeben!";
+            //    }
+            //}
+            //return true;
+        }
+
+        #region Buttons
         private void btnWrongClick(object sender, EventArgs e) {
             playSound(3);
             cbTeamRound.Checked = Monitor.makeWrong(cbTeamRound.Checked);
         }
 
-        private void btnGetQuestion_Click(object sender, EventArgs e) {
+        private void btnGetQuestionClick(object sender, EventArgs e) {
             getQuestion();
             btnAnswer1.Enabled = true;
             btnAnswer2.Enabled = true;
             btnAnswer3.Enabled = true;
-            if (CurrentGameStatus < 6) {
+            if (currentGameStatus < 6) {
                 btnAnswer4.Enabled = true;
             }
-            if (CurrentGameStatus < 5) {
+            if (currentGameStatus < 5) {
                 btnAnswer5.Enabled = true;
             }
-            if (CurrentGameStatus == 3) {
+            if (currentGameStatus == 3) {
                 btnAnswer6.Enabled = true;
             }
             btnShowQuestion.Enabled = true;
+            //btnTeam1.Enabled = true;
+            //btnTeam2.Enabled = true;
+            //btnRemi.Enabled = true;
+            btnWrong.Enabled = true;
+            cbTeamRound.Enabled = true;
+        }
+
+        private void btnShowQuestionClick(object sender, EventArgs e) {
+            Monitor.setQuestion(lblQuestion.Text.ToString());
+            btnShowQuestion.Enabled = false;
         }
 
         // answers
@@ -149,57 +285,65 @@ namespace FamilienDuell {
             btnAnswer1.Enabled = false;
             btnGetQuestion.Enabled = false;
             cbTeamRound.Checked = true;
-            togglePointButtons();
+            //togglePointButtons();
             Monitor.showResult(1, btnAnswer1.Text, lblQuantity1.Text);
+            ctrlWritePoints(lblQuantity1.Text, lblCtrlRdPts.Text);
         }
 
         private void btnAnswer2Click(object sender, EventArgs e) {
             playSound(2);
             btnAnswer2.Enabled = false;
             btnGetQuestion.Enabled = false;
-            togglePointButtons();
+            //togglePointButtons();
             Monitor.showResult(2, btnAnswer2.Text, lblQuantity2.Text);
+            ctrlWritePoints(lblQuantity2.Text, lblCtrlRdPts.Text);
         }
 
         private void btnAnswer3Click(object sender, EventArgs e) {
             playSound(2);
             btnGetQuestion.Enabled = false;
             btnAnswer3.Enabled = false;
-            togglePointButtons();
+            //togglePointButtons();
             Monitor.showResult(3, btnAnswer3.Text, lblQuantity3.Text);
+            ctrlWritePoints(lblQuantity3.Text, lblCtrlRdPts.Text);
         }
 
         private void btnAnswer4Click(object sender, EventArgs e) {
             playSound(2);
             btnAnswer4.Enabled = false;
-            togglePointButtons();
+            //togglePointButtons();
             btnGetQuestion.Enabled = false;
             Monitor.showResult(4, btnAnswer4.Text, lblQuantity4.Text);
+            ctrlWritePoints(lblQuantity4.Text, lblCtrlRdPts.Text);
         }
 
         private void btnAnswer5Click(object sender, EventArgs e) {
             playSound(2);
             btnAnswer5.Enabled = false;
-            togglePointButtons();
-            Monitor.showResult(5, btnAnswer5.Text, lblQuantity5.Text);
+            //togglePointButtons();
             btnGetQuestion.Enabled = false;
+            Monitor.showResult(5, btnAnswer5.Text, lblQuantity5.Text);
+            ctrlWritePoints(lblQuantity5.Text, lblCtrlRdPts.Text);
         }
 
         private void btnAnswer6Click(object sender, EventArgs e) {
             playSound(2);
             btnAnswer6.Enabled = false;
-            togglePointButtons();
+            //togglePointButtons();
             btnGetQuestion.Enabled = false;
             Monitor.showResult(6, btnAnswer6.Text, lblQuantity6.Text);
+            ctrlWritePoints(lblQuantity6.Text, lblCtrlRdPts.Text);
         }
 
         private void btnTeam1Click(object sender, EventArgs e) {
             Monitor.winnerPoints(2);
+            lblCtrlTm2Pts.Text += lblCtrlRdPts.Text;
             btnNext.Enabled = true;
         }
 
         private void btnTeam2Click(object sender, EventArgs e) {
             Monitor.winnerPoints(3);
+            lblCtrlTm2Pts.Text += lblCtrlRdPts.Text;
             btnNext.Enabled = true;
         }
 
@@ -208,8 +352,32 @@ namespace FamilienDuell {
             Monitor.setPoints(1, 0);
         }
 
+        private void btnMaximizeClick(object sender, EventArgs e) {
+            if (!maximus) {
+                Monitor.maximize();
+                Monitor.newSize();
+                maximus = true;
+                btnMaximize.Text = "Minimieren";
+            } else {
+                Monitor.minimize();
+                Monitor.newSize();
+                maximus = false;
+                btnMaximize.Text = "Maximieren";
+            }
+        }
+
+        private void changePointsClick(object sender, EventArgs e) {
+
+            using (ChangePoints ptChange = new ChangePoints()) {
+                ptChange.injectGameMonitor(Monitor);
+                ptChange.StartPosition = FormStartPosition.CenterParent;
+                ptChange.ShowDialog(this);
+            }
+        }
+        #endregion
+
         // sound emitter
-        private bool playSound(int Action) {
+        private void playSound(int Action) {
             if (cbSounds.Checked == true) {
                 try {
                     string locationOffset = Directory.GetCurrentDirectory();
@@ -232,9 +400,6 @@ namespace FamilienDuell {
                 } catch (Exception e) {
                     Debug.WriteLine("Could not play sound file: " + e.Message);
                 }
-                return true;
-            } else {
-                return false;
             }
         }
 
@@ -274,66 +439,26 @@ namespace FamilienDuell {
             return true;
         }
 
-        #endregion
-
-        #region Validating
-
-        private bool gridCheck() {
-            Boolean valid = true;
-
-            for (int j = 0; j < dataGridView.Rows.Count; j++) {
-                for (int i = 0; i < dataGridView.Columns.Count; i++) {
-                    if (dataGridView.Rows[j].Cells[i].Value == null) {
-                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
-
-                        valid = false;
-                    } else if (dataGridView.Rows[j].Cells[i].Value.ToString() == "") {
-                        dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
-
-                        valid = false;
-                    } else {
-                        dataGridView.Rows[j].Cells[i].Style.BackColor = Color.White;
-                    }
-                }
-            }
-            return valid;
+        private void ctrlWritePoints(String val1, String val2) {
+            int a = Convert.ToInt32(val1);
+            int b = Convert.ToInt32(val2);
+            int result = a + b;
+            lblCtrlRdPts.Text = result.ToString();
         }
 
-        private void readyToPlay() {
-            if (currentSetupStatus == 3) {
-                btnAnswer1.Enabled = true;
-                btnAnswer2.Enabled = true;
-                btnAnswer3.Enabled = true;
-                btnAnswer4.Enabled = true;
-                btnAnswer5.Enabled = true;
-                btnAnswer6.Enabled = true;
-                btnGetQuestion.Enabled = true;
-                btnShowQuestion.Enabled = true;
-                btnTeam1.Enabled = true;
-                btnTeam2.Enabled = true;
-                btnRemi.Enabled = true;
-                btnWrong.Enabled = true;
-                cbTeamRound.Enabled = true;
-            }
-        }
-
-        private void checkTeamNames(object sender, EventArgs e) {
-            string team1 = txtTeam1.Text;
-            string team2 = txtTeam2.Text;
-            if (team1.Length > 16) {
-                lblTeamAlert.Text = "Name für Team 1 möglicherweise zu lang!";
-            } else if (team2.Length > 16) {
-                lblTeamAlert.Text = "Name für Team 2 möglicherweise zu lang!";
-            } else {
-                lblTeamAlert.Text = "";
-            }
-            if (team1 == team2) {
-                //btnOvertake.Enabled = false;
-                lblTeamAlert.Text = "Zwei gleiche Teamnamen sind nicht gestattet.";
-            } else {
-                //btnOvertake.Enabled = true;
-            }
-        }
+        //private void togglePointButtons() {
+        //    if (btnRemi.Enabled == true) {
+        //        btnTeam1.Enabled = false;
+        //        btnTeam2.Enabled = false;
+        //        btnRemi.Enabled = false;
+        //    } else {
+        //        if (btnAnswer1.Enabled == false & btnAnswer2.Enabled == false & btnAnswer3.Enabled == false & btnAnswer4.Enabled == false & btnAnswer5.Enabled == false & btnAnswer6.Enabled == false) {
+        //            btnTeam1.Enabled = true;
+        //            btnTeam2.Enabled = true;
+        //            btnRemi.Enabled = true;
+        //        }
+        //    }
+        //}
         #endregion
 
         #region Design
@@ -346,136 +471,5 @@ namespace FamilienDuell {
         }
 
         #endregion
-
-        public void showMonitor() {
-            Monitor.Show();
-        }
-
-        // start functions
-        public bool playGame() {
-            if (CurrentGameStatus == 0) {
-                lblClientId.Text = txtGameTitle.Text;
-
-                btnNext.Text = "Start";
-                CurrentGameStatus = 1;
-            } else if (CurrentGameStatus == 1) {
-                Monitor.setHeadline("Davids Familien Duell v0.1 Alpha-RC");
-
-                //Monitor.toggleWaiting();
-                tabMainControl.Enabled = true;
-                btnNext.Enabled = false;
-                //btnNext.Text = "Runde starten!";
-                CurrentGameStatus = 2;
-            } else if (CurrentGameStatus == 2) {
-                if (txtTeam1.Text != "" & txtTeam2.Text != "") {
-                    lblTeamAlert.Text = "";
-                    //Monitor.toggleWaiting();
-                    btnNext.Text = "Nächste Runde";
-                    btnNext.Enabled = false;
-                    lblStatus.Text = "Aktives Spiel (Runde 1)";
-                    Monitor.gameStart();
-                    playSound(1);
-                    CurrentGameStatus = 3;
-                } else {
-                    lblTeamAlert.Text = "Es sind keine Teams angegeben!";
-                }
-            } else if (CurrentGameStatus == 3) {
-                if (txtTeam1.Text != "" & txtTeam2.Text != "") {
-                    togglePointButtons();
-                    lblTeamAlert.Text = "";
-                    btnNext.Enabled = false;
-                    btnGetQuestion.Enabled = true;
-                    lblStatus.Text = "Aktives Spiel (Runde 2)";
-                    Monitor.nextRound(2);
-                    CurrentGameStatus = 4;
-                } else {
-                    lblTeamAlert.Text = "Es sind keine Teams angegeben!";
-                }
-            }
-            return true;
-        }
-
-        private void togglePointButtons() {
-            if (btnRemi.Enabled == true) {
-                btnTeam1.Enabled = false;
-                btnTeam2.Enabled = false;
-                btnRemi.Enabled = false;
-            } else {
-                if (btnAnswer1.Enabled == false & btnAnswer2.Enabled == false & btnAnswer3.Enabled == false & btnAnswer4.Enabled == false & btnAnswer5.Enabled == false & btnAnswer6.Enabled == false) {
-                    btnTeam1.Enabled = true;
-                    btnTeam2.Enabled = true;
-                    btnRemi.Enabled = true;
-                }
-            }
-        }
-
-        // nextbutton
-        public void btnNextClick(object sender, EventArgs e) {
-            if (tabMainControl.SelectedIndex == 0) {
-                if (cbPlayernames.Checked == true) {
-                    try {
-                        int nOP = Convert.ToInt32(numericUpDown1.Value);
-                        if (dataGridView.RowCount != nOP) {
-                            int add = nOP - dataGridView.RowCount;
-                            for (int i = 0; i < add; i++) {
-                                // TODO DefaultNamen raus!
-                                dataGridView.Rows.Add("Player Red " + (i + 1), "Player Blue " + (i + 1));
-                            }
-                        }
-                    } catch (Exception ex) {
-                        MessageBox.Show(ex.Message, "Fehler!");
-                    }
-                    tabMainControl.SelectedIndex = 1;
-                    currentSetupStatus++;
-                } else {
-                    dataGridView.Enabled = false;
-                    tabMainControl.SelectedIndex = 2;
-                    currentSetupStatus += 2;
-                }
-
-            } else if (tabMainControl.SelectedIndex == 1) {
-                if (gridCheck()) {
-                    tabMainControl.SelectedIndex = 2;
-                    currentSetupStatus++;
-                }
-            } else if (tabMainControl.SelectedIndex == 2) {
-                tabMainControl.SelectedIndex = 3;
-                currentSetupStatus++;
-                readyToPlay();
-                playGame();
-            } else if (tabMainControl.SelectedIndex == 3) {
-                playGame();
-            }
-        }
-
-        private void btnShowQuestionClick(object sender, EventArgs e) {
-            Monitor.setQuestion(lblQuestion.Text.ToString());
-        }
-
-        private void btnMaximizeClick(object sender, EventArgs e) {
-            if (!maximus) {
-                Monitor.maximize();
-                Monitor.newSize();
-                maximus = true;
-                btnMaximize.Text = "Minimieren";
-            } else {
-                Monitor.minimize();
-                Monitor.newSize();
-                maximus = false;
-                btnMaximize.Text = "Maximieren";
-            }
-        }
-
-        private void changePoints_Click(object sender, EventArgs e) {
-
-            using (ChangePoints ptChange = new ChangePoints()) {
-                ptChange.injectGameMonitor(Monitor);
-                ptChange.StartPosition = FormStartPosition.CenterParent;
-                ptChange.ShowDialog(this);
-            }
-
-
-        }
     }
-
 }
