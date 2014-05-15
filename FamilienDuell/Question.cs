@@ -8,12 +8,6 @@ using System.Diagnostics;
 namespace FamilienDuell
 {
 
-    public struct Answer
-    {
-        public string title;
-        public int quantity;
-    }
-
     class Question
     {
 
@@ -62,11 +56,11 @@ namespace FamilienDuell
                             break;
 
                         case "title":
-                            bufferAnswer.title = reader.ReadElementContentAsString();
+                            bufferAnswer.setTitle(reader.ReadElementContentAsString());
                             break;
 
                         case "quantity":
-                            bufferAnswer.quantity = reader.ReadElementContentAsInt();
+                            bufferAnswer.setQuantity(reader.ReadElementContentAsInt());
                             break;
                     }
                 }

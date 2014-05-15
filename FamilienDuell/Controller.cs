@@ -428,11 +428,11 @@ namespace FamilienDuell {
                 Control quantity = this.Controls.Find("lblQuantity" + iteration.ToString(), true).Single();
 
                 if (button is Button) {
-                    button.Text = answer.title;
+                    button.Text = answer.getTitle();
                 }
 
                 if (quantity is Label) {
-                    quantity.Text = answer.quantity.ToString();
+                    quantity.Text = answer.getQuantityAsString();
                 }
             }
 
