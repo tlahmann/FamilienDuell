@@ -69,7 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Answer.cs" />
-    <Compile Include="AnswerResolver.cs" />
     <Compile Include="ChangePoints.cs">
       <SubType>Form</SubType>
     </Compile>
