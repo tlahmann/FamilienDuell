@@ -29,27 +29,14 @@ namespace FamilienDuell {
         // initialize monitor
         GameMonitor Monitor = new GameMonitor();
 
-        // clientid for server
-        string clientId = "asd"; // what do we need this for?
+        // clientid for server to identify client and match question history
+        string clientId;
 
-        //static string randString(Int32 len) {
-        //    string text = "";
-        //    System.Random random = new System.Random();
-        //    for (Int32 i = 0; i < len; i++) {
-        //        Int32 Number = Convert.ToInt32(Math.Floor(58 * random.NextDouble() + 65));
-        //        char x = Convert.ToChar(Number);
-        //        if (x > 90 && x < 97) {
-        //            i--;
-        //            continue;
-        //        } else {
-        //            text += x;
-        //        }
-        //    }
-        //    return text;
-        //}
 
         public Main() {
             InitializeComponent();
+
+            this.clientId = "asd"; // TODO: switch back to Main.randString(16); (web-backend doesn't understand dynamic IDs yet)
 
             txtGameTitle.TextChanged += new EventHandler(this.textGameTitleChanged);
             txtTeam1.TextChanged += new EventHandler(this.textTeamsChanged);
@@ -471,5 +458,23 @@ namespace FamilienDuell {
         }
 
         #endregion
+
+        static string randString(Int32 len) {
+            string text = "";
+            System.Random random = new System.Random();
+            for (Int32 i = 0; i < len; i++) {
+                Int32 Number = Convert.ToInt32(Math.Floor(58 * random.NextDouble() + 65));
+                char x = Convert.ToChar(Number);
+                if (x > 90 && x < 97) {
+                    i--;
+                    continue;
+                } else {
+                    text += x;
+                }
+            }
+            return text;
+        }
+
     }
+
 }
