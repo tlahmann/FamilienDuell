@@ -51,6 +51,12 @@ namespace FamilienDuell
                             if (reader.NodeType == XmlNodeType.Element) {
                                 bufferAnswer = new Answer();
                             } else if (reader.NodeType == XmlNodeType.EndElement) {
+
+                                // If this is the first element we are adding, it's our top answer
+                                if (this.answers.Count == 0) {
+                                    bufferAnswer.markAsTopAnswer();
+                                }
+
                                 this.answers.Add(bufferAnswer);
                             }
                             break;
