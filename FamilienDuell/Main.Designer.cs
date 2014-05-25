@@ -77,6 +77,13 @@
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.btnWrong = new System.Windows.Forms.Button();
             this.changePoints = new System.Windows.Forms.Button();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblCtrlTm1Pt = new System.Windows.Forms.Label();
+            this.lblCtrlTm1Pts = new System.Windows.Forms.Label();
+            this.lblCtrlRdPt = new System.Windows.Forms.Label();
+            this.lblCtrlTm2Pt = new System.Windows.Forms.Label();
+            this.lblCtrlTm2Pts = new System.Windows.Forms.Label();
+            this.lblCtrlRdPts = new System.Windows.Forms.Label();
             this.tabQuests = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabPlayers = new System.Windows.Forms.TabPage();
@@ -105,13 +112,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblTeamAlert = new System.Windows.Forms.Label();
             this.tabMainControl = new System.Windows.Forms.TabControl();
-            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblCtrlTm1Pt = new System.Windows.Forms.Label();
-            this.lblCtrlTm1Pts = new System.Windows.Forms.Label();
-            this.lblCtrlRdPt = new System.Windows.Forms.Label();
-            this.lblCtrlTm2Pt = new System.Windows.Forms.Label();
-            this.lblCtrlTm2Pts = new System.Windows.Forms.Label();
-            this.lblCtrlRdPts = new System.Windows.Forms.Label();
             this.tabPlay.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -123,6 +123,7 @@
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
+            this.tableLayoutPanel17.SuspendLayout();
             this.tabQuests.SuspendLayout();
             this.tabPlayers.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -136,7 +137,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             this.tabMainControl.SuspendLayout();
-            this.tableLayoutPanel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -512,7 +512,7 @@
             this.btnAnswer2.Size = new System.Drawing.Size(384, 30);
             this.btnAnswer2.TabIndex = 22;
             this.btnAnswer2.UseVisualStyleBackColor = true;
-            this.btnAnswer2.Click += new System.EventHandler(this.btnAnswer2Click);
+            this.btnAnswer2.Click += new System.EventHandler(this.btnResolveClick);
             // 
             // btnAnswer1
             // 
@@ -526,7 +526,7 @@
             this.btnAnswer1.Size = new System.Drawing.Size(384, 29);
             this.btnAnswer1.TabIndex = 16;
             this.btnAnswer1.UseVisualStyleBackColor = true;
-            this.btnAnswer1.Click += new System.EventHandler(this.btnAnswer1Click);
+            this.btnAnswer1.Click += new System.EventHandler(this.btnResolveClick);
             // 
             // lblQuantity6
             // 
@@ -553,7 +553,7 @@
             this.btnAnswer3.Size = new System.Drawing.Size(384, 30);
             this.btnAnswer3.TabIndex = 21;
             this.btnAnswer3.UseVisualStyleBackColor = true;
-            this.btnAnswer3.Click += new System.EventHandler(this.btnAnswer3Click);
+            this.btnAnswer3.Click += new System.EventHandler(this.btnResolveClick);
             // 
             // btnAnswer4
             // 
@@ -567,7 +567,7 @@
             this.btnAnswer4.Size = new System.Drawing.Size(384, 30);
             this.btnAnswer4.TabIndex = 20;
             this.btnAnswer4.UseVisualStyleBackColor = true;
-            this.btnAnswer4.Click += new System.EventHandler(this.btnAnswer4Click);
+            this.btnAnswer4.Click += new System.EventHandler(this.btnResolveClick);
             // 
             // lblQuantity5
             // 
@@ -594,7 +594,7 @@
             this.btnAnswer6.Size = new System.Drawing.Size(384, 31);
             this.btnAnswer6.TabIndex = 18;
             this.btnAnswer6.UseVisualStyleBackColor = true;
-            this.btnAnswer6.Click += new System.EventHandler(this.btnAnswer6Click);
+            this.btnAnswer6.Click += new System.EventHandler(this.btnResolveClick);
             // 
             // lblQuantity4
             // 
@@ -621,7 +621,7 @@
             this.btnAnswer5.Size = new System.Drawing.Size(384, 30);
             this.btnAnswer5.TabIndex = 19;
             this.btnAnswer5.UseVisualStyleBackColor = true;
-            this.btnAnswer5.Click += new System.EventHandler(this.btnAnswer5Click);
+            this.btnAnswer5.Click += new System.EventHandler(this.btnResolveClick);
             // 
             // lblQuantity3
             // 
@@ -819,382 +819,6 @@
             this.changePoints.UseVisualStyleBackColor = true;
             this.changePoints.Click += new System.EventHandler(this.changePointsClick);
             // 
-            // tabQuests
-            // 
-            this.tabQuests.Controls.Add(this.checkBox1);
-            this.tabQuests.Location = new System.Drawing.Point(4, 22);
-            this.tabQuests.Name = "tabQuests";
-            this.tabQuests.Padding = new System.Windows.Forms.Padding(3);
-            this.tabQuests.Size = new System.Drawing.Size(602, 374);
-            this.tabQuests.TabIndex = 1;
-            this.tabQuests.Text = "Fragen";
-            this.tabQuests.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(27, 26);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(255, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Beziehe Fragen automatisch von dbeuchert.com";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // tabPlayers
-            // 
-            this.tabPlayers.Controls.Add(this.panel1);
-            this.tabPlayers.Location = new System.Drawing.Point(4, 22);
-            this.tabPlayers.Name = "tabPlayers";
-            this.tabPlayers.Size = new System.Drawing.Size(602, 374);
-            this.tabPlayers.TabIndex = 4;
-            this.tabPlayers.Text = "Spielernamen";
-            this.tabPlayers.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.dataGridView);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(596, 368);
-            this.panel1.TabIndex = 1;
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToResizeColumns = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Team1,
-            this.Team2});
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(596, 368);
-            this.dataGridView.TabIndex = 0;
-            // 
-            // Team1
-            // 
-            this.Team1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Team1.HeaderText = "Team 1";
-            this.Team1.Name = "Team1";
-            // 
-            // Team2
-            // 
-            this.Team2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Team2.HeaderText = "Team 2";
-            this.Team2.Name = "Team2";
-            // 
-            // tabMainSettings
-            // 
-            this.tabMainSettings.Controls.Add(this.tableLayoutPanel1);
-            this.tabMainSettings.Controls.Add(this.lblTeamAlert);
-            this.tabMainSettings.Location = new System.Drawing.Point(4, 22);
-            this.tabMainSettings.Name = "tabMainSettings";
-            this.tabMainSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMainSettings.Size = new System.Drawing.Size(602, 374);
-            this.tabMainSettings.TabIndex = 0;
-            this.tabMainSettings.Text = "Spieleinstellungen";
-            this.tabMainSettings.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 6);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(590, 362);
-            this.tableLayoutPanel1.TabIndex = 9;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtGameTitle, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(584, 114);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 3);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Spieltitel";
-            // 
-            // txtGameTitle
-            // 
-            this.txtGameTitle.AutoCompleteCustomSource.AddRange(new string[] {
-            "FamilienDuell",
-            "Chaos Familien Duell",
-            "SchülerDuell",
-            "PartyDuell"});
-            this.txtGameTitle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtGameTitle.Location = new System.Drawing.Point(3, 60);
-            this.txtGameTitle.Name = "txtGameTitle";
-            this.txtGameTitle.Size = new System.Drawing.Size(259, 20);
-            this.txtGameTitle.TabIndex = 1;
-            this.txtGameTitle.Text = "DefaultGameName";
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtTeam1, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.txtTeam2, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lblTeamCheck, 2, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 123);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(584, 114);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Teamnamen";
-            // 
-            // txtTeam1
-            // 
-            this.txtTeam1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTeam1.Enabled = false;
-            this.txtTeam1.Location = new System.Drawing.Point(3, 60);
-            this.txtTeam1.Name = "txtTeam1";
-            this.txtTeam1.Size = new System.Drawing.Size(271, 20);
-            this.txtTeam1.TabIndex = 2;
-            this.txtTeam1.Text = "Team Blau";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(280, 60);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "vs.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtTeam2
-            // 
-            this.txtTeam2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTeam2.Enabled = false;
-            this.txtTeam2.Location = new System.Drawing.Point(310, 60);
-            this.txtTeam2.Name = "txtTeam2";
-            this.txtTeam2.Size = new System.Drawing.Size(271, 20);
-            this.txtTeam2.TabIndex = 3;
-            this.txtTeam2.Text = "Team Rot";
-            // 
-            // lblTeamCheck
-            // 
-            this.lblTeamCheck.AutoSize = true;
-            this.lblTeamCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeamCheck.ForeColor = System.Drawing.Color.Red;
-            this.lblTeamCheck.Location = new System.Drawing.Point(310, 3);
-            this.lblTeamCheck.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.lblTeamCheck.Name = "lblTeamCheck";
-            this.lblTeamCheck.Size = new System.Drawing.Size(0, 16);
-            this.lblTeamCheck.TabIndex = 4;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel8, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 243);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(584, 116);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.numericUpDown1, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(292, 34);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(292, 46);
-            this.tableLayoutPanel5.TabIndex = 12;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown1.Enabled = false;
-            this.numericUpDown1.Location = new System.Drawing.Point(195, 3);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(94, 20);
-            this.numericUpDown1.TabIndex = 12;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 3);
-            this.label18.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(128, 13);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Anzahl Spieler (pro Team)";
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.cbSounds, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.cbPlayernames, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 37);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(286, 40);
-            this.tableLayoutPanel8.TabIndex = 13;
-            // 
-            // cbSounds
-            // 
-            this.cbSounds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSounds.AutoSize = true;
-            this.cbSounds.Enabled = false;
-            this.cbSounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSounds.Location = new System.Drawing.Point(173, 3);
-            this.cbSounds.Name = "cbSounds";
-            this.cbSounds.Size = new System.Drawing.Size(110, 17);
-            this.cbSounds.TabIndex = 5;
-            this.cbSounds.Text = "Sounds abspielen";
-            this.cbSounds.UseVisualStyleBackColor = true;
-            // 
-            // cbPlayernames
-            // 
-            this.cbPlayernames.AutoSize = true;
-            this.cbPlayernames.Location = new System.Drawing.Point(3, 3);
-            this.cbPlayernames.Name = "cbPlayernames";
-            this.cbPlayernames.Size = new System.Drawing.Size(90, 17);
-            this.cbPlayernames.TabIndex = 6;
-            this.cbPlayernames.Text = "Spielernamen";
-            this.cbPlayernames.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Optionen";
-            // 
-            // lblTeamAlert
-            // 
-            this.lblTeamAlert.AutoSize = true;
-            this.lblTeamAlert.ForeColor = System.Drawing.Color.Red;
-            this.lblTeamAlert.Location = new System.Drawing.Point(245, 93);
-            this.lblTeamAlert.Name = "lblTeamAlert";
-            this.lblTeamAlert.Size = new System.Drawing.Size(0, 13);
-            this.lblTeamAlert.TabIndex = 8;
-            // 
-            // tabMainControl
-            // 
-            this.tabMainControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabMainControl.Controls.Add(this.tabMainSettings);
-            this.tabMainControl.Controls.Add(this.tabPlayers);
-            this.tabMainControl.Controls.Add(this.tabQuests);
-            this.tabMainControl.Controls.Add(this.tabPlay);
-            this.tabMainControl.Location = new System.Drawing.Point(12, 42);
-            this.tabMainControl.Name = "tabMainControl";
-            this.tabMainControl.SelectedIndex = 0;
-            this.tabMainControl.Size = new System.Drawing.Size(610, 460);
-            this.tabMainControl.TabIndex = 2;
-            // 
             // tableLayoutPanel17
             // 
             this.tableLayoutPanel17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1298,6 +922,382 @@
             this.lblCtrlRdPts.Text = "0";
             this.lblCtrlRdPts.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // tabQuests
+            // 
+            this.tabQuests.Controls.Add(this.checkBox1);
+            this.tabQuests.Location = new System.Drawing.Point(4, 22);
+            this.tabQuests.Name = "tabQuests";
+            this.tabQuests.Padding = new System.Windows.Forms.Padding(3);
+            this.tabQuests.Size = new System.Drawing.Size(602, 434);
+            this.tabQuests.TabIndex = 1;
+            this.tabQuests.Text = "Fragen";
+            this.tabQuests.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(27, 26);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(255, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Beziehe Fragen automatisch von dbeuchert.com";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // tabPlayers
+            // 
+            this.tabPlayers.Controls.Add(this.panel1);
+            this.tabPlayers.Location = new System.Drawing.Point(4, 22);
+            this.tabPlayers.Name = "tabPlayers";
+            this.tabPlayers.Size = new System.Drawing.Size(602, 434);
+            this.tabPlayers.TabIndex = 4;
+            this.tabPlayers.Text = "Spielernamen";
+            this.tabPlayers.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.dataGridView);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(596, 428);
+            this.panel1.TabIndex = 1;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Team1,
+            this.Team2});
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(596, 428);
+            this.dataGridView.TabIndex = 0;
+            // 
+            // Team1
+            // 
+            this.Team1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Team1.HeaderText = "Team 1";
+            this.Team1.Name = "Team1";
+            // 
+            // Team2
+            // 
+            this.Team2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Team2.HeaderText = "Team 2";
+            this.Team2.Name = "Team2";
+            // 
+            // tabMainSettings
+            // 
+            this.tabMainSettings.Controls.Add(this.tableLayoutPanel1);
+            this.tabMainSettings.Controls.Add(this.lblTeamAlert);
+            this.tabMainSettings.Location = new System.Drawing.Point(4, 22);
+            this.tabMainSettings.Name = "tabMainSettings";
+            this.tabMainSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMainSettings.Size = new System.Drawing.Size(602, 434);
+            this.tabMainSettings.TabIndex = 0;
+            this.tabMainSettings.Text = "Spieleinstellungen";
+            this.tabMainSettings.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(590, 422);
+            this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtGameTitle, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(584, 134);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Spieltitel";
+            // 
+            // txtGameTitle
+            // 
+            this.txtGameTitle.AutoCompleteCustomSource.AddRange(new string[] {
+            "FamilienDuell",
+            "Chaos Familien Duell",
+            "SchülerDuell",
+            "PartyDuell"});
+            this.txtGameTitle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtGameTitle.Location = new System.Drawing.Point(3, 70);
+            this.txtGameTitle.Name = "txtGameTitle";
+            this.txtGameTitle.Size = new System.Drawing.Size(259, 20);
+            this.txtGameTitle.TabIndex = 1;
+            this.txtGameTitle.Text = "DefaultGameName";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtTeam1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtTeam2, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblTeamCheck, 2, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 143);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(584, 134);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Teamnamen";
+            // 
+            // txtTeam1
+            // 
+            this.txtTeam1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTeam1.Enabled = false;
+            this.txtTeam1.Location = new System.Drawing.Point(3, 70);
+            this.txtTeam1.Name = "txtTeam1";
+            this.txtTeam1.Size = new System.Drawing.Size(271, 20);
+            this.txtTeam1.TabIndex = 2;
+            this.txtTeam1.Text = "Team Blau";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Location = new System.Drawing.Point(280, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "vs.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtTeam2
+            // 
+            this.txtTeam2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTeam2.Enabled = false;
+            this.txtTeam2.Location = new System.Drawing.Point(310, 70);
+            this.txtTeam2.Name = "txtTeam2";
+            this.txtTeam2.Size = new System.Drawing.Size(271, 20);
+            this.txtTeam2.TabIndex = 3;
+            this.txtTeam2.Text = "Team Rot";
+            // 
+            // lblTeamCheck
+            // 
+            this.lblTeamCheck.AutoSize = true;
+            this.lblTeamCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTeamCheck.ForeColor = System.Drawing.Color.Red;
+            this.lblTeamCheck.Location = new System.Drawing.Point(310, 3);
+            this.lblTeamCheck.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.lblTeamCheck.Name = "lblTeamCheck";
+            this.lblTeamCheck.Size = new System.Drawing.Size(0, 16);
+            this.lblTeamCheck.TabIndex = 4;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel8, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 283);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(584, 136);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.numericUpDown1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label18, 0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(292, 40);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(292, 54);
+            this.tableLayoutPanel5.TabIndex = 12;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDown1.Enabled = false;
+            this.numericUpDown1.Location = new System.Drawing.Point(195, 3);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(94, 20);
+            this.numericUpDown1.TabIndex = 12;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 3);
+            this.label18.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(128, 13);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Anzahl Spieler (pro Team)";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.cbSounds, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.cbPlayernames, 0, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 43);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(286, 48);
+            this.tableLayoutPanel8.TabIndex = 13;
+            // 
+            // cbSounds
+            // 
+            this.cbSounds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSounds.AutoSize = true;
+            this.cbSounds.Enabled = false;
+            this.cbSounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSounds.Location = new System.Drawing.Point(173, 3);
+            this.cbSounds.Name = "cbSounds";
+            this.cbSounds.Size = new System.Drawing.Size(110, 17);
+            this.cbSounds.TabIndex = 5;
+            this.cbSounds.Text = "Sounds abspielen";
+            this.cbSounds.UseVisualStyleBackColor = true;
+            // 
+            // cbPlayernames
+            // 
+            this.cbPlayernames.AutoSize = true;
+            this.cbPlayernames.Location = new System.Drawing.Point(3, 3);
+            this.cbPlayernames.Name = "cbPlayernames";
+            this.cbPlayernames.Size = new System.Drawing.Size(90, 17);
+            this.cbPlayernames.TabIndex = 6;
+            this.cbPlayernames.Text = "Spielernamen";
+            this.cbPlayernames.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Optionen";
+            // 
+            // lblTeamAlert
+            // 
+            this.lblTeamAlert.AutoSize = true;
+            this.lblTeamAlert.ForeColor = System.Drawing.Color.Red;
+            this.lblTeamAlert.Location = new System.Drawing.Point(245, 93);
+            this.lblTeamAlert.Name = "lblTeamAlert";
+            this.lblTeamAlert.Size = new System.Drawing.Size(0, 13);
+            this.lblTeamAlert.TabIndex = 8;
+            // 
+            // tabMainControl
+            // 
+            this.tabMainControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabMainControl.Controls.Add(this.tabMainSettings);
+            this.tabMainControl.Controls.Add(this.tabPlayers);
+            this.tabMainControl.Controls.Add(this.tabQuests);
+            this.tabMainControl.Controls.Add(this.tabPlay);
+            this.tabMainControl.Location = new System.Drawing.Point(12, 42);
+            this.tabMainControl.Name = "tabMainControl";
+            this.tabMainControl.SelectedIndex = 0;
+            this.tabMainControl.Size = new System.Drawing.Size(610, 460);
+            this.tabMainControl.TabIndex = 2;
+            // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1330,6 +1330,8 @@
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel14.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel17.PerformLayout();
             this.tabQuests.ResumeLayout(false);
             this.tabQuests.PerformLayout();
             this.tabPlayers.ResumeLayout(false);
@@ -1350,8 +1352,6 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tabMainControl.ResumeLayout(false);
-            this.tableLayoutPanel17.ResumeLayout(false);
-            this.tableLayoutPanel17.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

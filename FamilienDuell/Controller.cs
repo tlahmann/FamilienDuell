@@ -266,61 +266,27 @@ namespace FamilienDuell {
             btnShowQuestion.Enabled = false;
         }
 
-        // answers
-        private void btnAnswer1Click(object sender, EventArgs e) {
-            playSound(2);
-            btnAnswer1.Enabled = false;
+        private void btnResolveClick(object sender, EventArgs e) {
+
+            Button button = (Button)sender;
+            if (button.Tag.GetType() != typeof(Answer)) {
+                throw new Exception("Answer button has been tagged with '" + button.Tag.GetType().Name + "', expected instance of Answer");
+            }
+
+            Answer answer = (Answer)button.Tag;
             btnGetQuestion.Enabled = false;
-            cbTeamRound.Checked = true;
-            //togglePointButtons();
-            Monitor.showResult(1, btnAnswer1.Text, lblQuantity1.Text);
-            ctrlWritePoints(lblQuantity1.Text, lblCtrlRdPts.Text);
+            button.Enabled = false;
+
+            if (answer.isTopAnswer()) {
+                cbTeamRound.Checked = true;
+            }
+
+            ctrlWritePoints(answer.getQuantityAsString(), lblCtrlRdPts.Text);
+            Monitor.showResult(answer.getIndex(), answer.getTitle(), answer.getQuantityAsString());
+            playSound(2);
+
         }
 
-        private void btnAnswer2Click(object sender, EventArgs e) {
-            playSound(2);
-            btnAnswer2.Enabled = false;
-            btnGetQuestion.Enabled = false;
-            //togglePointButtons();
-            Monitor.showResult(2, btnAnswer2.Text, lblQuantity2.Text);
-            ctrlWritePoints(lblQuantity2.Text, lblCtrlRdPts.Text);
-        }
-
-        private void btnAnswer3Click(object sender, EventArgs e) {
-            playSound(2);
-            btnGetQuestion.Enabled = false;
-            btnAnswer3.Enabled = false;
-            //togglePointButtons();
-            Monitor.showResult(3, btnAnswer3.Text, lblQuantity3.Text);
-            ctrlWritePoints(lblQuantity3.Text, lblCtrlRdPts.Text);
-        }
-
-        private void btnAnswer4Click(object sender, EventArgs e) {
-            playSound(2);
-            btnAnswer4.Enabled = false;
-            //togglePointButtons();
-            btnGetQuestion.Enabled = false;
-            Monitor.showResult(4, btnAnswer4.Text, lblQuantity4.Text);
-            ctrlWritePoints(lblQuantity4.Text, lblCtrlRdPts.Text);
-        }
-
-        private void btnAnswer5Click(object sender, EventArgs e) {
-            playSound(2);
-            btnAnswer5.Enabled = false;
-            //togglePointButtons();
-            btnGetQuestion.Enabled = false;
-            Monitor.showResult(5, btnAnswer5.Text, lblQuantity5.Text);
-            ctrlWritePoints(lblQuantity5.Text, lblCtrlRdPts.Text);
-        }
-
-        private void btnAnswer6Click(object sender, EventArgs e) {
-            playSound(2);
-            btnAnswer6.Enabled = false;
-            //togglePointButtons();
-            btnGetQuestion.Enabled = false;
-            Monitor.showResult(6, btnAnswer6.Text, lblQuantity6.Text);
-            ctrlWritePoints(lblQuantity6.Text, lblCtrlRdPts.Text);
-        }
 
         private void btnTeam1Click(object sender, EventArgs e) {
             Monitor.winnerPoints(2);
@@ -408,14 +374,19 @@ namespace FamilienDuell {
             lblQuestion.Text = question.getQuestion();
 
             int iteration = 0;
+            ControlCollection controls = this.Controls as ControlCollection;
+
             foreach (Answer answer in question.getAnswers()) {
+
                 iteration++;
-                ControlCollection controls = this.Controls as ControlCollection;
+                answer.setIndex(iteration);
+
                 Control button = this.Controls.Find("btnAnswer" + iteration.ToString(), true).Single();
                 Control quantity = this.Controls.Find("lblQuantity" + iteration.ToString(), true).Single();
 
                 if (button is Button) {
                     button.Text = answer.getTitle();
+                    button.Tag = answer;
                 }
 
                 if (quantity is Label) {
