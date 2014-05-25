@@ -9,9 +9,13 @@ namespace FamilienDuell {
         protected string title;
         protected int quantity;
 
+        protected bool topAnswer = false;
+        protected int index;
+
         protected Label answerField;
         protected Label quantityField;
 
+        #region Setters
         public Answer setTitle(string title) {
             this.title = title;
             return this;
@@ -22,6 +26,28 @@ namespace FamilienDuell {
             return this;
         }
 
+        public Answer setAnswerField(Label answerField) {
+            this.answerField = answerField;
+            return this;
+        }
+
+        public Answer setQuantityField(Label quantityField) {
+            this.quantityField = quantityField;
+            return this;
+        }
+
+        public Answer markAsTopAnswer() {
+            this.topAnswer = true;
+            return this;
+        }
+
+        public Answer setIndex(int index) {
+            this.index = index;
+            return this;
+        }
+        #endregion
+
+        #region Getters
         public string getTitle() {
             return this.title;
         }
@@ -33,5 +59,14 @@ namespace FamilienDuell {
         public string getQuantityAsString() {
             return this.quantity.ToString();
         }
+
+        public bool isTopAnswer() {
+            return this.topAnswer;
+        }
+
+        public int getIndex() {
+            return this.index;
+        }
+        #endregion
     }
 }
