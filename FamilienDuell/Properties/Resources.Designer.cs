@@ -59,5 +59,15 @@ namespace FamilienDuell.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] PressStart2P {
+            get {
+                object obj = ResourceManager.GetObject("PressStart2P", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

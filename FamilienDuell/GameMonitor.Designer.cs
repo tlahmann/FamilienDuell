@@ -83,7 +83,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuestion.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.ForeColor = System.Drawing.Color.Lime;
             this.lblQuestion.Location = new System.Drawing.Point(4, 0);
             this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -99,7 +99,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTeam1.BackColor = System.Drawing.Color.Transparent;
-            this.lblTeam1.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTeam1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTeam1.ForeColor = System.Drawing.Color.Blue;
             this.lblTeam1.Location = new System.Drawing.Point(3, 0);
             this.lblTeam1.Name = "lblTeam1";
@@ -114,7 +114,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPointsTeam1.BackColor = System.Drawing.Color.Transparent;
-            this.lblPointsTeam1.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointsTeam1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointsTeam1.ForeColor = System.Drawing.Color.Blue;
             this.lblPointsTeam1.Location = new System.Drawing.Point(320, 0);
             this.lblPointsTeam1.Name = "lblPointsTeam1";
@@ -128,7 +128,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPointsTeam2.BackColor = System.Drawing.Color.Transparent;
-            this.lblPointsTeam2.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointsTeam2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointsTeam2.ForeColor = System.Drawing.Color.Red;
             this.lblPointsTeam2.Location = new System.Drawing.Point(620, 0);
             this.lblPointsTeam2.Name = "lblPointsTeam2";
@@ -143,7 +143,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTeam2.BackColor = System.Drawing.Color.Transparent;
-            this.lblTeam2.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTeam2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTeam2.ForeColor = System.Drawing.Color.Red;
             this.lblTeam2.Location = new System.Drawing.Point(770, 0);
             this.lblTeam2.Name = "lblTeam2";
@@ -157,7 +157,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRoundPoints.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoundPoints.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoundPoints.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoundPoints.ForeColor = System.Drawing.Color.Lime;
             this.lblRoundPoints.Location = new System.Drawing.Point(470, 0);
             this.lblRoundPoints.Name = "lblRoundPoints";
@@ -170,7 +170,7 @@
             // 
             this.lblWrong2.BackColor = System.Drawing.Color.Transparent;
             this.lblWrong2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWrong2.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrong2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWrong2.ForeColor = System.Drawing.Color.Red;
             this.lblWrong2.Location = new System.Drawing.Point(3, 0);
             this.lblWrong2.Name = "lblWrong2";
@@ -191,7 +191,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswer1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswer1.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer1.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswer1.Location = new System.Drawing.Point(203, 0);
             this.lblAnswer1.Name = "lblAnswer1";
@@ -205,7 +205,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswer2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswer2.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer2.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswer2.Location = new System.Drawing.Point(203, 65);
             this.lblAnswer2.Name = "lblAnswer2";
@@ -219,7 +219,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswer3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswer3.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer3.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswer3.Location = new System.Drawing.Point(203, 130);
             this.lblAnswer3.Name = "lblAnswer3";
@@ -233,7 +233,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswer4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswer4.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer4.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswer4.Location = new System.Drawing.Point(203, 197);
             this.lblAnswer4.Name = "lblAnswer4";
@@ -247,7 +247,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswer6.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswer6.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer6.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer6.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswer6.Location = new System.Drawing.Point(203, 319);
             this.lblAnswer6.Name = "lblAnswer6";
@@ -261,7 +261,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswer5.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswer5.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer5.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer5.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswer5.Location = new System.Drawing.Point(203, 254);
             this.lblAnswer5.Name = "lblAnswer5";
@@ -280,7 +280,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerPts1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerPts1.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerPts1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts1.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerPts1.Location = new System.Drawing.Point(887, 0);
             this.lblAnswerPts1.Name = "lblAnswerPts1";
@@ -295,7 +295,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerPts6.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerPts6.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerPts6.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts6.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerPts6.Location = new System.Drawing.Point(887, 319);
             this.lblAnswerPts6.Name = "lblAnswerPts6";
@@ -310,7 +310,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerPts5.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerPts5.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerPts5.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts5.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerPts5.Location = new System.Drawing.Point(887, 254);
             this.lblAnswerPts5.Name = "lblAnswerPts5";
@@ -325,7 +325,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerPts4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerPts4.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerPts4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts4.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerPts4.Location = new System.Drawing.Point(887, 197);
             this.lblAnswerPts4.Name = "lblAnswerPts4";
@@ -340,7 +340,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerPts3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerPts3.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerPts3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts3.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerPts3.Location = new System.Drawing.Point(887, 130);
             this.lblAnswerPts3.Name = "lblAnswerPts3";
@@ -355,7 +355,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerPts2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerPts2.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerPts2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts2.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerPts2.Location = new System.Drawing.Point(887, 65);
             this.lblAnswerPts2.Name = "lblAnswerPts2";
@@ -459,7 +459,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerNo6.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo6.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo6.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo6.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerNo6.Location = new System.Drawing.Point(3, 319);
             this.lblAnswerNo6.Name = "lblAnswerNo6";
@@ -474,7 +474,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerNo5.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo5.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo5.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo5.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerNo5.Location = new System.Drawing.Point(3, 254);
             this.lblAnswerNo5.Name = "lblAnswerNo5";
@@ -489,7 +489,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerNo4.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo4.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo4.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerNo4.Location = new System.Drawing.Point(3, 197);
             this.lblAnswerNo4.Name = "lblAnswerNo4";
@@ -504,7 +504,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerNo3.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo3.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo3.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerNo3.Location = new System.Drawing.Point(3, 130);
             this.lblAnswerNo3.Name = "lblAnswerNo3";
@@ -519,7 +519,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerNo2.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo2.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo2.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerNo2.Location = new System.Drawing.Point(3, 65);
             this.lblAnswerNo2.Name = "lblAnswerNo2";
@@ -534,7 +534,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnswerNo1.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnswerNo1.Font = new System.Drawing.Font("Press Start 2P", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswerNo1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo1.ForeColor = System.Drawing.Color.Lime;
             this.lblAnswerNo1.Location = new System.Drawing.Point(3, 0);
             this.lblAnswerNo1.Name = "lblAnswerNo1";
@@ -603,7 +603,7 @@
             // 
             this.lblWrong3.BackColor = System.Drawing.Color.Transparent;
             this.lblWrong3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWrong3.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrong3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWrong3.ForeColor = System.Drawing.Color.Red;
             this.lblWrong3.Location = new System.Drawing.Point(141, 0);
             this.lblWrong3.Name = "lblWrong3";
@@ -617,7 +617,7 @@
             // 
             this.lblWrong1.BackColor = System.Drawing.Color.Transparent;
             this.lblWrong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWrong1.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrong1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWrong1.ForeColor = System.Drawing.Color.Red;
             this.lblWrong1.Location = new System.Drawing.Point(72, 0);
             this.lblWrong1.Name = "lblWrong1";
@@ -631,7 +631,7 @@
             // 
             this.lblPlayerBlue.AutoSize = true;
             this.lblPlayerBlue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPlayerBlue.Font = new System.Drawing.Font("Press Start 2P", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerBlue.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerBlue.Location = new System.Drawing.Point(3, 0);
             this.lblPlayerBlue.Name = "lblPlayerBlue";
             this.lblPlayerBlue.Size = new System.Drawing.Size(425, 54);
@@ -644,7 +644,7 @@
             // 
             this.lblPlayerRed.AutoSize = true;
             this.lblPlayerRed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPlayerRed.Font = new System.Drawing.Font("Press Start 2P", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerRed.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerRed.Location = new System.Drawing.Point(649, 0);
             this.lblPlayerRed.Name = "lblPlayerRed";
             this.lblPlayerRed.Size = new System.Drawing.Size(426, 54);
@@ -661,7 +661,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1090, 594);
             this.Controls.Add(this.tableLayoutPanel1);
