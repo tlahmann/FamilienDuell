@@ -14,7 +14,6 @@ using System.IO;
 
 namespace FamilienDuell {
     public partial class GameMonitor : Form {
-        int waiting = 0;
         int wrongs = 0;
 
         int answerTo;
@@ -24,10 +23,8 @@ namespace FamilienDuell {
         int targetTeam;
         int targetTeamDel;
         int targetValDel;
-        String[] targetText;
 
         private static PrivateFontCollection myFonts;
-        private static IntPtr fontBuffer;
 
         public GameMonitor() {
             InitializeComponent();
@@ -90,7 +87,7 @@ namespace FamilienDuell {
                                 setSize(f30, f40);
                             }
                         }
-                    } catch (Exception e) {}
+                    } catch (Exception) {}
             
                 }
 
@@ -160,6 +157,11 @@ namespace FamilienDuell {
         }
 
         public void gameStart() {
+            this.resetMonitor();
+            lblQuestion.Text = "Runde #1";
+        }
+
+        public void resetMonitor() {
             lblWrong2.Visible = false;
             //lblTeam1.Visible = true;
             //lblTeam2.Visible = true;
@@ -178,12 +180,12 @@ namespace FamilienDuell {
             lblAnswerPts4.Visible = true;
             lblAnswerPts5.Visible = true;
             lblAnswerPts6.Visible = true;
-            lblAnswer1.Text = "................................................";
-            lblAnswer2.Text = "................................................";
-            lblAnswer3.Text = "................................................";
-            lblAnswer4.Text = "................................................";
-            lblAnswer5.Text = "................................................";
-            lblAnswer6.Text = "................................................";
+            lblAnswer1.Text = "............";
+            lblAnswer2.Text = "............";
+            lblAnswer3.Text = "............";
+            lblAnswer4.Text = "............";
+            lblAnswer5.Text = "............";
+            lblAnswer6.Text = "............";
             lblAnswerPts1.Text = "..";
             lblAnswerPts2.Text = "..";
             lblAnswerPts3.Text = "..";
@@ -191,36 +193,29 @@ namespace FamilienDuell {
             lblAnswerPts5.Text = "..";
             lblAnswerPts6.Text = "..";
             lblWrong2.Text = "";
-            lblQuestion.Text = "Runde #1";
         }
 
         public void nextRound(int roundNumber) {
-            lblWrong2.Visible = false;
+
+            this.resetMonitor();
+
+            lblQuestion.Text = "Runde #" + Convert.ToString(roundNumber);
             if (roundNumber > 1) {
                 lblAnswer6.Visible = false;
                 lblAnswerPts6.Visible = false;
+                lblAnswerNo6.Visible = false;
             }
             if (roundNumber > 2) {
                 lblAnswer5.Visible = false;
                 lblAnswerPts5.Visible = false;
+                lblAnswerNo5.Visible = false;
             }
             if (roundNumber > 3) {
                 lblAnswer4.Visible = false;
                 lblAnswerPts4.Visible = false;
+                lblAnswerNo4.Visible = false;
             }
 
-            lblQuestion.Text = "Runde #" + Convert.ToString(roundNumber);
-            lblAnswer1.Text = "................................................";
-            lblAnswer2.Text = "................................................";
-            lblAnswer3.Text = "................................................";
-            lblAnswer4.Text = "................................................";
-            lblAnswer5.Text = "................................................";
-            lblAnswerPts1.Text = "..";
-            lblAnswerPts2.Text = "..";
-            lblAnswerPts3.Text = "..";
-            lblAnswerPts4.Text = "..";
-            lblAnswerPts5.Text = "..";
-            lblWrong2.Text = "";
         }
 
         public bool makeWrong(bool isInTeamRound) {
@@ -258,7 +253,7 @@ namespace FamilienDuell {
             wrongs = 0;
         }
 
-        // point management
+        #region Point Management
         public bool newPoints(int team, int points) {
             if (team == 1) {
                 targetVal = Convert.ToInt32(lblRoundPoints.Text) + points;
@@ -320,72 +315,6 @@ namespace FamilienDuell {
 
         }
 
-        public void showResult(int answer, string text, string people) {
-            if (text.Length > 45) {
-                text = text.Substring(0, 45) + "...";
-            }
-            if (answer == 1) {
-                targetText = text.Select(c => c.ToString()).ToArray();
-                resultWriter.Enabled = true;
-                lblAnswerPts1.Visible = true;
-                lblAnswerPts1.Text = people;
-                //lblAnswerPts1.TextAlign = StringAlignment.Center;
-            }
-            else if (answer == 2) {
-                lblAnswer2.Text = text;
-                lblAnswerPts2.Visible = true;
-                lblAnswerPts2.Text = people;
-            }
-            else if (answer == 3) {
-                lblAnswer3.Text = text;
-                lblAnswerPts3.Visible = true;
-                lblAnswerPts3.Text = people;
-            }
-            else if (answer == 4) {
-                lblAnswer4.Text = text;
-                lblAnswerPts4.Visible = true;
-                lblAnswerPts4.Text = people;
-            }
-            else if (answer == 5) {
-                lblAnswer5.Text = text;
-                lblAnswerPts5.Visible = true;
-                lblAnswerPts5.Text = people;
-            }
-            else if (answer == 6) {
-                lblAnswer6.Text = text;
-                lblAnswerPts6.Visible = true;
-                lblAnswerPts6.Text = people;
-            }
-            if (answer > 0 & answer < 7) {
-                answerTo = answer;
-                quantity = people;
-                timerRight.Enabled = true;
-            }
-        }
-
-        private void showQuantity(object sender, EventArgs e) {
-            if (answerTo == 1) {
-                lblAnswerPts1.Text = quantity;
-            }
-            if (answerTo == 2) {
-                lblAnswerPts2.Text = quantity;
-            }
-            if (answerTo == 3) {
-                lblAnswerPts3.Text = quantity;
-            }
-            if (answerTo == 4) {
-                lblAnswerPts4.Text = quantity;
-            }
-            if (answerTo == 5) {
-                lblAnswerPts5.Text = quantity;
-            }
-            if (answerTo == 6) {
-                lblAnswerPts6.Text = quantity;
-            }
-            timerRight.Enabled = false;
-            newPoints(1, int.Parse(quantity));
-        }
-
         private void addPoints(object sender, EventArgs e) {
             if (targetTeam == 1) {
                 if (Convert.ToInt32(lblRoundPoints.Text) < targetVal) {
@@ -440,6 +369,67 @@ namespace FamilienDuell {
                 }
             }
         }
+        #endregion
+
+        #region Resolve Things
+        public void showResult(int answer, string text, string people) {
+            if (text.Length > 45) {
+                text = text.Substring(0, 45) + "...";
+            }
+            if (answer == 1) {
+                lblAnswer1.Text = text;
+                lblAnswerPts1.Visible = true;
+                lblAnswerPts1.Text = people;
+            } else if (answer == 2) {
+                lblAnswer2.Text = text;
+                lblAnswerPts2.Visible = true;
+                lblAnswerPts2.Text = people;
+            } else if (answer == 3) {
+                lblAnswer3.Text = text;
+                lblAnswerPts3.Visible = true;
+                lblAnswerPts3.Text = people;
+            } else if (answer == 4) {
+                lblAnswer4.Text = text;
+                lblAnswerPts4.Visible = true;
+                lblAnswerPts4.Text = people;
+            } else if (answer == 5) {
+                lblAnswer5.Text = text;
+                lblAnswerPts5.Visible = true;
+                lblAnswerPts5.Text = people;
+            } else if (answer == 6) {
+                lblAnswer6.Text = text;
+                lblAnswerPts6.Visible = true;
+                lblAnswerPts6.Text = people;
+            }
+            if (answer > 0 & answer < 7) {
+                answerTo = answer;
+                quantity = people;
+                timerRight.Enabled = true;
+            }
+        }
+
+        private void showQuantity(object sender, EventArgs e) {
+            if (answerTo == 1) {
+                lblAnswerPts1.Text = quantity;
+            }
+            if (answerTo == 2) {
+                lblAnswerPts2.Text = quantity;
+            }
+            if (answerTo == 3) {
+                lblAnswerPts3.Text = quantity;
+            }
+            if (answerTo == 4) {
+                lblAnswerPts4.Text = quantity;
+            }
+            if (answerTo == 5) {
+                lblAnswerPts5.Text = quantity;
+            }
+            if (answerTo == 6) {
+                lblAnswerPts6.Text = quantity;
+            }
+            timerRight.Enabled = false;
+            newPoints(1, int.Parse(quantity));
+        }
 
         public void writeResult(String[] text) {
             Debug.WriteLine(text.Length);
@@ -453,5 +443,6 @@ namespace FamilienDuell {
         private void resultWriter_Tick(object sender, EventArgs e) {
             //writeResult();
         }
+        #endregion
     }
 }
