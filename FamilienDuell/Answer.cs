@@ -9,6 +9,7 @@ namespace FamilienDuell {
         protected string title;
         protected int quantity;
 
+        protected bool resolved = false;
         protected bool topAnswer = false;
         protected int index;
 
@@ -41,6 +42,11 @@ namespace FamilienDuell {
             return this;
         }
 
+        public Answer markAsResolved() {
+            this.resolved = true;
+            return this;
+        }
+
         public Answer setIndex(int index) {
             this.index = index;
             return this;
@@ -62,6 +68,10 @@ namespace FamilienDuell {
 
         public bool isTopAnswer() {
             return this.topAnswer;
+        }
+
+        public bool isResolved() {
+            return this.resolved;
         }
 
         public int getIndex() {

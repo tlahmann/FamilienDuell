@@ -86,6 +86,16 @@ namespace FamilienDuell
 
         }
 
+        public bool isResolved() {
+            foreach (Answer answer in this.getAnswers()) {
+                if (answer.isResolved()) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public Question injectReaderObject(XmlTextReader reader)
         {
             this.reader = reader;
