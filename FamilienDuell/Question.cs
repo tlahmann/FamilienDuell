@@ -86,14 +86,15 @@ namespace FamilienDuell
 
         }
 
-        public bool isResolved() {
+        public bool isResolved(int dummyAnswers = 0) {
+            int unansweredQuestions = 0;
             foreach (Answer answer in this.getAnswers()) {
-                if (answer.isResolved()) {
-                    return true;
+                if (!answer.isResolved()) {
+                    unansweredQuestions++;
                 }
             }
 
-            return false;
+            return (unansweredQuestions <= dummyAnswers);
         }
 
         public Question injectReaderObject(XmlTextReader reader)
