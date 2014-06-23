@@ -39,42 +39,42 @@
             this.btnMinus3 = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnRound = new System.Windows.Forms.Button();
+            this.btnSet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbPoints
             // 
-            this.tbPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPoints.Location = new System.Drawing.Point(12, 70);
+            this.tbPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
+            this.tbPoints.Location = new System.Drawing.Point(14, 12);
             this.tbPoints.Name = "tbPoints";
-            this.tbPoints.ReadOnly = true;
-            this.tbPoints.Size = new System.Drawing.Size(155, 20);
+            this.tbPoints.Size = new System.Drawing.Size(155, 31);
             this.tbPoints.TabIndex = 0;
             this.tbPoints.Text = "0";
             this.tbPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnTm1
             // 
-            this.btnTm1.Location = new System.Drawing.Point(12, 41);
+            this.btnTm1.Location = new System.Drawing.Point(14, 154);
             this.btnTm1.Name = "btnTm1";
-            this.btnTm1.Size = new System.Drawing.Size(75, 23);
+            this.btnTm1.Size = new System.Drawing.Size(46, 23);
             this.btnTm1.TabIndex = 1;
-            this.btnTm1.Text = "Team 1";
+            this.btnTm1.Text = "T1";
             this.btnTm1.UseVisualStyleBackColor = true;
             this.btnTm1.Click += new System.EventHandler(this.btnTm1_Click);
             // 
             // btnTm2
             // 
-            this.btnTm2.Location = new System.Drawing.Point(92, 41);
+            this.btnTm2.Location = new System.Drawing.Point(67, 154);
             this.btnTm2.Name = "btnTm2";
-            this.btnTm2.Size = new System.Drawing.Size(75, 23);
+            this.btnTm2.Size = new System.Drawing.Size(49, 23);
             this.btnTm2.TabIndex = 2;
-            this.btnTm2.Text = "Team 2";
+            this.btnTm2.Text = "T2";
             this.btnTm2.UseVisualStyleBackColor = true;
             this.btnTm2.Click += new System.EventHandler(this.btnTm2_Click);
             // 
             // btnPlus1
             // 
-            this.btnPlus1.Location = new System.Drawing.Point(12, 96);
+            this.btnPlus1.Location = new System.Drawing.Point(14, 51);
             this.btnPlus1.Name = "btnPlus1";
             this.btnPlus1.Size = new System.Drawing.Size(75, 23);
             this.btnPlus1.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             // btnPlus2
             // 
-            this.btnPlus2.Location = new System.Drawing.Point(12, 125);
+            this.btnPlus2.Location = new System.Drawing.Point(14, 80);
             this.btnPlus2.Name = "btnPlus2";
             this.btnPlus2.Size = new System.Drawing.Size(75, 23);
             this.btnPlus2.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             // btnMinus1
             // 
-            this.btnMinus1.Location = new System.Drawing.Point(92, 96);
+            this.btnMinus1.Location = new System.Drawing.Point(94, 51);
             this.btnMinus1.Name = "btnMinus1";
             this.btnMinus1.Size = new System.Drawing.Size(75, 23);
             this.btnMinus1.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             // btnMinus2
             // 
-            this.btnMinus2.Location = new System.Drawing.Point(92, 125);
+            this.btnMinus2.Location = new System.Drawing.Point(94, 80);
             this.btnMinus2.Name = "btnMinus2";
             this.btnMinus2.Size = new System.Drawing.Size(75, 23);
             this.btnMinus2.TabIndex = 6;
@@ -114,7 +114,7 @@
             // 
             // btnPlus3
             // 
-            this.btnPlus3.Location = new System.Drawing.Point(12, 154);
+            this.btnPlus3.Location = new System.Drawing.Point(14, 109);
             this.btnPlus3.Name = "btnPlus3";
             this.btnPlus3.Size = new System.Drawing.Size(75, 23);
             this.btnPlus3.TabIndex = 7;
@@ -124,7 +124,7 @@
             // 
             // btnMinus3
             // 
-            this.btnMinus3.Location = new System.Drawing.Point(92, 154);
+            this.btnMinus3.Location = new System.Drawing.Point(94, 109);
             this.btnMinus3.Name = "btnMinus3";
             this.btnMinus3.Size = new System.Drawing.Size(75, 23);
             this.btnMinus3.TabIndex = 8;
@@ -134,29 +134,40 @@
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(12, 183);
+            this.btnApply.Location = new System.Drawing.Point(95, 183);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(155, 23);
+            this.btnApply.Size = new System.Drawing.Size(74, 23);
             this.btnApply.TabIndex = 9;
-            this.btnApply.Text = "Anwenden";
+            this.btnApply.Text = "Addieren";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // btnRound
             // 
-            this.btnRound.Location = new System.Drawing.Point(12, 12);
+            this.btnRound.Location = new System.Drawing.Point(122, 154);
             this.btnRound.Name = "btnRound";
-            this.btnRound.Size = new System.Drawing.Size(155, 23);
+            this.btnRound.Size = new System.Drawing.Size(47, 23);
             this.btnRound.TabIndex = 10;
-            this.btnRound.Text = "Rundenpunkte";
+            this.btnRound.Text = "RND";
             this.btnRound.UseVisualStyleBackColor = true;
             this.btnRound.Click += new System.EventHandler(this.btnRound_Click);
+            // 
+            // btnSet
+            // 
+            this.btnSet.Location = new System.Drawing.Point(14, 183);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(73, 23);
+            this.btnSet.TabIndex = 11;
+            this.btnSet.Text = "Setzen";
+            this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
             // ChangePoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(181, 218);
+            this.Controls.Add(this.btnSet);
             this.Controls.Add(this.btnRound);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.btnMinus3);
@@ -192,5 +203,6 @@
         private System.Windows.Forms.Button btnMinus3;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnRound;
+        private System.Windows.Forms.Button btnSet;
     }
 }

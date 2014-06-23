@@ -11,16 +11,16 @@ namespace FamilienDuell
 {
     public partial class ChangePoints : Form
     {
-        protected GameMonitor GameMonitor;
+        protected Main controller;
 
         public ChangePoints()
         {
             InitializeComponent();
         }
 
-        public void injectGameMonitor(GameMonitor GameMonitor)
+        public void injectController(Main controller)
         {
-            this.GameMonitor = GameMonitor;
+            this.controller = controller;
         }
 
         private void btnRound_Click(object sender, EventArgs e) {
@@ -98,11 +98,28 @@ namespace FamilienDuell
 
             if (team != 0) {
                 if (punkte >= 0)
-                    GameMonitor.newPoints(team, punkte);
+                    this.controller.newPoints(team, punkte);
                 else {
-                    GameMonitor.remPoints(team, Math.Abs(punkte));
+                    this.controller.remPoints(team, Math.Abs(punkte));
                 }
-                this.Close();
+            }
+        }
+
+        private void btnSet_Click(object sender, EventArgs e) {
+            int points = 0;
+            int team = 0;
+            try {points = Convert.ToInt16(tbPoints.Text);} catch (Exception) {}
+
+            if (!btnTm1.Enabled) {
+                team = 2;
+            } else if (!btnTm2.Enabled) {
+                team = 3;
+            } else if (!btnRound.Enabled) {
+                team = 1;
+            }
+
+            if (team != 0) {
+                this.controller.setPoints(team, points);
             }
         }
     }
