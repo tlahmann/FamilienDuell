@@ -36,8 +36,13 @@ namespace FamilienDuell {
                 myFonts = new PrivateFontCollection();
             }
 
-            string path = Application.StartupPath;
-            myFonts.AddFontFile(path + @"\\resources\\PressStart2P.ttf");
+            try {
+                string path = Application.StartupPath;
+                myFonts.AddFontFile(path + @"\\resources\\PressStart2P.ttf");
+            } catch (Exception e) {
+                MessageBox.Show("Error loading font: " + e.Message);
+                return;
+            }
 
             this.BackColor = Color.Black;
 
@@ -47,112 +52,102 @@ namespace FamilienDuell {
             newSize(800, 700);
         }
 
-        public void formResize(object sender, EventArgs e) {
-            newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
-        }
-
-        public void newSize(int breite, int hoehe) {
-            lblPlayerBlue.Visible = true;
-            lblPlayerRed.Visible = true;
-            lblPlayerBlue.Text = hoehe.ToString();
-            lblPlayerRed.Text = breite.ToString();
-
-            FontFamily fam = myFonts.Families[0];
-            if (hoehe <= 300) {
-                using (Font f15 = new Font(fam, 15)) {
-                    lblQuestion.Font = f15;
+        #region Responsive Action
+                public void formResize(object sender, EventArgs e) {
+                    newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
                 }
-            }
-            else if (hoehe <= 500) {
-                using (Font f15 = new Font(fam, 15))
-                using (Font f18 = new Font(fam, 18)) {
-                    setSize(f15, f18);
+
+                public void newSize(int breite, int hoehe) {
+                    lblPlayerBlue.Visible = true;
+                    lblPlayerRed.Visible = true;
+                    lblPlayerBlue.Text = hoehe.ToString();
+                    lblPlayerRed.Text = breite.ToString();
+
+                    try {
+                        FontFamily fam = myFonts.Families[0];
+                        if (hoehe <= 300) {
+                            using (Font f15 = new Font(fam, 15)) {
+                                lblQuestion.Font = f15;
+                            }
+                        } else if (hoehe <= 500) {
+                            using (Font f15 = new Font(fam, 15))
+                            using (Font f18 = new Font(fam, 18)) {
+                                setSize(f15, f18);
+                            }
+                        } else if (hoehe <= 700) {
+                            using (Font f18 = new Font(fam, 18))
+                            using (Font f22 = new Font(fam, 22)) {
+                                setSize(f18, f22);
+                            }
+                        } else if (hoehe <= 1000) {
+                            using (Font f22 = new Font(fam, 22))
+                            using (Font f30 = new Font(fam, 30)) {
+                                setSize(f22, f30);
+                            }
+                        } else if (hoehe <= 1500) {
+                            using (Font f30 = new Font(fam, 30))
+                            using (Font f40 = new Font(fam, 40)) {
+                                setSize(f30, f40);
+                            }
+                        }
+                    } catch (Exception e) {}
+            
                 }
-            }
-            else if (hoehe <= 700) {
-                using (Font f18 = new Font(fam, 18))
-                using (Font f22 = new Font(fam, 22)) {
-                    setSize(f18, f22);
+
+                public void setSize(Font smallF, Font bigF) {
+                    lblQuestion.Font = bigF;
+
+                    lblWrong1.Font = bigF;
+                    lblWrong2.Font = bigF;
+                    lblWrong3.Font = bigF;
+
+                    lblTeam1.Font = smallF;
+                    lblPointsTeam1.Font = smallF;
+                    lblRoundPoints.Font = smallF;
+                    lblTeam2.Font = smallF;
+                    lblPointsTeam2.Font = smallF;
+                    lblAnswerNo1.Font = smallF;
+                    lblAnswer1.Font = smallF;
+                    lblAnswerPts1.Font = smallF;
+                    lblAnswerNo2.Font = smallF;
+                    lblAnswer2.Font = smallF;
+                    lblAnswerPts2.Font = smallF;
+                    lblAnswerNo3.Font = smallF;
+                    lblAnswer3.Font = smallF;
+                    lblAnswerPts3.Font = smallF;
+                    lblAnswerNo4.Font = smallF;
+                    lblAnswer4.Font = smallF;
+                    lblAnswerPts4.Font = smallF;
+                    lblAnswerNo5.Font = smallF;
+                    lblAnswer5.Font = smallF;
+                    lblAnswerPts5.Font = smallF;
+                    lblAnswerNo6.Font = smallF;
+                    lblAnswer6.Font = smallF;
+                    lblAnswerPts6.Font = smallF;
                 }
-            }
-            else if (hoehe <= 1000) {
-                using (Font f22 = new Font(fam, 22))
-                using (Font f30 = new Font(fam, 30)) {
-                    setSize(f22, f30);
+
+                private void monitorClosing(object sender, CancelEventArgs e) {
+                    //MessageBox.Show("Dieses Fenster kann nicht geschlossen werden", "Nicht möglich", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // TODO Auskommentiert weil es geschört hat...
+                    e.Cancel = true;
                 }
-            }
-            else if (hoehe <= 1500) {
-                using (Font f30 = new Font(fam, 30))
-                using (Font f40 = new Font(fam, 40)) {
-                    setSize(f30, f40);
+
+                public void setHeadline(string text) {
+                    lblQuestion.Text = text;
                 }
-            }
-        }
 
-        public void setSize(Font smallF, Font bigF) {
-            lblQuestion.Font = bigF;
+                public void maximize() {
+                    WindowState = FormWindowState.Maximized;
+                    newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
+                    FormBorderStyle = FormBorderStyle.None;
+                }
 
-            lblWrong1.Font = bigF;
-            lblWrong2.Font = bigF;
-            lblWrong3.Font = bigF;
-
-            lblTeam1.Font = smallF;
-            lblPointsTeam1.Font = smallF;
-            lblRoundPoints.Font = smallF;
-            lblTeam2.Font = smallF;
-            lblPointsTeam2.Font = smallF;
-            lblAnswerNo1.Font = smallF;
-            lblAnswer1.Font = smallF;
-            lblAnswerPts1.Font = smallF;
-            lblAnswerNo2.Font = smallF;
-            lblAnswer2.Font = smallF;
-            lblAnswerPts2.Font = smallF;
-            lblAnswerNo3.Font = smallF;
-            lblAnswer3.Font = smallF;
-            lblAnswerPts3.Font = smallF;
-            lblAnswerNo4.Font = smallF;
-            lblAnswer4.Font = smallF;
-            lblAnswerPts4.Font = smallF;
-            lblAnswerNo5.Font = smallF;
-            lblAnswer5.Font = smallF;
-            lblAnswerPts5.Font = smallF;
-            lblAnswerNo6.Font = smallF;
-            lblAnswer6.Font = smallF;
-            lblAnswerPts6.Font = smallF;
-        }
-
-        private void monitorClosing(object sender, CancelEventArgs e) {
-            //MessageBox.Show("Dieses Fenster kann nicht geschlossen werden", "Nicht möglich", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            // TODO Auskommentiert weil es geschört hat...
-            e.Cancel = true;
-        }
-
-        public void setHeadline(string text) {
-            lblQuestion.Text = text;
-        }
-
-        public void maximize() {
-            WindowState = FormWindowState.Maximized;
-            newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
-            FormBorderStyle = FormBorderStyle.None;
-        }
-
-        public void minimize() {
-            WindowState = FormWindowState.Normal;
-            newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
-            FormBorderStyle = FormBorderStyle.Sizable;
-        }
-
-        public void toggleWaiting() {
-            if (waiting == 0) {
-                //imgWaiting.Visible = true;
-                waiting = 1;
-            }
-            else {
-                //imgWaiting.Visible = false;
-                waiting = 0;
-            }
-        }
+                public void minimize() {
+                    WindowState = FormWindowState.Normal;
+                    newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
+                    FormBorderStyle = FormBorderStyle.Sizable;
+                }
+        #endregion
 
         public void setTeams(string Team1, string Team2) {
             lblTeam1.Text = Team1;
@@ -213,6 +208,7 @@ namespace FamilienDuell {
                 lblAnswer4.Visible = false;
                 lblAnswerPts4.Visible = false;
             }
+
             lblQuestion.Text = "Runde #" + Convert.ToString(roundNumber);
             lblAnswer1.Text = "................................................";
             lblAnswer2.Text = "................................................";
