@@ -32,6 +32,9 @@ namespace FamilienDuell {
         // clientid for server to identify client and match question history
         string clientId;
 
+        // the current question object
+        Question question;
+
 
         public Main() {
             InitializeComponent();
@@ -186,51 +189,22 @@ namespace FamilienDuell {
         #region Gameplay
         // start functions
         public void playGame() {
-            if (currentGameStatus == 0) {
-                btnGetQuestion.Enabled = true;
-                changePoints.Enabled = true;
-                btnNext.Text = "Runde läuft...";
-                btnNext.Enabled = false;
-            }
-            //if (currentGameStatus == 0) {
-            //    lblClientId.Text = txtGameTitle.Text;
-            //    btnNext.Text = "Start";
-            //    currentGameStatus = 1;
-            //} else if (currentGameStatus == 1) {
-            //    Monitor.setHeadline("Davids Familien Duell v0.1 Alpha-RC");
 
-            //    //Monitor.toggleWaiting();
-            //    tabMainControl.Enabled = true;
-            //    btnNext.Enabled = false;
-            //    //btnNext.Text = "Runde starten!";
-            //    currentGameStatus = 2;
-            //} else if (currentGameStatus == 2) {
-            //    if (txtTeam1.Text != "" & txtTeam2.Text != "") {
-            //        lblTeamAlert.Text = "";
-            //        //Monitor.toggleWaiting();
-            //        btnNext.Text = "Nächste Runde";
-            //        btnNext.Enabled = false;
-            //        lblStatus.Text = "Aktives Spiel (Runde 1)";
-            //        Monitor.gameStart();
-            //        playSound(1);
-            //        currentGameStatus = 3;
-            //    } else {
-            //        lblTeamAlert.Text = "Es sind keine Teams angegeben!";
-            //    }
-            //} else if (currentGameStatus == 3) {
-            //    if (txtTeam1.Text != "" & txtTeam2.Text != "") {
-            //        togglePointButtons();
-            //        lblTeamAlert.Text = "";
-            //        btnNext.Enabled = false;
-            //        btnGetQuestion.Enabled = true;
-            //        lblStatus.Text = "Aktives Spiel (Runde 2)";
-            //        Monitor.nextRound(2);
-            //        currentGameStatus = 4;
-            //    } else {
-            //        lblTeamAlert.Text = "Es sind keine Teams angegeben!";
-            //    }
-            //}
-            //return true;
+            btnGetQuestion.Enabled = true;
+            changePoints.Enabled = true;
+            btnNext.Text = "Nächste Runde";
+            btnNext.Enabled = false;
+
+            switch (this.currentGameStatus) {
+                case 0:
+                    this.currentGameStatus = 1;
+                    break;
+
+                case 1:
+                    this.Monitor.nextRound(2);
+                    this.currentGameStatus = 2;
+                    break;
+            }
         }
 
         #region Buttons
@@ -250,13 +224,10 @@ namespace FamilienDuell {
             if (currentGameStatus < 5) {
                 btnAnswer5.Enabled = true;
             }
-            if (currentGameStatus == 3) {
+            if (currentGameStatus == 1) {
                 btnAnswer6.Enabled = true;
             }
             btnShowQuestion.Enabled = true;
-            //btnTeam1.Enabled = true;
-            //btnTeam2.Enabled = true;
-            //btnRemi.Enabled = true;
             btnWrong.Enabled = true;
             cbTeamRound.Enabled = true;
         }
@@ -284,6 +255,12 @@ namespace FamilienDuell {
             ctrlWritePoints(answer.getQuantityAsString(), lblCtrlRdPts.Text);
             Monitor.showResult(answer.getIndex(), answer.getTitle(), answer.getQuantityAsString());
             playSound(2);
+
+            answer.markAsResolved();
+
+            if (this.question.isResolved()) {
+                this.enablePointDistribution();
+            }
 
         }
 
@@ -318,9 +295,8 @@ namespace FamilienDuell {
         }
 
         private void changePointsClick(object sender, EventArgs e) {
-
             using (ChangePoints ptChange = new ChangePoints()) {
-                ptChange.injectGameMonitor(Monitor);
+                ptChange.injectController(this);
                 ptChange.StartPosition = FormStartPosition.CenterParent;
                 ptChange.ShowDialog(this);
             }
@@ -352,6 +328,12 @@ namespace FamilienDuell {
                     Debug.WriteLine("Could not play sound file: " + e.Message);
                 }
             }
+        }
+
+        protected void enablePointDistribution() {
+            btnTeam1.Enabled = true;
+            btnTeam2.Enabled = true;
+            btnRemi.Enabled = true;
         }
 
         private bool getQuestion() {
@@ -392,6 +374,7 @@ namespace FamilienDuell {
                 }
             }
 
+            this.question = question;
             return true;
         }
 
@@ -443,6 +426,20 @@ namespace FamilienDuell {
             }
             return text;
         }
+
+        #region Pointstuff
+        public void newPoints(int team, int points) {
+            this.Monitor.newPoints(team, points);
+        }
+
+        public void remPoints(int team, int points) {
+            this.Monitor.remPoints(team, points);
+        }
+
+        public void setPoints(int team, int points) {
+            this.Monitor.setPoints(team, points);
+        }
+        #endregion
 
     }
 
