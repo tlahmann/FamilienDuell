@@ -72,18 +72,18 @@ namespace FamilienDuell {
                                 setSize(f15, f18);
                             }
                         } else if (hoehe <= 700) {
-                            using (Font f18 = new Font(fam, 18))
-                            using (Font f22 = new Font(fam, 22)) {
+                            using (Font f18 = new Font(fam, 15))
+                            using (Font f22 = new Font(fam, 20)) {
                                 setSize(f18, f22);
                             }
                         } else if (hoehe <= 1000) {
-                            using (Font f22 = new Font(fam, 22))
-                            using (Font f30 = new Font(fam, 30)) {
+                            using (Font f22 = new Font(fam, 20))
+                            using (Font f30 = new Font(fam, 38)) {
                                 setSize(f22, f30);
                             }
                         } else if (hoehe <= 1500) {
-                            using (Font f30 = new Font(fam, 30))
-                            using (Font f40 = new Font(fam, 40)) {
+                            using (Font f30 = new Font(fam, 25))
+                            using (Font f40 = new Font(fam, 35)) {
                                 setSize(f30, f40);
                             }
                         }
