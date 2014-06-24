@@ -81,8 +81,8 @@
             this.lblCtrlTm1Pt = new System.Windows.Forms.Label();
             this.lblCtrlTm1Pts = new System.Windows.Forms.Label();
             this.lblCtrlRdPt = new System.Windows.Forms.Label();
-            this.lblCtrlTm2Pt = new System.Windows.Forms.Label();
             this.lblCtrlTm2Pts = new System.Windows.Forms.Label();
+            this.lblCtrlTm2Pt = new System.Windows.Forms.Label();
             this.lblCtrlRdPts = new System.Windows.Forms.Label();
             this.tabQuests = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -834,8 +834,8 @@
             this.tableLayoutPanel17.Controls.Add(this.lblCtrlTm1Pt, 0, 1);
             this.tableLayoutPanel17.Controls.Add(this.lblCtrlTm1Pts, 1, 1);
             this.tableLayoutPanel17.Controls.Add(this.lblCtrlRdPt, 2, 0);
-            this.tableLayoutPanel17.Controls.Add(this.lblCtrlTm2Pt, 3, 1);
-            this.tableLayoutPanel17.Controls.Add(this.lblCtrlTm2Pts, 4, 1);
+            this.tableLayoutPanel17.Controls.Add(this.lblCtrlTm2Pts, 3, 1);
+            this.tableLayoutPanel17.Controls.Add(this.lblCtrlTm2Pt, 4, 1);
             this.tableLayoutPanel17.Controls.Add(this.lblCtrlRdPts, 2, 1);
             this.tableLayoutPanel17.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 337);
@@ -883,30 +883,30 @@
             this.lblCtrlRdPt.Text = "RundenPunkte";
             this.lblCtrlRdPt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // lblCtrlTm2Pt
-            // 
-            this.lblCtrlTm2Pt.AutoSize = true;
-            this.lblCtrlTm2Pt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCtrlTm2Pt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCtrlTm2Pt.ForeColor = System.Drawing.Color.Crimson;
-            this.lblCtrlTm2Pt.Location = new System.Drawing.Point(360, 27);
-            this.lblCtrlTm2Pt.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.lblCtrlTm2Pt.Name = "lblCtrlTm2Pt";
-            this.lblCtrlTm2Pt.Size = new System.Drawing.Size(113, 17);
-            this.lblCtrlTm2Pt.TabIndex = 3;
-            this.lblCtrlTm2Pt.Text = "0";
-            this.lblCtrlTm2Pt.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // lblCtrlTm2Pts
             // 
             this.lblCtrlTm2Pts.AutoSize = true;
             this.lblCtrlTm2Pts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCtrlTm2Pts.Location = new System.Drawing.Point(479, 27);
+            this.lblCtrlTm2Pts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCtrlTm2Pts.ForeColor = System.Drawing.Color.Crimson;
+            this.lblCtrlTm2Pts.Location = new System.Drawing.Point(360, 27);
             this.lblCtrlTm2Pts.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblCtrlTm2Pts.Name = "lblCtrlTm2Pts";
-            this.lblCtrlTm2Pts.Size = new System.Drawing.Size(114, 17);
-            this.lblCtrlTm2Pts.TabIndex = 4;
-            this.lblCtrlTm2Pts.Text = "Team 2 Punkte";
+            this.lblCtrlTm2Pts.Size = new System.Drawing.Size(113, 17);
+            this.lblCtrlTm2Pts.TabIndex = 3;
+            this.lblCtrlTm2Pts.Text = "0";
+            this.lblCtrlTm2Pts.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblCtrlTm2Pt
+            // 
+            this.lblCtrlTm2Pt.AutoSize = true;
+            this.lblCtrlTm2Pt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCtrlTm2Pt.Location = new System.Drawing.Point(479, 27);
+            this.lblCtrlTm2Pt.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.lblCtrlTm2Pt.Name = "lblCtrlTm2Pt";
+            this.lblCtrlTm2Pt.Size = new System.Drawing.Size(114, 17);
+            this.lblCtrlTm2Pt.TabIndex = 4;
+            this.lblCtrlTm2Pt.Text = "Team 2 Punkte";
             // 
             // lblCtrlRdPts
             // 
@@ -1440,8 +1440,8 @@
         private System.Windows.Forms.Label lblCtrlTm1Pt;
         private System.Windows.Forms.Label lblCtrlTm1Pts;
         private System.Windows.Forms.Label lblCtrlRdPt;
-        private System.Windows.Forms.Label lblCtrlTm2Pt;
         private System.Windows.Forms.Label lblCtrlTm2Pts;
+        private System.Windows.Forms.Label lblCtrlTm2Pt;
         private System.Windows.Forms.Label lblCtrlRdPts;
     }
 }
