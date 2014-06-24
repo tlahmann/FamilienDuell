@@ -264,6 +264,7 @@ namespace FamilienDuell {
             else if (team == 3) {
                 targetVal = int.Parse(lblPointsTeam2.Text) + points;
             }
+
             targetTeam = team;
             timerAddPoints.Enabled = true;
             return true;
@@ -316,9 +317,10 @@ namespace FamilienDuell {
         }
 
         private void addPoints(object sender, EventArgs e) {
+
             if (targetTeam == 1) {
-                if (Convert.ToInt32(lblRoundPoints.Text) < targetVal) {
-                    lblRoundPoints.Text = Convert.ToString(Convert.ToInt32(lblRoundPoints.Text) + 1);
+                if (Convert.ToInt16(lblRoundPoints.Text) < targetVal) {
+                    lblRoundPoints.Text = Convert.ToString(Convert.ToInt16(lblRoundPoints.Text) + 1);
                 }
                 else {
                     timerAddPoints.Enabled = false;
@@ -340,7 +342,6 @@ namespace FamilienDuell {
                     timerAddPoints.Enabled = false;
                 }
             }
-
         }
 
         private void delPoints(object sender, EventArgs e) {
@@ -349,7 +350,7 @@ namespace FamilienDuell {
                     lblRoundPoints.Text = Convert.ToString(Convert.ToInt32(lblRoundPoints.Text) - 1);
                 }
                 else {
-                    timerAddPoints.Enabled = false;
+                    timerDelPoints.Enabled = false;
                 }
             }
             else if (targetTeamDel == 2) {
@@ -357,7 +358,7 @@ namespace FamilienDuell {
                     lblPointsTeam1.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam1.Text) - 1);
                 }
                 else {
-                    timerAddPoints.Enabled = false;
+                    timerDelPoints.Enabled = false;
                 }
             }
             else if (targetTeamDel == 3) {
