@@ -194,6 +194,11 @@ namespace FamilienDuell {
             changePoints.Enabled = true;
             btnNext.Text = "Nächste Runde";
             btnNext.Enabled = false;
+            cbTeamRound.Checked = false;
+
+            btnTeam1.Enabled = false;
+            btnTeam2.Enabled = false;
+            btnRemi.Enabled = false;
 
             switch (this.currentGameStatus) {
                 case 0:
