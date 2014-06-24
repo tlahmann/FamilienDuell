@@ -50,6 +50,8 @@ namespace FamilienDuell {
         }
 
         private void Main_Load(object sender, EventArgs e) {
+            Screen[] screens = Screen.AllScreens;
+            setFormLocation(Monitor, screens[0]);
             Monitor.Show();
 
             textGameTitleChanged(null, null);
@@ -57,6 +59,17 @@ namespace FamilienDuell {
             //playSound(1);
 
             //tabMainControl.Enabled = false;
+        }
+
+        private void setFormLocation(Form form, Screen screen) {
+            // first method
+            form.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            Rectangle bounds = screen.Bounds;
+            form.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+
+            if (form is GameMonitor) {
+                this.Monitor.newSize(bounds.Width, bounds.Height);
+            }
         }
 
         #region Setup
