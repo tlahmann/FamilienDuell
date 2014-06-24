@@ -285,12 +285,6 @@ namespace FamilienDuell {
             return true;
         }
 
-        public bool winnerPoints(int team) {
-            newPoints(team, int.Parse(lblRoundPoints.Text));
-            setPoints(1, 0);
-            return true;
-        }
-
         public bool setPoints(int team, int points) {
             int currentPoints = 0;
             if (team == 1) {
@@ -373,10 +367,11 @@ namespace FamilienDuell {
         #endregion
 
         #region Resolve Things
-        public void showResult(int answer, string text, string people) {
+        public void showResult(int answer, string text, string people, int pointsMultiplier) {
             if (text.Length > 45) {
                 text = text.Substring(0, 45) + "...";
             }
+
             if (answer == 1) {
                 lblAnswer1.Text = text;
                 lblAnswerPts1.Visible = true;
@@ -402,9 +397,10 @@ namespace FamilienDuell {
                 lblAnswerPts6.Visible = true;
                 lblAnswerPts6.Text = people;
             }
+
             if (answer > 0 & answer < 7) {
                 answerTo = answer;
-                quantity = people;
+                quantity = (int.Parse(people) * pointsMultiplier).ToString();
                 timerRight.Enabled = true;
             }
         }
