@@ -22,6 +22,7 @@ namespace FamilienDuell {
 
         int currentGameStatus = 0;
         int currentSetupStatus = 0;
+        int currentPointsMultiplier = 1;
 
         // determines if the monitor form is maximized
         Boolean maximus;
@@ -222,6 +223,18 @@ namespace FamilienDuell {
                     this.Monitor.nextRound(2);
                     this.currentGameStatus = 2;
                     break;
+
+                case 2:
+                    this.Monitor.nextRound(3);
+                    this.currentGameStatus = 3;
+                    this.currentPointsMultiplier = 2;
+                    break;
+
+                case 3:
+                    this.Monitor.nextRound(4);
+                    this.currentGameStatus = 4;
+                    this.currentPointsMultiplier = 3;
+                    break;
             }
         }
 
@@ -236,10 +249,10 @@ namespace FamilienDuell {
             btnAnswer1.Enabled = true;
             btnAnswer2.Enabled = true;
             btnAnswer3.Enabled = true;
-            if (currentGameStatus < 6) {
+            if (currentGameStatus < 4) {
                 btnAnswer4.Enabled = true;
             }
-            if (currentGameStatus < 5) {
+            if (currentGameStatus < 3) {
                 btnAnswer5.Enabled = true;
             }
             if (currentGameStatus == 1) {
@@ -270,13 +283,13 @@ namespace FamilienDuell {
                 cbTeamRound.Checked = true;
             }
 
-            ctrlWritePoints(answer.getQuantityAsString(), lblCtrlRdPts.Text);
-            Monitor.showResult(answer.getIndex(), answer.getTitle(), answer.getQuantityAsString());
+            ctrlWritePoints(answer.getQuantity() * this.currentPointsMultiplier, this.getTeamPointsFromControl(1));
+            Monitor.showResult(answer.getIndex(), answer.getTitle(), answer.getQuantityAsString(), this.currentPointsMultiplier);
             playSound(2);
 
             answer.markAsResolved();
 
-            if (this.question.isResolved()) {
+            if (this.question.isResolved(currentGameStatus - 1)) {
                 this.enablePointDistribution();
             }
 
@@ -284,20 +297,18 @@ namespace FamilienDuell {
 
 
         private void btnTeam1Click(object sender, EventArgs e) {
-            Monitor.winnerPoints(2);
-            lblCtrlTm2Pts.Text += lblCtrlRdPts.Text;
+            this.winnerPoints(2);
             btnNext.Enabled = true;
         }
 
         private void btnTeam2Click(object sender, EventArgs e) {
-            Monitor.winnerPoints(3);
-            lblCtrlTm2Pts.Text += lblCtrlRdPts.Text;
+            this.winnerPoints(3);
             btnNext.Enabled = true;
         }
 
         private void btnRemiClick(object sender, EventArgs e) {
             btnNext.Enabled = true;
-            Monitor.setPoints(1, 0);
+            this.setPoints(1, 0);
         }
 
         private void btnMaximizeClick(object sender, EventArgs e) {
@@ -396,26 +407,10 @@ namespace FamilienDuell {
             return true;
         }
 
-        private void ctrlWritePoints(String val1, String val2) {
-            int a = Convert.ToInt32(val1);
-            int b = Convert.ToInt32(val2);
-            int result = a + b;
-            lblCtrlRdPts.Text = result.ToString();
+        private void ctrlWritePoints(int a, int b) {
+            lblCtrlRdPts.Text = (a + b).ToString();
         }
 
-        //private void togglePointButtons() {
-        //    if (btnRemi.Enabled == true) {
-        //        btnTeam1.Enabled = false;
-        //        btnTeam2.Enabled = false;
-        //        btnRemi.Enabled = false;
-        //    } else {
-        //        if (btnAnswer1.Enabled == false & btnAnswer2.Enabled == false & btnAnswer3.Enabled == false & btnAnswer4.Enabled == false & btnAnswer5.Enabled == false & btnAnswer6.Enabled == false) {
-        //            btnTeam1.Enabled = true;
-        //            btnTeam2.Enabled = true;
-        //            btnRemi.Enabled = true;
-        //        }
-        //    }
-        //}
         #endregion
 
         #region Design
@@ -448,16 +443,41 @@ namespace FamilienDuell {
         #region Pointstuff
         public void newPoints(int team, int points) {
             this.Monitor.newPoints(team, points);
+            this.getPointControlLabelByTeam(team).Text = (this.getTeamPointsFromControl(team) + points).ToString();
         }
 
         public void remPoints(int team, int points) {
             this.Monitor.remPoints(team, points);
+            this.getPointControlLabelByTeam(team).Text = (this.getTeamPointsFromControl(team) - points).ToString();
         }
 
         public void setPoints(int team, int points) {
             this.Monitor.setPoints(team, points);
+            this.getPointControlLabelByTeam(team).Text = points.ToString();
+        }
+
+        public void winnerPoints(int team) {
+            this.newPoints(team, this.getTeamPointsFromControl(1));
+            this.setPoints(1, 0);
         }
         #endregion
+
+        protected Label getPointControlLabelByTeam(int team) {
+            switch (team) {
+                case 2:
+                    return lblCtrlTm1Pts;
+
+                case 3:
+                    return lblCtrlTm2Pts;
+
+                default:
+                    return lblCtrlRdPts;
+            }
+        }
+
+        protected int getTeamPointsFromControl(int team) {
+            return int.Parse(this.getPointControlLabelByTeam(team).Text);
+        }
 
     }
 
