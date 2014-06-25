@@ -104,7 +104,7 @@
             this.lblTeam1.Location = new System.Drawing.Point(3, 0);
             this.lblTeam1.Name = "lblTeam1";
             this.lblTeam1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTeam1.Size = new System.Drawing.Size(311, 42);
+            this.lblTeam1.Size = new System.Drawing.Size(236, 42);
             this.lblTeam1.TabIndex = 2;
             this.lblTeam1.Text = "Team Blau";
             // 
@@ -116,9 +116,9 @@
             this.lblPointsTeam1.BackColor = System.Drawing.Color.Transparent;
             this.lblPointsTeam1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointsTeam1.ForeColor = System.Drawing.Color.Blue;
-            this.lblPointsTeam1.Location = new System.Drawing.Point(320, 0);
+            this.lblPointsTeam1.Location = new System.Drawing.Point(245, 0);
             this.lblPointsTeam1.Name = "lblPointsTeam1";
-            this.lblPointsTeam1.Size = new System.Drawing.Size(144, 42);
+            this.lblPointsTeam1.Size = new System.Drawing.Size(194, 42);
             this.lblPointsTeam1.TabIndex = 3;
             this.lblPointsTeam1.Text = "0";
             // 
@@ -130,10 +130,10 @@
             this.lblPointsTeam2.BackColor = System.Drawing.Color.Transparent;
             this.lblPointsTeam2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointsTeam2.ForeColor = System.Drawing.Color.Red;
-            this.lblPointsTeam2.Location = new System.Drawing.Point(620, 0);
+            this.lblPointsTeam2.Location = new System.Drawing.Point(645, 0);
             this.lblPointsTeam2.Name = "lblPointsTeam2";
             this.lblPointsTeam2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblPointsTeam2.Size = new System.Drawing.Size(144, 42);
+            this.lblPointsTeam2.Size = new System.Drawing.Size(194, 42);
             this.lblPointsTeam2.TabIndex = 4;
             this.lblPointsTeam2.Text = "0";
             // 
@@ -145,9 +145,9 @@
             this.lblTeam2.BackColor = System.Drawing.Color.Transparent;
             this.lblTeam2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTeam2.ForeColor = System.Drawing.Color.Red;
-            this.lblTeam2.Location = new System.Drawing.Point(770, 0);
+            this.lblTeam2.Location = new System.Drawing.Point(845, 0);
             this.lblTeam2.Name = "lblTeam2";
-            this.lblTeam2.Size = new System.Drawing.Size(311, 42);
+            this.lblTeam2.Size = new System.Drawing.Size(236, 42);
             this.lblTeam2.TabIndex = 5;
             this.lblTeam2.Text = "Team Rot";
             // 
@@ -159,9 +159,9 @@
             this.lblRoundPoints.BackColor = System.Drawing.Color.Transparent;
             this.lblRoundPoints.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoundPoints.ForeColor = System.Drawing.Color.Lime;
-            this.lblRoundPoints.Location = new System.Drawing.Point(470, 0);
+            this.lblRoundPoints.Location = new System.Drawing.Point(445, 0);
             this.lblRoundPoints.Name = "lblRoundPoints";
-            this.lblRoundPoints.Size = new System.Drawing.Size(144, 42);
+            this.lblRoundPoints.Size = new System.Drawing.Size(194, 42);
             this.lblRoundPoints.TabIndex = 6;
             this.lblRoundPoints.Text = "0";
             this.lblRoundPoints.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -398,9 +398,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 5;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.lblTeam1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.lblPointsTeam1, 1, 0);
@@ -433,7 +433,6 @@
             this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts1, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.lblAnswer6, 1, 5);
             this.tableLayoutPanel5.Controls.Add(this.lblAnswer5, 1, 4);
-            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts6, 2, 5);
             this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts5, 2, 4);
             this.tableLayoutPanel5.Controls.Add(this.lblAnswer4, 1, 3);
             this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts4, 2, 3);
@@ -441,6 +440,7 @@
             this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts2, 2, 1);
             this.tableLayoutPanel5.Controls.Add(this.lblAnswer2, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts3, 2, 2);
+            this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts6, 2, 5);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 157);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 6;
