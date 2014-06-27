@@ -82,7 +82,8 @@ namespace FamilienDuell {
                 txtTeam1.Enabled = true;
                 txtTeam2.Enabled = true;
                 tableLayoutPanel3.BackColor = SystemColors.ActiveCaption;
-            } else {
+            }
+            else {
                 txtTeam1.Enabled = false;
                 txtTeam2.Enabled = false;
                 tableLayoutPanel3.BackColor = SystemColors.InactiveCaption;
@@ -95,20 +96,21 @@ namespace FamilienDuell {
         // determine if Teamnames have been entered
         public void textTeamsChanged(object sender, EventArgs e) {
             if (txtTeam1.Text != "") {
-                Monitor.lblTeam1.Text = txtTeam1.Text.ToString();
+                Monitor.setTeams(txtTeam1.Text.ToString() + " ", null);
             }
 
-            if (txtTeam1.Text != "") {
-                Monitor.lblTeam2.Text = txtTeam2.Text.ToString();
+            if (txtTeam2.Text != "") {
+                Monitor.setTeams(null, " " + txtTeam2.Text.ToString());
             }
 
             if (txtTeam1.Text != "" && txtTeam2.Text != "") {
-                checkTeamNames(txtTeam1.Text, txtTeam2.Text);
+                checkTeamNames(txtTeam1.Text.ToString() + " ", " " + txtTeam2.Text.ToString());
                 numericUpDown1.Enabled = true;
                 cbSounds.Enabled = true;
                 tableLayoutPanel4.BackColor = SystemColors.ActiveCaption;
-            } else {
-                Monitor.lblTeam2.Text = txtTeam2.Text.ToString();
+            }
+            else {
+                Monitor.setTeams("Team Blau", "Team Rot");
                 numericUpDown1.Enabled = false;
                 cbSounds.Enabled = false;
                 tableLayoutPanel4.BackColor = SystemColors.InactiveCaption;
@@ -119,9 +121,11 @@ namespace FamilienDuell {
         private void checkTeamNames(string team1, string team2) {
             if (team1.Length > 16) {
                 lblTeamCheck.Text = "Name für Team 1 möglicherweise zu lang!";
-            } else if (team2.Length > 16) {
+            }
+            else if (team2.Length > 16) {
                 lblTeamCheck.Text = "Name für Team 2 möglicherweise zu lang!";
-            } else {
+            }
+            else {
                 lblTeamCheck.Text = "";
             }
             if (team1 == team2) {
@@ -139,11 +143,13 @@ namespace FamilienDuell {
                         dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
 
                         valid = false;
-                    } else if (dataGridView.Rows[j].Cells[i].Value.ToString() == "") {
+                    }
+                    else if (dataGridView.Rows[j].Cells[i].Value.ToString() == "") {
                         dataGridView.Rows[j].Cells[i].Style.BackColor = SystemColors.InactiveCaption;
 
                         valid = false;
-                    } else {
+                    }
+                    else {
                         dataGridView.Rows[j].Cells[i].Style.BackColor = Color.White;
                     }
                 }
@@ -164,26 +170,31 @@ namespace FamilienDuell {
                                 dataGridView.Rows.Add("Player Red " + (i + 1), "Player Blue " + (i + 1));
                             }
                         }
-                    } catch (Exception ex) {
+                    }
+                    catch (Exception ex) {
                         MessageBox.Show(ex.Message, "Fehler!");
                     }
                     tabMainControl.SelectedIndex = 1;
                     currentSetupStatus = 1;
-                } else {
+                }
+                else {
                     dataGridView.Enabled = false;
                     tabMainControl.SelectedIndex = 2;
                     currentSetupStatus = 2;
                 }
 
-            } else if (tabMainControl.SelectedIndex == 1) {
+            }
+            else if (tabMainControl.SelectedIndex == 1) {
                 if (gridCheck()) {
                     tabMainControl.SelectedIndex = 2;
                     currentSetupStatus = 2;
                 }
-            } else if (tabMainControl.SelectedIndex == 2) {
+            }
+            else if (tabMainControl.SelectedIndex == 2) {
                 currentSetupStatus = 3;
                 tabMainControl.SelectedIndex = 3;
-            } else if (tabMainControl.SelectedIndex == 3) {
+            }
+            else if (tabMainControl.SelectedIndex == 3) {
                 playGame();
             }
         }
@@ -193,7 +204,8 @@ namespace FamilienDuell {
             if (currentGameStatus == 0) {
                 if (tabMainControl.SelectedIndex == 3 && currentSetupStatus == 3) {
                     btnNext.Text = "Start";
-                } else {
+                }
+                else {
                     btnNext.Text = "Weiter";
                 }
             }
@@ -315,8 +327,9 @@ namespace FamilienDuell {
             if (!maximus) {
                 Monitor.maximize();
                 maximus = true;
-                btnMaximize.Text = "Minimieren";
-            } else {
+                btnMaximize.Text = "Verkleinern";
+            }
+            else {
                 Monitor.minimize();
                 maximus = false;
                 btnMaximize.Text = "Maximieren";
@@ -344,16 +357,19 @@ namespace FamilienDuell {
                         // main theme
                         SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff94_main_theme.wav");
                         simpleSound.Play();
-                    } else if (Action == 2) {
+                    }
+                    else if (Action == 2) {
                         // correct answer sound
                         SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff-clang.wav");
                         simpleSound.Play();
-                    } else if (Action == 3) {
+                    }
+                    else if (Action == 3) {
                         // wrong answer sound
                         SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff-strike3.wav");
                         simpleSound.Play();
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e) {
                     Debug.WriteLine("Could not play sound file: " + e.Message);
                 }
             }
@@ -376,7 +392,8 @@ namespace FamilienDuell {
                 if (!question.readQuestion()) {
                     MessageBox.Show("Unknown read error while reading question.");
                 }
-            } catch (Exception Exception) {
+            }
+            catch (Exception Exception) {
                 MessageBox.Show("Error: " + Exception.Message + "\n" + Exception.StackTrace);
             }
 
@@ -433,7 +450,8 @@ namespace FamilienDuell {
                 if (x > 90 && x < 97) {
                     i--;
                     continue;
-                } else {
+                }
+                else {
                     text += x;
                 }
             }
