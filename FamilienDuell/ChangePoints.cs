@@ -86,36 +86,36 @@ namespace FamilienDuell
         private void btnAddTo_Click(object sender, EventArgs e)
         {
             int punkte = Convert.ToInt16(tbPoints.Text);
-            int team = 0;
+            int team = -1;
 
             if (!btnTm1.Enabled) {
-                team = 2;
-            } else if (!btnTm2.Enabled) {
-                team = 3;
-            } else if (!btnRound.Enabled){
                 team = 1;
+            } else if (!btnTm2.Enabled) {
+                team = 2;
+            } else if (!btnRound.Enabled){
+                team = 0;
             }
 
-            if (team != 0) {
-               this.controller.setPoints(team, punkte, 1);
+            if (team != -1) {
+               this.controller.setPoints(team, punkte, 2);
             }
         }
 
         private void btnSet_Click(object sender, EventArgs e) {
             int points = 0;
-            int team = 0;
+            int team = -1;
             try {points = Convert.ToInt16(tbPoints.Text);} catch (Exception) {}
 
             if (!btnTm1.Enabled) {
-                team = 2;
-            } else if (!btnTm2.Enabled) {
-                team = 3;
-            } else if (!btnRound.Enabled) {
                 team = 1;
+            } else if (!btnTm2.Enabled) {
+                team = 2;
+            } else if (!btnRound.Enabled) {
+                team = 0;
             }
 
-            if (team != 0) {
-                this.controller.setPoints(team, points, 2);
+            if (team != -1) {
+                this.controller.setPoints(team, points, 1);
             }
         }
     }

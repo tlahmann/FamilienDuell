@@ -26,6 +26,8 @@ namespace FamilienDuell {
 
         private static PrivateFontCollection myFonts;
 
+        private bool busyPoints;
+
         public GameMonitor() {
             InitializeComponent();
 
@@ -257,22 +259,27 @@ namespace FamilienDuell {
 
         #region Point Management
         public bool setPoints(int team, int points) {
-            if (team == 1) {
-                targetVal = Convert.ToInt32(lblRoundPoints.Text) + points;
+            busyPoints = true;
+            int currentPoints = 0;
+            currentPoints = int.Parse(lblRoundPoints.Text);
+
+            if (points < currentPoints) {
+                targetTeamDel = team;
+                targetValDel = points;
+                timerDelPoints.Enabled = true;
             }
-            else if (team == 2) {
-                targetVal = int.Parse(lblPointsTeam1.Text) + points;
-            }
-            else if (team == 3) {
-                targetVal = int.Parse(lblPointsTeam2.Text) + points;
+            else if (points > currentPoints) {
+                targetTeam = team;
+                targetVal = points;
+                timerAddPoints.Enabled = true;
             }
 
-            targetTeam = team;
-            timerAddPoints.Enabled = true;
+            busyPoints = false;
             return true;
         }
 
-        public bool remPoints(int team, int points) {
+        public bool minusPoints(int team, int points) {
+            busyPoints = true;
             if (team == 1) {
                 targetValDel = Convert.ToInt32(lblRoundPoints.Text) - points;
             }
@@ -284,88 +291,104 @@ namespace FamilienDuell {
             }
             targetTeamDel = team;
             timerDelPoints.Enabled = true;
+            busyPoints = false;
             return true;
         }
 
-        public bool addPoints(int team, int points) {
-            int currentPoints = 0;
-            if (team == 1) {
-                currentPoints = int.Parse(lblRoundPoints.Text);
+        public bool plusPoints(int team, int points) {
+            busyPoints = true;
+            if (team == 0) {
+                targetVal = Convert.ToInt32(lblRoundPoints.Text) + points;
+            }
+            else if (team == 1) {
+                targetVal = int.Parse(lblPointsTeam1.Text) + points;
             }
             else if (team == 2) {
-                currentPoints = int.Parse(lblRoundPoints.Text);
+                targetVal = int.Parse(lblPointsTeam2.Text) + points;
             }
-            else if (team == 3) {
-                currentPoints = int.Parse(lblRoundPoints.Text);
-            }
-            if (points < currentPoints) {
-                targetTeamDel = team;
-                targetValDel = points;
-                timerDelPoints.Enabled = true;
-            }
-            else if (points > currentPoints) {
-                targetTeam = team;
-                targetVal = points;
-                timerAddPoints.Enabled = true;
-            }
+            targetTeam = team;
+            timerAddPoints.Enabled = true;
+            busyPoints = false;
             return true;
-
         }
 
-        //private void addPoints(object sender, EventArgs e) {
+        public int getPtTm1 {
+            get {
+                return Convert.ToInt32(lblPointsTeam1.Text);
+            }
+        }
 
-        //    if (targetTeam == 1) {
-        //        if (Convert.ToInt16(lblRoundPoints.Text) < targetVal) {
-        //            lblRoundPoints.Text = Convert.ToString(Convert.ToInt16(lblRoundPoints.Text) + 1);
-        //        }
-        //        else {
-        //            timerAddPoints.Enabled = false;
-        //        }
-        //    }
-        //    else if (targetTeam == 2) {
-        //        if (Convert.ToInt32(lblPointsTeam1.Text) < targetVal) {
-        //            lblPointsTeam1.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam1.Text) + 1);
-        //        }
-        //        else {
-        //            timerAddPoints.Enabled = false;
-        //        }
-        //    }
-        //    else if (targetTeam == 3) {
-        //        if (Convert.ToInt32(lblPointsTeam2.Text) < targetVal) {
-        //            lblPointsTeam2.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam2.Text) + 1);
-        //        }
-        //        else {
-        //            timerAddPoints.Enabled = false;
-        //        }
-        //    }
-        //}
+        public int getPtTm2 {
+            get {
+                return Convert.ToInt32(lblPointsTeam2.Text);
+            }
+        }
 
-        //private void delPoints(object sender, EventArgs e) {
-        //    if (targetTeamDel == 1) {
-        //        if (Convert.ToInt32(lblRoundPoints.Text) > targetValDel) {
-        //            lblRoundPoints.Text = Convert.ToString(Convert.ToInt32(lblRoundPoints.Text) - 1);
-        //        }
-        //        else {
-        //            timerDelPoints.Enabled = false;
-        //        }
-        //    }
-        //    else if (targetTeamDel == 2) {
-        //        if (Convert.ToInt32(lblPointsTeam1.Text) > targetValDel) {
-        //            lblPointsTeam1.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam1.Text) - 1);
-        //        }
-        //        else {
-        //            timerDelPoints.Enabled = false;
-        //        }
-        //    }
-        //    else if (targetTeamDel == 3) {
-        //        if (Convert.ToInt32(lblPointsTeam2.Text) > targetValDel) {
-        //            lblPointsTeam2.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam2.Text) - 1);
-        //        }
-        //        else {
-        //            timerDelPoints.Enabled = false;
-        //        }
-        //    }
-        //}
+        public int getPtRd {
+            get {
+                return Convert.ToInt32(lblRoundPoints.Text);
+            }
+        }
+
+        public bool getBusyPoints {
+            get {
+                return busyPoints;
+            }
+        }
+
+        private void addPoints(object sender, EventArgs e) {
+            if (targetTeam == 0) {
+                if (Convert.ToInt16(lblRoundPoints.Text) < targetVal) {
+                    lblRoundPoints.Text = Convert.ToString(Convert.ToInt16(lblRoundPoints.Text) + 1);
+                }
+                else {
+                    timerAddPoints.Enabled = false;
+                }
+            }
+            else if (targetTeam == 1) {
+                if (Convert.ToInt32(lblPointsTeam1.Text) < targetVal) {
+                    lblPointsTeam1.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam1.Text) + 1);
+                }
+                else {
+                    timerAddPoints.Enabled = false;
+                }
+            }
+            else if (targetTeam == 2) {
+                if (Convert.ToInt32(lblPointsTeam2.Text) < targetVal) {
+                    lblPointsTeam2.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam2.Text) + 1);
+                }
+                else {
+                    timerAddPoints.Enabled = false;
+                }
+            }
+        }
+
+        private void delPoints(object sender, EventArgs e) {
+            if (targetTeamDel == 0) {
+                if (Convert.ToInt32(lblRoundPoints.Text) > targetValDel) {
+                    lblRoundPoints.Text = Convert.ToString(Convert.ToInt32(lblRoundPoints.Text) - 1);
+                }
+                else {
+                    timerDelPoints.Enabled = false;
+                }
+            }
+            else if (targetTeamDel == 1) {
+                if (Convert.ToInt32(lblPointsTeam1.Text) > targetValDel) {
+                    lblPointsTeam1.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam1.Text) - 1);
+                }
+                else {
+                    timerDelPoints.Enabled = false;
+                }
+            }
+            else if (targetTeamDel == 2) {
+                if (Convert.ToInt32(lblPointsTeam2.Text) > targetValDel) {
+                    lblPointsTeam2.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam2.Text) - 1);
+                }
+                else {
+                    timerDelPoints.Enabled = false;
+                }
+            }
+        }
         #endregion
 
         #region Resolve Things

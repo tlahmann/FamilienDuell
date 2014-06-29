@@ -19,7 +19,6 @@ namespace FamilienDuell {
 
         // determines if the monitor form is maximized
         Boolean maximus;
-        Boolean busyPts = false;
 
         // initialize monitor
         GameMonitor Monitor = new GameMonitor();
@@ -47,7 +46,7 @@ namespace FamilienDuell {
             //tabMainControl.TabIndexChanged += new EventHandler(this.tabStateChanged);
 
             pTimer.Elapsed += new System.Timers.ElapsedEventHandler(pTimerTick);
-            pTimer.Interval = 5000;
+            pTimer.Interval = 500;
         }
 
         private void Main_Load(object sender, EventArgs e) {
@@ -314,7 +313,7 @@ namespace FamilienDuell {
 
         private void btnRemiClick(object sender, EventArgs e) {
             btnNext.Enabled = true;
-            this.setPoints(1, 0);
+            //this.setPoints(1, 0);
         }
 
         private void btnMaximizeClick(object sender, EventArgs e) {
@@ -448,54 +447,100 @@ namespace FamilienDuell {
 
         #region Pointstuff
         private void pTimerTick(Object o, EventArgs e) {
-            if (pList.Count > 0 && !busyPts) {
-                busyPts = !busyPts;
-                PointControl pointy = pList[0];
-                alterPoints(pointy.team, pointy.points);
-                pList.RemoveAt(0);
-                busyPts = !busyPts;
+            if (Convert.ToInt32(lblCtrlTm1Pts.Text) != Monitor.getPtTm1) {
+                Boolean present = false;
+                foreach (PointControl pc in pList){
+                    if (pc.team == 1) {
+                        present = true;
+                    }
+                }
+                if (!present) {
+                    Monitor.setPoints(1, Convert.ToInt32(lblCtrlTm1Pts.Text));
+                }
             }
+            if (Convert.ToInt32(lblCtrlTm2Pts.Text) != Monitor.getPtTm2) {
+                Boolean present = false;
+                foreach (PointControl pc in pList) {
+                    if (pc.team == 2) {
+                        present = true;
+                    }
+                }
+                if (!present) {
+                    Monitor.setPoints(2, Convert.ToInt32(lblCtrlTm2Pts.Text));
+                }
+            }
+            if (Convert.ToInt32(lblCtrlRdPts.Text) != Monitor.getPtRd) {
+                Boolean present = false;
+                foreach (PointControl pc in pList) {
+                    if (pc.team == 0) {
+                        present = true;
+                    }
+                }
+                if (!present) {
+                    Monitor.setPoints(0, Convert.ToInt32(lblCtrlRdPts.Text));
+                }
+            }
+            alterPoints();
         }
 
-        public void alterPoints(int team, int points) {
-            if (points < 0) {
-                this.Monitor.addPoints(team, points);
-                this.getPointControlLabelByTeam(team).Text = points.ToString();
+        public void alterPoints() {
+            if (pList.Count > 0 && !Monitor.getBusyPoints) {
+                PointControl pointy = pList[0];
+                changePointsValue(pointy.team, pointy.points);
+                pList.RemoveAt(0);
             }
-            else if (points > 0){
 
+        }
+
+        public void changePointsValue(int t, int p){
+            if (p < 0) {
+                this.Monitor.minusPoints(t, p);
+            }
+            else if (p > 0) {
+                this.Monitor.plusPoints(t, p);
             }
         }
 
         public void setPoints(int t, int p, int c) {
             if (c == 1) {
-                if (p == 2) {
-                    this.lblCtrlTm1Pts.Text = t.ToString();
+                if (t == 1) {
+                    this.lblCtrlTm1Pts.Text = p.ToString();
+                    PointControl pointy = new PointControl(1, p);
+                    pList.Add(pointy);
                 }
-                else if (p == 3) {
-                    this.lblCtrlTm2Pts.Text = t.ToString();
+                else if (t == 2) {
+                    this.lblCtrlTm2Pts.Text = p.ToString();
+                    PointControl pointy = new PointControl(2, p);
+                    pList.Add(pointy);
                 }
                 else {
-                    this.lblCtrlRdPts.Text = t.ToString();
+                    this.lblCtrlRdPts.Text = p.ToString();
+                    PointControl pointy = new PointControl(0, p);
+                    pList.Add(pointy);
                 }
             }
-            else if(c == 2) {
-                if (p == 2) {
-                    int newPt = Convert.ToInt32(lblCtrlTm1Pts.Text) + t;
-                    this.lblCtrlTm1Pts.Text = newPt.ToString();
+            else if (c == 2) {
+                if (t == 1) {
+                    this.lblCtrlTm1Pts.Text = (Convert.ToInt32(lblCtrlTm1Pts.Text) + p).ToString();
+                    PointControl pointy = new PointControl(1, Convert.ToInt32(lblCtrlTm1Pts.Text) + p);
+                    pList.Add(pointy);
                 }
-                else if (p == 3) {
-                    this.lblCtrlTm2Pts.Text =+ t.ToString();
+                else if (t == 2) {
+                    this.lblCtrlTm2Pts.Text = (Convert.ToInt32(lblCtrlTm2Pts.Text) + p).ToString();
+                    PointControl pointy = new PointControl(2, Convert.ToInt32(lblCtrlTm2Pts.Text) + p);
+                    pList.Add(pointy);
                 }
                 else {
-                    this.lblCtrlRdPts.Text =+ t.ToString();
+                    this.lblCtrlRdPts.Text = (Convert.ToInt32(lblCtrlRdPts.Text) + p).ToString();
+                    PointControl pointy = new PointControl(0, Convert.ToInt32(lblCtrlRdPts.Text) + p);
+                    pList.Add(pointy);
                 }
             }
         }
 
         public void winnerPoints(int team) {
-            this.newPoints(team, this.getTeamPointsFromControl(1));
-            this.setPoints(1, 0);
+            //this.newPoints(team, this.getTeamPointsFromControl(1));
+            //this.setPoints(1, 0);
         }
         #endregion
 
