@@ -151,6 +151,7 @@
             // btnNext
             // 
             this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.Enabled = false;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Location = new System.Drawing.Point(472, 508);
             this.btnNext.Name = "btnNext";
@@ -1069,7 +1070,7 @@
             this.txtGameTitle.Name = "txtGameTitle";
             this.txtGameTitle.Size = new System.Drawing.Size(259, 20);
             this.txtGameTitle.TabIndex = 1;
-            this.txtGameTitle.Text = "DefaultGameName";
+            this.txtGameTitle.Text = "Das FamilienDuell";
             // 
             // tableLayoutPanel3
             // 

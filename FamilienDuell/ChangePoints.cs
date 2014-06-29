@@ -83,7 +83,7 @@ namespace FamilienDuell
             tbPoints.Text = punkte.ToString();
         }
 
-        private void btnApply_Click(object sender, EventArgs e)
+        private void btnAddTo_Click(object sender, EventArgs e)
         {
             int punkte = Convert.ToInt16(tbPoints.Text);
             int team = 0;
@@ -97,11 +97,7 @@ namespace FamilienDuell
             }
 
             if (team != 0) {
-                if (punkte >= 0)
-                    this.controller.newPoints(team, punkte);
-                else {
-                    this.controller.remPoints(team, Math.Abs(punkte));
-                }
+               this.controller.setPoints(team, punkte, 1);
             }
         }
 
@@ -119,7 +115,7 @@ namespace FamilienDuell
             }
 
             if (team != 0) {
-                this.controller.setPoints(team, points);
+                this.controller.setPoints(team, points, 2);
             }
         }
     }

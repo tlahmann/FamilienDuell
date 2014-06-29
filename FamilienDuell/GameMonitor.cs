@@ -36,6 +36,8 @@ namespace FamilienDuell {
             try {
                 string path = Application.StartupPath;
                 myFonts.AddFontFile(path + @"\\resources\\PressStart2P.ttf");
+                myFonts.AddFontFile(path + @"\\resources\\SECRCODE.ttf");
+                myFonts.AddFontFile(path + @"\\resources\\PLANE___.ttf");
             } catch (Exception e) {
                 MessageBox.Show("Error loading font: " + e.Message);
                 return;
@@ -61,29 +63,29 @@ namespace FamilienDuell {
                     lblPlayerRed.Text = breite.ToString();
 
                     try {
-                        FontFamily fam = myFonts.Families[0];
+                        FontFamily fam = myFonts.Families[0]; // Font lässt sich über index ändern
                         if (hoehe <= 300) {
                             using (Font f15 = new Font(fam, 15)) {
                                 lblQuestion.Font = f15;
                             }
                         } else if (hoehe <= 500) {
-                            using (Font f15 = new Font(fam, 15))
-                            using (Font f18 = new Font(fam, 18)) {
+                            using (Font f15 = new Font(fam, 20))
+                            using (Font f18 = new Font(fam, 22)) {
                                 setSize(f15, f18);
                             }
                         } else if (hoehe <= 700) {
-                            using (Font f18 = new Font(fam, 15))
-                            using (Font f22 = new Font(fam, 20)) {
+                            using (Font f18 = new Font(fam, 22))
+                            using (Font f22 = new Font(fam, 26)) {
                                 setSize(f18, f22);
                             }
                         } else if (hoehe <= 1000) {
-                            using (Font f22 = new Font(fam, 20))
+                            using (Font f22 = new Font(fam, 26))
                             using (Font f30 = new Font(fam, 38)) {
                                 setSize(f22, f30);
                             }
                         } else if (hoehe <= 1500) {
-                            using (Font f30 = new Font(fam, 25))
-                            using (Font f40 = new Font(fam, 35)) {
+                            using (Font f30 = new Font(fam, 40))
+                            using (Font f40 = new Font(fam, 45)) {
                                 setSize(f30, f40);
                             }
                         }
@@ -254,7 +256,7 @@ namespace FamilienDuell {
         }
 
         #region Point Management
-        public bool newPoints(int team, int points) {
+        public bool setPoints(int team, int points) {
             if (team == 1) {
                 targetVal = Convert.ToInt32(lblRoundPoints.Text) + points;
             }
@@ -285,7 +287,7 @@ namespace FamilienDuell {
             return true;
         }
 
-        public bool setPoints(int team, int points) {
+        public bool addPoints(int team, int points) {
             int currentPoints = 0;
             if (team == 1) {
                 currentPoints = int.Parse(lblRoundPoints.Text);
@@ -310,60 +312,60 @@ namespace FamilienDuell {
 
         }
 
-        private void addPoints(object sender, EventArgs e) {
+        //private void addPoints(object sender, EventArgs e) {
 
-            if (targetTeam == 1) {
-                if (Convert.ToInt16(lblRoundPoints.Text) < targetVal) {
-                    lblRoundPoints.Text = Convert.ToString(Convert.ToInt16(lblRoundPoints.Text) + 1);
-                }
-                else {
-                    timerAddPoints.Enabled = false;
-                }
-            }
-            else if (targetTeam == 2) {
-                if (Convert.ToInt32(lblPointsTeam1.Text) < targetVal) {
-                    lblPointsTeam1.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam1.Text) + 1);
-                }
-                else {
-                    timerAddPoints.Enabled = false;
-                }
-            }
-            else if (targetTeam == 3) {
-                if (Convert.ToInt32(lblPointsTeam2.Text) < targetVal) {
-                    lblPointsTeam2.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam2.Text) + 1);
-                }
-                else {
-                    timerAddPoints.Enabled = false;
-                }
-            }
-        }
+        //    if (targetTeam == 1) {
+        //        if (Convert.ToInt16(lblRoundPoints.Text) < targetVal) {
+        //            lblRoundPoints.Text = Convert.ToString(Convert.ToInt16(lblRoundPoints.Text) + 1);
+        //        }
+        //        else {
+        //            timerAddPoints.Enabled = false;
+        //        }
+        //    }
+        //    else if (targetTeam == 2) {
+        //        if (Convert.ToInt32(lblPointsTeam1.Text) < targetVal) {
+        //            lblPointsTeam1.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam1.Text) + 1);
+        //        }
+        //        else {
+        //            timerAddPoints.Enabled = false;
+        //        }
+        //    }
+        //    else if (targetTeam == 3) {
+        //        if (Convert.ToInt32(lblPointsTeam2.Text) < targetVal) {
+        //            lblPointsTeam2.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam2.Text) + 1);
+        //        }
+        //        else {
+        //            timerAddPoints.Enabled = false;
+        //        }
+        //    }
+        //}
 
-        private void delPoints(object sender, EventArgs e) {
-            if (targetTeamDel == 1) {
-                if (Convert.ToInt32(lblRoundPoints.Text) > targetValDel) {
-                    lblRoundPoints.Text = Convert.ToString(Convert.ToInt32(lblRoundPoints.Text) - 1);
-                }
-                else {
-                    timerDelPoints.Enabled = false;
-                }
-            }
-            else if (targetTeamDel == 2) {
-                if (Convert.ToInt32(lblPointsTeam1.Text) > targetValDel) {
-                    lblPointsTeam1.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam1.Text) - 1);
-                }
-                else {
-                    timerDelPoints.Enabled = false;
-                }
-            }
-            else if (targetTeamDel == 3) {
-                if (Convert.ToInt32(lblPointsTeam2.Text) > targetValDel) {
-                    lblPointsTeam2.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam2.Text) - 1);
-                }
-                else {
-                    timerDelPoints.Enabled = false;
-                }
-            }
-        }
+        //private void delPoints(object sender, EventArgs e) {
+        //    if (targetTeamDel == 1) {
+        //        if (Convert.ToInt32(lblRoundPoints.Text) > targetValDel) {
+        //            lblRoundPoints.Text = Convert.ToString(Convert.ToInt32(lblRoundPoints.Text) - 1);
+        //        }
+        //        else {
+        //            timerDelPoints.Enabled = false;
+        //        }
+        //    }
+        //    else if (targetTeamDel == 2) {
+        //        if (Convert.ToInt32(lblPointsTeam1.Text) > targetValDel) {
+        //            lblPointsTeam1.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam1.Text) - 1);
+        //        }
+        //        else {
+        //            timerDelPoints.Enabled = false;
+        //        }
+        //    }
+        //    else if (targetTeamDel == 3) {
+        //        if (Convert.ToInt32(lblPointsTeam2.Text) > targetValDel) {
+        //            lblPointsTeam2.Text = Convert.ToString(Convert.ToInt32(lblPointsTeam2.Text) - 1);
+        //        }
+        //        else {
+        //            timerDelPoints.Enabled = false;
+        //        }
+        //    }
+        //}
         #endregion
 
         #region Resolve Things
@@ -425,7 +427,7 @@ namespace FamilienDuell {
                 lblAnswerPts6.Text = quantity;
             }
             timerRight.Enabled = false;
-            newPoints(1, int.Parse(quantity));
+            setPoints(1, int.Parse(quantity));
         }
 
         public void writeResult(String[] text) {

@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
@@ -26,6 +19,7 @@ namespace FamilienDuell {
 
         // determines if the monitor form is maximized
         Boolean maximus;
+        Boolean busyPts = false;
 
         // initialize monitor
         GameMonitor Monitor = new GameMonitor();
@@ -36,6 +30,9 @@ namespace FamilienDuell {
         // the current question object
         Question question;
 
+        List<PointControl> pList = new List<PointControl>();
+
+        System.Timers.Timer pTimer = new System.Timers.Timer();
 
         public Main() {
             InitializeComponent();
@@ -48,6 +45,9 @@ namespace FamilienDuell {
             this.dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewRowPostPaint);
             this.tabMainControl.SelectedIndexChanged += new EventHandler(this.checkTab);
             //tabMainControl.TabIndexChanged += new EventHandler(this.tabStateChanged);
+
+            pTimer.Elapsed += new System.Timers.ElapsedEventHandler(pTimerTick);
+            pTimer.Interval = 5000;
         }
 
         private void Main_Load(object sender, EventArgs e) {
@@ -88,6 +88,7 @@ namespace FamilienDuell {
                 tableLayoutPanel3.BackColor = SystemColors.InactiveCaption;
                 numericUpDown1.Enabled = false;
                 cbSounds.Enabled = false;
+                btnNext.Enabled = false;
                 tableLayoutPanel4.BackColor = SystemColors.InactiveCaption;
             }
         }
@@ -106,11 +107,13 @@ namespace FamilienDuell {
                 checkTeamNames(txtTeam1.Text, txtTeam2.Text);
                 numericUpDown1.Enabled = true;
                 cbSounds.Enabled = true;
+                btnNext.Enabled = true;
                 tableLayoutPanel4.BackColor = SystemColors.ActiveCaption;
             } else {
                 Monitor.lblTeam2.Text = txtTeam2.Text.ToString();
                 numericUpDown1.Enabled = false;
                 cbSounds.Enabled = false;
+                btnNext.Enabled = false;
                 tableLayoutPanel4.BackColor = SystemColors.InactiveCaption;
             }
         }
@@ -193,6 +196,8 @@ namespace FamilienDuell {
             if (currentGameStatus == 0) {
                 if (tabMainControl.SelectedIndex == 3 && currentSetupStatus == 3) {
                     btnNext.Text = "Start";
+                } else if (tabMainControl.SelectedIndex == 3 && currentSetupStatus != 3) {
+                    btnNext.Text = "Start";
                 } else {
                     btnNext.Text = "Weiter";
                 }
@@ -217,6 +222,7 @@ namespace FamilienDuell {
             switch (this.currentGameStatus) {
                 case 0:
                     this.currentGameStatus = 1;
+                    pTimer.Enabled = true;
                     break;
 
                 case 1:
@@ -441,19 +447,50 @@ namespace FamilienDuell {
         }
 
         #region Pointstuff
-        public void newPoints(int team, int points) {
-            this.Monitor.newPoints(team, points);
-            this.getPointControlLabelByTeam(team).Text = (this.getTeamPointsFromControl(team) + points).ToString();
+        private void pTimerTick(Object o, EventArgs e) {
+            if (pList.Count > 0 && !busyPts) {
+                busyPts = !busyPts;
+                PointControl pointy = pList[0];
+                alterPoints(pointy.team, pointy.points);
+                pList.RemoveAt(0);
+                busyPts = !busyPts;
+            }
         }
 
-        public void remPoints(int team, int points) {
-            this.Monitor.remPoints(team, points);
-            this.getPointControlLabelByTeam(team).Text = (this.getTeamPointsFromControl(team) - points).ToString();
+        public void alterPoints(int team, int points) {
+            if (points < 0) {
+                this.Monitor.addPoints(team, points);
+                this.getPointControlLabelByTeam(team).Text = points.ToString();
+            }
+            else if (points > 0){
+
+            }
         }
 
-        public void setPoints(int team, int points) {
-            this.Monitor.setPoints(team, points);
-            this.getPointControlLabelByTeam(team).Text = points.ToString();
+        public void setPoints(int t, int p, int c) {
+            if (c == 1) {
+                if (p == 2) {
+                    this.lblCtrlTm1Pts.Text = t.ToString();
+                }
+                else if (p == 3) {
+                    this.lblCtrlTm2Pts.Text = t.ToString();
+                }
+                else {
+                    this.lblCtrlRdPts.Text = t.ToString();
+                }
+            }
+            else if(c == 2) {
+                if (p == 2) {
+                    int newPt = Convert.ToInt32(lblCtrlTm1Pts.Text) + t;
+                    this.lblCtrlTm1Pts.Text = newPt.ToString();
+                }
+                else if (p == 3) {
+                    this.lblCtrlTm2Pts.Text =+ t.ToString();
+                }
+                else {
+                    this.lblCtrlRdPts.Text =+ t.ToString();
+                }
+            }
         }
 
         public void winnerPoints(int team) {

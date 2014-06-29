@@ -37,7 +37,7 @@
             this.btnMinus2 = new System.Windows.Forms.Button();
             this.btnPlus3 = new System.Windows.Forms.Button();
             this.btnMinus3 = new System.Windows.Forms.Button();
-            this.btnApply = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnRound = new System.Windows.Forms.Button();
             this.btnSet = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -132,15 +132,15 @@
             this.btnMinus3.UseVisualStyleBackColor = true;
             this.btnMinus3.Click += new System.EventHandler(this.btnMinus3_Click);
             // 
-            // btnApply
+            // btnAdd
             // 
-            this.btnApply.Location = new System.Drawing.Point(95, 183);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(74, 23);
-            this.btnApply.TabIndex = 9;
-            this.btnApply.Text = "Addieren";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            this.btnAdd.Location = new System.Drawing.Point(95, 183);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(74, 23);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "Addieren";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAddTo_Click);
             // 
             // btnRound
             // 
@@ -169,7 +169,7 @@
             this.ClientSize = new System.Drawing.Size(181, 218);
             this.Controls.Add(this.btnSet);
             this.Controls.Add(this.btnRound);
-            this.Controls.Add(this.btnApply);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnMinus3);
             this.Controls.Add(this.btnPlus3);
             this.Controls.Add(this.btnMinus2);
@@ -201,7 +201,7 @@
         private System.Windows.Forms.Button btnMinus2;
         private System.Windows.Forms.Button btnPlus3;
         private System.Windows.Forms.Button btnMinus3;
-        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRound;
         private System.Windows.Forms.Button btnSet;
     }
