@@ -8,6 +8,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Threading;
 using System.Xml;
+using System.ComponentModel;
 
 namespace FamilienDuell {
 
@@ -33,6 +34,8 @@ namespace FamilienDuell {
 
         System.Timers.Timer pTimer = new System.Timers.Timer();
 
+        private BackgroundWorker bwPoints = new BackgroundWorker();
+
         public Main() {
             InitializeComponent();
 
@@ -46,7 +49,11 @@ namespace FamilienDuell {
             //tabMainControl.TabIndexChanged += new EventHandler(this.tabStateChanged);
 
             pTimer.Elapsed += new System.Timers.ElapsedEventHandler(pTimerTick);
-            pTimer.Interval = 500;
+            pTimer.Interval = 5000;
+
+            bwPoints.DoWork += new DoWorkEventHandler(bwDoWork);
+            bwPoints.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bwRunWorkerCompleted);
+            bwPoints.ProgressChanged += new ProgressChangedEventHandler(bwProgressChanged);
         }
 
         private void Main_Load(object sender, EventArgs e) {
@@ -221,7 +228,9 @@ namespace FamilienDuell {
             switch (this.currentGameStatus) {
                 case 0:
                     this.currentGameStatus = 1;
-                    pTimer.Enabled = true;
+                    //bwCalc.WorkerSupportsCancellation = true;
+                    //bwCalc.WorkerReportsProgress = true;
+                    bwPoints.RunWorkerAsync();
                     break;
 
                 case 1:
@@ -446,6 +455,21 @@ namespace FamilienDuell {
         }
 
         #region Pointstuff
+
+        // backgroundworker done
+        private void bwRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
+            
+        }
+
+        // backgroundworker
+        private void bwDoWork(object sender, DoWorkEventArgs e) {
+            pTimer.Enabled = true;
+        }
+
+        private void bwProgressChanged(object sender, ProgressChangedEventArgs e) {
+
+        }
+
         private void pTimerTick(Object o, EventArgs e) {
             if (Convert.ToInt32(lblCtrlTm1Pts.Text) != Monitor.getPtTm1) {
                 Boolean present = false;
@@ -455,7 +479,7 @@ namespace FamilienDuell {
                     }
                 }
                 if (!present) {
-                    Monitor.setPoints(1, Convert.ToInt32(lblCtrlTm1Pts.Text));
+                    addPointsToList(1, Convert.ToInt32(lblCtrlTm1Pts.Text), 1);
                 }
             }
             if (Convert.ToInt32(lblCtrlTm2Pts.Text) != Monitor.getPtTm2) {
@@ -466,7 +490,7 @@ namespace FamilienDuell {
                     }
                 }
                 if (!present) {
-                    Monitor.setPoints(2, Convert.ToInt32(lblCtrlTm2Pts.Text));
+                    addPointsToList(2, Convert.ToInt32(lblCtrlTm2Pts.Text), 2);
                 }
             }
             if (Convert.ToInt32(lblCtrlRdPts.Text) != Monitor.getPtRd) {
@@ -477,19 +501,23 @@ namespace FamilienDuell {
                     }
                 }
                 if (!present) {
-                    Monitor.setPoints(0, Convert.ToInt32(lblCtrlRdPts.Text));
+                    addPointsToList(0, Convert.ToInt32(lblCtrlRdPts.Text), 0);
                 }
             }
-            alterPoints();
-        }
-
-        public void alterPoints() {
+            //alterPoints();
             if (pList.Count > 0 && !Monitor.getBusyPoints) {
                 PointControl pointy = pList[0];
                 changePointsValue(pointy.team, pointy.points);
                 pList.RemoveAt(0);
             }
+        }
 
+        public void alterPoints() {
+            //if (pList.Count > 0 && !Monitor.getBusyPoints) {
+            //    PointControl pointy = pList[0];
+            //    changePointsValue(pointy.team, pointy.points);
+            //    pList.RemoveAt(0);
+            //}
         }
 
         public void changePointsValue(int t, int p){
@@ -501,7 +529,7 @@ namespace FamilienDuell {
             }
         }
 
-        public void setPoints(int t, int p, int c) {
+        public void addPointsToList(int t, int p, int c) {
             if (c == 1) {
                 if (t == 1) {
                     this.lblCtrlTm1Pts.Text = p.ToString();

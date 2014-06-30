@@ -259,7 +259,6 @@ namespace FamilienDuell {
 
         #region Point Management
         public bool setPoints(int team, int points) {
-            busyPoints = true;
             int currentPoints = 0;
             currentPoints = int.Parse(lblRoundPoints.Text);
 
@@ -273,13 +272,10 @@ namespace FamilienDuell {
                 targetVal = points;
                 timerAddPoints.Enabled = true;
             }
-
-            busyPoints = false;
             return true;
         }
 
         public bool minusPoints(int team, int points) {
-            busyPoints = true;
             if (team == 1) {
                 targetValDel = Convert.ToInt32(lblRoundPoints.Text) - points;
             }
@@ -291,12 +287,10 @@ namespace FamilienDuell {
             }
             targetTeamDel = team;
             timerDelPoints.Enabled = true;
-            busyPoints = false;
             return true;
         }
 
         public bool plusPoints(int team, int points) {
-            busyPoints = true;
             if (team == 0) {
                 targetVal = Convert.ToInt32(lblRoundPoints.Text) + points;
             }
@@ -308,7 +302,6 @@ namespace FamilienDuell {
             }
             targetTeam = team;
             timerAddPoints.Enabled = true;
-            busyPoints = false;
             return true;
         }
 
@@ -337,6 +330,7 @@ namespace FamilienDuell {
         }
 
         private void addPoints(object sender, EventArgs e) {
+            busyPoints = true;
             if (targetTeam == 0) {
                 if (Convert.ToInt16(lblRoundPoints.Text) < targetVal) {
                     lblRoundPoints.Text = Convert.ToString(Convert.ToInt16(lblRoundPoints.Text) + 1);
@@ -361,9 +355,13 @@ namespace FamilienDuell {
                     timerAddPoints.Enabled = false;
                 }
             }
+            else {
+                busyPoints = false;
+            }
         }
 
         private void delPoints(object sender, EventArgs e) {
+            busyPoints = true;
             if (targetTeamDel == 0) {
                 if (Convert.ToInt32(lblRoundPoints.Text) > targetValDel) {
                     lblRoundPoints.Text = Convert.ToString(Convert.ToInt32(lblRoundPoints.Text) - 1);
@@ -387,6 +385,9 @@ namespace FamilienDuell {
                 else {
                     timerDelPoints.Enabled = false;
                 }
+            }
+            else {
+                busyPoints = false;
             }
         }
         #endregion

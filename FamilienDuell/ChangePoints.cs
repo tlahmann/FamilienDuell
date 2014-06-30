@@ -97,7 +97,7 @@ namespace FamilienDuell
             }
 
             if (team != -1) {
-               this.controller.setPoints(team, punkte, 2);
+               this.controller.addPointsToList(team, punkte, 2);
             }
         }
 
@@ -115,7 +115,7 @@ namespace FamilienDuell
             }
 
             if (team != -1) {
-                this.controller.setPoints(team, points, 1);
+                this.controller.addPointsToList(team, points, 1);
             }
         }
     }
