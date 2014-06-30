@@ -162,9 +162,6 @@ namespace FamilienDuell {
         }
 
         public void resetMonitor() {
-            lblWrong2.Visible = false;
-            //lblTeam1.Visible = true;
-            //lblTeam2.Visible = true;
             lblPointsTeam1.Visible = true;
             lblPointsTeam2.Visible = true;
             lblRoundPoints.Visible = true;
@@ -192,7 +189,6 @@ namespace FamilienDuell {
             lblAnswerPts4.Text = "..";
             lblAnswerPts5.Text = "..";
             lblAnswerPts6.Text = "..";
-            lblWrong2.Text = "";
         }
 
         public void nextRound(int roundNumber) {
@@ -219,6 +215,9 @@ namespace FamilienDuell {
         }
 
         public bool makeWrong(bool isInTeamRound) {
+
+            MessageBox.Show(wrongs.ToString());
+
             if (isInTeamRound) {
                 if (wrongs == 0) {
                     lblWrong1.Visible = true;
@@ -236,7 +235,7 @@ namespace FamilienDuell {
 
             }
             else {
-                lblWrong2.Visible = true;
+                lblWrong1.Visible = true;
                 timerWrong.Enabled = true;
                 return false;
             }
