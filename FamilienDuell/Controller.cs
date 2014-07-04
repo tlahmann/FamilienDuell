@@ -36,6 +36,8 @@ namespace FamilienDuell {
         // the current question object
         Question question;
 
+        InputDevice id = new InputDevice( Handle );
+        int NumberOfKeyboards;
 
         public Main() {
             InitializeComponent();
@@ -48,6 +50,13 @@ namespace FamilienDuell {
             this.dataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewRowPostPaint);
             this.tabMainControl.SelectedIndexChanged += new EventHandler(this.checkTab);
             //tabMainControl.TabIndexChanged += new EventHandler(this.tabStateChanged);
+
+            // Create a new InputDevice object, get the number of
+            // keyboards, and register the method which will handle the 
+            // InputDevice KeyPressed event
+            id = 
+            NumberOfKeyboards = id.EnumerateDevices();
+            id.KeyPressed += new InputDevice.DeviceEventHandler( m_KeyPressed );
         }
 
         private void Main_Load(object sender, EventArgs e) {
@@ -169,10 +178,14 @@ namespace FamilienDuell {
                     }
                     tabMainControl.SelectedIndex = 1;
                     currentSetupStatus = 1;
-                } else {
+                } else if (cbBuzzer.Checked == true){
                     dataGridView.Enabled = false;
                     tabMainControl.SelectedIndex = 2;
                     currentSetupStatus = 2;
+                } else {
+                    dataGridView.Enabled = false;
+                    tabMainControl.SelectedIndex = 3;
+                    currentSetupStatus = 3;
                 }
 
             } else if (tabMainControl.SelectedIndex == 1) {
@@ -183,7 +196,12 @@ namespace FamilienDuell {
             } else if (tabMainControl.SelectedIndex == 2) {
                 currentSetupStatus = 3;
                 tabMainControl.SelectedIndex = 3;
-            } else if (tabMainControl.SelectedIndex == 3) {
+            }
+            else if (tabMainControl.SelectedIndex == 3) {
+                currentSetupStatus = 4;
+                tabMainControl.SelectedIndex = 4;
+            }
+            else if (tabMainControl.SelectedIndex == 4) {
                 playGame();
             }
         }
@@ -191,7 +209,7 @@ namespace FamilienDuell {
         // check which tab is selected to change the text on the next-button
         public void checkTab(object sender, EventArgs e) {
             if (currentGameStatus == 0) {
-                if (tabMainControl.SelectedIndex == 3 && currentSetupStatus == 3) {
+                if (tabMainControl.SelectedIndex == 4 && currentSetupStatus == 4) {
                     btnNext.Text = "Start";
                 } else {
                     btnNext.Text = "Weiter";
@@ -461,6 +479,22 @@ namespace FamilienDuell {
             this.setPoints(1, 0);
         }
         #endregion
+        
+        // The WndProc is overridden to allow InputDevice to intercept
+        // messages to the window and thus catch WM_INPUT messages
+        protected override void WndProc( ref Message message )
+        {
+           if( id != null )
+           {
+               id.ProcessMessage( message );
+           }
+           base.WndProc( ref message );
+        }
+
+        private void m_KeyPressed( object sender, InputDevice.KeyControlEventArgs e )
+        {
+            lblBuzzerSet.Text = "Hallo";
+        }
 
         protected Label getPointControlLabelByTeam(int team) {
             switch (team) {
@@ -477,6 +511,14 @@ namespace FamilienDuell {
 
         protected int getTeamPointsFromControl(int team) {
             return int.Parse(this.getPointControlLabelByTeam(team).Text);
+        }
+
+        private void btnBuzzerTm1Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnBuzzerTm2Click(object sender, EventArgs e) {
+
         }
 
     }

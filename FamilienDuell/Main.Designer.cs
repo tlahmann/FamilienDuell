@@ -109,9 +109,17 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.cbSounds = new System.Windows.Forms.CheckBox();
             this.cbPlayernames = new System.Windows.Forms.CheckBox();
+            this.cbBuzzer = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTeamAlert = new System.Windows.Forms.Label();
             this.tabMainControl = new System.Windows.Forms.TabControl();
+            this.tabBuzzer = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnBuzzerTm1 = new System.Windows.Forms.Button();
+            this.btnBuzzerTm2 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblBuzzerSet = new System.Windows.Forms.Label();
             this.tabPlay.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -137,6 +145,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             this.tabMainControl.SuspendLayout();
+            this.tabBuzzer.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -1233,9 +1244,11 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.cbSounds, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.cbPlayernames, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.cbBuzzer, 0, 1);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 43);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(286, 48);
             this.tableLayoutPanel8.TabIndex = 13;
@@ -1262,6 +1275,16 @@
             this.cbPlayernames.TabIndex = 6;
             this.cbPlayernames.Text = "Spielernamen";
             this.cbPlayernames.UseVisualStyleBackColor = true;
+            // 
+            // cbBuzzer
+            // 
+            this.cbBuzzer.AutoSize = true;
+            this.cbBuzzer.Location = new System.Drawing.Point(3, 27);
+            this.cbBuzzer.Name = "cbBuzzer";
+            this.cbBuzzer.Size = new System.Drawing.Size(105, 17);
+            this.cbBuzzer.TabIndex = 7;
+            this.cbBuzzer.Text = "Buzzer benutzen";
+            this.cbBuzzer.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -1290,6 +1313,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabMainControl.Controls.Add(this.tabMainSettings);
             this.tabMainControl.Controls.Add(this.tabPlayers);
+            this.tabMainControl.Controls.Add(this.tabBuzzer);
             this.tabMainControl.Controls.Add(this.tabQuests);
             this.tabMainControl.Controls.Add(this.tabPlay);
             this.tabMainControl.Location = new System.Drawing.Point(12, 42);
@@ -1297,6 +1321,98 @@
             this.tabMainControl.SelectedIndex = 0;
             this.tabMainControl.Size = new System.Drawing.Size(610, 460);
             this.tabMainControl.TabIndex = 2;
+            // 
+            // tabBuzzer
+            // 
+            this.tabBuzzer.Controls.Add(this.tableLayoutPanel18);
+            this.tabBuzzer.Location = new System.Drawing.Point(4, 22);
+            this.tabBuzzer.Name = "tabBuzzer";
+            this.tabBuzzer.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBuzzer.Size = new System.Drawing.Size(602, 434);
+            this.tabBuzzer.TabIndex = 5;
+            this.tabBuzzer.Text = "Buzzer";
+            this.tabBuzzer.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.ColumnCount = 1;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 0, 1);
+            this.tableLayoutPanel18.Controls.Add(this.label13, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.lblBuzzerSet, 0, 2);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 3;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(596, 428);
+            this.tableLayoutPanel18.TabIndex = 0;
+            // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.ColumnCount = 2;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel19.Controls.Add(this.btnBuzzerTm1, 0, 0);
+            this.tableLayoutPanel19.Controls.Add(this.btnBuzzerTm2, 1, 0);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 1;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(590, 372);
+            this.tableLayoutPanel19.TabIndex = 0;
+            // 
+            // btnBuzzerTm1
+            // 
+            this.btnBuzzerTm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBuzzerTm1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuzzerTm1.Location = new System.Drawing.Point(20, 100);
+            this.btnBuzzerTm1.Margin = new System.Windows.Forms.Padding(20, 100, 20, 100);
+            this.btnBuzzerTm1.Name = "btnBuzzerTm1";
+            this.btnBuzzerTm1.Size = new System.Drawing.Size(255, 172);
+            this.btnBuzzerTm1.TabIndex = 0;
+            this.btnBuzzerTm1.Text = "Buzzer einrichten für Team 1";
+            this.btnBuzzerTm1.UseVisualStyleBackColor = true;
+            this.btnBuzzerTm1.Click += new System.EventHandler(this.btnBuzzerTm1Click);
+            // 
+            // btnBuzzerTm2
+            // 
+            this.btnBuzzerTm2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBuzzerTm2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuzzerTm2.Location = new System.Drawing.Point(315, 100);
+            this.btnBuzzerTm2.Margin = new System.Windows.Forms.Padding(20, 100, 20, 100);
+            this.btnBuzzerTm2.Name = "btnBuzzerTm2";
+            this.btnBuzzerTm2.Size = new System.Drawing.Size(255, 172);
+            this.btnBuzzerTm2.TabIndex = 1;
+            this.btnBuzzerTm2.Text = "Buzzer einrichten für Team 2";
+            this.btnBuzzerTm2.UseVisualStyleBackColor = true;
+            this.btnBuzzerTm2.Click += new System.EventHandler(this.btnBuzzerTm2Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Name = "label13";
+            this.label13.Padding = new System.Windows.Forms.Padding(5);
+            this.label13.Size = new System.Drawing.Size(130, 23);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Buzzereinstellungen";
+            // 
+            // lblBuzzerSet
+            // 
+            this.lblBuzzerSet.AutoSize = true;
+            this.lblBuzzerSet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblBuzzerSet.Location = new System.Drawing.Point(3, 408);
+            this.lblBuzzerSet.Name = "lblBuzzerSet";
+            this.lblBuzzerSet.Size = new System.Drawing.Size(590, 20);
+            this.lblBuzzerSet.TabIndex = 2;
+            this.lblBuzzerSet.Text = "Bitte wählen Sie den festzulegenden Buzzer.";
+            this.lblBuzzerSet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Main
             // 
@@ -1352,6 +1468,10 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tabMainControl.ResumeLayout(false);
+            this.tabBuzzer.ResumeLayout(false);
+            this.tableLayoutPanel18.ResumeLayout(false);
+            this.tableLayoutPanel18.PerformLayout();
+            this.tableLayoutPanel19.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1443,6 +1563,14 @@
         private System.Windows.Forms.Label lblCtrlTm2Pts;
         private System.Windows.Forms.Label lblCtrlTm2Pt;
         private System.Windows.Forms.Label lblCtrlRdPts;
+        private System.Windows.Forms.CheckBox cbBuzzer;
+        private System.Windows.Forms.TabPage tabBuzzer;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        private System.Windows.Forms.Button btnBuzzerTm1;
+        private System.Windows.Forms.Button btnBuzzerTm2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblBuzzerSet;
     }
 }
 
