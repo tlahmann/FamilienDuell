@@ -93,6 +93,16 @@ namespace FamilienDuell.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgTextfieldGreen {
+            get {
+                object obj = ResourceManager.GetObject("bgTextfieldGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bgTextfieldKlein {
             get {
                 object obj = ResourceManager.GetObject("bgTextfieldKlein", resourceCulture);
@@ -106,6 +116,16 @@ namespace FamilienDuell.Properties {
         internal static System.Drawing.Bitmap bgTextfieldLarge {
             get {
                 object obj = ResourceManager.GetObject("bgTextfieldLarge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bgTextfieldLarge1 {
+            get {
+                object obj = ResourceManager.GetObject("bgTextfieldLarge1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

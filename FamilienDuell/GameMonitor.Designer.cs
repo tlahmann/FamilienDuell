@@ -30,19 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameMonitor));
-            this.lblQuestion = new System.Windows.Forms.Label();
-            this.lblPointsTeam1 = new System.Windows.Forms.Label();
-            this.lblPointsTeam2 = new System.Windows.Forms.Label();
-            this.lblRoundPoints = new System.Windows.Forms.Label();
             this.timerWrong = new System.Windows.Forms.Timer(this.components);
             this.timerRight = new System.Windows.Forms.Timer(this.components);
             this.timerAddPoints = new System.Windows.Forms.Timer(this.components);
             this.timerDelPoints = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTeam1 = new System.Windows.Forms.Label();
-            this.lblTeam2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblPlayerBlue = new System.Windows.Forms.Label();
+            this.lblPlayerRed = new System.Windows.Forms.Label();
+            this.resultWriter = new System.Windows.Forms.Timer(this.components);
+            this.lblTeam1 = new System.Windows.Forms.Label();
+            this.lblPointsTeam2 = new System.Windows.Forms.Label();
+            this.lblRoundPoints = new System.Windows.Forms.Label();
+            this.lblTeam2 = new System.Windows.Forms.Label();
+            this.lblPointsTeam1 = new System.Windows.Forms.Label();
             this.lblAnswerNo6 = new System.Windows.Forms.Label();
             this.lblAnswer1 = new System.Windows.Forms.Label();
             this.lblAnswerNo5 = new System.Windows.Forms.Label();
@@ -61,15 +66,10 @@
             this.lblAnswerPts3 = new System.Windows.Forms.Label();
             this.lblAnswerPts6 = new System.Windows.Forms.Label();
             this.lblAnswerNo1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblQuestion = new System.Windows.Forms.Label();
             this.lblWrong1 = new System.Windows.Forms.PictureBox();
             this.lblWrong2 = new System.Windows.Forms.PictureBox();
             this.lblWrong3 = new System.Windows.Forms.PictureBox();
-            this.lblPlayerBlue = new System.Windows.Forms.Label();
-            this.lblPlayerRed = new System.Windows.Forms.Label();
-            this.resultWriter = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -80,72 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lblWrong2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblWrong3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblQuestion
-            // 
-            this.lblQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuestion.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuestion.ForeColor = System.Drawing.Color.Green;
-            this.lblQuestion.Image = global::FamilienDuell.Properties.Resources.bgTextfieldLarge;
-            this.lblQuestion.Location = new System.Drawing.Point(4, 0);
-            this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(1311, 105);
-            this.lblQuestion.TabIndex = 0;
-            this.lblQuestion.Text = "DefaultGameName";
-            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPointsTeam1
-            // 
-            this.lblPointsTeam1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPointsTeam1.BackColor = System.Drawing.Color.Transparent;
-            this.lblPointsTeam1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPointsTeam1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblPointsTeam1.Image = global::FamilienDuell.Properties.Resources.bgTextfieldKlein;
-            this.lblPointsTeam1.Location = new System.Drawing.Point(362, 0);
-            this.lblPointsTeam1.Name = "lblPointsTeam1";
-            this.lblPointsTeam1.Size = new System.Drawing.Size(194, 94);
-            this.lblPointsTeam1.TabIndex = 3;
-            this.lblPointsTeam1.Text = "0";
-            this.lblPointsTeam1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblPointsTeam2
-            // 
-            this.lblPointsTeam2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPointsTeam2.BackColor = System.Drawing.Color.Transparent;
-            this.lblPointsTeam2.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPointsTeam2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblPointsTeam2.Image = global::FamilienDuell.Properties.Resources.bgTextfieldKlein;
-            this.lblPointsTeam2.Location = new System.Drawing.Point(762, 0);
-            this.lblPointsTeam2.Name = "lblPointsTeam2";
-            this.lblPointsTeam2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblPointsTeam2.Size = new System.Drawing.Size(194, 94);
-            this.lblPointsTeam2.TabIndex = 4;
-            this.lblPointsTeam2.Text = "0";
-            this.lblPointsTeam2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblRoundPoints
-            // 
-            this.lblRoundPoints.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRoundPoints.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoundPoints.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoundPoints.ForeColor = System.Drawing.Color.Green;
-            this.lblRoundPoints.Image = global::FamilienDuell.Properties.Resources.bgTextfieldKlein;
-            this.lblRoundPoints.Location = new System.Drawing.Point(562, 0);
-            this.lblRoundPoints.Name = "lblRoundPoints";
-            this.lblRoundPoints.Size = new System.Drawing.Size(194, 94);
-            this.lblRoundPoints.TabIndex = 6;
-            this.lblRoundPoints.Text = "0";
-            this.lblRoundPoints.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timerWrong
             // 
@@ -209,43 +143,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1319, 94);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // lblTeam1
-            // 
-            this.lblTeam1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTeam1.BackColor = System.Drawing.Color.Transparent;
-            this.lblTeam1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeam1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblTeam1.Image = global::FamilienDuell.Properties.Resources.bgTextfieldBlue;
-            this.lblTeam1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTeam1.Location = new System.Drawing.Point(3, 0);
-            this.lblTeam1.Name = "lblTeam1";
-            this.lblTeam1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.lblTeam1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTeam1.Size = new System.Drawing.Size(353, 94);
-            this.lblTeam1.TabIndex = 2;
-            this.lblTeam1.Text = "Team Blau";
-            this.lblTeam1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTeam2
-            // 
-            this.lblTeam2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTeam2.BackColor = System.Drawing.Color.Transparent;
-            this.lblTeam2.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeam2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTeam2.Image = global::FamilienDuell.Properties.Resources.bgTextfieldRed;
-            this.lblTeam2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTeam2.Location = new System.Drawing.Point(962, 0);
-            this.lblTeam2.Name = "lblTeam2";
-            this.lblTeam2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.lblTeam2.Size = new System.Drawing.Size(354, 94);
-            this.lblTeam2.TabIndex = 5;
-            this.lblTeam2.Text = "Team Rot";
-            this.lblTeam2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -291,6 +188,178 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1319, 592);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.lblQuestion, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(8, 8);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1319, 204);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 500F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblPlayerBlue, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblPlayerRed, 2, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1313, 99);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.Controls.Add(this.lblWrong1, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lblWrong2, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lblWrong3, 2, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(406, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(500, 99);
+            this.tableLayoutPanel6.TabIndex = 2;
+            // 
+            // lblPlayerBlue
+            // 
+            this.lblPlayerBlue.AutoSize = true;
+            this.lblPlayerBlue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPlayerBlue.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerBlue.Location = new System.Drawing.Point(3, 0);
+            this.lblPlayerBlue.Name = "lblPlayerBlue";
+            this.lblPlayerBlue.Size = new System.Drawing.Size(400, 99);
+            this.lblPlayerBlue.TabIndex = 3;
+            this.lblPlayerBlue.Text = "Spieler Blau";
+            this.lblPlayerBlue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPlayerBlue.Visible = false;
+            // 
+            // lblPlayerRed
+            // 
+            this.lblPlayerRed.AutoSize = true;
+            this.lblPlayerRed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPlayerRed.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerRed.Location = new System.Drawing.Point(909, 0);
+            this.lblPlayerRed.Name = "lblPlayerRed";
+            this.lblPlayerRed.Size = new System.Drawing.Size(401, 99);
+            this.lblPlayerRed.TabIndex = 4;
+            this.lblPlayerRed.Text = "Spieler Rot";
+            this.lblPlayerRed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPlayerRed.Visible = false;
+            // 
+            // resultWriter
+            // 
+            this.resultWriter.Tick += new System.EventHandler(this.resultWriter_Tick);
+            // 
+            // lblTeam1
+            // 
+            this.lblTeam1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTeam1.BackColor = System.Drawing.Color.Transparent;
+            this.lblTeam1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTeam1.ForeColor = System.Drawing.Color.Black;
+            this.lblTeam1.Image = ((System.Drawing.Image)(resources.GetObject("lblTeam1.Image")));
+            this.lblTeam1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTeam1.Location = new System.Drawing.Point(3, 0);
+            this.lblTeam1.Name = "lblTeam1";
+            this.lblTeam1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.lblTeam1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTeam1.Size = new System.Drawing.Size(353, 94);
+            this.lblTeam1.TabIndex = 2;
+            this.lblTeam1.Text = "Team Blau";
+            this.lblTeam1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPointsTeam2
+            // 
+            this.lblPointsTeam2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPointsTeam2.BackColor = System.Drawing.Color.Transparent;
+            this.lblPointsTeam2.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointsTeam2.ForeColor = System.Drawing.Color.Black;
+            this.lblPointsTeam2.Image = global::FamilienDuell.Properties.Resources.bgTextfieldKlein;
+            this.lblPointsTeam2.Location = new System.Drawing.Point(762, 0);
+            this.lblPointsTeam2.Name = "lblPointsTeam2";
+            this.lblPointsTeam2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblPointsTeam2.Size = new System.Drawing.Size(194, 94);
+            this.lblPointsTeam2.TabIndex = 4;
+            this.lblPointsTeam2.Text = "0";
+            this.lblPointsTeam2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblRoundPoints
+            // 
+            this.lblRoundPoints.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRoundPoints.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoundPoints.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoundPoints.ForeColor = System.Drawing.Color.Black;
+            this.lblRoundPoints.Image = global::FamilienDuell.Properties.Resources.bgTextfieldKlein;
+            this.lblRoundPoints.Location = new System.Drawing.Point(562, 0);
+            this.lblRoundPoints.Name = "lblRoundPoints";
+            this.lblRoundPoints.Size = new System.Drawing.Size(194, 94);
+            this.lblRoundPoints.TabIndex = 6;
+            this.lblRoundPoints.Text = "0";
+            this.lblRoundPoints.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTeam2
+            // 
+            this.lblTeam2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTeam2.BackColor = System.Drawing.Color.Transparent;
+            this.lblTeam2.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTeam2.ForeColor = System.Drawing.Color.Black;
+            this.lblTeam2.Image = ((System.Drawing.Image)(resources.GetObject("lblTeam2.Image")));
+            this.lblTeam2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTeam2.Location = new System.Drawing.Point(962, 0);
+            this.lblTeam2.Name = "lblTeam2";
+            this.lblTeam2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.lblTeam2.Size = new System.Drawing.Size(354, 94);
+            this.lblTeam2.TabIndex = 5;
+            this.lblTeam2.Text = "Team Rot";
+            this.lblTeam2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPointsTeam1
+            // 
+            this.lblPointsTeam1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPointsTeam1.BackColor = System.Drawing.Color.Transparent;
+            this.lblPointsTeam1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointsTeam1.ForeColor = System.Drawing.Color.Black;
+            this.lblPointsTeam1.Image = global::FamilienDuell.Properties.Resources.bgTextfieldKlein;
+            this.lblPointsTeam1.Location = new System.Drawing.Point(362, 0);
+            this.lblPointsTeam1.Name = "lblPointsTeam1";
+            this.lblPointsTeam1.Size = new System.Drawing.Size(194, 94);
+            this.lblPointsTeam1.TabIndex = 3;
+            this.lblPointsTeam1.Text = "0";
+            this.lblPointsTeam1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // lblAnswerNo6
             // 
             this.lblAnswerNo6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -317,7 +386,7 @@
             this.lblAnswer1.BackColor = System.Drawing.Color.Transparent;
             this.lblAnswer1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer1.ForeColor = System.Drawing.Color.Black;
-            this.lblAnswer1.Image = global::FamilienDuell.Properties.Resources.bgTextfieldLarge;
+            this.lblAnswer1.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswer1.Image")));
             this.lblAnswer1.Location = new System.Drawing.Point(200, 0);
             this.lblAnswer1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.lblAnswer1.MinimumSize = new System.Drawing.Size(0, 100);
@@ -621,61 +690,22 @@
             this.lblAnswerNo1.Text = "01.";
             this.lblAnswerNo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel2
+            // lblQuestion
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.lblQuestion, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(8, 8);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1319, 204);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 500F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblPlayerBlue, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblPlayerRed, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 108);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1313, 99);
-            this.tableLayoutPanel4.TabIndex = 1;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.Controls.Add(this.lblWrong1, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lblWrong2, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lblWrong3, 2, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(406, 0);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(500, 99);
-            this.tableLayoutPanel6.TabIndex = 2;
+            this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuestion.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.ForeColor = System.Drawing.Color.Black;
+            this.lblQuestion.Image = ((System.Drawing.Image)(resources.GetObject("lblQuestion.Image")));
+            this.lblQuestion.Location = new System.Drawing.Point(4, 0);
+            this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuestion.Name = "lblQuestion";
+            this.lblQuestion.Size = new System.Drawing.Size(1311, 105);
+            this.lblQuestion.TabIndex = 0;
+            this.lblQuestion.Text = "DefaultGameName";
+            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWrong1
             // 
@@ -716,41 +746,11 @@
             this.lblWrong3.TabIndex = 2;
             this.lblWrong3.TabStop = false;
             // 
-            // lblPlayerBlue
-            // 
-            this.lblPlayerBlue.AutoSize = true;
-            this.lblPlayerBlue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPlayerBlue.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerBlue.Location = new System.Drawing.Point(3, 0);
-            this.lblPlayerBlue.Name = "lblPlayerBlue";
-            this.lblPlayerBlue.Size = new System.Drawing.Size(400, 99);
-            this.lblPlayerBlue.TabIndex = 3;
-            this.lblPlayerBlue.Text = "Spieler Blau";
-            this.lblPlayerBlue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblPlayerBlue.Visible = false;
-            // 
-            // lblPlayerRed
-            // 
-            this.lblPlayerRed.AutoSize = true;
-            this.lblPlayerRed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPlayerRed.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerRed.Location = new System.Drawing.Point(909, 0);
-            this.lblPlayerRed.Name = "lblPlayerRed";
-            this.lblPlayerRed.Size = new System.Drawing.Size(401, 99);
-            this.lblPlayerRed.TabIndex = 4;
-            this.lblPlayerRed.Text = "Spieler Rot";
-            this.lblPlayerRed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPlayerRed.Visible = false;
-            // 
-            // resultWriter
-            // 
-            this.resultWriter.Tick += new System.EventHandler(this.resultWriter_Tick);
-            // 
             // GameMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1335, 918);
             this.Controls.Add(this.tableLayoutPanel1);

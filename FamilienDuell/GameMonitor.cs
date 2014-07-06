@@ -38,17 +38,19 @@ namespace FamilienDuell {
                 myFonts.AddFontFile(path + @"\\resources\\PressStart2P.ttf");
                 myFonts.AddFontFile(path + @"\\resources\\SECRCODE.ttf");
                 myFonts.AddFontFile(path + @"\\resources\\PLANE___.ttf");
+                myFonts.AddFontFile(path + @"\\resources\\Prototype.ttf");
+                myFonts.AddFontFile(path + @"\\resources\\GOODTIME.ttf");
             } catch (Exception e) {
                 MessageBox.Show("Error loading font: " + e.Message);
                 return;
             }
 
-            this.BackColor = Color.Black;
-            this.BackgroundImage = Properties.Resources.Background;
+            this.BackColor = Color.SlateGray;
+            //this.BackgroundImage = Properties.Resources.Background;
 
-            //lblWrong1.Visible = false;
-            //lblWrong2.Visible = false;
-            //lblWrong3.Visible = false;
+            lblWrong1.Visible = false;
+            lblWrong2.Visible = false;
+            lblWrong3.Visible = false;
 
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.monitorClosing);
             this.ResizeEnd += new EventHandler(this.formResize);
