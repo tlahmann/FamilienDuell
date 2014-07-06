@@ -85,7 +85,6 @@
     <Compile Include="GameMonitor.Designer.cs">
       <DependentUpon>GameMonitor.cs</DependentUpon>
     </Compile>
-    <Compile Include="InputDevice.cs" />
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Controller.cs</DependentUpon>
     </Compile>
