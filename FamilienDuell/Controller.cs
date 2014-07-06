@@ -160,6 +160,10 @@ namespace FamilienDuell {
         // nextbutton
         public void btnNextClick(object sender, EventArgs e) {
             if (tabMainControl.SelectedIndex == 0) {
+                currentSetupStatus = 1;
+                tabMainControl.SelectedIndex = 1;
+            }
+            else if (tabMainControl.SelectedIndex == 1) {
                 if (cbPlayernames.Checked == true) {
                     try {
                         int nOP = Convert.ToInt32(numericUpDown1.Value);
@@ -174,27 +178,26 @@ namespace FamilienDuell {
                     catch (Exception ex) {
                         MessageBox.Show(ex.Message, "Fehler!");
                     }
-                    tabMainControl.SelectedIndex = 1;
-                    currentSetupStatus = 1;
+                    tabMainControl.SelectedIndex = 2;
+                    currentSetupStatus = 2;
                 }
                 else {
                     dataGridView.Enabled = false;
-                    tabMainControl.SelectedIndex = 2;
-                    currentSetupStatus = 2;
-                }
-
-            }
-            else if (tabMainControl.SelectedIndex == 1) {
-                if (gridCheck()) {
-                    tabMainControl.SelectedIndex = 2;
-                    currentSetupStatus = 2;
+                    tabMainControl.SelectedIndex = 3;
+                    currentSetupStatus = 3;
                 }
             }
             else if (tabMainControl.SelectedIndex == 2) {
-                currentSetupStatus = 3;
-                tabMainControl.SelectedIndex = 3;
+                if (gridCheck()) {
+                    tabMainControl.SelectedIndex = 3;
+                    currentSetupStatus = 3;
+                }
             }
             else if (tabMainControl.SelectedIndex == 3) {
+                currentSetupStatus = 4;
+                tabMainControl.SelectedIndex = 4;
+            }
+            else if (tabMainControl.SelectedIndex == 4) {
                 playGame();
             }
         }
@@ -439,6 +442,45 @@ namespace FamilienDuell {
             }
         }
 
+        private void cbBgColorSelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setBgColor(cbBgColor.SelectedIndex);
+        }
+
+        private void cbFontSelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setFont(cbFont.SelectedIndex);
+        }
+
+        private void cbBgTxtSelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setTextBg(cbBgTxt.SelectedIndex);
+        }
+
+        private void btnChooseBackgroundClick(object sender, EventArgs e) {
+            // Displays a OpenFileDialog so the user can import the data
+            openBgFile.DefaultExt = "jpg";
+            openBgFile.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.gif, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.gif; *.jfif; *.png";
+            openBgFile.Title = "Hintergrund öffnen";
+            openBgFile.InitialDirectory = Application.StartupPath;
+
+            if (openBgFile.ShowDialog() == DialogResult.OK) {
+                string file = openBgFile.FileName;
+                try {
+                    pictureBoxBackgrountImage.Image = (Bitmap)Image.FromFile(openBgFile.FileName);
+                    Monitor.setBackground((Bitmap)Image.FromFile(openBgFile.FileName));
+                }
+                catch (IOException ex) {
+                    MessageBox.Show(ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else {
+                //MessageBox.Show("Importieren abgebrochen.");
+            }
+            
+        }
+
+        private void btnDeleteBackgroundClick(object sender, EventArgs e) {
+            pictureBoxBackgrountImage.Image = null;
+            Monitor.setBackground(null);
+        }
         #endregion
 
         static string randString(Int32 len) {

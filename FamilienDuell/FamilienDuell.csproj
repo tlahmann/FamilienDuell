@@ -164,16 +164,7 @@
     <None Include="Resources\bgTextfieldLeft.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bgTextfieldRight.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldCenter.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldLarge.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldKlein.gif" />
+    <None Include="Resources\bgTextfieldSmall.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bgTextfieldBlue.gif" />
@@ -185,7 +176,10 @@
     <None Include="Resources\bgTextfieldGreen.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bgTextfieldLarge1.gif" />
+    <None Include="Resources\bgTextfieldLarge.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgTextfieldXLarge.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

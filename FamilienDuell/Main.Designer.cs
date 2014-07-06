@@ -112,6 +112,27 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblTeamAlert = new System.Windows.Forms.Label();
             this.tabMainControl = new System.Windows.Forms.TabControl();
+            this.tabDesign = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBoxBackgrountImage = new System.Windows.Forms.PictureBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnChooseBackground = new System.Windows.Forms.Button();
+            this.btnDeleteBackground = new System.Windows.Forms.Button();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFont = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbBgTxt = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.cbBgColor = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.openBgFile = new System.Windows.Forms.OpenFileDialog();
             this.tabPlay.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -137,6 +158,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             this.tabMainControl.SuspendLayout();
+            this.tabDesign.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgrountImage)).BeginInit();
+            this.tableLayoutPanel23.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
+            this.tableLayoutPanel21.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -1295,6 +1324,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabMainControl.Controls.Add(this.tabMainSettings);
+            this.tabMainControl.Controls.Add(this.tabDesign);
             this.tabMainControl.Controls.Add(this.tabPlayers);
             this.tabMainControl.Controls.Add(this.tabQuests);
             this.tabMainControl.Controls.Add(this.tabPlay);
@@ -1303,6 +1333,283 @@
             this.tabMainControl.SelectedIndex = 0;
             this.tabMainControl.Size = new System.Drawing.Size(610, 460);
             this.tabMainControl.TabIndex = 2;
+            // 
+            // tabDesign
+            // 
+            this.tabDesign.Controls.Add(this.tableLayoutPanel18);
+            this.tabDesign.Location = new System.Drawing.Point(4, 22);
+            this.tabDesign.Name = "tabDesign";
+            this.tabDesign.Size = new System.Drawing.Size(602, 434);
+            this.tabDesign.TabIndex = 5;
+            this.tabDesign.Text = "Design";
+            this.tabDesign.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.ColumnCount = 2;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 0, 2);
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel20, 0, 1);
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel21, 1, 1);
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel22, 1, 2);
+            this.tableLayoutPanel18.Controls.Add(this.label22, 0, 0);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 3;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(602, 434);
+            this.tableLayoutPanel18.TabIndex = 0;
+            // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel19.ColumnCount = 1;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.Controls.Add(this.pictureBoxBackgrountImage, 0, 1);
+            this.tableLayoutPanel19.Controls.Add(this.label21, 0, 0);
+            this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel23, 0, 2);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 235);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 3;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(295, 196);
+            this.tableLayoutPanel19.TabIndex = 1;
+            // 
+            // pictureBoxBackgrountImage
+            // 
+            this.pictureBoxBackgrountImage.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxBackgrountImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxBackgrountImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxBackgrountImage.Location = new System.Drawing.Point(3, 33);
+            this.pictureBoxBackgrountImage.Name = "pictureBoxBackgrountImage";
+            this.pictureBoxBackgrountImage.Size = new System.Drawing.Size(289, 130);
+            this.pictureBoxBackgrountImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBackgrountImage.TabIndex = 0;
+            this.pictureBoxBackgrountImage.TabStop = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(5, 5);
+            this.label21.Margin = new System.Windows.Forms.Padding(5);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(93, 13);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Hintergrundbild";
+            // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.ColumnCount = 2;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel23.Controls.Add(this.btnChooseBackground, 1, 0);
+            this.tableLayoutPanel23.Controls.Add(this.btnDeleteBackground, 0, 0);
+            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(0, 166);
+            this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 1;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(295, 30);
+            this.tableLayoutPanel23.TabIndex = 3;
+            // 
+            // btnChooseBackground
+            // 
+            this.btnChooseBackground.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChooseBackground.Location = new System.Drawing.Point(217, 3);
+            this.btnChooseBackground.Name = "btnChooseBackground";
+            this.btnChooseBackground.Size = new System.Drawing.Size(75, 23);
+            this.btnChooseBackground.TabIndex = 1;
+            this.btnChooseBackground.Text = "Auswählen";
+            this.btnChooseBackground.UseVisualStyleBackColor = true;
+            this.btnChooseBackground.Click += new System.EventHandler(this.btnChooseBackgroundClick);
+            // 
+            // btnDeleteBackground
+            // 
+            this.btnDeleteBackground.Location = new System.Drawing.Point(3, 3);
+            this.btnDeleteBackground.Name = "btnDeleteBackground";
+            this.btnDeleteBackground.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteBackground.TabIndex = 2;
+            this.btnDeleteBackground.Text = "Löschen";
+            this.btnDeleteBackground.UseVisualStyleBackColor = true;
+            this.btnDeleteBackground.Click += new System.EventHandler(this.btnDeleteBackgroundClick);
+            // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel20.ColumnCount = 1;
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel20.Controls.Add(this.cbFont, 0, 1);
+            this.tableLayoutPanel20.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            this.tableLayoutPanel20.RowCount = 2;
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(295, 196);
+            this.tableLayoutPanel20.TabIndex = 3;
+            // 
+            // cbFont
+            // 
+            this.cbFont.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFont.FormattingEnabled = true;
+            this.cbFont.Items.AddRange(new object[] {
+            "Font 1",
+            "Font 2",
+            "Font 3",
+            "Font 4",
+            "Font 5"});
+            this.cbFont.Location = new System.Drawing.Point(3, 101);
+            this.cbFont.Name = "cbFont";
+            this.cbFont.Size = new System.Drawing.Size(289, 21);
+            this.cbFont.TabIndex = 0;
+            this.cbFont.SelectedIndexChanged += new System.EventHandler(this.cbFontSelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(5, 5);
+            this.label20.Margin = new System.Windows.Forms.Padding(5);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(59, 13);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Schriftart";
+            // 
+            // tableLayoutPanel21
+            // 
+            this.tableLayoutPanel21.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel21.ColumnCount = 1;
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel21.Controls.Add(this.cbBgTxt, 0, 3);
+            this.tableLayoutPanel21.Controls.Add(this.label19, 0, 2);
+            this.tableLayoutPanel21.Controls.Add(this.label23, 0, 0);
+            this.tableLayoutPanel21.Controls.Add(this.cbBgColor, 0, 1);
+            this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel21.Location = new System.Drawing.Point(304, 33);
+            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
+            this.tableLayoutPanel21.RowCount = 4;
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(295, 196);
+            this.tableLayoutPanel21.TabIndex = 4;
+            // 
+            // cbBgTxt
+            // 
+            this.cbBgTxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbBgTxt.FormattingEnabled = true;
+            this.cbBgTxt.Items.AddRange(new object[] {
+            "Keine",
+            "Blau/Grün"});
+            this.cbBgTxt.Location = new System.Drawing.Point(3, 150);
+            this.cbBgTxt.Name = "cbBgTxt";
+            this.cbBgTxt.Size = new System.Drawing.Size(289, 21);
+            this.cbBgTxt.TabIndex = 2;
+            this.cbBgTxt.SelectedIndexChanged += new System.EventHandler(this.cbBgTxtSelectedIndexChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(5, 103);
+            this.label19.Margin = new System.Windows.Forms.Padding(5);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(125, 13);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Texthintergrundfarbe";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(5, 5);
+            this.label23.Margin = new System.Windows.Forms.Padding(5);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(102, 13);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "Hintergrundfarbe";
+            // 
+            // cbBgColor
+            // 
+            this.cbBgColor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbBgColor.FormattingEnabled = true;
+            this.cbBgColor.Items.AddRange(new object[] {
+            "Schwarz",
+            "Weiß",
+            "Dunkelgrau",
+            "Blau",
+            "Rot"});
+            this.cbBgColor.Location = new System.Drawing.Point(3, 52);
+            this.cbBgColor.Name = "cbBgColor";
+            this.cbBgColor.Size = new System.Drawing.Size(289, 21);
+            this.cbBgColor.TabIndex = 5;
+            this.cbBgColor.SelectedIndexChanged += new System.EventHandler(this.cbBgColorSelectedIndexChanged);
+            // 
+            // tableLayoutPanel22
+            // 
+            this.tableLayoutPanel22.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel22.ColumnCount = 1;
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.Controls.Add(this.comboBox3, 0, 1);
+            this.tableLayoutPanel22.Controls.Add(this.label13, 0, 0);
+            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(304, 235);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            this.tableLayoutPanel22.RowCount = 2;
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(295, 196);
+            this.tableLayoutPanel22.TabIndex = 5;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(3, 101);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(289, 21);
+            this.comboBox3.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(5, 5);
+            this.label13.Margin = new System.Windows.Forms.Padding(5);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(60, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Soundset";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(5, 5);
+            this.label22.Margin = new System.Windows.Forms.Padding(5);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(150, 13);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Monitor Design anpassen";
+            // 
+            // openBgFile
+            // 
+            this.openBgFile.FileName = "openFileDialog1";
             // 
             // Main
             // 
@@ -1358,6 +1665,19 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tabMainControl.ResumeLayout(false);
+            this.tabDesign.ResumeLayout(false);
+            this.tableLayoutPanel18.ResumeLayout(false);
+            this.tableLayoutPanel18.PerformLayout();
+            this.tableLayoutPanel19.ResumeLayout(false);
+            this.tableLayoutPanel19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgrountImage)).EndInit();
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel20.ResumeLayout(false);
+            this.tableLayoutPanel20.PerformLayout();
+            this.tableLayoutPanel21.ResumeLayout(false);
+            this.tableLayoutPanel21.PerformLayout();
+            this.tableLayoutPanel22.ResumeLayout(false);
+            this.tableLayoutPanel22.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1449,6 +1769,27 @@
         private System.Windows.Forms.Label lblCtrlTm2Pts;
         private System.Windows.Forms.Label lblCtrlTm2Pt;
         private System.Windows.Forms.Label lblCtrlRdPts;
+        private System.Windows.Forms.TabPage tabDesign;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        private System.Windows.Forms.PictureBox pictureBoxBackgrountImage;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
+        private System.Windows.Forms.Button btnChooseBackground;
+        private System.Windows.Forms.Button btnDeleteBackground;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
+        private System.Windows.Forms.ComboBox cbFont;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
+        private System.Windows.Forms.ComboBox cbBgTxt;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.OpenFileDialog openBgFile;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox cbBgColor;
     }
 }
 

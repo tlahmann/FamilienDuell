@@ -301,7 +301,7 @@
             this.lblPointsTeam2.BackColor = System.Drawing.Color.Transparent;
             this.lblPointsTeam2.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointsTeam2.ForeColor = System.Drawing.Color.Black;
-            this.lblPointsTeam2.Image = global::FamilienDuell.Properties.Resources.bgTextfieldKlein;
+            this.lblPointsTeam2.Image = global::FamilienDuell.Properties.Resources.bgTextfieldSmall;
             this.lblPointsTeam2.Location = new System.Drawing.Point(762, 0);
             this.lblPointsTeam2.Name = "lblPointsTeam2";
             this.lblPointsTeam2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -318,7 +318,7 @@
             this.lblRoundPoints.BackColor = System.Drawing.Color.Transparent;
             this.lblRoundPoints.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoundPoints.ForeColor = System.Drawing.Color.Black;
-            this.lblRoundPoints.Image = global::FamilienDuell.Properties.Resources.bgTextfieldKlein;
+            this.lblRoundPoints.Image = global::FamilienDuell.Properties.Resources.bgTextfieldSmall;
             this.lblRoundPoints.Location = new System.Drawing.Point(562, 0);
             this.lblRoundPoints.Name = "lblRoundPoints";
             this.lblRoundPoints.Size = new System.Drawing.Size(194, 94);
@@ -352,7 +352,7 @@
             this.lblPointsTeam1.BackColor = System.Drawing.Color.Transparent;
             this.lblPointsTeam1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointsTeam1.ForeColor = System.Drawing.Color.Black;
-            this.lblPointsTeam1.Image = global::FamilienDuell.Properties.Resources.bgTextfieldKlein;
+            this.lblPointsTeam1.Image = global::FamilienDuell.Properties.Resources.bgTextfieldSmall;
             this.lblPointsTeam1.Location = new System.Drawing.Point(362, 0);
             this.lblPointsTeam1.Name = "lblPointsTeam1";
             this.lblPointsTeam1.Size = new System.Drawing.Size(194, 94);
@@ -698,7 +698,7 @@
             this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
             this.lblQuestion.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.ForeColor = System.Drawing.Color.Black;
-            this.lblQuestion.Image = ((System.Drawing.Image)(resources.GetObject("lblQuestion.Image")));
+            this.lblQuestion.Image = global::FamilienDuell.Properties.Resources.bgTextfieldXLarge;
             this.lblQuestion.Location = new System.Drawing.Point(4, 0);
             this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuestion.Name = "lblQuestion";
