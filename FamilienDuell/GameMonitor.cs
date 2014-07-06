@@ -36,12 +36,21 @@ namespace FamilienDuell {
             try {
                 string path = Application.StartupPath;
                 myFonts.AddFontFile(path + @"\\resources\\PressStart2P.ttf");
+                myFonts.AddFontFile(path + @"\\resources\\SECRCODE.ttf");
+                myFonts.AddFontFile(path + @"\\resources\\PLANE___.ttf");
+                myFonts.AddFontFile(path + @"\\resources\\Prototype.ttf");
+                myFonts.AddFontFile(path + @"\\resources\\GOODTIME.ttf");
             } catch (Exception e) {
                 MessageBox.Show("Error loading font: " + e.Message);
                 return;
             }
 
-            this.BackColor = Color.Black;
+            this.BackColor = Color.SlateGray;
+            //this.BackgroundImage = Properties.Resources.Background;
+
+            lblWrong1.Visible = false;
+            lblWrong2.Visible = false;
+            lblWrong3.Visible = false;
 
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.monitorClosing);
             this.ResizeEnd += new EventHandler(this.formResize);
@@ -60,43 +69,77 @@ namespace FamilienDuell {
                     lblPlayerBlue.Text = hoehe.ToString();
                     lblPlayerRed.Text = breite.ToString();
 
+                    //try {
+                    //    FontFamily fam = myFonts.Families[0]; // arrayindex ändern um andere Font anzusehen
+                    //    if (hoehe <= 300) {
+                    //        using (Font f15 = new Font(fam, 15)) {
+                    //            lblQuestion.Font = f15;
+                    //        }
+                    //    } else if (hoehe <= 500) {
+                    //        using (Font f15 = new Font(fam, 15))
+                    //        using (Font f18 = new Font(fam, 18)) {
+                    //            setSize(f15, f18);
+                    //        }
+                    //    } else if (hoehe <= 700) {
+                    //        using (Font f18 = new Font(fam, 15))
+                    //        using (Font f22 = new Font(fam, 20)) {
+                    //            setSize(f18, f22);
+                    //        }
+                    //    } else if (hoehe <= 1000) {
+                    //        using (Font f22 = new Font(fam, 20))
+                    //        using (Font f30 = new Font(fam, 38)) {
+                    //            setSize(f22, f30);
+                    //        }
+                    //    } else if (hoehe <= 1500) {
+                    //        using (Font f30 = new Font(fam, 25))
+                    //        using (Font f40 = new Font(fam, 35)) {
+                    //            setSize(f30, f40);
+                    //        }
+                    //    }
+                    //} catch (Exception) {}
+
                     try {
-                        FontFamily fam = myFonts.Families[0];
+                        FontFamily fam = myFonts.Families[0]; // arrayindex ändern um andere Font anzusehen
                         if (hoehe <= 300) {
                             using (Font f15 = new Font(fam, 15)) {
                                 lblQuestion.Font = f15;
                             }
-                        } else if (hoehe <= 500) {
-                            using (Font f15 = new Font(fam, 15))
-                            using (Font f18 = new Font(fam, 18)) {
+                        }
+                        else if (hoehe <= 500) {
+                            using (Font f15 = new Font(fam, 20))
+                            using (Font f18 = new Font(fam, 22)) {
                                 setSize(f15, f18);
                             }
-                        } else if (hoehe <= 700) {
-                            using (Font f18 = new Font(fam, 15))
+                        }
+                        else if (hoehe <= 700) {
+                            using (Font f18 = new Font(fam, 22))
                             using (Font f22 = new Font(fam, 20)) {
                                 setSize(f18, f22);
                             }
-                        } else if (hoehe <= 1000) {
+                        }
+                        else if (hoehe <= 1000) {
                             using (Font f22 = new Font(fam, 20))
                             using (Font f30 = new Font(fam, 38)) {
                                 setSize(f22, f30);
                             }
-                        } else if (hoehe <= 1500) {
-                            using (Font f30 = new Font(fam, 25))
-                            using (Font f40 = new Font(fam, 35)) {
+                        }
+                        else if (hoehe <= 1500) {
+                            using (Font f30 = new Font(fam, 40))
+                            using (Font f40 = new Font(fam, 45)) {
                                 setSize(f30, f40);
                             }
                         }
-                    } catch (Exception) {}
+                    }
+                    catch (Exception) { }
             
                 }
 
                 public void setSize(Font smallF, Font bigF) {
                     lblQuestion.Font = bigF;
 
-                    lblWrong1.Font = bigF;
-                    lblWrong2.Font = bigF;
-                    lblWrong3.Font = bigF;
+                    //lblWrong1.Font = bigF;
+                    //lblWrong2.Font = bigF;
+                    //lblWrong3.Font = bigF;
 
                     lblTeam1.Font = smallF;
                     lblPointsTeam1.Font = smallF;
@@ -146,9 +189,17 @@ namespace FamilienDuell {
                 }
         #endregion
 
-        public void setTeams(string Team1, string Team2) {
-            lblTeam1.Text = Team1;
-            lblTeam2.Text = Team2;
+        public void setTeams(string team1, string team2) {
+            if (team1 == null) {
+                lblTeam2.Text = team2;
+            }
+            else if (team2 == null) {
+                lblTeam1.Text = team1;
+            }
+            else {
+                lblTeam1.Text = team1;
+                lblTeam2.Text = team2;
+            }
         }
 
         public void setQuestion(string msg) {
@@ -367,8 +418,8 @@ namespace FamilienDuell {
 
         #region Resolve Things
         public void showResult(int answer, string text, string people, int pointsMultiplier) {
-            if (text.Length > 45) {
-                text = text.Substring(0, 45) + "...";
+            if (text.Length > 30) {
+                text = text.Substring(0, 30) + "...";
             }
 
             if (answer == 1) {

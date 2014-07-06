@@ -540,6 +540,7 @@
             this.lblQuantity6.Size = new System.Drawing.Size(44, 34);
             this.lblQuantity6.TabIndex = 31;
             this.lblQuantity6.Text = "123";
+            this.lblQuantity6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAnswer3
             // 
@@ -581,6 +582,7 @@
             this.lblQuantity5.Size = new System.Drawing.Size(44, 33);
             this.lblQuantity5.TabIndex = 33;
             this.lblQuantity5.Text = "123";
+            this.lblQuantity5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAnswer6
             // 
@@ -608,6 +610,7 @@
             this.lblQuantity4.Size = new System.Drawing.Size(44, 33);
             this.lblQuantity4.TabIndex = 34;
             this.lblQuantity4.Text = "123";
+            this.lblQuantity4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAnswer5
             // 
@@ -635,6 +638,7 @@
             this.lblQuantity3.Size = new System.Drawing.Size(44, 33);
             this.lblQuantity3.TabIndex = 35;
             this.lblQuantity3.Text = "123";
+            this.lblQuantity3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblQuantity1
             // 
@@ -648,6 +652,7 @@
             this.lblQuantity1.Size = new System.Drawing.Size(44, 32);
             this.lblQuantity1.TabIndex = 32;
             this.lblQuantity1.Text = "123";
+            this.lblQuantity1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblQuantity2
             // 
@@ -661,6 +666,7 @@
             this.lblQuantity2.Size = new System.Drawing.Size(44, 33);
             this.lblQuantity2.TabIndex = 26;
             this.lblQuantity2.Text = "123";
+            this.lblQuantity2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel15
             // 
@@ -1069,7 +1075,7 @@
             this.txtGameTitle.Name = "txtGameTitle";
             this.txtGameTitle.Size = new System.Drawing.Size(259, 20);
             this.txtGameTitle.TabIndex = 1;
-            this.txtGameTitle.Text = "DefaultGameName";
+            this.txtGameTitle.Text = "Das FamilienDuell";
             // 
             // tableLayoutPanel3
             // 
