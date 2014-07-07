@@ -20,6 +20,7 @@ namespace FamilienDuell {
 
     public partial class Main : Form {
 
+        #region ClassVar
         int currentGameStatus = 0;
         int currentSetupStatus = 0;
         int currentPointsMultiplier = 1;
@@ -36,6 +37,12 @@ namespace FamilienDuell {
         // the current question object
         Question question;
 
+        SoundPlayer rightSound;
+        SoundPlayer wrongSound;
+        SoundPlayer ansPresentSound;
+        SoundPlayer timeOverSoundP;
+        SoundPlayer themesongSoundP;
+        #endregion
 
         public Main() {
             InitializeComponent();
@@ -205,7 +212,7 @@ namespace FamilienDuell {
         // check which tab is selected to change the text on the next-button
         public void checkTab(object sender, EventArgs e) {
             if (currentGameStatus == 0) {
-                if (tabMainControl.SelectedIndex == 3 && currentSetupStatus == 3) {
+                if (tabMainControl.SelectedIndex == 4 && currentSetupStatus == 4) {
                     btnNext.Text = "Start";
                 }
                 else {
@@ -310,7 +317,6 @@ namespace FamilienDuell {
 
         }
 
-
         private void btnTeam1Click(object sender, EventArgs e) {
             this.winnerPoints(2);
             btnNext.Enabled = true;
@@ -352,24 +358,20 @@ namespace FamilienDuell {
         private void playSound(int Action) {
             if (cbSounds.Checked == true) {
                 try {
-                    string locationOffset = Directory.GetCurrentDirectory();
-                    //System.Diagnostics.Process.Start(path + @"\sound\Bonefit_Hilfe.pdf");
-
-                    //string locationOffset = "D:\\Dropbox\\Misc\\FamilienDuell\\FamilienDuell\\obj\\Debug\\";
-                    if (Action == 1) {
-                        // main theme
-                        SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff94_main_theme.wav");
-                        simpleSound.Play();
+                    if (Action == 1) { // main theme
+                        themesongSoundP.Play();
                     }
-                    else if (Action == 2) {
-                        // correct answer sound
-                        SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff-clang.wav");
-                        simpleSound.Play();
+                    else if (Action == 2) { // correct answer sound
+                        rightSound.Play();
                     }
-                    else if (Action == 3) {
-                        // wrong answer sound
-                        SoundPlayer simpleSound = new SoundPlayer(locationOffset + @"\sounds\ff-strike3.wav");
-                        simpleSound.Play();
+                    else if (Action == 3) { // wrong answer sound
+                        wrongSound.Play();
+                    }
+                    else if (Action == 4) { // answer if present sound
+                        ansPresentSound.Play();
+                    }
+                    else if (Action == 5) { // time over sound
+                        timeOverSoundP.Play();
                     }
                 }
                 catch (Exception e) {
@@ -484,26 +486,38 @@ namespace FamilienDuell {
             }
         }
 
-        private void setTxtBgColor_SelectedIndexChanged(object sender, EventArgs e) {
-            Monitor.setTextBg(setTxtBgColorPD.SelectedIndex);
+        private void setTxtBgQuestion_SelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setTextBgQuestion(setTxtBgQuestion.SelectedIndex);
         }
 
-        private void setTxtBgColorRGB_Click(object sender, EventArgs e) {
-            //try {
-            //    String str = txtBgValueRGB.ToString().Substring(bgValueRGB.ToString().LastIndexOf(':') + 2);
-            //    String[] s = str.Split(',');
-            //    int[] i = new int[s.Length];
-            //    for (int n = 0; n < s.Length; n++) {
-            //        i[n] = Convert.ToInt32(s[n]);
-            //    }
-            //    Monitor.setTextBgColor(i[0], i[1], i[2]);
-            //}
-            //catch (Exception ex) {
-            //    MessageBox.Show(ex.Message, "Fehler!");
-            //}
+        private void setTxtBgAnswer_SelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setTextBgAnswer(setTxtBgAnswer.SelectedIndex);
         }
 
-        private void btnChooseBackgroundClick(object sender, EventArgs e) {
+        private void setTxtBgTeams_SelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setTextBgTeams(setTxtBgTeams.SelectedIndex);
+        }
+
+        private void setTxtBgPoints_SelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setTextBgPoints(setTxtBgPoints.SelectedIndex);
+        }
+
+        //private void setTxtBgColorRGB_Click(object sender, EventArgs e) {
+        //    try {
+        //        String str = txtBgValueRGB.ToString().Substring(bgValueRGB.ToString().LastIndexOf(':') + 2);
+        //        String[] s = str.Split(',');
+        //        int[] i = new int[s.Length];
+        //        for (int n = 0; n < s.Length; n++) {
+        //            i[n] = Convert.ToInt32(s[n]);
+        //        }
+        //        Monitor.setTextBgColor(i[0], i[1], i[2]);
+        //    }
+        //    catch (Exception ex) {
+        //        MessageBox.Show(ex.Message, "Fehler!");
+        //    }
+        //}
+
+        private void btnChooseBackground_Click(object sender, EventArgs e) {
             // Displays a OpenFileDialog so the user can import the data
             openBgFile.DefaultExt = "jpg";
             openBgFile.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.gif, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.gif; *.jfif; *.png";
@@ -526,9 +540,66 @@ namespace FamilienDuell {
 
         }
 
-        private void btnDeleteBackgroundClick(object sender, EventArgs e) {
+        private void btnDeleteBackground_Click(object sender, EventArgs e) {
             pictureBoxBackgrountImage.Image = null;
             Monitor.setBackground(null);
+        }
+
+        private void setSoundSet_SelectedIndexChanged(object sender, EventArgs e) {
+            //rightSound = soundFileChooser();
+        }
+
+        private void setRightAnswerSound_Click(object sender, EventArgs e) {
+            rightSound = soundFileChooser();
+            rightAnswerSound.Text = rightSound.SoundLocation.ToString();
+            rightAnswerSound.SelectionStart = rightAnswerSound.Text.Length - 1;
+        }
+
+        private void setWrongAnswerSound_Click(object sender, EventArgs e) {
+            wrongSound = soundFileChooser();
+            wrongAnswerSound.Text = wrongSound.SoundLocation.ToString();
+            wrongAnswerSound.SelectionStart = wrongAnswerSound.Text.Length - 1;
+        }
+
+        private void setAnswerExistingSound_Click(object sender, EventArgs e) {
+            ansPresentSound = soundFileChooser();
+            answerExistingSound.Text = ansPresentSound.SoundLocation.ToString();
+            answerExistingSound.SelectionStart = answerExistingSound.Text.Length - 1;
+        }
+
+        private void setTimeOverSound_Click(object sender, EventArgs e) {
+            timeOverSoundP = soundFileChooser();
+            timeOverSound.Text = timeOverSoundP.SoundLocation.ToString();
+            timeOverSound.SelectionStart = timeOverSound.Text.Length - 1;
+        }
+
+        private void setThemesongSound_Click(object sender, EventArgs e) {
+            themesongSoundP = soundFileChooser();
+            themesongSound.Text = themesongSoundP.SoundLocation.ToString();
+            themesongSound.SelectionStart = themesongSound.Text.Length - 1;
+        }
+
+        private SoundPlayer soundFileChooser() {
+            // Displays a OpenFileDialog so the user can import the data
+            openBgFile.DefaultExt = "wav";
+            openBgFile.Filter = "Sound File files (*.wav) | *.wav";
+            openBgFile.Title = "Soundfile öffnen";
+            openBgFile.InitialDirectory = Application.StartupPath;
+
+            SoundPlayer sp = null;
+            if (openBgFile.ShowDialog() == DialogResult.OK) {
+                string file = openBgFile.FileName;
+                try {
+                    sp = new SoundPlayer(file);
+                }
+                catch (IOException ex) {
+                    MessageBox.Show(ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else {
+                //MessageBox.Show("Importieren abgebrochen.");
+            }
+            return sp;
         }
 
         #endregion
@@ -588,7 +659,6 @@ namespace FamilienDuell {
         protected int getTeamPointsFromControl(int team) {
             return int.Parse(this.getPointControlLabelByTeam(team).Text);
         }
-
     }
 
 }

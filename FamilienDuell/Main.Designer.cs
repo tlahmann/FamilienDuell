@@ -115,7 +115,6 @@
             this.tabDesign = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxBackgrountImage = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
             this.btnChooseBackground = new System.Windows.Forms.Button();
@@ -133,12 +132,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBgValueRGB = new System.Windows.Forms.TextBox();
-            this.setTxtBgColorRGB = new System.Windows.Forms.Button();
-            this.setTxtBgColorPD = new System.Windows.Forms.ComboBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.setTxtBgQuestion = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
@@ -149,10 +143,34 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
+            this.themesongSound = new System.Windows.Forms.TextBox();
+            this.timeOverSound = new System.Windows.Forms.TextBox();
+            this.answerExistingSound = new System.Windows.Forms.TextBox();
+            this.wrongAnswerSound = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.setRightAnswerSound = new System.Windows.Forms.Button();
+            this.setWrongAnswerSound = new System.Windows.Forms.Button();
+            this.setAnswerExistingSound = new System.Windows.Forms.Button();
+            this.setTimeOverSound = new System.Windows.Forms.Button();
+            this.setThemesongSound = new System.Windows.Forms.Button();
+            this.rightAnswerSound = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.setSoundSet = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.openBgFile = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBoxBackgrountImage = new System.Windows.Forms.PictureBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.setTxtBgAnswer = new System.Windows.Forms.ComboBox();
+            this.setTxtBgTeams = new System.Windows.Forms.ComboBox();
+            this.setTxtBgPoints = new System.Windows.Forms.ComboBox();
             this.tabPlay.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -181,17 +199,17 @@
             this.tabDesign.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgrountImage)).BeginInit();
             this.tableLayoutPanel23.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel25.SuspendLayout();
             this.tableLayoutPanel26.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel28.SuspendLayout();
-            this.tableLayoutPanel29.SuspendLayout();
             this.tableLayoutPanel24.SuspendLayout();
             this.tableLayoutPanel27.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
+            this.tableLayoutPanel30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgrountImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -1408,18 +1426,6 @@
             this.tableLayoutPanel19.Size = new System.Drawing.Size(295, 196);
             this.tableLayoutPanel19.TabIndex = 1;
             // 
-            // pictureBoxBackgrountImage
-            // 
-            this.pictureBoxBackgrountImage.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxBackgrountImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxBackgrountImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxBackgrountImage.Location = new System.Drawing.Point(3, 33);
-            this.pictureBoxBackgrountImage.Name = "pictureBoxBackgrountImage";
-            this.pictureBoxBackgrountImage.Size = new System.Drawing.Size(289, 130);
-            this.pictureBoxBackgrountImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxBackgrountImage.TabIndex = 0;
-            this.pictureBoxBackgrountImage.TabStop = false;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -1456,7 +1462,7 @@
             this.btnChooseBackground.TabIndex = 1;
             this.btnChooseBackground.Text = "Auswählen";
             this.btnChooseBackground.UseVisualStyleBackColor = true;
-            this.btnChooseBackground.Click += new System.EventHandler(this.btnChooseBackgroundClick);
+            this.btnChooseBackground.Click += new System.EventHandler(this.btnChooseBackground_Click);
             // 
             // btnDeleteBackground
             // 
@@ -1466,7 +1472,7 @@
             this.btnDeleteBackground.TabIndex = 2;
             this.btnDeleteBackground.Text = "Löschen";
             this.btnDeleteBackground.UseVisualStyleBackColor = true;
-            this.btnDeleteBackground.Click += new System.EventHandler(this.btnDeleteBackgroundClick);
+            this.btnDeleteBackground.Click += new System.EventHandler(this.btnDeleteBackground_Click);
             // 
             // tableLayoutPanel20
             // 
@@ -1474,8 +1480,8 @@
             this.tableLayoutPanel20.ColumnCount = 1;
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel25, 0, 3);
-            this.tableLayoutPanel20.Controls.Add(this.cbFont, 0, 1);
-            this.tableLayoutPanel20.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel24, 0, 1);
+            this.tableLayoutPanel20.Controls.Add(this.label23, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.label24, 0, 2);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(3, 33);
@@ -1590,7 +1596,7 @@
             "Font 3",
             "Font 4",
             "Font 5"});
-            this.cbFont.Location = new System.Drawing.Point(3, 33);
+            this.cbFont.Location = new System.Drawing.Point(3, 169);
             this.cbFont.Name = "cbFont";
             this.cbFont.Size = new System.Drawing.Size(289, 21);
             this.cbFont.TabIndex = 0;
@@ -1600,7 +1606,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(5, 5);
+            this.label20.Location = new System.Drawing.Point(5, 141);
             this.label20.Margin = new System.Windows.Forms.Padding(5);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(59, 13);
@@ -1623,18 +1629,18 @@
             this.tableLayoutPanel21.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tableLayoutPanel21.ColumnCount = 1;
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel28, 0, 3);
-            this.tableLayoutPanel21.Controls.Add(this.label19, 0, 2);
-            this.tableLayoutPanel21.Controls.Add(this.label23, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel24, 0, 1);
+            this.tableLayoutPanel21.Controls.Add(this.label20, 0, 2);
+            this.tableLayoutPanel21.Controls.Add(this.cbFont, 0, 3);
+            this.tableLayoutPanel21.Controls.Add(this.label19, 0, 0);
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel28, 0, 1);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel21.Location = new System.Drawing.Point(304, 33);
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
             this.tableLayoutPanel21.RowCount = 4;
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel21.Size = new System.Drawing.Size(295, 196);
             this.tableLayoutPanel21.TabIndex = 4;
             // 
@@ -1643,97 +1649,46 @@
             this.tableLayoutPanel28.ColumnCount = 2;
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel28.Controls.Add(this.tableLayoutPanel29, 1, 1);
-            this.tableLayoutPanel28.Controls.Add(this.setTxtBgColorPD, 1, 0);
-            this.tableLayoutPanel28.Controls.Add(this.radioButton5, 0, 0);
-            this.tableLayoutPanel28.Controls.Add(this.radioButton6, 0, 1);
+            this.tableLayoutPanel28.Controls.Add(this.setTxtBgPoints, 1, 3);
+            this.tableLayoutPanel28.Controls.Add(this.setTxtBgTeams, 1, 2);
+            this.tableLayoutPanel28.Controls.Add(this.setTxtBgAnswer, 1, 1);
+            this.tableLayoutPanel28.Controls.Add(this.setTxtBgQuestion, 1, 0);
+            this.tableLayoutPanel28.Controls.Add(this.label30, 0, 0);
+            this.tableLayoutPanel28.Controls.Add(this.label31, 0, 1);
+            this.tableLayoutPanel28.Controls.Add(this.label32, 0, 2);
+            this.tableLayoutPanel28.Controls.Add(this.label33, 0, 3);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel28.Location = new System.Drawing.Point(3, 131);
+            this.tableLayoutPanel28.Location = new System.Drawing.Point(3, 33);
             this.tableLayoutPanel28.Name = "tableLayoutPanel28";
-            this.tableLayoutPanel28.RowCount = 2;
-            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel28.Size = new System.Drawing.Size(289, 62);
+            this.tableLayoutPanel28.RowCount = 4;
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel28.Size = new System.Drawing.Size(289, 100);
             this.tableLayoutPanel28.TabIndex = 6;
             // 
-            // tableLayoutPanel29
+            // setTxtBgQuestion
             // 
-            this.tableLayoutPanel29.ColumnCount = 2;
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel29.Controls.Add(this.txtBgValueRGB, 0, 0);
-            this.tableLayoutPanel29.Controls.Add(this.setTxtBgColorRGB, 1, 0);
-            this.tableLayoutPanel29.Location = new System.Drawing.Point(110, 31);
-            this.tableLayoutPanel29.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel29.Name = "tableLayoutPanel29";
-            this.tableLayoutPanel29.RowCount = 1;
-            this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel29.Size = new System.Drawing.Size(179, 31);
-            this.tableLayoutPanel29.TabIndex = 9;
-            // 
-            // txtBgValueRGB
-            // 
-            this.txtBgValueRGB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.setTxtBgQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBgValueRGB.Enabled = false;
-            this.txtBgValueRGB.Location = new System.Drawing.Point(3, 3);
-            this.txtBgValueRGB.Name = "txtBgValueRGB";
-            this.txtBgValueRGB.Size = new System.Drawing.Size(128, 20);
-            this.txtBgValueRGB.TabIndex = 8;
-            // 
-            // setTxtBgColorRGB
-            // 
-            this.setTxtBgColorRGB.Enabled = false;
-            this.setTxtBgColorRGB.Location = new System.Drawing.Point(137, 3);
-            this.setTxtBgColorRGB.Name = "setTxtBgColorRGB";
-            this.setTxtBgColorRGB.Size = new System.Drawing.Size(39, 23);
-            this.setTxtBgColorRGB.TabIndex = 9;
-            this.setTxtBgColorRGB.Text = "Set";
-            this.setTxtBgColorRGB.UseVisualStyleBackColor = true;
-            this.setTxtBgColorRGB.Click += new System.EventHandler(this.setTxtBgColorRGB_Click);
-            // 
-            // setTxtBgColorPD
-            // 
-            this.setTxtBgColorPD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.setTxtBgColorPD.FormattingEnabled = true;
-            this.setTxtBgColorPD.Items.AddRange(new object[] {
+            this.setTxtBgQuestion.FormattingEnabled = true;
+            this.setTxtBgQuestion.Items.AddRange(new object[] {
             "keinen",
-            "Blau/Grün"});
-            this.setTxtBgColorPD.Location = new System.Drawing.Point(113, 3);
-            this.setTxtBgColorPD.Name = "setTxtBgColorPD";
-            this.setTxtBgColorPD.Size = new System.Drawing.Size(173, 21);
-            this.setTxtBgColorPD.TabIndex = 5;
-            this.setTxtBgColorPD.SelectedIndexChanged += new System.EventHandler(this.setTxtBgColor_SelectedIndexChanged);
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(3, 3);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(78, 17);
-            this.radioButton5.TabIndex = 6;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Vordefiniert";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Enabled = false;
-            this.radioButton6.Location = new System.Drawing.Point(3, 34);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(99, 17);
-            this.radioButton6.TabIndex = 7;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "RGB (00,00,00)";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            "Rot",
+            "Blau",
+            "Grün"});
+            this.setTxtBgQuestion.Location = new System.Drawing.Point(113, 3);
+            this.setTxtBgQuestion.Name = "setTxtBgQuestion";
+            this.setTxtBgQuestion.Size = new System.Drawing.Size(173, 21);
+            this.setTxtBgQuestion.TabIndex = 5;
+            this.setTxtBgQuestion.SelectedIndexChanged += new System.EventHandler(this.setTxtBgQuestion_SelectedIndexChanged);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(5, 103);
+            this.label19.Location = new System.Drawing.Point(5, 5);
             this.label19.Margin = new System.Windows.Forms.Padding(5);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(125, 13);
@@ -1846,28 +1801,209 @@
             // 
             this.tableLayoutPanel22.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tableLayoutPanel22.ColumnCount = 1;
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.Controls.Add(this.comboBox3, 0, 1);
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel30, 0, 2);
             this.tableLayoutPanel22.Controls.Add(this.label13, 0, 0);
+            this.tableLayoutPanel22.Controls.Add(this.setSoundSet, 0, 1);
             this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel22.Location = new System.Drawing.Point(304, 235);
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
             this.tableLayoutPanel22.RowCount = 3;
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel22.Size = new System.Drawing.Size(295, 196);
             this.tableLayoutPanel22.TabIndex = 5;
             // 
-            // comboBox3
+            // tableLayoutPanel30
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel30.ColumnCount = 3;
+            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel30.Controls.Add(this.themesongSound, 1, 4);
+            this.tableLayoutPanel30.Controls.Add(this.timeOverSound, 1, 3);
+            this.tableLayoutPanel30.Controls.Add(this.answerExistingSound, 1, 2);
+            this.tableLayoutPanel30.Controls.Add(this.wrongAnswerSound, 1, 1);
+            this.tableLayoutPanel30.Controls.Add(this.label25, 0, 0);
+            this.tableLayoutPanel30.Controls.Add(this.label26, 0, 1);
+            this.tableLayoutPanel30.Controls.Add(this.label27, 0, 2);
+            this.tableLayoutPanel30.Controls.Add(this.label28, 0, 3);
+            this.tableLayoutPanel30.Controls.Add(this.label29, 0, 4);
+            this.tableLayoutPanel30.Controls.Add(this.setRightAnswerSound, 2, 0);
+            this.tableLayoutPanel30.Controls.Add(this.setWrongAnswerSound, 2, 1);
+            this.tableLayoutPanel30.Controls.Add(this.setAnswerExistingSound, 2, 2);
+            this.tableLayoutPanel30.Controls.Add(this.setTimeOverSound, 2, 3);
+            this.tableLayoutPanel30.Controls.Add(this.setThemesongSound, 2, 4);
+            this.tableLayoutPanel30.Controls.Add(this.rightAnswerSound, 1, 0);
+            this.tableLayoutPanel30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel30.Location = new System.Drawing.Point(0, 60);
+            this.tableLayoutPanel30.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel30.Name = "tableLayoutPanel30";
+            this.tableLayoutPanel30.RowCount = 5;
+            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel30.Size = new System.Drawing.Size(295, 136);
+            this.tableLayoutPanel30.TabIndex = 2;
+            // 
+            // themesongSound
+            // 
+            this.themesongSound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(3, 91);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(289, 21);
-            this.comboBox3.TabIndex = 0;
+            this.themesongSound.Location = new System.Drawing.Point(133, 111);
+            this.themesongSound.Name = "themesongSound";
+            this.themesongSound.Size = new System.Drawing.Size(129, 20);
+            this.themesongSound.TabIndex = 14;
+            this.themesongSound.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // timeOverSound
+            // 
+            this.timeOverSound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.timeOverSound.Location = new System.Drawing.Point(133, 84);
+            this.timeOverSound.Name = "timeOverSound";
+            this.timeOverSound.Size = new System.Drawing.Size(129, 20);
+            this.timeOverSound.TabIndex = 13;
+            this.timeOverSound.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // answerExistingSound
+            // 
+            this.answerExistingSound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.answerExistingSound.Location = new System.Drawing.Point(133, 57);
+            this.answerExistingSound.Name = "answerExistingSound";
+            this.answerExistingSound.Size = new System.Drawing.Size(129, 20);
+            this.answerExistingSound.TabIndex = 12;
+            this.answerExistingSound.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // wrongAnswerSound
+            // 
+            this.wrongAnswerSound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.wrongAnswerSound.Location = new System.Drawing.Point(133, 30);
+            this.wrongAnswerSound.Name = "wrongAnswerSound";
+            this.wrongAnswerSound.Size = new System.Drawing.Size(129, 20);
+            this.wrongAnswerSound.TabIndex = 11;
+            this.wrongAnswerSound.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(5, 5);
+            this.label25.Margin = new System.Windows.Forms.Padding(5);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(101, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Richtige Antwort";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(5, 32);
+            this.label26.Margin = new System.Windows.Forms.Padding(5);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(98, 13);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Falsche Antwort";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(5, 59);
+            this.label27.Margin = new System.Windows.Forms.Padding(5);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(114, 13);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Antwort vorhanden";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(5, 86);
+            this.label28.Margin = new System.Windows.Forms.Padding(5);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(96, 13);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Zeit abgelaufen";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(5, 113);
+            this.label29.Margin = new System.Windows.Forms.Padding(5);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(72, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Themesong";
+            // 
+            // setRightAnswerSound
+            // 
+            this.setRightAnswerSound.Location = new System.Drawing.Point(268, 3);
+            this.setRightAnswerSound.Name = "setRightAnswerSound";
+            this.setRightAnswerSound.Size = new System.Drawing.Size(24, 21);
+            this.setRightAnswerSound.TabIndex = 5;
+            this.setRightAnswerSound.Text = "...";
+            this.setRightAnswerSound.UseVisualStyleBackColor = true;
+            this.setRightAnswerSound.Click += new System.EventHandler(this.setRightAnswerSound_Click);
+            // 
+            // setWrongAnswerSound
+            // 
+            this.setWrongAnswerSound.Location = new System.Drawing.Point(268, 30);
+            this.setWrongAnswerSound.Name = "setWrongAnswerSound";
+            this.setWrongAnswerSound.Size = new System.Drawing.Size(24, 21);
+            this.setWrongAnswerSound.TabIndex = 6;
+            this.setWrongAnswerSound.Text = "...";
+            this.setWrongAnswerSound.UseVisualStyleBackColor = true;
+            this.setWrongAnswerSound.Click += new System.EventHandler(this.setWrongAnswerSound_Click);
+            // 
+            // setAnswerExistingSound
+            // 
+            this.setAnswerExistingSound.Location = new System.Drawing.Point(268, 57);
+            this.setAnswerExistingSound.Name = "setAnswerExistingSound";
+            this.setAnswerExistingSound.Size = new System.Drawing.Size(24, 21);
+            this.setAnswerExistingSound.TabIndex = 7;
+            this.setAnswerExistingSound.Text = "...";
+            this.setAnswerExistingSound.UseVisualStyleBackColor = true;
+            this.setAnswerExistingSound.Click += new System.EventHandler(this.setAnswerExistingSound_Click);
+            // 
+            // setTimeOverSound
+            // 
+            this.setTimeOverSound.Location = new System.Drawing.Point(268, 84);
+            this.setTimeOverSound.Name = "setTimeOverSound";
+            this.setTimeOverSound.Size = new System.Drawing.Size(24, 21);
+            this.setTimeOverSound.TabIndex = 8;
+            this.setTimeOverSound.Text = "...";
+            this.setTimeOverSound.UseVisualStyleBackColor = true;
+            this.setTimeOverSound.Click += new System.EventHandler(this.setTimeOverSound_Click);
+            // 
+            // setThemesongSound
+            // 
+            this.setThemesongSound.Location = new System.Drawing.Point(268, 111);
+            this.setThemesongSound.Name = "setThemesongSound";
+            this.setThemesongSound.Size = new System.Drawing.Size(24, 22);
+            this.setThemesongSound.TabIndex = 9;
+            this.setThemesongSound.Text = "...";
+            this.setThemesongSound.UseVisualStyleBackColor = true;
+            this.setThemesongSound.Click += new System.EventHandler(this.setThemesongSound_Click);
+            // 
+            // rightAnswerSound
+            // 
+            this.rightAnswerSound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rightAnswerSound.Location = new System.Drawing.Point(133, 3);
+            this.rightAnswerSound.Name = "rightAnswerSound";
+            this.rightAnswerSound.Size = new System.Drawing.Size(129, 20);
+            this.rightAnswerSound.TabIndex = 10;
+            this.rightAnswerSound.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
             // 
@@ -1879,6 +2015,22 @@
             this.label13.Size = new System.Drawing.Size(60, 13);
             this.label13.TabIndex = 1;
             this.label13.Text = "Soundset";
+            // 
+            // setSoundSet
+            // 
+            this.setSoundSet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.setSoundSet.Enabled = false;
+            this.setSoundSet.FormattingEnabled = true;
+            this.setSoundSet.Items.AddRange(new object[] {
+            "Set 1",
+            "Set 2",
+            "Set 3"});
+            this.setSoundSet.Location = new System.Drawing.Point(3, 33);
+            this.setSoundSet.Name = "setSoundSet";
+            this.setSoundSet.Size = new System.Drawing.Size(289, 21);
+            this.setSoundSet.TabIndex = 0;
+            this.setSoundSet.SelectedIndexChanged += new System.EventHandler(this.setSoundSet_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -1894,6 +2046,110 @@
             // openBgFile
             // 
             this.openBgFile.FileName = "openFileDialog1";
+            // 
+            // pictureBoxBackgrountImage
+            // 
+            this.pictureBoxBackgrountImage.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxBackgrountImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxBackgrountImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxBackgrountImage.Location = new System.Drawing.Point(3, 33);
+            this.pictureBoxBackgrountImage.Name = "pictureBoxBackgrountImage";
+            this.pictureBoxBackgrountImage.Size = new System.Drawing.Size(289, 130);
+            this.pictureBoxBackgrountImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBackgrountImage.TabIndex = 0;
+            this.pictureBoxBackgrountImage.TabStop = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(5, 5);
+            this.label30.Margin = new System.Windows.Forms.Padding(5);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(39, 13);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Frage";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(5, 30);
+            this.label31.Margin = new System.Windows.Forms.Padding(5);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(64, 13);
+            this.label31.TabIndex = 7;
+            this.label31.Text = "Antworten";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(5, 55);
+            this.label32.Margin = new System.Windows.Forms.Padding(5);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(44, 13);
+            this.label32.TabIndex = 8;
+            this.label32.Text = "Teams";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(5, 80);
+            this.label33.Margin = new System.Windows.Forms.Padding(5);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(47, 13);
+            this.label33.TabIndex = 9;
+            this.label33.Text = "Punkte";
+            // 
+            // setTxtBgAnswer
+            // 
+            this.setTxtBgAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.setTxtBgAnswer.FormattingEnabled = true;
+            this.setTxtBgAnswer.Items.AddRange(new object[] {
+            "keinen",
+            "Rot",
+            "Blau",
+            "Grün"});
+            this.setTxtBgAnswer.Location = new System.Drawing.Point(113, 28);
+            this.setTxtBgAnswer.Name = "setTxtBgAnswer";
+            this.setTxtBgAnswer.Size = new System.Drawing.Size(173, 21);
+            this.setTxtBgAnswer.TabIndex = 10;
+            this.setTxtBgAnswer.SelectedIndexChanged += new System.EventHandler(this.setTxtBgAnswer_SelectedIndexChanged);
+            // 
+            // setTxtBgTeams
+            // 
+            this.setTxtBgTeams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.setTxtBgTeams.FormattingEnabled = true;
+            this.setTxtBgTeams.Items.AddRange(new object[] {
+            "keinen",
+            "Rot",
+            "Blau",
+            "Grün"});
+            this.setTxtBgTeams.Location = new System.Drawing.Point(113, 53);
+            this.setTxtBgTeams.Name = "setTxtBgTeams";
+            this.setTxtBgTeams.Size = new System.Drawing.Size(173, 21);
+            this.setTxtBgTeams.TabIndex = 11;
+            this.setTxtBgTeams.SelectedIndexChanged += new System.EventHandler(this.setTxtBgTeams_SelectedIndexChanged);
+            // 
+            // setTxtBgPoints
+            // 
+            this.setTxtBgPoints.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.setTxtBgPoints.FormattingEnabled = true;
+            this.setTxtBgPoints.Items.AddRange(new object[] {
+            "keinen",
+            "Rot",
+            "Blau",
+            "Grün"});
+            this.setTxtBgPoints.Location = new System.Drawing.Point(113, 78);
+            this.setTxtBgPoints.Name = "setTxtBgPoints";
+            this.setTxtBgPoints.Size = new System.Drawing.Size(173, 21);
+            this.setTxtBgPoints.TabIndex = 12;
+            this.setTxtBgPoints.SelectedIndexChanged += new System.EventHandler(this.setTxtBgPoints_SelectedIndexChanged);
             // 
             // Main
             // 
@@ -1954,7 +2210,6 @@
             this.tableLayoutPanel18.PerformLayout();
             this.tableLayoutPanel19.ResumeLayout(false);
             this.tableLayoutPanel19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgrountImage)).EndInit();
             this.tableLayoutPanel23.ResumeLayout(false);
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel20.PerformLayout();
@@ -1966,14 +2221,15 @@
             this.tableLayoutPanel21.PerformLayout();
             this.tableLayoutPanel28.ResumeLayout(false);
             this.tableLayoutPanel28.PerformLayout();
-            this.tableLayoutPanel29.ResumeLayout(false);
-            this.tableLayoutPanel29.PerformLayout();
             this.tableLayoutPanel24.ResumeLayout(false);
             this.tableLayoutPanel24.PerformLayout();
             this.tableLayoutPanel27.ResumeLayout(false);
             this.tableLayoutPanel27.PerformLayout();
             this.tableLayoutPanel22.ResumeLayout(false);
             this.tableLayoutPanel22.PerformLayout();
+            this.tableLayoutPanel30.ResumeLayout(false);
+            this.tableLayoutPanel30.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgrountImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2079,7 +2335,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox setSoundSet;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.OpenFileDialog openBgFile;
@@ -2100,12 +2356,30 @@
         private System.Windows.Forms.TextBox bgValueRGB;
         private System.Windows.Forms.Button setBgColorRGB;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel29;
-        private System.Windows.Forms.TextBox txtBgValueRGB;
-        private System.Windows.Forms.Button setTxtBgColorRGB;
-        private System.Windows.Forms.ComboBox setTxtBgColorPD;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.ComboBox setTxtBgQuestion;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
+        private System.Windows.Forms.TextBox themesongSound;
+        private System.Windows.Forms.TextBox timeOverSound;
+        private System.Windows.Forms.TextBox answerExistingSound;
+        private System.Windows.Forms.TextBox wrongAnswerSound;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button setRightAnswerSound;
+        private System.Windows.Forms.Button setWrongAnswerSound;
+        private System.Windows.Forms.Button setAnswerExistingSound;
+        private System.Windows.Forms.Button setTimeOverSound;
+        private System.Windows.Forms.Button setThemesongSound;
+        private System.Windows.Forms.TextBox rightAnswerSound;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox setTxtBgPoints;
+        private System.Windows.Forms.ComboBox setTxtBgTeams;
+        private System.Windows.Forms.ComboBox setTxtBgAnswer;
     }
 }
 

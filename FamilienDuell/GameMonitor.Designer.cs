@@ -114,7 +114,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 265F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1335, 918);
@@ -170,7 +170,7 @@
             this.lblPointsTeam2.BackColor = System.Drawing.Color.Transparent;
             this.lblPointsTeam2.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointsTeam2.ForeColor = System.Drawing.Color.Black;
-            this.lblPointsTeam2.Image = global::FamilienDuell.Properties.Resources.bgTextfieldSmall;
+            this.lblPointsTeam2.Image = ((System.Drawing.Image)(resources.GetObject("lblPointsTeam2.Image")));
             this.lblPointsTeam2.Location = new System.Drawing.Point(762, 0);
             this.lblPointsTeam2.Name = "lblPointsTeam2";
             this.lblPointsTeam2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -187,7 +187,7 @@
             this.lblRoundPoints.BackColor = System.Drawing.Color.Transparent;
             this.lblRoundPoints.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoundPoints.ForeColor = System.Drawing.Color.Black;
-            this.lblRoundPoints.Image = global::FamilienDuell.Properties.Resources.bgTextfieldSmall;
+            this.lblRoundPoints.Image = ((System.Drawing.Image)(resources.GetObject("lblRoundPoints.Image")));
             this.lblRoundPoints.Location = new System.Drawing.Point(562, 0);
             this.lblRoundPoints.Name = "lblRoundPoints";
             this.lblRoundPoints.Size = new System.Drawing.Size(194, 94);
@@ -221,7 +221,7 @@
             this.lblPointsTeam1.BackColor = System.Drawing.Color.Transparent;
             this.lblPointsTeam1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPointsTeam1.ForeColor = System.Drawing.Color.Black;
-            this.lblPointsTeam1.Image = global::FamilienDuell.Properties.Resources.bgTextfieldSmall;
+            this.lblPointsTeam1.Image = ((System.Drawing.Image)(resources.GetObject("lblPointsTeam1.Image")));
             this.lblPointsTeam1.Location = new System.Drawing.Point(362, 0);
             this.lblPointsTeam1.Name = "lblPointsTeam1";
             this.lblPointsTeam1.Size = new System.Drawing.Size(194, 94);
@@ -262,7 +262,7 @@
             this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts3, 2, 2);
             this.tableLayoutPanel5.Controls.Add(this.lblAnswerPts6, 2, 5);
             this.tableLayoutPanel5.Controls.Add(this.lblAnswerNo1, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(8, 218);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(8, 273);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 6;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -271,7 +271,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1319, 592);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1319, 537);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // lblAnswerNo6
@@ -283,11 +283,11 @@
             this.lblAnswerNo6.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo6.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerNo6.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerNo6.Image")));
-            this.lblAnswerNo6.Location = new System.Drawing.Point(0, 490);
+            this.lblAnswerNo6.Location = new System.Drawing.Point(0, 445);
             this.lblAnswerNo6.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerNo6.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerNo6.Name = "lblAnswerNo6";
-            this.lblAnswerNo6.Size = new System.Drawing.Size(200, 102);
+            this.lblAnswerNo6.Size = new System.Drawing.Size(200, 100);
             this.lblAnswerNo6.TabIndex = 28;
             this.lblAnswerNo6.Text = "06.";
             this.lblAnswerNo6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -319,7 +319,7 @@
             this.lblAnswerNo5.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo5.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerNo5.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerNo5.Image")));
-            this.lblAnswerNo5.Location = new System.Drawing.Point(0, 392);
+            this.lblAnswerNo5.Location = new System.Drawing.Point(0, 356);
             this.lblAnswerNo5.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerNo5.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerNo5.Name = "lblAnswerNo5";
@@ -337,7 +337,7 @@
             this.lblAnswerNo4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo4.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerNo4.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerNo4.Image")));
-            this.lblAnswerNo4.Location = new System.Drawing.Point(0, 294);
+            this.lblAnswerNo4.Location = new System.Drawing.Point(0, 267);
             this.lblAnswerNo4.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerNo4.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerNo4.Name = "lblAnswerNo4";
@@ -355,7 +355,7 @@
             this.lblAnswerNo3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo3.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerNo3.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerNo3.Image")));
-            this.lblAnswerNo3.Location = new System.Drawing.Point(0, 196);
+            this.lblAnswerNo3.Location = new System.Drawing.Point(0, 178);
             this.lblAnswerNo3.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerNo3.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerNo3.Name = "lblAnswerNo3";
@@ -373,7 +373,7 @@
             this.lblAnswerNo2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerNo2.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerNo2.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerNo2.Image")));
-            this.lblAnswerNo2.Location = new System.Drawing.Point(0, 98);
+            this.lblAnswerNo2.Location = new System.Drawing.Point(0, 89);
             this.lblAnswerNo2.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerNo2.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerNo2.Name = "lblAnswerNo2";
@@ -410,11 +410,11 @@
             this.lblAnswer6.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer6.ForeColor = System.Drawing.Color.Black;
             this.lblAnswer6.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswer6.Image")));
-            this.lblAnswer6.Location = new System.Drawing.Point(200, 490);
+            this.lblAnswer6.Location = new System.Drawing.Point(200, 445);
             this.lblAnswer6.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswer6.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswer6.Name = "lblAnswer6";
-            this.lblAnswer6.Size = new System.Drawing.Size(919, 102);
+            this.lblAnswer6.Size = new System.Drawing.Size(919, 100);
             this.lblAnswer6.TabIndex = 14;
             this.lblAnswer6.Text = "............";
             this.lblAnswer6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -428,7 +428,7 @@
             this.lblAnswer5.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer5.ForeColor = System.Drawing.Color.Black;
             this.lblAnswer5.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswer5.Image")));
-            this.lblAnswer5.Location = new System.Drawing.Point(200, 392);
+            this.lblAnswer5.Location = new System.Drawing.Point(200, 356);
             this.lblAnswer5.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswer5.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswer5.Name = "lblAnswer5";
@@ -446,7 +446,7 @@
             this.lblAnswerPts5.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts5.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerPts5.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerPts5.Image")));
-            this.lblAnswerPts5.Location = new System.Drawing.Point(1119, 392);
+            this.lblAnswerPts5.Location = new System.Drawing.Point(1119, 356);
             this.lblAnswerPts5.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerPts5.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerPts5.Name = "lblAnswerPts5";
@@ -465,7 +465,7 @@
             this.lblAnswer4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer4.ForeColor = System.Drawing.Color.Black;
             this.lblAnswer4.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswer4.Image")));
-            this.lblAnswer4.Location = new System.Drawing.Point(200, 294);
+            this.lblAnswer4.Location = new System.Drawing.Point(200, 267);
             this.lblAnswer4.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswer4.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswer4.Name = "lblAnswer4";
@@ -483,7 +483,7 @@
             this.lblAnswerPts4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts4.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerPts4.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerPts4.Image")));
-            this.lblAnswerPts4.Location = new System.Drawing.Point(1119, 294);
+            this.lblAnswerPts4.Location = new System.Drawing.Point(1119, 267);
             this.lblAnswerPts4.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerPts4.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerPts4.Name = "lblAnswerPts4";
@@ -502,7 +502,7 @@
             this.lblAnswer3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer3.ForeColor = System.Drawing.Color.Black;
             this.lblAnswer3.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswer3.Image")));
-            this.lblAnswer3.Location = new System.Drawing.Point(200, 196);
+            this.lblAnswer3.Location = new System.Drawing.Point(200, 178);
             this.lblAnswer3.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswer3.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswer3.Name = "lblAnswer3";
@@ -520,7 +520,7 @@
             this.lblAnswerPts2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts2.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerPts2.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerPts2.Image")));
-            this.lblAnswerPts2.Location = new System.Drawing.Point(1119, 98);
+            this.lblAnswerPts2.Location = new System.Drawing.Point(1119, 89);
             this.lblAnswerPts2.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerPts2.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerPts2.Name = "lblAnswerPts2";
@@ -539,7 +539,7 @@
             this.lblAnswer2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer2.ForeColor = System.Drawing.Color.Black;
             this.lblAnswer2.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswer2.Image")));
-            this.lblAnswer2.Location = new System.Drawing.Point(200, 98);
+            this.lblAnswer2.Location = new System.Drawing.Point(200, 89);
             this.lblAnswer2.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswer2.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswer2.Name = "lblAnswer2";
@@ -557,7 +557,7 @@
             this.lblAnswerPts3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts3.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerPts3.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerPts3.Image")));
-            this.lblAnswerPts3.Location = new System.Drawing.Point(1119, 196);
+            this.lblAnswerPts3.Location = new System.Drawing.Point(1119, 178);
             this.lblAnswerPts3.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerPts3.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerPts3.Name = "lblAnswerPts3";
@@ -576,11 +576,11 @@
             this.lblAnswerPts6.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerPts6.ForeColor = System.Drawing.Color.Black;
             this.lblAnswerPts6.Image = ((System.Drawing.Image)(resources.GetObject("lblAnswerPts6.Image")));
-            this.lblAnswerPts6.Location = new System.Drawing.Point(1119, 490);
+            this.lblAnswerPts6.Location = new System.Drawing.Point(1119, 445);
             this.lblAnswerPts6.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnswerPts6.MinimumSize = new System.Drawing.Size(0, 100);
             this.lblAnswerPts6.Name = "lblAnswerPts6";
-            this.lblAnswerPts6.Size = new System.Drawing.Size(200, 102);
+            this.lblAnswerPts6.Size = new System.Drawing.Size(200, 100);
             this.lblAnswerPts6.TabIndex = 18;
             this.lblAnswerPts6.Text = "###";
             this.lblAnswerPts6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -616,9 +616,9 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(8, 8);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1319, 204);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1319, 259);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // lblQuestion
@@ -629,11 +629,11 @@
             this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
             this.lblQuestion.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.ForeColor = System.Drawing.Color.Black;
-            this.lblQuestion.Image = global::FamilienDuell.Properties.Resources.bgTextfieldXLarge;
+            this.lblQuestion.Image = ((System.Drawing.Image)(resources.GetObject("lblQuestion.Image")));
             this.lblQuestion.Location = new System.Drawing.Point(4, 0);
             this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(1311, 105);
+            this.lblQuestion.Size = new System.Drawing.Size(1311, 155);
             this.lblQuestion.TabIndex = 0;
             this.lblQuestion.Text = "DefaultGameName";
             this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -650,11 +650,11 @@
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.lblPlayerBlue, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.lblPlayerRed, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 158);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1313, 99);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1313, 104);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -674,7 +674,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(500, 99);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(500, 104);
             this.tableLayoutPanel6.TabIndex = 2;
             // 
             // lblWrong1
@@ -685,7 +685,7 @@
             this.lblWrong1.Location = new System.Drawing.Point(0, 0);
             this.lblWrong1.Margin = new System.Windows.Forms.Padding(0);
             this.lblWrong1.Name = "lblWrong1";
-            this.lblWrong1.Size = new System.Drawing.Size(166, 99);
+            this.lblWrong1.Size = new System.Drawing.Size(166, 104);
             this.lblWrong1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.lblWrong1.TabIndex = 0;
             this.lblWrong1.TabStop = false;
@@ -698,7 +698,7 @@
             this.lblWrong2.Location = new System.Drawing.Point(166, 0);
             this.lblWrong2.Margin = new System.Windows.Forms.Padding(0);
             this.lblWrong2.Name = "lblWrong2";
-            this.lblWrong2.Size = new System.Drawing.Size(166, 99);
+            this.lblWrong2.Size = new System.Drawing.Size(166, 104);
             this.lblWrong2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.lblWrong2.TabIndex = 1;
             this.lblWrong2.TabStop = false;
@@ -711,7 +711,7 @@
             this.lblWrong3.Location = new System.Drawing.Point(332, 0);
             this.lblWrong3.Margin = new System.Windows.Forms.Padding(0);
             this.lblWrong3.Name = "lblWrong3";
-            this.lblWrong3.Size = new System.Drawing.Size(168, 99);
+            this.lblWrong3.Size = new System.Drawing.Size(168, 104);
             this.lblWrong3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.lblWrong3.TabIndex = 2;
             this.lblWrong3.TabStop = false;
@@ -723,7 +723,7 @@
             this.lblPlayerBlue.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerBlue.Location = new System.Drawing.Point(3, 0);
             this.lblPlayerBlue.Name = "lblPlayerBlue";
-            this.lblPlayerBlue.Size = new System.Drawing.Size(400, 99);
+            this.lblPlayerBlue.Size = new System.Drawing.Size(400, 104);
             this.lblPlayerBlue.TabIndex = 3;
             this.lblPlayerBlue.Text = "Spieler Blau";
             this.lblPlayerBlue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -736,7 +736,7 @@
             this.lblPlayerRed.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerRed.Location = new System.Drawing.Point(909, 0);
             this.lblPlayerRed.Name = "lblPlayerRed";
-            this.lblPlayerRed.Size = new System.Drawing.Size(401, 99);
+            this.lblPlayerRed.Size = new System.Drawing.Size(401, 104);
             this.lblPlayerRed.TabIndex = 4;
             this.lblPlayerRed.Text = "Spieler Rot";
             this.lblPlayerRed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

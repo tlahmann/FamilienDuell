@@ -120,7 +120,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Resource Include="Resources\PressStart2P.ttf" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -155,32 +154,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Background.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\wrong.gif" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldLeft.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldSmall.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldBlue.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldRed.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldGreen.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldLarge.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgTextfieldXLarge.gif" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

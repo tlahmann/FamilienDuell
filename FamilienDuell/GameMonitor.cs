@@ -11,7 +11,6 @@ using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.IO;
 
-
 namespace FamilienDuell {
     public partial class GameMonitor : Form {
         int wrongs = 0;
@@ -51,6 +50,9 @@ namespace FamilienDuell {
             lblWrong2.Visible = false;
             lblWrong3.Visible = false;
 
+            lblPlayerRed.Visible = false;
+            lblPlayerBlue.Visible = false;
+
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.monitorClosing);
             this.ResizeEnd += new EventHandler(this.formResize);
             this.Size = new System.Drawing.Size(800, 700);
@@ -64,8 +66,8 @@ namespace FamilienDuell {
             }
 
             public void newSize(int breite, int hoehe) {
-                lblPlayerBlue.Visible = true;
-                lblPlayerRed.Visible = true;
+                //lblPlayerBlue.Visible = true;
+                //lblPlayerRed.Visible = true;
                 lblPlayerBlue.Text = hoehe.ToString();
                 lblPlayerRed.Text = breite.ToString();
 
@@ -152,12 +154,14 @@ namespace FamilienDuell {
                 WindowState = FormWindowState.Maximized;
                 newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
                 FormBorderStyle = FormBorderStyle.None;
+                lblQuestion.Padding = new Padding((((Form.ActiveForm.Bounds.Width) - 1200) / 2), 0, (((Form.ActiveForm.Bounds.Width) - 1200) / 2), 0);
             }
 
             public void minimize() {
                 WindowState = FormWindowState.Normal;
                 newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
                 FormBorderStyle = FormBorderStyle.Sizable;
+                lblQuestion.Padding = new Padding((((Form.ActiveForm.Bounds.Width) - 1200) / 2), 0, (((Form.ActiveForm.Bounds.Width) - 1200) / 2), 0);
             }
 
             public void setFont(int i) {
@@ -193,59 +197,142 @@ namespace FamilienDuell {
                 this.BackgroundImage = bmp;
             }
 
-            public void setTextBg(int i) {
-                if (i == 0) {
-                    lblQuestion.Image = null;
-                    lblAnswer1.Image = null;
-                    lblAnswerNo1.Image = null;
-                    lblAnswerPts1.Image = null;
-                    lblAnswer2.Image = null;
-                    lblAnswerNo2.Image = null;
-                    lblAnswerPts2.Image = null;
-                    lblAnswer3.Image = null;
-                    lblAnswerNo3.Image = null;
-                    lblAnswerPts3.Image = null;
-                    lblAnswer4.Image = null;
-                    lblAnswerNo4.Image = null;
-                    lblAnswerPts4.Image = null;
-                    lblAnswer5.Image = null;
-                    lblAnswerNo5.Image = null;
-                    lblAnswerPts5.Image = null;
-                    lblAnswer6.Image = null;
-                    lblAnswerNo6.Image = null;
-                    lblAnswerPts6.Image = null;
-                    lblTeam1.Image = null;
-                    lblPointsTeam1.Image = null;
-                    lblTeam2.Image = null;
-                    lblPointsTeam2.Image = null;
-                    lblRoundPoints.Image = null;
+            public void setTextBgQuestion(int i) {
+                Bitmap bmpQuestion = null;
+
+                try {
+                    string path = Application.StartupPath;
+
+                    if (i == 0) {
+                        // do nothing
+                    }
+                    else if (i == 1) {
+                        bmpQuestion = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldXXLargeRed.gif");
+                    }
+                    else if (i == 2) {
+                        bmpQuestion = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldXXLargeBlue.gif");
+                    }
+                    else if (i == 3) {
+                        bmpQuestion = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldXXLargeGreen.gif");
+                    }
                 }
-                else if (i == 1) {
-                    lblQuestion.Image = Properties.Resources.bgTextfieldXLarge;
-                    lblAnswer1.Image = Properties.Resources.bgTextfieldXLarge;
-                    lblAnswerNo1.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswerPts1.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswer2.Image = Properties.Resources.bgTextfieldXLarge;
-                    lblAnswerNo2.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswerPts2.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswer3.Image = Properties.Resources.bgTextfieldXLarge;
-                    lblAnswerNo3.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswerPts3.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswer4.Image = Properties.Resources.bgTextfieldXLarge;
-                    lblAnswerNo4.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswerPts4.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswer5.Image = Properties.Resources.bgTextfieldXLarge;
-                    lblAnswerNo5.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswerPts5.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswer6.Image = Properties.Resources.bgTextfieldXLarge;
-                    lblAnswerNo6.Image = Properties.Resources.bgTextfieldSmall;
-                    lblAnswerPts6.Image = Properties.Resources.bgTextfieldSmall;
-                    lblTeam1.Image = Properties.Resources.bgTextfieldGreen;
-                    lblPointsTeam1.Image = Properties.Resources.bgTextfieldSmall;
-                    lblTeam2.Image = Properties.Resources.bgTextfieldGreen;
-                    lblPointsTeam2.Image = Properties.Resources.bgTextfieldSmall;
-                    lblRoundPoints.Image = Properties.Resources.bgTextfieldSmall;
+                catch (Exception e) {
+                    MessageBox.Show("Error loading Bitmap: " + e.Message);
+                    return;
                 }
+
+                lblQuestion.Image = bmpQuestion;
+
+                setTextColorRGB(-1, -1, -1);
+            }
+
+            public void setTextBgAnswer(int i) {
+                Bitmap bmpLarge = null;
+                Bitmap bmpSmall = null;
+
+                try {
+                    string path = Application.StartupPath;
+
+                    if (i == 0) {
+                        // do nothing
+                    }
+                    else if (i == 1) {
+                        bmpLarge = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldXLargeRed.gif");
+                        bmpSmall = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldSmallRed.gif");
+                    }
+                    else if (i == 2) {
+                        bmpLarge = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldXLargeBlue.gif");
+                        bmpSmall = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldSmallBlue.gif");
+                    }
+                    else if (i == 3) {
+                        bmpLarge = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldXLargeGreen.gif");
+                        bmpSmall = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldSmallGreen.gif");
+                    }
+                }
+                catch (Exception e) {
+                    MessageBox.Show("Error loading Bitmap: " + e.Message);
+                    return;
+                }
+
+                lblAnswer1.Image = bmpLarge;
+                lblAnswerNo1.Image = bmpSmall;
+                lblAnswerPts1.Image = bmpSmall;
+                lblAnswer2.Image = bmpLarge;
+                lblAnswerNo2.Image = bmpSmall;
+                lblAnswerPts2.Image = bmpSmall;
+                lblAnswer3.Image = bmpLarge;
+                lblAnswerNo3.Image = bmpSmall;
+                lblAnswerPts3.Image = bmpSmall;
+                lblAnswer4.Image = bmpLarge;
+                lblAnswerNo4.Image = bmpSmall;
+                lblAnswerPts4.Image = bmpSmall;
+                lblAnswer5.Image = bmpLarge;
+                lblAnswerNo5.Image = bmpSmall;
+                lblAnswerPts5.Image = bmpSmall;
+                lblAnswer6.Image = bmpLarge;
+                lblAnswerNo6.Image = bmpSmall;
+                lblAnswerPts6.Image = bmpSmall;
+
+                setTextColorRGB(-1, -1, -1);
+            }
+
+            public void setTextBgTeams(int i) {
+                Bitmap bmpTeam = null;
+
+                try {
+                    string path = Application.StartupPath;
+
+                    if (i == 0) {
+                        // do nothing
+                    }
+                    else if (i == 1) {
+                        bmpTeam = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldRegularRed.gif");
+                    }
+                    else if (i == 2) {
+                        bmpTeam = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldRegularBlue.gif");
+                    }
+                    else if (i == 3) {
+                        bmpTeam = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldRegularGreen.gif");
+                    }
+                }
+                catch (Exception e) {
+                    MessageBox.Show("Error loading Bitmap: " + e.Message);
+                    return;
+                }
+
+                lblTeam1.Image = bmpTeam;
+                lblTeam2.Image = bmpTeam;
+
+                setTextColorRGB(-1, -1, -1);
+            }
+
+            public void setTextBgPoints(int i) {
+                Bitmap bmpSmall = null;
+
+                try {
+                    string path = Application.StartupPath;
+
+                    if (i == 0) {
+                        // do nothing
+                    }
+                    else if (i == 1) {
+                        bmpSmall = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldSmallRed.gif");
+                    }
+                    else if (i == 2) {
+                        bmpSmall = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldSmallBlue.gif");
+                    }
+                    else if (i == 3) {
+                        bmpSmall = (Bitmap)Image.FromFile(path + @"\\resources\\background\\bgTextfieldSmallGreen.gif");
+                    }
+                }
+                catch (Exception e) {
+                    MessageBox.Show("Error loading Bitmap: " + e.Message);
+                    return;
+                }
+
+                lblPointsTeam1.Image = bmpSmall;
+                lblPointsTeam2.Image = bmpSmall;
+                lblRoundPoints.Image = bmpSmall;
 
                 setTextColorRGB(-1, -1, -1);
             }
@@ -350,8 +437,21 @@ namespace FamilienDuell {
         }
 
         public void setQuestion(string msg) {
+            int i = 70;
+            if (msg.Length > i) {
+                FontFamily fam = myFonts.Families[fontNumber];
+                lblQuestion.Font = new Font(fam, 30);
+            }
+            else if (msg.Length > i / 2) {
+                FontFamily fam = myFonts.Families[fontNumber];
+                lblQuestion.Font = new Font(fam, 36);
+            }
+            else {
+                newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
+            }
             lblQuestion.Visible = true;
             lblQuestion.Text = msg;
+            
         }
 
         public void gameStart() {
