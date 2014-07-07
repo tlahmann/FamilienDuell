@@ -391,7 +391,7 @@ namespace FamilienDuell {
             Question question = new Question();
 
             try {
-                XmlTextReader reader = new XmlTextReader("http://www.dbeuchert.com/Duell/" + clientId + ".xml");
+                XmlTextReader reader = new XmlTextReader("http://www.dbeuchert.net/Duell/index.php?id=" + this.clientId + "&gameState=" + this.currentGameStatus);
                 question.injectReaderObject(reader);
 
                 if (!question.readQuestion()) {
