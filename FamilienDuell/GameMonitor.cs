@@ -514,15 +514,13 @@ namespace FamilienDuell {
 
         public bool makeWrong(bool isInTeamRound) {
 
-            MessageBox.Show(wrongs.ToString());
-
             if (isInTeamRound) {
                 if (wrongs == 0) {
-                    lblWrong1.Visible = true;
+                    lblWrong2.Visible = true;
                     wrongs++;
                 }
                 else if (wrongs == 1) {
-                    lblWrong2.Visible = true;
+                    lblWrong1.Visible = true;
                     wrongs++;
                 }
                 else if (wrongs == 2) {
@@ -533,7 +531,7 @@ namespace FamilienDuell {
 
             }
             else {
-                lblWrong1.Visible = true;
+                lblWrong2.Visible = true;
                 timerWrong.Enabled = true;
                 return false;
             }
