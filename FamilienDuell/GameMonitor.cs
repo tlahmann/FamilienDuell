@@ -160,7 +160,12 @@ namespace FamilienDuell {
                 FormBorderStyle = FormBorderStyle.Sizable;
             }
 
-            public void setBgColor(int i) {
+            public void setFont(int i) {
+                fontNumber = i;
+                formResize(null, null);
+            }
+
+            public void setBgColorPD(int i) {
                 if (i == 0) {
                     this.BackColor = Color.Black;
                 }
@@ -177,12 +182,15 @@ namespace FamilienDuell {
                     this.BackColor = Color.Maroon;
                 }
 
-                setTextColor();
+                setTextColorRGB(-1, -1, -1);
             }
 
-            public void setFont(int i) {
-                fontNumber = i;
-                formResize(null, null);
+            public void setBgColorRGB(int r, int g, int b) {
+                this.BackColor = Color.FromArgb(r, g, b);
+            }
+
+            public void setBackground(Bitmap bmp) {
+                this.BackgroundImage = bmp;
             }
 
             public void setTextBg(int i) {
@@ -239,16 +247,65 @@ namespace FamilienDuell {
                     lblRoundPoints.Image = Properties.Resources.bgTextfieldSmall;
                 }
 
-                setTextColor();
+                setTextColorRGB(-1, -1, -1);
             }
 
-            private void setTextColor() {
-                Color cl = Color.Black;
-                if (lblQuestion.Image == null && this.BackColor == Color.Black) {
-                    cl = Color.White;
+            public void setTextColorPD(int i) {
+                Color clr = Color.Black;
+                if (i == 0) {
+                    clr = Color.Black;
                 }
-                else if (lblQuestion.Image == null && this.BackColor != Color.Black) {
-                    cl = Color.Black;
+                else if (i == 1) {
+                    clr = Color.White;
+                }
+                else if (i == 2) {
+                    clr = Color.DimGray;
+                }
+                else if (i == 3) {
+                    clr = Color.MidnightBlue;
+                }
+                else if (i == 4) {
+                    clr = Color.Maroon;
+                }
+
+                lblQuestion.ForeColor = clr;
+                lblAnswer1.ForeColor = clr;
+                lblAnswerNo1.ForeColor = clr;
+                lblAnswerPts1.ForeColor = clr;
+                lblAnswer2.ForeColor = clr;
+                lblAnswerNo2.ForeColor = clr;
+                lblAnswerPts2.ForeColor = clr;
+                lblAnswer3.ForeColor = clr;
+                lblAnswerNo3.ForeColor = clr;
+                lblAnswerPts3.ForeColor = clr;
+                lblAnswer4.ForeColor = clr;
+                lblAnswerNo4.ForeColor = clr;
+                lblAnswerPts4.ForeColor = clr;
+                lblAnswer5.ForeColor = clr;
+                lblAnswerNo5.ForeColor = clr;
+                lblAnswerPts5.ForeColor = clr;
+                lblAnswer6.ForeColor = clr;
+                lblAnswerNo6.ForeColor = clr;
+                lblAnswerPts6.ForeColor = clr;
+                lblTeam1.ForeColor = clr;
+                lblPointsTeam1.ForeColor = clr;
+                lblTeam2.ForeColor = clr;
+                lblPointsTeam2.ForeColor = clr;
+                lblRoundPoints.ForeColor = clr;
+            }
+
+            public void setTextColorRGB(int r, int g, int b) {
+                Color cl = Color.Black;
+                if (r == -1 && g == -1 && b == -1) {
+                    if (lblQuestion.Image == null && this.BackColor == Color.Black) {
+                        cl = Color.White;
+                    }
+                    else if (lblQuestion.Image == null && this.BackColor != Color.Black) {
+                        cl = Color.Black;
+                    }
+                }
+                else {
+                    cl = Color.FromArgb(r, g, b);
                 }
 
                 lblQuestion.ForeColor = cl;
@@ -275,10 +332,6 @@ namespace FamilienDuell {
                 lblTeam2.ForeColor = cl;
                 lblPointsTeam2.ForeColor = cl;
                 lblRoundPoints.ForeColor = cl;
-            }
-
-            public void setBackground(Bitmap bmp) {
-                this.BackgroundImage = bmp;
             }
 
         #endregion

@@ -442,16 +442,65 @@ namespace FamilienDuell {
             }
         }
 
-        private void cbBgColorSelectedIndexChanged(object sender, EventArgs e) {
-            Monitor.setBgColor(cbBgColor.SelectedIndex);
-        }
-
-        private void cbFontSelectedIndexChanged(object sender, EventArgs e) {
+        private void setFont_SelectedIndexChanged(object sender, EventArgs e) {
             Monitor.setFont(cbFont.SelectedIndex);
         }
 
-        private void cbBgTxtSelectedIndexChanged(object sender, EventArgs e) {
-            Monitor.setTextBg(cbBgTxt.SelectedIndex);
+        private void setBgColor_SelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setBgColorPD(setBgColorPD.SelectedIndex);
+        }
+
+        private void setBgColorRGB_Click(object sender, EventArgs e) {
+            try {
+                String str = bgValueRGB.ToString().Substring(bgValueRGB.ToString().LastIndexOf(':') + 2);
+                String[] s = str.Split(',');
+                int[] i = new int[s.Length];
+                for (int n = 0; n < s.Length; n++) {
+                    i[n] = Convert.ToInt32(s[n]);
+                }
+                Monitor.setBgColorRGB(i[0], i[1], i[2]);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Fehler!");
+            }
+        }
+
+        private void setTextColor_SelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setTextColorPD(setTextColorPD.SelectedIndex);
+        }
+
+        private void setTextColorRGB_Click(object sender, EventArgs e) {
+            try {
+                String str = txtValueRGB.ToString().Substring(bgValueRGB.ToString().LastIndexOf(':') + 2);
+                String[] s = str.Split(',');
+                int[] i = new int[s.Length];
+                for (int n = 0; n < s.Length; n++) {
+                    i[n] = Convert.ToInt32(s[n]);
+                }
+                Monitor.setTextColorRGB(i[0], i[1], i[2]);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Fehler!");
+            }
+        }
+
+        private void setTxtBgColor_SelectedIndexChanged(object sender, EventArgs e) {
+            Monitor.setTextBg(setTxtBgColorPD.SelectedIndex);
+        }
+
+        private void setTxtBgColorRGB_Click(object sender, EventArgs e) {
+            //try {
+            //    String str = txtBgValueRGB.ToString().Substring(bgValueRGB.ToString().LastIndexOf(':') + 2);
+            //    String[] s = str.Split(',');
+            //    int[] i = new int[s.Length];
+            //    for (int n = 0; n < s.Length; n++) {
+            //        i[n] = Convert.ToInt32(s[n]);
+            //    }
+            //    Monitor.setTextBgColor(i[0], i[1], i[2]);
+            //}
+            //catch (Exception ex) {
+            //    MessageBox.Show(ex.Message, "Fehler!");
+            //}
         }
 
         private void btnChooseBackgroundClick(object sender, EventArgs e) {
@@ -474,13 +523,14 @@ namespace FamilienDuell {
             else {
                 //MessageBox.Show("Importieren abgebrochen.");
             }
-            
+
         }
 
         private void btnDeleteBackgroundClick(object sender, EventArgs e) {
             pictureBoxBackgrountImage.Image = null;
             Monitor.setBackground(null);
         }
+
         #endregion
 
         static string randString(Int32 len) {
