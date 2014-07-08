@@ -88,7 +88,7 @@
             // 
             // timerRight
             // 
-            this.timerRight.Interval = 2050;
+            this.timerRight.Interval = 250;
             this.timerRight.Tick += new System.EventHandler(this.showQuantity);
             // 
             // timerAddPoints
