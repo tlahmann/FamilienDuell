@@ -706,24 +706,6 @@ namespace FamilienDuell {
         }
 
         private void showQuantity(object sender, EventArgs e) {
-            if (answerTo == 1) {
-                lblAnswerPts1.Text = quantity;
-            }
-            if (answerTo == 2) {
-                lblAnswerPts2.Text = quantity;
-            }
-            if (answerTo == 3) {
-                lblAnswerPts3.Text = quantity;
-            }
-            if (answerTo == 4) {
-                lblAnswerPts4.Text = quantity;
-            }
-            if (answerTo == 5) {
-                lblAnswerPts5.Text = quantity;
-            }
-            if (answerTo == 6) {
-                lblAnswerPts6.Text = quantity;
-            }
             timerRight.Enabled = false;
             newPoints(1, int.Parse(quantity));
         }
