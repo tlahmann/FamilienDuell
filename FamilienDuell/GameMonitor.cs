@@ -53,6 +53,8 @@ namespace FamilienDuell {
             lblPlayerRed.Visible = false;
             lblPlayerBlue.Visible = false;
 
+            lblQuestion.Padding = new Padding((((Form.ActiveForm.Bounds.Width) - 1300) / 2), 20, (((Form.ActiveForm.Bounds.Width) - 1300) / 2), 0);
+
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.monitorClosing);
             this.ResizeEnd += new EventHandler(this.formResize);
             this.Size = new System.Drawing.Size(800, 700);
@@ -154,14 +156,14 @@ namespace FamilienDuell {
                 WindowState = FormWindowState.Maximized;
                 newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
                 FormBorderStyle = FormBorderStyle.None;
-                lblQuestion.Padding = new Padding((((Form.ActiveForm.Bounds.Width) - 1200) / 2), 0, (((Form.ActiveForm.Bounds.Width) - 1200) / 2), 0);
+                lblQuestion.Padding = new Padding((((Form.ActiveForm.Bounds.Width) - 1100) / 2), 20, (((Form.ActiveForm.Bounds.Width) - 1100) / 2), 0);
             }
 
             public void minimize() {
                 WindowState = FormWindowState.Normal;
                 newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
                 FormBorderStyle = FormBorderStyle.Sizable;
-                lblQuestion.Padding = new Padding((((Form.ActiveForm.Bounds.Width) - 1200) / 2), 0, (((Form.ActiveForm.Bounds.Width) - 1200) / 2), 0);
+                lblQuestion.Padding = new Padding((((Form.ActiveForm.Bounds.Width) - 1100) / 2), 20, (((Form.ActiveForm.Bounds.Width) - 1100) / 2), 0);
             }
 
             public void setFont(int i) {
@@ -437,14 +439,14 @@ namespace FamilienDuell {
         }
 
         public void setQuestion(string msg) {
-            int i = 70;
+            int i = 50;
             if (msg.Length > i) {
                 FontFamily fam = myFonts.Families[fontNumber];
-                lblQuestion.Font = new Font(fam, 30);
+                lblQuestion.Font = new Font(fam, 28);
             }
             else if (msg.Length > i / 2) {
                 FontFamily fam = myFonts.Families[fontNumber];
-                lblQuestion.Font = new Font(fam, 36);
+                lblQuestion.Font = new Font(fam, 34);
             }
             else {
                 newSize(Form.ActiveForm.Bounds.Width, Form.ActiveForm.Bounds.Height);
